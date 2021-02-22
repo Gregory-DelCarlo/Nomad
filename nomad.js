@@ -2,13 +2,16 @@ const express = require('express');
 const nomad = express();
 const mongoose = require('mongoose');
 const db = require('./config/keys').mongoURI;
+const users = require('./routes/api/users');
 const bodyParser = require('body-parser');
+
+nomad.use('/api/users', users);
 
 //set up root route
 nomad.get('/', (req, res) => res.send('entry working'));
 
 //set local and production port
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 
 //connect database to mongoose for use
 mongoose
