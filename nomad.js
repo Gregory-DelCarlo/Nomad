@@ -5,8 +5,8 @@ const db = require('./config/keys').mongoURI;
 const bodyParser = require('body-parser');
 
 const passport = require('passport');
-
 nomad.get('/', (req, res) => res.send('entry working'));
+
 //set local and production port
 const port = process.env.PORT || 5000;
 
