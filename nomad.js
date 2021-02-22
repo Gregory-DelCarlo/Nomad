@@ -4,11 +4,12 @@ const mongoose = require('mongoose');
 const db = require('./config/keys').mongoURI;
 const bodyParser = require('body-parser');
 
+
 //set up root route
-nomad.get('/', (req, res) => res.send('entry working'));
+nomad.get('/', (req, res) => res.send('entry file working'));
 
 //set local and production port
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 5000;
 
 //connect database to mongoose for use
 mongoose
