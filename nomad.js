@@ -2,10 +2,7 @@ const express = require('express');
 const nomad = express();
 const mongoose = require('mongoose');
 const db = require('./config/keys').mongoURI;
-const users = require('./routes/api/users');
 const bodyParser = require('body-parser');
-
-nomad.use('/api/users', users);
 
 //set up root route
 nomad.get('/', (req, res) => res.send('entry working'));
