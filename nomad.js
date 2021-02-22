@@ -2,8 +2,9 @@ const express = require('express');
 const nomad = express();
 const mongoose = require('mongoose');
 const db = require('./config/keys').mongoURI;
+const bodyParser = require('body-parser');
 
-// set up root route
+//set up root route
 nomad.get('/', (req, res) => res.send('entry working'));
 
 //set local and production port
@@ -14,6 +15,10 @@ mongoose
   .connect(db, { useNewUrlParser: true })
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch(err => console.log(err));
+
+//set up json parsing so that it can be properly sent to the frontend
+nomad.use(bodyParser.urlencoded({ extended: false }));
+nomad.use(bodyParser.json());
 
 //set server so listen on the port specified
 nomad.listen(port, () => console.log(`Server is running on port ${port}`));
