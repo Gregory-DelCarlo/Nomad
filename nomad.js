@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const db = require('./config/keys').mongoURI;
 const users = require('./routes/api/users');
 const bodyParser = require('body-parser');
+const passport = require('passport');
 
 //set local and production port
 const port = process.env.PORT || 5000;
@@ -13,6 +14,9 @@ mongoose
 .connect(db, { useNewUrlParser: true })
 .then(() => console.log("Connected to MongoDB successfully"))
 .catch(err => console.log(err));
+
+nomad.use(passport.initialize());
+require('./config/passport')(passport);
 
 nomad.use(bodyParser.urlencoded({ extended: false }));
 nomad.use(bodyParser.json());
