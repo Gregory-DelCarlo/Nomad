@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -21,11 +21,15 @@ class NavBar extends React.Component {
           <button onClick={this.logoutUser}>Logout</button>
         </div>
       );
+    } else if (this.props.location.pathname === "/signup") {
+      <Link className="login-link" to={'/login'}>Login</Link>
+    } else if (this.props.location.pathname === "/login") {
+      <Link className="signup-link" to={'/signup'}>Signup</Link>
     } else {
       return (
         <div>
-          <Link to={'/signup'}>Signup</Link>
-          <Link to={'/login'}>Login</Link>
+          <Link className="signup-link" to={'/signup'}>Signup</Link>
+          <Link className="login-link" to={'/login'}>Login</Link>
         </div>
       );
     }
@@ -35,10 +39,11 @@ class NavBar extends React.Component {
     return (
       <div>
         <h1>Nomad</h1>
+        {this.props.location.pathname}
         { this.getLinks()}
       </div>
     );
   }
 }
 
-export default NavBar;
+export default withRouter(NavBar);
