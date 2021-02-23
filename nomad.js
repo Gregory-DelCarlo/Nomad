@@ -3,6 +3,7 @@ const nomad = express();
 const mongoose = require('mongoose');
 const db = require('./config/keys').mongoURI;
 const bodyParser = require('body-parser');
+const users = require("./routes/api/users");
 
 const passport = require('passport');
 nomad.get('/', (req, res) => res.send('entry working'));
@@ -30,5 +31,3 @@ nomad.get('/', (req, res) => res.send('entry working'));
 
 //set server so listen on the port specified
 nomad.listen(port, () => console.log(`Server is running on port ${port}`));
-
-
