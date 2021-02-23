@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import styled from 'styled-components';
-import AutoComplete from './Autocomplete';
-import Marker from './Marker';
+import AutoComplete from './autocomplete';
+import Marker from './marker';
 
 const Wrapper = styled.main`
   width: 100%;
