@@ -3,3 +3,5 @@
 
 /config/keys.js
 frontend/node_modules/
+/config/.env.development
+/config/.env.production
