@@ -2,4 +2,4 @@ const RootReducer = () => {
 
 }
 
-export default RootReducer;
+export default RootReducer; 
