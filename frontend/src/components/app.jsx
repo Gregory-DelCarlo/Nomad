@@ -12,6 +12,8 @@ const App = () => (
         <Route exact path='/' component={MainPage}/>
         <AuthRoute exact path="/login" component={LoginFormContainer} />
         <AuthRoute exact path="/signup" component={SignupFormContainer} />
+        {/* create home (or other) component and add protect routes here */}
+        {/* add navbar route, possibly protected */}
     </Switch>
 );
 
