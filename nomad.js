@@ -18,13 +18,13 @@ mongoose
 .catch(err => console.log(err));
 
 nomad.use(passport.initialize());
+require('./config/passport')(passport);
 
 //set up json parsing so that it can be properly sent to the frontend
 nomad.use(bodyParser.urlencoded({ extended: false }));
 nomad.use(bodyParser.json());
 
 nomad.use('/api/users', users);
-require('./config/passport')(passport);
 
 // set up root route
 nomad.get('/', (req, res) => res.send('entry working'));
