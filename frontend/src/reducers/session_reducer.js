@@ -1,4 +1,4 @@
-import { RECEIVE_USER_LOGOUT } from '../actions/session_actions';
+import { RECEIVE_USER_LOGOUT, RECEIVE_USER_SIGN_IN, RECEIVE_CURRENT_USER } from '../actions/session_actions';
 
 const initialState = {
   isAuthenticated: false,
@@ -12,6 +12,16 @@ const sessionReducer = (state = initialState, action) => {
         isAuthenticated: false,
         user: undefined
       };
+    case RECEIVE_USER_SIGN_IN:
+      return {
+        isAuthenticated: !!action.currentUser,
+        user: action.currentUser
+      }
+    case RECEIVE_CURRENT_USER:
+      return {
+        isAuthenticated: !!action.currentUser,
+        user: action.currentUser
+      }
     default:
       return state;
   }
