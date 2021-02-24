@@ -4,40 +4,74 @@ import { connect } from 'react-redux';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
 
-function Modal({modal, closeModal}) {
-  if (!modal) {
-    return null;
+class Modal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.component = null;
+    this.handleKeyPress = this.handleKeyPress.bind(this)
+    this.handleMouseDown = this.handleMouseDown.bind(this)
   }
-  let component;
-  switch (modal) {
-    case 'login':
-      component = <LoginFormContainer />;
-      break;
-    case 'signup':
-      component = <SignupFormContainer />;
-      break;
-    default:
-      return null;
+
+  selectComponent() {
+    switch (this.props.modal) {
+      case 'login':
+        this.component = <LoginFormContainer />;
+        break;
+      case 'signup':
+        this.component = <SignupFormContainer />;
+        break;
+      default:
+        this.component = null;
+        return null
+    }
   }
-  return (
-    <div className="modal-background" onClick={closeModal}>
-      <div className="modal-child" onClick={e => e.stopPropagation()}>
-        { component }
+
+  handleKeyPress(e) {
+    if (e.key == "Escape") {
+      this.props.closeModal()
+    }
+  }
+
+  handleMouseDown(e) {
+    if (e.target.className === "modal-background") {
+      this.props.closeModal();
+    }
+  }
+
+  componentDidMount() {
+    document.addEventListener('keydown', this.handleKeyPress);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('keydown', this.handleKeyPress);
+  }
+
+  render() { 
+    if (!this.props.modal) {
+      this.component = null;
+      return null
+    }
+    this.selectComponent();
+    return(
+      <div className="modal-background" onMouseDown={this.handleMouseDown} onKeyDown={this.handleKeyPress}>
+        <div className="modal-child" onClick={e => e.stopPropagation()}>
+          { this.component }
+        </div>
       </div>
-    </div>
-  );
+    )
+  }
 }
 
 const mapStateToProps = state => {
   return {
     modal: state.ui.modal
-  };
+  }
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     closeModal: () => dispatch(closeModal())
-  };
+  }
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Modal);
