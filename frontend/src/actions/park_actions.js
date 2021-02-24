@@ -17,10 +17,16 @@ const receivePark = park => ({
 
 
 export const getParks = () => dispatch => (
-    fetchParks().then(parks => dispatch(receiveParks(parks)))
+    fetchParks().then(res => {
+        const parks = {};
+        res.data.forEach(park => {
+            parks[park._id] = park
+        });
+        dispatch(receiveParks(parks));
+    }).catch(err => err)
 );
 
 export const getPark = parkId => dispatch => (
-    fetchPark(parkId).then(park => dispatch(receivePark(park)))
+    fetchPark(parkId).then(res => dispatch(receivePark(res.data)))
 );
 

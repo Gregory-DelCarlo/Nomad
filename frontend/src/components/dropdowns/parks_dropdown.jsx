@@ -11,19 +11,19 @@ export default class ParksDropdown extends React.Component {
         this.props.getParks();
     }
 
-    // renderTrail() {
-    //     const parks = document.getElementsByClassName('park');
-    //     parks.forEach(park => {
-    //         park.addEventListener('click', e => {
 
-    //         })
-    //     })
-    // }
     // need a component to get parks from state.
     render() {
         const parks = Object.values(this.props.parks).map(park => {
-            return <li className='park'>{park.name}</li>;
-        })
+            return( 
+                <li key={park._id} className='park'>
+                    <Link to={`/park/${park._id}`}>
+                        {park.name}
+                    </Link>
+                </li>
+            )
+        });
+
         return (
             <>
                 <ul>

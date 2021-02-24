@@ -1,11 +1,13 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom'
+import ParksDropDownContainer from '../dropdowns/parks_dropdown_container';
 
 class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
     this.getLinks = this.getLinks.bind(this);
+    this.renderDropdown = this.renderDropdown.bind(this);
   }
 
   logoutUser(e) {
@@ -39,6 +41,10 @@ class NavBar extends React.Component {
     }
   }
 
+  renderDropdown() {
+    return <ParksDropDownContainer />;
+  }
+
   render() {
     return (
       <div>
@@ -47,7 +53,7 @@ class NavBar extends React.Component {
         <br/>
         <button className='login-btn' onClick={() => this.props.openModal('login')} style={{color: 'green'}}>Login</button>
         <button className='signup-btn' onClick={() => this.props.openModal('signup')}>Create Account</button>
-
+        <div onClick={this.renderDropdown}>Dropdown</div>
       </div>
     );
   }
