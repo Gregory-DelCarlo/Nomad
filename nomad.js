@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === 'production') {
 
   
 const passport = require('passport');
-nomad.get('/', (req, res) => res.send('entry working'));
+// nomad.get('/', (req, res) => res.send('entry working'));
 
 //set local and production port
 const port = process.env.PORT || 5000;
@@ -38,7 +38,7 @@ nomad.use('/api/users', users);
 nomad.use('/api/parks', parks);
 
 // set up root route
-nomad.get('/', (req, res) => res.send('entry working'));
+// nomad.get('/', (req, res) => res.send('entry working'));
 
 //set server so listen on the port specified
 nomad.listen(port, () => console.log(`Server is running on port ${port}`));
