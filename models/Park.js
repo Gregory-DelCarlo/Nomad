@@ -11,3 +11,6 @@ const ParkSchema = new Schema({
         required: true
     }
 })
+
+const Park = new mongoose.model('parks', ParkSchema);
+module.exports = Park;
