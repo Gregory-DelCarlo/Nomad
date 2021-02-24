@@ -6,6 +6,29 @@
   width: 50%;
 }
 
+.backpack > img {
+  width: 100%;
+}
+
+.item-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  top: -30rem;
+  left: 12rem;
+  width: 40%;
+  height: 30%;
+  background-color: rgb(85,107,48);
+  border: 2px solid red;
+}
+
+.item-list > li {
+  height: 20%;
+  background-color: rgb(230,230,230);
+}
+
 .backpack-view {
   width: 50%;
 }
