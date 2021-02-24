@@ -60,10 +60,19 @@ class SessionForm extends React.Component {
               onChange={this.handleChange('password')} 
               placeholder="Password" 
               value={this.state.password} />
-            {errors['Password'] ? <div className="credential-errors-ul">{errors['Password']}</div> : null}
-            {errors['Invalid'] ? <div className="credential-errors-ul">{errors['Invalid']}</div> : null}
+            {errors['Password'] ? <div>{errors['Password']}</div> : null}
+            {errors['Invalid'] ? <div>{errors['Invalid']}</div> : null}
           </div>
-
+          {
+            this.props.formType === 'signup' ? 
+            <div>
+              <input type='password' 
+              onChange={this.handleChange('password2')} 
+              placeholder="Password" 
+              value={this.state.password} />
+            {errors['Passwords'] ? <div>{errors['Passwords']}</div> : null}
+            </div> : ''
+          }
           <button className="modal-form-submit-button" type='submit'>{this.props.formType}</button>
         </form>
       </div>

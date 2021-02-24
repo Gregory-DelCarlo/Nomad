@@ -7,7 +7,8 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 const mapStateToProps = (state) => {
   return {
     signedIn: state.session.isSignedIn,
-    errors: Object.values(state.errors.session)
+    errors: Object.values(state.errors.session),
+    formType: 'signup'
   };
 };
 
