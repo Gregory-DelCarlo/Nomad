@@ -82,7 +82,7 @@ class Map extends Component {
             mapApi
         } = this.state;
 
-        const geocoder = new mapApi.Geocoder;
+        const geocoder = new mapApi.Geocoder();
 
         geocoder.geocode({ 'location': { lat: this.state.lat, lng: this.state.lng } }, (results, status) => {
             console.log(results);
