@@ -44,6 +44,10 @@ class NavBar extends React.Component {
       <div>
         <h1>Nomad</h1>
         { this.getLinks()}
+        <br/>
+        <button className='login-btn' onClick={() => this.props.openModal('login')} style={{color: 'green'}}>Login</button>
+        <button className='signup-btn' onClick={() => this.props.openModal('signup')}>Create Account</button>
+
       </div>
     );
   }
