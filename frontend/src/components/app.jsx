@@ -10,11 +10,7 @@ const App = () => (
     <div>
         <NavBarContainer />
         <Switch>
-<<<<<<< HEAD
-            <Route exact path='/' component={MainPage}/>
-=======
             <AuthRoute exact path='/' component={MainPage}/>
->>>>>>> 241f17ac6cee4720eae40e4175167a3be1dfa58c
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             {/* create home (or other) component and add protect routes here */}

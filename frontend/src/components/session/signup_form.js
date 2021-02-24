@@ -40,19 +40,23 @@ class SignupForm extends React.Component {
     this.props.signup(user, this.props.history);
   }
 
-  renderErrors() {
-    return (
-      <ul>
-        {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
-            {this.state.errors[error]}
-          </li>
-        ))}
-      </ul>
-    );
-  }
+  // renderErrors() {
+  //   return (
+  //     <ul>
+  //       {Object.keys(this.state.errors).map((error, i) => (
+  //         <li key={`error-${i}`}>
+  //           {this.state.errors[error]}
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
 
   render() {
+    const errors = {}
+    this.props.errors.forEach( (error) => {
+        errors[error.split(" ")[0]] = error
+    })
     return (
       <div className="signup-form-container">
         <form onSubmit={this.handleSubmit}>
@@ -63,21 +67,27 @@ class SignupForm extends React.Component {
               onChange={this.update('username')}
               placeholder="Username"
             />
+            {errors['Username'] ? <div>{errors['Username']}</div> : null}
+
             <br />
             <input type="password"
               value={this.state.password}
               onChange={this.update('password')}
               placeholder="Password"
             />
+            {errors['Password'] ? <div>{errors['Password']}</div> : null}
+
             <br />
             <input type="password"
               value={this.state.password2}
               onChange={this.update('password2')}
               placeholder="Confirm Password"
             />
+            {errors['Passwords'] ? <div>{errors['Passwords']}</div> : null}
+
             <br />
             <input type="submit" value="Submit" />
-            {this.renderErrors()}
+            {/* {this.renderErrors()} */}
           </div>
         </form>
       </div>
