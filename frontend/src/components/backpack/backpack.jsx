@@ -8,6 +8,7 @@ class Backpack extends React.Component {
       numItems: 0
     }
     this.getItems = this.getItems.bind(this);
+    this.changeView = this.changeView.bind(this);
     this.getView = this.getView.bind(this);
   }
 
@@ -39,7 +40,11 @@ class Backpack extends React.Component {
   }
 
   getView() {
-
+    if (this.state.currentPage === 'start') {
+      return (
+        <Start changeView={this.changeView}/>
+      )
+    }
   }
 
   render() {
