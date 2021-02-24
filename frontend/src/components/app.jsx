@@ -5,6 +5,7 @@ import NavBarContainer from './nav/navbar_container';
 import MainPage from './main_page/main_page';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
+import BackpackContainer from './backpack/backpack_container';
 
 const App = () => (
     <div>
@@ -13,8 +14,8 @@ const App = () => (
             <AuthRoute exact path='/' component={MainPage}/>
             <AuthRoute exact path="/login" component={LoginFormContainer} />
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
-            {/* create home (or other) component and add protect routes here */}
-            {/* add navbar route, possibly protected */}
+            <AuthRoute exact path="/backpack" component={BackpackContainer}/>
+            {/* change backpack to protectedroute after testing */}
         </Switch>
     </div>
 );

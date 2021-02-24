@@ -43,7 +43,11 @@ class Backpack extends React.Component {
   getView() {
     if (this.state.currentPage === 'start') {
       return (
-        <Start clickFunction={this.changeView}/>
+        <Start clickFunction={() => this.changeView('time and location form')}/>
+      )
+    } else if (this.state.currentPage === 'time and location form') {
+      return (
+        <p>Button test success!</p>
       )
     }
   }
