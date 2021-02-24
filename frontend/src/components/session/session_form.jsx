@@ -11,7 +11,6 @@ class SessionForm extends React.Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleEnter = this.handleEnter.bind(this);
     this.demoAttempt = false;
   }
 
@@ -21,24 +20,11 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    // this.demoAttempt ? this.props.login(this.state).then(this.props.closeModal) : this.props.action(this.state).then(this.props.closeModal);
     this.props.action(this.state).then(this.props.closeModal);
   }
 
   handleChange(field) {
     return e => this.setState( {[field]: e.target.value} )
-  }
-
-  // This prevents auto login of the demo user on the enter key
-  // Note that the getElementsByClassName method returns an array-like object
-  handleEnter(e) {
-    
-    if (e.key == "Enter") {
-      e.preventDefault();
-    } else {
-      this.demoLogin()
-      document.getElementsByClassName("modal-form-submit-button")[0].click();
-    }
   }
 
   render() {

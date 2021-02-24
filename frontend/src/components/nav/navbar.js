@@ -5,7 +5,10 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
-    this.getLinks = this.getLinks.bind(this);
+
+    this.sessionContainer = this.sessionContainer.bind(this);
+    this.navContainer = this.navContainer.bind(this);
+
   }
 
   logoutUser(e) {
@@ -13,41 +16,32 @@ class NavBar extends React.Component {
     this.props.logout();
   }
 
-  getLinks() {
-    if (this.props.loggedIn) {
-      return (
-        <div>
-          <Link to={'/profile'}>Profile</Link>
-          <button onClick={this.logoutUser}>Logout</button>
+  sessionContainer() {
+    return (
+      <nav className="login-signup-nav">
+        <div className="login-signup">
+          <button className='login-btn' onClick={() => this.props.openModal('login')} style={{color: 'green'}}>Login</button>
+          <button className='signup-btn' onClick={() => this.props.openModal('signup')}>Create Account</button>
         </div>
-      );
-    } else if (this.props.location.pathname === "/signup") {
-      return (
-        <Link className="login-link" to={'/login'}>Login</Link>
-      )
-    } else if (this.props.location.pathname === "/login") {
-      return (
-        <Link className="signup-link" to={'/signup'}>Signup</Link>
-      )
-    } else {
-      return (
-        <div>
-          <Link className="signup-link" to={'/signup'}>Signup</Link>
-          <Link className="login-link" to={'/login'}>Login</Link>
-        </div>
-      );
-    }
+      </nav>
+    )
+  }
+
+  navContainer() {
+    return(
+      <div className="navbar-container">
+        <button onClick={this.logoutUser}>Logout</button>
+      </div>
+    )
   }
 
   render() {
     return (
       <div>
         <h1>Nomad</h1>
-        { this.getLinks()}
         <br/>
-        <button className='login-btn' onClick={() => this.props.openModal('login')} style={{color: 'green'}}>Login</button>
-        <button className='signup-btn' onClick={() => this.props.openModal('signup')}>Create Account</button>
-
+        { this.props.loggedIn ? this.navContainer() : this.sessionContainer() }
+       
       </div>
     );
   }
