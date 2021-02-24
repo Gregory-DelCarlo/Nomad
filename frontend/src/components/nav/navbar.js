@@ -20,7 +20,7 @@ class NavBar extends React.Component {
     return (
       <nav className="login-signup-nav">
         <div className="login-signup">
-          <button className='login-btn' onClick={() => this.props.openModal('login')} style={{color: 'green'}}>Login</button>
+          <button className='login-btn' onClick={() => this.props.openModal('login')}>Login</button>
           <button className='signup-btn' onClick={() => this.props.openModal('signup')}>Create Account</button>
         </div>
       </nav>
