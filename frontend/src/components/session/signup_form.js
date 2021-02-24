@@ -40,6 +40,12 @@ class SignupForm extends React.Component {
     this.props.signup(user, this.props.history);
   }
 
+  // Current signup errors
+  // Username field is required
+  // Username already exists
+  // Username must be between 2 and 30 characters
+  // Password must be at least 6 characters
+  // Passwords must match
   // renderErrors() {
   //   return (
   //     <ul>
