@@ -6,6 +6,7 @@
   "scripts": {
     "start": "node nomad.js",
     "server": "nodemon nomad.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix frontend && npm run build --prefix frontend",
     "frontend-install": "npm install --prefix frontend",
     "frontend": "npm start --prefix frontend",
     "dev": "concurrently \"npm run server\" \"npm run frontend\""
@@ -25,6 +26,7 @@
     "body-parser": "^1.19.0",
     "concurrently": "^6.0.0",
     "express": "^4.17.1",
+    "google-map-react": "^2.1.9",
     "google-maps-react": "^2.0.6",
     "jsonwebtoken": "^8.5.1",
     "mapbox-gl": "^2.1.1",

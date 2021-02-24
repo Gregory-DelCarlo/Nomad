@@ -5,10 +5,13 @@ import configureStore from './store/store';
 import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
-import './css_stylesheets/application.scss'
+import './css_stylesheets/application.scss';
+import { getParks } from './actions/park_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
+
+
 
     if (localStorage.jwtToken) {
         setAuthToken(localStorage.jwtToken);
@@ -26,7 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         store = configureStore({});
     }
-    const root = document.getElementById('root');
 
+    window.getState = store.getState;
+    window.dispatch = store.dispatch;
+  
+    const root = document.getElementById('root');
     ReactDOM.render(<Root store={store} />, root);
+    window.getParks = getParks;
+    window.store = store;
 });

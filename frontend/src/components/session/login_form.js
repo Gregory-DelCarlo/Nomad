@@ -12,16 +12,16 @@ class LoginForm extends React.Component {
     };
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
+    // this.renderErrors = this.renderErrors.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.currentUser === true) {
-      this.props.history.push('/home'); //possibly change url redirect from home to something else
-    }
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.currentUser === true) {
+  //     this.props.history.push('/home'); //possibly change url redirect from home to something else
+  //   }
 
-    this.setState({ errors: nextProps.errors })
-  }
+  //   this.setState({ errors: nextProps.errors })
+  // }
 
   update(field) {
     return e => this.setState({
@@ -40,19 +40,27 @@ class LoginForm extends React.Component {
     this.props.login(user);
   }
 
-  renderErrors() {
-    return (
-      <ul>
-        {Object.keys(this.state.errors).map((error, i) => (
-          <li key={`error-${i}`}>
-            {this.state.errors[error]}
-          </li>
-        ))}
-      </ul>
-    );
-  }
+  // Possible login errors
+  // User not found
+  // Username field is required
+  // Password field is required
+  // renderErrors() {
+  //   return (
+  //     <ul>
+  //       {Object.keys(this.state.errors).map((error, i) => (
+  //         <li key={`error-${i}`}>
+  //           {this.state.errors[error]}
+  //         </li>
+  //       ))}
+  //     </ul>
+  //   );
+  // }
 
   render() {
+    const errors = {}
+    this.props.errors.forEach( (error) => {
+        errors[error.split(" ")[0]] = error
+    })
     return (
       <div>
         <form onSubmit={this.handleSubmit}>
@@ -62,15 +70,20 @@ class LoginForm extends React.Component {
               onChange={this.update('username')}
               placeholder="Username"
             />
+            {errors['Username'] ? <div>{errors['Username']}</div> : null}
             <br />
             <input type="password"
               value={this.state.password}
               onChange={this.update('password')}
               placeholder="Password"
             />
+            {errors['Password'] ? <div>{errors['Password']}</div> : null}
+
             <br />
+            {errors['User'] ? <div>{errors['User']}</div> : null}
+
             <input type="submit" value="Submit" />
-            {this.renderErrors()}
+            {/* {this.renderErrors()} */}
           </div>
         </form>
       </div>
