@@ -4,34 +4,52 @@ class Backpack extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      currentPage: 'main',
+      currentPage: 'start',
       numItems: 0
     }
     this.getItems = this.getItems.bind(this);
+    this.getView = this.getView.bind(this);
+  }
+
+  changeView(item) {
+    this.setState({currentPage: item})
+  }
+
+  addItem(itemNum) {
+    this.setState({numItems: itemNum})
   }
 
   getItems() {
     const itemNum = this.state.numItems;
     if (itemNum > 0) {
-      const itemList = ["Time & Location", "Team", "Supplies"];
+      const itemList = [
+        <li onClick={this.changeView("time and location")}>Time and Location</li>, 
+        <li onClick={this.changeView("team")}>Team</li>, 
+        <li onClick={this.changeView("supplies")}>Supplies</li>
+      ];
       const items = itemList.slice(0, itemNum);
       return (
         <ul className="item-list">
           {items.map(item => (
-            <li>{item}</li>
+            {item}
           ))}
         </ul>
       )
     }
   }
 
+  getView() {
 
+  }
 
   render() {
     return (
       <div className="backpack-page">
         <div className="backpack">
           {this.getItems()}
+        </div>
+        <div className="backpack-view">
+          {this.getView()}
         </div>
       </div>
     )
