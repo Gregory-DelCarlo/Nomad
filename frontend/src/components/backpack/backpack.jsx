@@ -1,4 +1,5 @@
 import React from 'react';
+import Start from './start';
 
 class Backpack extends React.Component {
   constructor(props) {
@@ -42,7 +43,7 @@ class Backpack extends React.Component {
   getView() {
     if (this.state.currentPage === 'start') {
       return (
-        <Start changeView={this.changeView}/>
+        <Start clickFunction={this.changeView}/>
       )
     }
   }
