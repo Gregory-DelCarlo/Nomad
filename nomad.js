@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const db = require('./config/keys').mongoURI;
 const bodyParser = require('body-parser');
 const users = require("./routes/api/users");
+const parks = require("./routes/api/parks")
 
 const passport = require('passport');
 nomad.get('/', (req, res) => res.send('entry working'));
@@ -25,6 +26,7 @@ nomad.use(bodyParser.urlencoded({ extended: false }));
 nomad.use(bodyParser.json());
 
 nomad.use('/api/users', users);
+nomad.use('/api/parks', parks);
 
 // set up root route
 nomad.get('/', (req, res) => res.send('entry working'));
