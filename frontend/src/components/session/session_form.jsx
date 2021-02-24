@@ -20,7 +20,8 @@ class SessionForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.demoAttempt ? this.props.login(this.state).then(this.props.closeModal) : this.props.action(this.state).then(this.props.closeModal);
+    // this.demoAttempt ? this.props.login(this.state).then(this.props.closeModal) : this.props.action(this.state).then(this.props.closeModal);
+    this.props.action(this.state).then(this.props.closeModal);
   }
 
   handleChange(field) {
@@ -69,11 +70,11 @@ class SessionForm extends React.Component {
               <input type='password' 
               onChange={this.handleChange('password2')} 
               placeholder="Password" 
-              value={this.state.password} />
+              value={this.state.password2} />
             {errors['Passwords'] ? <div>{errors['Passwords']}</div> : null}
             </div> : ''
           }
-          <button className="modal-form-submit-button" type='submit'>{this.props.formType}</button>
+          <button type='submit'>{this.props.formType}</button>
         </form>
       </div>
     )
