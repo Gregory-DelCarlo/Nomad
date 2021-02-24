@@ -17,7 +17,7 @@ const receivePark = park => ({
 
 
 export const getParks = () => dispatch => (
-    fetchParks.then(parks => dispatch(receiveParks(parks)))
+    fetchParks().then(parks => dispatch(receiveParks(parks)))
 );
 
 export const getPark = parkId => dispatch => (

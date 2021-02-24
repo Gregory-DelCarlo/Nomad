@@ -80,4 +80,4 @@ class SessionForm extends React.Component {
   }
 }
 
-export default SessionForm
+export default SessionForm;

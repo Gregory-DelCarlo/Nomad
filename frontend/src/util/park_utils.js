@@ -7,3 +7,4 @@ export const fetchParks = () => {
 export const fetchPark = (parkId) => {
     return axios.get(`/api/parks/${parkId}`);
 };
+

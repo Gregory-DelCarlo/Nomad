@@ -6,7 +6,7 @@ const ParkSchema = new Schema({
         type: String,
         required: true
     },
-    trail_map: {
+    rid: {
         type: String,
         required: true
     }
