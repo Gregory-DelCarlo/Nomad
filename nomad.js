@@ -5,7 +5,16 @@ const db = require('./config/keys').mongoURI;
 const bodyParser = require('body-parser');
 const users = require("./routes/api/users");
 const parks = require("./routes/api/parks")
+const path = require('path');
 
+if (process.env.NODE_ENV === 'production') {
+    nomad.use(express.static('frontend/build'));
+    nomad.get('/', (req, res) => {
+      res.sendFile(path.resolve(__dirname, 'frontend', 'build', 'index.html'));
+    })
+}
+
+  
 const passport = require('passport');
 nomad.get('/', (req, res) => res.send('entry working'));
 
