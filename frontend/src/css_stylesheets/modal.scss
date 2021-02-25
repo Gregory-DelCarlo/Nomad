@@ -8,7 +8,7 @@
 }
 
 .modal-child {
-  background: white;
+  background: rgb(134, 156, 119);
   margin: 0 auto;
   margin-top: 150px;
   width: 350px;
@@ -26,6 +26,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  border-bottom: 3px solid  rgb(37, 61, 26);
 }
 
 .modal-form {
@@ -33,6 +34,20 @@
   flex-direction: column;
   justify-content: center;
   padding: 15px;
+}
+
+.auth-form-field {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 25px;
+  color: white;
+  
+}
+
+.auth-input {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 25px;
+  color: white;
+  background: rgb(117, 139, 102)
 }
 
 .modal-form input {
@@ -55,7 +70,7 @@
 #submit {
   cursor: pointer;
   color: white;
-  background: rgb(57, 158, 57);
+  background: rgb(37, 61, 26);
   font-family: 'Montserrat';
   font-size: 18px;
   padding: 10px 0px;
