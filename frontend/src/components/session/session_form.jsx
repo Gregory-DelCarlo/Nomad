@@ -42,7 +42,7 @@ class SessionForm extends React.Component {
             <span>Username</span>
             <input type='text' 
               onChange={this.handleChange('username')} 
-              placeholder="Username" 
+              // placeholder="Username" 
               value={this.state.username} />
             {errors['Username'] ? <div>{errors['Username']}</div> : null}
           </div>
@@ -51,23 +51,23 @@ class SessionForm extends React.Component {
             <span>Password</span>
             <input type='password' 
               onChange={this.handleChange('password')} 
-              placeholder="Password" 
+              // placeholder="Password" 
               value={this.state.password} />
             {errors['Password'] ? <div>{errors['Password']}</div> : null}
             {errors['Invalid'] ? <div>{errors['Invalid']}</div> : null}
           </div>
           {
-            this.props.formType === 'signup' ? 
+            this.props.formType === 'Sign Up' ? 
             <div>
               <span>Confirm Password</span>
               <input type='password' 
               onChange={this.handleChange('password2')} 
-              placeholder="Password" 
+              // placeholder="Password" 
               value={this.state.password2} />
             {errors['Passwords'] ? <div>{errors['Passwords']}</div> : null}
             </div> : ''
           }
-          <button type='submit'>{this.props.formType}</button>
+          <button id='submit' type='submit'>{this.props.formType}</button>
         </form>
       </div>
     )

@@ -43,5 +43,31 @@
   padding: 7px 8px;
   border-radius: 5px;
   margin-bottom: 30px;
+  border: 1px solid lightgray;
   // opacity: 0.7;
+}
+
+.modal-form input:focus {
+  outline: 0;
+  border: 1px solid gray;
+}
+
+#submit {
+  cursor: pointer;
+  color: white;
+  background: rgb(57, 158, 57);
+  font-family: 'Montserrat';
+  font-size: 18px;
+  padding: 10px 0px;
+  outline: 0;
+  border: none;
+
+}
+
+#submit:hover {
+  background: rgb(41, 114, 41);
+}
+
+#submit:active {
+  background: rgb(29, 100, 29);
 }
