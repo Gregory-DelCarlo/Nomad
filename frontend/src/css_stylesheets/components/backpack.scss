@@ -1,34 +1,43 @@
 .backpack-page {
   display: flex;
+  height: 100%;
 }
 
 .backpack {
-  width: 50%;
-}
-
-.backpack > img {
-  width: 100%;
+  width: 40%;
+  min-width: 600px;
 }
 
 .item-list {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  position: relative;
-  top: -30rem;
-  left: 12rem;
-  width: 40%;
-  height: 30%;
-  background-color: rgb(85,107,48);
-  border: 2px solid red;
+  // width: 480px;
+  width: auto;
+  height: 710px;
+  min-width: 400px;
+  padding: 10%;
+  background-image: url('../../assets/images/backpack.png');
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .item-list > li {
-  height: 20%;
-  background-color: rgb(230,230,230);
+  height: 80px;
+  width: 50%;
+  min-width: 300px;
+  border-radius: 4px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  margin-left: 110px;
+  line-height: 2.5;
+  text-align: center;
+  background-color: rgb(230,230,230,0.9);
+  font-size: 30px;
 }
 
 .backpack-view {
   width: 50%;
+  min-width: 500px;
 }

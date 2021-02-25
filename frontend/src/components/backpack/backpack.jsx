@@ -57,7 +57,7 @@ class Backpack extends React.Component {
     return (
       <div className="backpack-page">
         <div className="backpack">
-          <img src={backpackImg} alt="backpack img"/>
+          {/* <img src={backpackImg} alt="backpack img"/> */}
           {this.getItems()}
         </div>
         <div className="backpack-view">
