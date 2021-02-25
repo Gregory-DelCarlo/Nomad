@@ -1,8 +1,10 @@
 // CSS Reset
 // @import 'base/reset';
 @import './base/reset';
+@import './base/colors';
+// Components
 @import './modal.scss';
+@import './components/backpack.scss';
 @import './nav.scss';
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
- // Components
-//  @import 'components/*';
+@import './components/animations';
