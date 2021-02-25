@@ -5,6 +5,7 @@
   height: 100%;
   background-color: rgb(211, 211, 211, 0.7);
   // opacity: 0.7;
+  z-index: 10;
 }
 
 .modal-child {
@@ -15,17 +16,18 @@
   height: auto;
   opacity: 1;
 }
-
-.modal-form-header {
-  color: rgb(57, 158, 57);
+.modal-form-header-wrapper{
   background: black;
-  height: 40px;
   padding: 15px;
-  font-size: 40px;
-  font-family: 'Montserrat';
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.modal-form-header {
+  color: rgb(57, 158, 57);
+  height: 40px;
+  font-size: 40px;
+  font-family: 'Montserrat';
 }
 
 .modal-form {

@@ -36,7 +36,9 @@ class SessionForm extends React.Component {
     })
     return (
       <div>
-        <div className="modal-form-header">Nomad</div>
+        <div className='modal-form-header-wrapper'>
+          <div className="modal-form-header">Nomad</div>
+        </div>
         <form className="modal-form" onSubmit={this.handleSubmit} >
           <div>
             <span>Username</span>
