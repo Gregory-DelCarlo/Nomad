@@ -1,6 +1,8 @@
 const express = require("express");
 const router = express.Router();
 const Trip = require('../../models/Trip');
+const passport = require('passport');
+const validateTripInput = require('../../validation/trip');
 
 router.get('/:id', (req, res) => {
   Trip.findById(req.params.id)
@@ -40,6 +42,40 @@ router.post('/',
     });
 
     newTrip.save().then(trip => res.json(trip));
+  }
+);
+
+router.put('/update/:id', 
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    const { errors, isValid } = validateTripInput(req.body);
+
+    if (!isValid) {
+      return res.status(400).json(errors);
+    }
+  
+    const updatedTrip = {
+      user: req.user.id,
+      title: req.body.title,
+      time: req.body.time,
+      location: req.body.location,
+      team: req.body.team,
+      food: req.body.food,
+      equipment: req.body.equipment
+    }
+
+    Trip.findByIdAndUpdate(
+      req.params.id,
+      { $set: updatedTrip}
+    ).then(trip => res.json(trip))
+  }
+);
+
+router.delete('/delete/:id',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    Trip.findByIdAndDelete(req.params.id)
+    .then(trip => res.json(trip))
   }
 );
 
