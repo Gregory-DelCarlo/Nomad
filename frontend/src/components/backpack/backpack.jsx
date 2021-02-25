@@ -10,7 +10,7 @@ class Backpack extends React.Component {
     super(props);
     this.state = {
       currentPage: 'start',
-      numItems: 0 //Change to 0 after testing
+      numItems: 0
     }
     this.getItems = this.getItems.bind(this);
     this.addItem = this.addItem.bind(this);
@@ -20,31 +20,34 @@ class Backpack extends React.Component {
 
   changeView(item) {
     this.setState({currentPage: item})
-    console.log(this.state.numItems) //remove after testing
-    console.log(this.state.currentPage) //remove after testing
   }
 
   addItem(newPage, itemNum) {
-    debugger
     this.setState({currentPage: newPage, numItems: itemNum})
-    console.log(this.state.numItems) // remove after testing
-    console.log(this.state.currentPage) // remove after testing
   }
-  // addItem(itemNum) {
-  //   this.setState({numItems: itemNum})
-  //   console.log(this.state.numItems) // remove after testing
-  //   console.log(this.state.currentPage) // remove after testing
-  // }
-
-
 
   getItems() {
     const itemNum = this.state.numItems;
     if (itemNum > 0) {
       const itemList = [
-        <li onClick={() => this.changeView("time and location")}>Time and Location</li>, 
-        <li onClick={() => this.changeView("team")}>Team</li>, 
-        <li onClick={() => this.changeView("supplies")}>Supplies</li>
+        <li 
+          key="1"
+          onClick={() => this.changeView("time and location")}
+          className="location-item"
+          slide={this.state.numItems}
+        >Time and Location</li>, 
+        <li 
+          key="2"
+          onClick={() => this.changeView("team")}
+          className="team-item"
+          slide={this.state.numItems}
+        >Team</li>, 
+        <li 
+          key="3"
+          onClick={() => this.changeView("supplies")}
+          className="supplies-item"
+          slide={this.state.numItems}
+        >Supplies</li>
       ];
       const items = itemList.slice(0, itemNum);
       return (
@@ -71,14 +74,12 @@ class Backpack extends React.Component {
       return (
         <Test 
           clickAddItem={() => this.addItem('team form', 1)} 
-          // clickAddItem={() => this.addItem(1)} 
         />
       )
     } else if (this.state.currentPage === 'team form') {
       return (
         <Test2 
           clickAddItem={() => this.addItem('supplies form', 2)} 
-          // clickAddItem={() => this.addItem(2)} 
         />
       )
     } else if (this.state.currentPage === 'supplies form') {
