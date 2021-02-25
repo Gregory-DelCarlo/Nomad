@@ -1,30 +1,36 @@
 .navbar-container{
   width: 100%;
-  height: 56px;
-  background: black;
-  font-family: 'Montserrat';
+  height: 70px;
+  background: rgb(136, 79, 26);
+  // font-family: 'Montserrat';
 }
 
 .navbar-content {
-  width: 900px;
+  // width: 900px;
   height: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  // margin: 0 auto;
+  display: grid;
+  grid-template-columns: 50 160 50px;
+  // flex-direction: row;
+  // display: flex;
+  // justify-content: space-between;
+  // align-items: center;
 }
 
 .navbar-content button {
   cursor: pointer;
-  font-family: 'Montserrat';
-  font-size: 16px;
+  // font-family: 'Montserrat';
+  font-family: 'Architects Daughter', cursive;
+  font-size: 20px;
+  // font-size: 16px;
   // font-weight: 300;
   color: white;
-  background: rgb(57, 158, 57);
-  border: none;
+  // background: rgb(57, 158, 57);
+  background: rgb(37, 61, 26);
+  border: 1px solid transparent;
   padding: 5px;
   outline: 0;
+  border-radius: 4px;
 }
 
 .navbar-content button:hover {
@@ -36,21 +42,54 @@
 }
 
 // .login-signup {
+  
+  // }
+  
+  .nomad-header {
+    font-size: 30px;
+    color: rgb(57, 158, 57);
+    // font-weight: 800;
+    grid-column: 1;
+    display:flex;
+    padding-left: 25px;
+    // justify-content: center;
+    align-items: center;
+    // position: relative;
+    // float: left;
+    // padding: 15px;
+    font-family: Kalam;
+  }
+
+  .map-menu {
+    grid-column: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    align-items: center;
+    margin-left: 32px;
+  }
+
+  .list-button {
+    margin: 5px;
+  }
+  
+  // .logout-btn {
 
 // }
-
-.nomad-header {
-  font-size: 30px;
-  // font-weight: 300;
-  color: rgb(57, 158, 57);
+.auth-buttons {
+  grid-column: 3;
+  float: right;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20px;
 }
-
-// .logout-btn {
-
-// }
 
 .login-btn {
   margin-right: 5px;
+
 }
 
 .signup-btn {

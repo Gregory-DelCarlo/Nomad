@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import {Dropdown} from 'react-bootstrap'
+import {DropdownButton, Dropdown} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
 export default class ParksDropdown extends React.Component {
@@ -73,16 +73,19 @@ export default class ParksDropdown extends React.Component {
         const allParks = this.formatParks();
 
         return (
-            <>
-                <Dropdown>
-                    <Dropdown.Toggle variant="success" id="dropdown-basic">
-                        Regional Areas
-                    </Dropdown.Toggle>
-                        <Dropdown.Menu>
-                            {allParks['Northern California']}
-                        </Dropdown.Menu>
-                </Dropdown>
-            </>
+            <div className='map-menu'>
+                {/* <DropdownButton title="Regional Areas"> */}
+                    <DropdownButton menuAlign='left' title="Northern California" className='list-button'>
+                        {allParks['Northern California']} 
+                    </DropdownButton>
+                    <DropdownButton title="Central California" className="list-button">
+                        {allParks['Central California']}
+                    </DropdownButton>
+                    <DropdownButton title='Southern California' className='list-button'>
+                        {allParks['Southern California']}
+                    </DropdownButton>
+                {/* </DropdownButton> */}
+            </div>
         )
     }
 }
