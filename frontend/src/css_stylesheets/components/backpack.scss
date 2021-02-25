@@ -10,10 +10,9 @@
 
 .item-list {
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   justify-content: center;
   align-items: center;
-  // width: 480px;
   width: auto;
   height: 710px;
   min-width: 400px;
