@@ -5,11 +5,13 @@ export default class MainPage extends React.Component {
     render() {
         return (
             <div className="carousel-container">
-                <div className="carousel-header">
-                    Plan Your Trip Today
+                <div className="carousel-header-wrapper">
+                    <div className="carousel-header">
+                        Plan Your Trip Today
+                    </div>
                 </div>
-                <Carousel>
-                <Carousel.Item interval={2500}>
+                <Carousel className="carousel-content">
+                <Carousel.Item interval={4000}>
                   <img
                     className="carosel-item"
                     src="https://media.tenor.com/images/b143ac6c86210714b4273f28c05f3aa7/tenor.gif"
@@ -17,7 +19,7 @@ export default class MainPage extends React.Component {
                   <Carousel.Caption>
                   </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item interval={2500}>
+                <Carousel.Item interval={4000}>
                   <img
                     className="carosel-item"
                     src="https://media.tenor.com/images/b143ac6c86210714b4273f28c05f3aa7/tenor.gif"
@@ -25,7 +27,7 @@ export default class MainPage extends React.Component {
                   <Carousel.Caption>
                   </Carousel.Caption>
                 </Carousel.Item>
-                <Carousel.Item  interval={2500}>
+                <Carousel.Item  interval={4000}>
                   <img
                     className="carosel-item"
                     src="https://media.tenor.com/images/b143ac6c86210714b4273f28c05f3aa7/tenor.gif"
