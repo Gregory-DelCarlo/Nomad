@@ -29,21 +29,6 @@ class SessionForm extends React.Component {
     return e => this.setState( {[field]: e.target.value} )
   }
 
-<<<<<<< HEAD
-  // This prevents auto login of the demo user on the enter key
-  // Note that the getElementsByClassName method returns an array-like object
-  handleEnter(e) {
-    
-    if (e.key === "Enter") {
-      e.preventDefault();
-    } else {
-      this.demoLogin()
-      document.getElementsByClassName("modal-form-submit-button")[0].click();
-    }
-  }
-
-=======
->>>>>>> d2d68b9182127d387a35f2506bbc2132b843f506
   render() {
     const errors = {}
     this.props.errors.forEach( (error) => {

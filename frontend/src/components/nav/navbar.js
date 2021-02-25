@@ -6,15 +6,10 @@ class NavBar extends React.Component {
   constructor(props) {
     super(props);
     this.logoutUser = this.logoutUser.bind(this);
-<<<<<<< HEAD
-    this.getLinks = this.getLinks.bind(this);
-    // this.renderDropdown = this.renderDropdown.bind(this);
-=======
 
     this.sessionContainer = this.sessionContainer.bind(this);
     this.navContainer = this.navContainer.bind(this);
 
->>>>>>> d2d68b9182127d387a35f2506bbc2132b843f506
   }
 
   logoutUser(e) {
@@ -46,21 +41,13 @@ class NavBar extends React.Component {
   render() {
     return (
       <div>
-<<<<<<< HEAD
-        <h1>Nomad</h1>
-        { this.getLinks()}
-        <br/>
-        <button className='login-btn' onClick={() => this.props.openModal('login')} style={{color: 'green'}}>Login</button>
-        <button className='signup-btn' onClick={() => this.props.openModal('signup')}>Create Account</button>
-        <ParksDropDownContainer />
-=======
         <nav className="navbar-container">
           <div className="navbar-content">
             <div className="nomad-header">Nomad</div>
+            <ParksDropDownContainer />
             { this.props.loggedIn ? this.navContainer() : this.sessionContainer() }
           </div>
         </nav>
->>>>>>> d2d68b9182127d387a35f2506bbc2132b843f506
       </div>
     );
   }
