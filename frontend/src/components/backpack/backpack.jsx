@@ -3,6 +3,7 @@ import Start from './start';
 //test components
 import Test from './test';
 import Test2 from './test2';
+import Test3 from './test3';
 
 class Backpack extends React.Component {
   constructor(props) {
@@ -64,23 +65,27 @@ class Backpack extends React.Component {
   getView() {
     if (this.state.currentPage === 'start') {
       return (
-        <Start clickAddItem={() => this.addItem('time and location form', 1)}/>
+        <Start clickAddItem={() => this.addItem('time and location form', 0)}/>
       )
     } else if (this.state.currentPage === 'time and location form') {
       return (
         <Test 
-          clickAddItem={() => this.addItem('team form', 2)} 
+          clickAddItem={() => this.addItem('team form', 1)} 
           // clickAddItem={() => this.addItem(1)} 
         />
       )
     } else if (this.state.currentPage === 'team form') {
       return (
         <Test2 
-          clickAddItem={() => this.addItem('supplies form', 3)} 
+          clickAddItem={() => this.addItem('supplies form', 2)} 
           // clickAddItem={() => this.addItem(2)} 
         />
       )
-    } 
+    } else if (this.state.currentPage === 'supplies form') {
+      return (
+        <Test3 clickAddItem={() => this.addItem('', 3)} />
+      )
+    }
   }
 
   render() {
