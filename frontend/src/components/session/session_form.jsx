@@ -38,8 +38,8 @@ class SessionForm extends React.Component {
       <div>
         <div className="modal-form-header">Nomad</div>
         <form className="modal-form" onSubmit={this.handleSubmit} >
-          <div>
-            <span>Username</span>
+          <div className="modal-input">
+            <span className='modal-placeholder'>Username</span>
             <input type='text' 
               onChange={this.handleChange('username')} 
               // placeholder="Username" 
@@ -47,8 +47,8 @@ class SessionForm extends React.Component {
             {errors['Username'] ? <div>{errors['Username']}</div> : null}
           </div>
 
-          <div>
-            <span>Password</span>
+          <div className="modal-input">
+            <span className="modal-placeholder">Password</span>
             <input type='password' 
               onChange={this.handleChange('password')} 
               // placeholder="Password" 
@@ -58,8 +58,8 @@ class SessionForm extends React.Component {
           </div>
           {
             this.props.formType === 'Sign Up' ? 
-            <div>
-              <span>Confirm Password</span>
+            <div className="modal-input">
+              <span className='modal-placeholder'>Confirm Password</span>
               <input type='password' 
               onChange={this.handleChange('password2')} 
               // placeholder="Password" 
