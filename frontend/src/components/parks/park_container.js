@@ -14,5 +14,5 @@ const mapDispatchToProps = (dispatch, ownProps) => {
         getPark: () => dispatch(getPark(ownProps.match.params.parkId))
     }
 };
-
+ 
 export default connect(mapStateToProps, mapDispatchToProps)(Park);

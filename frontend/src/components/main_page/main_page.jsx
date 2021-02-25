@@ -1,5 +1,5 @@
 import React from 'react';
-import ParksDropDownContainer from '../dropdowns/parks_dropdown_container';
+
 
 export default class MainPage extends React.Component {
     render() {
@@ -9,7 +9,7 @@ export default class MainPage extends React.Component {
                     Welcome to our Site!!!
                 </h1>
                 <div>Really cool splash page here!</div>
-                <ParksDropDownContainer />
+                {/* <ParksDropDownContainer /> */}
             </main>
         )
     }

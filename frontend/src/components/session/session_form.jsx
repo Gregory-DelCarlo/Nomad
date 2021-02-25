@@ -33,7 +33,7 @@ class SessionForm extends React.Component {
   // Note that the getElementsByClassName method returns an array-like object
   handleEnter(e) {
     
-    if (e.key == "Enter") {
+    if (e.key === "Enter") {
       e.preventDefault();
     } else {
       this.demoLogin()
