@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 import {Dropdown} from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 export default class ParksDropdown extends React.Component {
 
@@ -25,30 +26,29 @@ export default class ParksDropdown extends React.Component {
 
         Object.values(this.props.parks).forEach(park => {
             switch (park.location){
-                case (park.location === "Northern California"):
-                    parkslist['Northern California'].push(park => 
-                    <Dropdown.Item>
-                        <Link to={`/park/${park._id}`}>
+                case ("Northern California"):
+                    parkslist['Northern California'].push( 
+                    <Dropdown.Item key={park._id} href={`#/park/${park._id}`} >
                             {park.name}
-                        </Link>
                     </Dropdown.Item>)
                      return ""
-                case (park.location === "Central California"):
-                    parkslist["Central California"].push(park => 
-                    <Dropdown.Item>
-                        <Link to={`/park/${park._id}`}>
+                case ( "Central California"):
+                    parkslist["Central California"].push(
+                    <Dropdown.Item key={park._id} href={`#/park/${park._id}`}>
                             {park.name}
-                        </Link>
+                        
                     </Dropdown.Item>)
                     return ""
-                case (park.location === "Southern California"):
-                    parkslist["Southern California"].push(park =>
-                     <Dropdown.Item>
-                        <Link to={`/park/${park._id}`}>
+                case ("Southern California"):
+                    parkslist["Southern California"].push(
+                    <Dropdown.Item key={park._id} href={`#/park/${park._id}`}>
                             {park.name}
-                        </Link>
+                        
                     </Dropdown.Item>)
                     return ""
+
+                default: 
+                        return ""
 
             }
                 
@@ -79,8 +79,8 @@ export default class ParksDropdown extends React.Component {
                         Regional Areas
                     </Dropdown.Toggle>
                         <Dropdown.Menu>
-                            {allParks}
-                    </Dropdown.Menu>
+                            {allParks['Northern California']}
+                        </Dropdown.Menu>
                 </Dropdown>
             </>
         )

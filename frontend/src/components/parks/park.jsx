@@ -11,6 +11,8 @@ export default class Park extends React.Component {
         this.props.getPark().then(() => (
             this.sourceMap()
         ))
+        // this.sourceMap();
+        // this.props.getPark()
     }
     
     // componentWillUnMount() {
@@ -28,8 +30,12 @@ export default class Park extends React.Component {
         return(
     
             <div className="map-container" >
-                <div className="TrailforksRegionInfo" data-w="800px" data-h="150px" data-rid={this.props.park.rid} data-counts="1" data-stats="1"></div>
-                <div className="TrailforksWidgetMap" data-w="800px" data-h="400px" data-rid={this.props.park.rid} data-activitytype="6" data-maptype="trailforks" data-trailstyle="difficulty" data-controls="0" data-list="1" data-dml="1" data-layers="trail,labels,poi,polygon,directory,region" data-z="" data-lat="" data-lon="" data-hideunsanctioned="0"></div>
+                <div className="map-info">
+                    <iframe width="800" height="133" frameborder="0" src={`https://www.trailforks.com/widgets/region_info/?rid=${this.props.park.rid}&counts=1&stats=1&title=1&w=800px&h=133&activitytype=6`}></iframe>
+                </div>
+                <div className="map-widget">
+                <iframe width="800" height="400" frameborder="0" allowfullscreen src={`https://www.trailforks.com/widgets/region_map/?rid=${this.props.park.rid}&w=800px&h=400px&activitytype=6&maptype=trailforks&trailstyle=difficulty&controls=0&list=1&layers=labels,poi,polygon,directory,region&z=&lat=&lon=&hideunsanctioned=0`}></iframe>
+                </div>
             </div>
         )
 

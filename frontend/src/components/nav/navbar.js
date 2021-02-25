@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import ParksDropDownContainer from '../dropdowns/parks_dropdown_container';
 
 class NavBar extends React.Component {
