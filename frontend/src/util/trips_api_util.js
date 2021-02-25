@@ -4,8 +4,8 @@ export const getTrip = id => {
   return axios.get(`/api/trips/${id}`)
 };
 
-export const getUserTrips = id => {
-  return axios.get(`/api/trips/user/${id}`)
+export const getUserTrips = userId => {
+  return axios.get(`/api/trips/user/${userId}`)
 };
 
 export const makeTrip = tripData => {
