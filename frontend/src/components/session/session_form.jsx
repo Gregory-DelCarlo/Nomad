@@ -36,8 +36,10 @@ class SessionForm extends React.Component {
     })
     return (
       <div>
+        <div className="modal-form-header">Nomad</div>
         <form className="modal-form" onSubmit={this.handleSubmit} >
           <div>
+            <span>Username</span>
             <input type='text' 
               onChange={this.handleChange('username')} 
               placeholder="Username" 
@@ -46,6 +48,7 @@ class SessionForm extends React.Component {
           </div>
 
           <div>
+            <span>Password</span>
             <input type='password' 
               onChange={this.handleChange('password')} 
               placeholder="Password" 
@@ -56,6 +59,7 @@ class SessionForm extends React.Component {
           {
             this.props.formType === 'signup' ? 
             <div>
+              <span>Confirm Password</span>
               <input type='password' 
               onChange={this.handleChange('password2')} 
               placeholder="Password" 
