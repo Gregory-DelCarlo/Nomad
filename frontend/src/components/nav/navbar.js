@@ -18,18 +18,16 @@ class NavBar extends React.Component {
 
   sessionContainer() {
     return (
-      <nav className="login-signup-nav">
-        <div className="login-signup">
-          <button className='login-btn' onClick={() => this.props.openModal('login')}>Login</button>
-          <button className='signup-btn' onClick={() => this.props.openModal('signup')}>Create Account</button>
-        </div>
-      </nav>
+      <div className="login-signup">
+        <button className='login-btn' onClick={() => this.props.openModal('login')}>Login</button>
+        <button className='signup-btn' onClick={() => this.props.openModal('signup')}>Create Account</button>
+      </div>
     )
   }
 
   navContainer() {
     return(
-      <div className="navbar-container">
+      <div className="logout-btn">
         <button onClick={this.logoutUser}>Logout</button>
       </div>
     )
@@ -38,10 +36,12 @@ class NavBar extends React.Component {
   render() {
     return (
       <div>
-        <h1>Nomad</h1>
-        <br/>
-        { this.props.loggedIn ? this.navContainer() : this.sessionContainer() }
-       
+        <nav className="navbar-container">
+          <div className="navbar-content">
+            <div className="nomad-header">Nomad</div>
+            { this.props.loggedIn ? this.navContainer() : this.sessionContainer() }
+          </div>
+        </nav>
       </div>
     );
   }
