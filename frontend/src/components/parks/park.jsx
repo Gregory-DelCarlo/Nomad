@@ -25,7 +25,6 @@ export default class Park extends React.Component {
 
     render() {
         if (!this.props.park) return null;
-        console.log('hello world');
         return(
     
             <div className="map-container" >
