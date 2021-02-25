@@ -28,20 +28,20 @@ export default class ParksDropdown extends React.Component {
             switch (park.location){
                 case ("Northern California"):
                     parkslist['Northern California'].push( 
-                    <Dropdown.Item key={park._id} href={`#/park/${park._id}`} >
+                    <Dropdown.Item className='dropdown-items' key={park._id} href={`#/park/${park._id}`} >
                             {park.name}
                     </Dropdown.Item>)
                      return ""
                 case ( "Central California"):
                     parkslist["Central California"].push(
-                    <Dropdown.Item key={park._id} href={`#/park/${park._id}`}>
+                    <Dropdown.Item className='dropdown-items' key={park._id} href={`#/park/${park._id}`}>
                             {park.name}
                         
                     </Dropdown.Item>)
                     return ""
                 case ("Southern California"):
                     parkslist["Southern California"].push(
-                    <Dropdown.Item key={park._id} href={`#/park/${park._id}`}>
+                    <Dropdown.Item className='dropdown-items' key={park._id} href={`#/park/${park._id}`}>
                             {park.name}
                         
                     </Dropdown.Item>)
