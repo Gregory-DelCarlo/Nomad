@@ -1,0 +1,58 @@
+.navbar-container{
+  width: 100%;
+  height: 56px;
+  background: black;
+  font-family: 'Montserrat';
+}
+
+.navbar-content {
+  width: 900px;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-content button {
+  cursor: pointer;
+  font-family: 'Montserrat';
+  font-size: 16px;
+  // font-weight: 300;
+  color: white;
+  background: rgb(57, 158, 57);
+  border: none;
+  padding: 5px;
+  outline: 0;
+}
+
+.navbar-content button:hover {
+  background: rgb(41, 114, 41);
+}
+
+.navbar-content button:active {
+  background: rgb(29, 100, 29);
+}
+
+// .login-signup {
+
+// }
+
+.nomad-header {
+  font-size: 30px;
+  // font-weight: 300;
+  color: rgb(57, 158, 57);
+}
+
+// .logout-btn {
+
+// }
+
+.login-btn {
+  margin-right: 5px;
+}
+
+.signup-btn {
+  margin-left: 5px;
+}

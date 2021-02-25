@@ -3,13 +3,71 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background: lightgray;
-  opacity: 0.7;
+  background-color: rgb(211, 211, 211, 0.7);
+  // opacity: 0.7;
 }
 
 .modal-child {
   background: white;
   margin: 0 auto;
-  margin-top: 500px;
-  width: 400px;
+  margin-top: 150px;
+  width: 350px;
+  height: auto;
+  opacity: 1;
+}
+
+.modal-form-header {
+  color: rgb(57, 158, 57);
+  background: black;
+  height: 40px;
+  padding: 15px;
+  font-size: 40px;
+  font-family: 'Montserrat';
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 15px;
+}
+
+.modal-form input {
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 18px;
+  line-height: 20px;
+  padding: 7px 8px;
+  border-radius: 5px;
+  margin-bottom: 30px;
+  border: 1px solid lightgray;
+  // opacity: 0.7;
+}
+
+.modal-form input:focus {
+  outline: 0;
+  border: 1px solid gray;
+}
+
+#submit {
+  cursor: pointer;
+  color: white;
+  background: rgb(57, 158, 57);
+  font-family: 'Montserrat';
+  font-size: 18px;
+  padding: 10px 0px;
+  outline: 0;
+  border: none;
+
+}
+
+#submit:hover {
+  background: rgb(41, 114, 41);
+}
+
+#submit:active {
+  background: rgb(29, 100, 29);
 }
