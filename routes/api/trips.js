@@ -20,4 +20,27 @@ router.get('/user/:user_id', (req, res) => {
     );
 });
 
+router.post('/',
+  passport.authenticate('jwt', { session: false }),
+  (req, res) => {
+    const { errors, isValid } = validateTripInput(req.body);
+
+    if (!isValid) {
+      return res.status(400).json(errors);
+    }
+
+    const newTrip = new Trip({
+      user: req.user.id,
+      title: req.body.title,
+      time: req.body.time,
+      location: req.body.location,
+      team: req.body.team,
+      food: req.body.food,
+      equipment: req.body.equipment
+    });
+
+    newTrip.save().then(trip => res.json(trip));
+  }
+);
+
 module.exports = router;
