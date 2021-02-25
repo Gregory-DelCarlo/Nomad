@@ -41,13 +41,14 @@
   background: rgb(29, 100, 29);
 }
 
+
+
 // .login-signup {
   
   // }
   
   .nomad-header {
-    font-size: 30px;
-    color: rgb(57, 158, 57);
+    
     // font-weight: 800;
     grid-column: 1;
     display:flex;
@@ -60,6 +61,18 @@
     font-family: Kalam;
   }
 
+  .nomad-header .home-link {
+    text-decoration: none;
+    font-size: 30px;
+    color: rgb(57, 158, 57);
+  }
+
+  .nomad-header .home-link:hover {
+    text-decoration: none;
+    font-size: 30px;
+    color: rgb(57, 158, 57);
+  }
+
   .map-menu {
     grid-column: 2;
     display: flex;
@@ -67,12 +80,32 @@
     justify-content: left;
     align-items: center;
     margin-left: 32px;
-     }
+}
 
   .list-button {
     margin: 5px;
     font-family: 'Architects Daughter';
+    // background: rgb(29, 100, 29);
   }
+
+  .btn-primary:hover  {
+    color: #fff;
+    background-color: rgb(29, 100, 29);
+    border-color: rgb(29, 100, 29);
+    border-radius: 4px;
+}
+.btn-primary.focus, .btn-primary:focus {
+  background-color: rgb(29, 100, 29);
+  border-color: rgb(29, 100, 29);
+  box-shadow: none!important;
+}
+
+  .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: rgb(29, 100, 29);
+    border-color: rgb(29, 100, 29);
+}
+
   
   // .logout-btn {
 
@@ -87,6 +120,8 @@
   align-items: center;
   margin-right: 20px;
 }
+
+
 
 
 

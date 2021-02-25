@@ -1,5 +1,6 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom'
+import { withRouter} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ParksDropDownContainer from '../dropdowns/parks_dropdown_container';
 
 class NavBar extends React.Component {
@@ -46,7 +47,7 @@ class NavBar extends React.Component {
       <div>
         <nav className="navbar-container">
           <div className="navbar-content">
-            <div className="nomad-header">Nomad</div>
+            <div className="nomad-header"><Link className='home-link' to='/'>Nomad</Link></div>
             <ParksDropDownContainer />
             { this.props.loggedIn ? this.navContainer() : this.sessionContainer() }
           </div>
