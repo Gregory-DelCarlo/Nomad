@@ -8,17 +8,19 @@ export default class ParksDropdown extends React.Component {
         super(props);
         // debugger
         this.formatParks = this.formatParks.bind(this);
-        this.handleClick = this.handleClick.bind(this);
+        // this.handleClick = this.handleClick.bind(this);
     }
 
 
 
     componentDidMount() {
+        // debugger
         this.props.getParks();
+        // this.props.receivePark('6036a5503f24932940440ced');
     }
 
     handleClick(parkId) {
-        return () => this.recievePark(this.props.parks[parkId].rid);
+        return () => this.props.receivePark(parkId);
     }
 
     
@@ -35,7 +37,7 @@ export default class ParksDropdown extends React.Component {
             switch (park.location){
                 case ("Northern California"):
                     parkslist['Northern California'].push( 
-                    <Dropdown.Item className='dropdown-items' key={park._id} onClick={this.handleClick(park._id)} >
+                    <Dropdown.Item className='dropdown-items' key={park._id} onClick={this.handleClick(park._id)}>
                             {park.name}
                     </Dropdown.Item>)
                      return ""
@@ -43,7 +45,6 @@ export default class ParksDropdown extends React.Component {
                     parkslist["Central California"].push(
                     <Dropdown.Item className='dropdown-items' key={park._id} href={`#/park/${park._id}`}>
                             {park.name}
-                        
                     </Dropdown.Item>)
                     return ""
                 case ("Southern California"):

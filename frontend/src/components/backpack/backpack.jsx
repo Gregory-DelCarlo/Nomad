@@ -31,6 +31,10 @@ class Backpack extends React.Component {
     this.addDateLocation = this.addDateLocation.bind(this);
   }
 
+  componentWillMount() {
+    this.props.getParks();
+  }
+
   changeView(item) {
     this.setState({currentPage: item})
   }

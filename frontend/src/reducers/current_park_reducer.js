@@ -4,13 +4,11 @@ import {
 
 const currentParkReducer = (state = {}, action) => {
     Object.freeze(state);
-    const nextState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_PARK:
-            nextState['currentPark'] = action.parkrid;
-            return nextState;
+            return action.park_rid;        
         default:
-            return state;
+            return '';
     }
 };
 

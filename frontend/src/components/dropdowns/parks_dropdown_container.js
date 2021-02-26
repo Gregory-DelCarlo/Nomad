@@ -13,7 +13,7 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     // debugger
     return {
         getParks: () => dispatch(getParks()),
-        receiveParks: parkrid => dispatch(receivePark(parkrid))
+        receivePark: parkrid => dispatch(receivePark(parkrid))
     }
 };
 

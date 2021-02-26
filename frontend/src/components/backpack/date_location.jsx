@@ -4,8 +4,8 @@ import Park from '../parks/park';
 
 export default class DateLocation extends React.Component {
     constructor(props) {
+        debugger
         super(props);
-        
         this.state = {
             parkId: this.props.currentPark, 
             trailName: '',
@@ -14,7 +14,7 @@ export default class DateLocation extends React.Component {
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderTrailMap = this.renderTrailMap.bind(this);
-        this.getParkId = this.getParkId.bind(this);
+        // this.getParkId = this.getParkId.bind(this);
     }
 
     handleChange(field) {
@@ -28,11 +28,18 @@ export default class DateLocation extends React.Component {
       }
 
       renderTrailMap() {
-        //   debugger
+        // debugger
+        
         if (this.state.parkId) {
-            return <Park rid={this.props.parks[parkId].rid} />
-        }
+            return <Park rid={this.props.parks[this.state.parkId].rid} />
+        } 
       }
+
+    //   componentWillMount() {
+    //       if(this.state.parkId == '') {
+    //         this.setState({parkId: this.props.currentPark});
+    //       }
+    //   }
 
     //   getParkId(parkId) {
     //     //   debugger
