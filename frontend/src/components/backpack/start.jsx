@@ -20,16 +20,18 @@ class Start extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Start planning your trip!</h1>
-        <form className="start-form" onSubmit={this.handleSubmit}>
-          <label>Give your trip a title:</label>
-          <input 
-            type="text"
-            onChange={this.handleChange('title')}
-          />
-          <button type='submit'>Plan Trip</button>
-        </form>
+      <div className="start">
+        <div className="start-box">
+          <h1>Start planning your trip!</h1>
+          <form className="start-form" onSubmit={this.handleSubmit}>
+            <label>Give your trip a title:</label>
+            <input 
+              type="text"
+              onChange={this.handleChange('title')}
+            />
+            <button type='submit'>Plan Trip</button>
+          </form>
+        </div>
       </div>
     )
   }

@@ -12,7 +12,7 @@ import ParksContainer from './parks/park_container';
 
 
 const App = () => (
-    <div>
+    <div className="app">
         <NavBarContainer />
         <Switch>
             <AuthRoute exact path='/' component={MainPage}/>
@@ -21,7 +21,9 @@ const App = () => (
             <ProtectedRoute exact path="/backpack" component={BackpackContainer}/>
             <Route exact path='/park/:parkId' component={ParksContainer}/>
         </Switch>
-        <a href="https://www.vecteezy.com/free-vector/summit">Summit Vectors by Vecteezy</a>
+        <div className="vector-creds">
+            <a href="https://www.vecteezy.com/free-vector/summit" className="vector-creds">Summit Vectors by Vecteezy</a>
+        </div>
     </div>
 );
 
