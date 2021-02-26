@@ -26,7 +26,7 @@ const receiveUpdatedTrip = updatedTrip => ({
   updatedTrip
 });
 
-const deleteTrip = trip => ({
+const removeTrip = trip => ({
   type: DELETE_TRIP,
   trip
 });
@@ -48,5 +48,5 @@ export const updateTrip = trip => dispatch => (
 );
 
 export const deleteTrip = trip => dispatch => (
-  APIUtil.deleteTrip(trip).then(trip => dispatch(deleteTrip(trip)))
+  APIUtil.deleteTrip(trip).then(trip => dispatch(removeTrip(trip)))
 );
