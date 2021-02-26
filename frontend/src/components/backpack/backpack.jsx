@@ -10,12 +10,18 @@ class Backpack extends React.Component {
     super(props);
     this.state = {
       currentPage: 'start',
-      numItems: 0
+      numItems: 0,
+      user: this.props.userId,
+      title: '',
+      team: [],
+      food: [],
+      equipment: []
     }
     this.getItems = this.getItems.bind(this);
     this.addItem = this.addItem.bind(this);
     this.getView = this.getView.bind(this);
     this.changeView = this.changeView.bind(this);
+    this.addTitle = this.addTitle.bind(this);
   }
 
   changeView(item) {
@@ -24,6 +30,12 @@ class Backpack extends React.Component {
 
   addItem(newPage, itemNum) {
     this.setState({currentPage: newPage, numItems: itemNum})
+  }
+
+  addTitle(newPage, itemNum, title) {
+    this.setState({
+      currentPage: newPage, numItems: itemNum, title: title
+    })
   }
 
   getItems() {
@@ -68,7 +80,12 @@ class Backpack extends React.Component {
   getView() {
     if (this.state.currentPage === 'start') {
       return (
-        <Start clickAddItem={() => this.addItem('time and location form', 0)}/>
+        <Start 
+          clickAddItem={this.addTitle}
+        />
+        // <Start 
+        //   clickAddItem={() => this.addItem('time and location form', 0)}
+        // />
       )
     } else if (this.state.currentPage === 'time and location form') {
       return (
@@ -84,7 +101,9 @@ class Backpack extends React.Component {
       )
     } else if (this.state.currentPage === 'supplies form') {
       return (
-        <Test3 clickAddItem={() => this.addItem('', 3)} />
+        <Test3 
+          clickAddItem={() => this.addItem('', 3)} 
+        />
       )
     }
   }

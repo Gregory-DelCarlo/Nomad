@@ -6,9 +6,9 @@ import { fetchTrip,
         updateTrip, 
         deleteTrip } from '../../actions/trip_actions';
 
-// const mapStateToProps = state => ({
-  
-// });
+const mapStateToProps = state => ({
+  userId: state.session.user.id
+});
 
 const mapDispatchToProps = dispatch => ({
   getTrip: id => dispatch(fetchTrip(id)),
@@ -18,4 +18,4 @@ const mapDispatchToProps = dispatch => ({
   deleteTrip: trip => dispatch(deleteTrip(trip))
 });
 
-export default connect(null, mapDispatchToProps)(Backpack);
+export default connect(mapStateToProps, mapDispatchToProps)(Backpack);
