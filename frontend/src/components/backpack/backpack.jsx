@@ -2,7 +2,7 @@ import React from 'react';
 import Start from './start';
 //test components
 import Test from './test';
-import Test2 from './test2';
+import Team from './team';
 import Test3 from './test3';
 
 class Backpack extends React.Component {
@@ -95,7 +95,7 @@ class Backpack extends React.Component {
       )
     } else if (this.state.currentPage === 'team form') {
       return (
-        <Test2 
+        <Team 
           clickAddItem={() => this.addItem('supplies form', 2)} 
         />
       )
