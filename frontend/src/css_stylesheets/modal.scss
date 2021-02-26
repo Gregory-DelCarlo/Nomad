@@ -22,6 +22,8 @@
 
 .modal-content {
   all: initial;
+  // border: none;
+  // width: 400px;
 }
 .modal-form-header {
   background: rgb(105, 83, 63);;
@@ -56,6 +58,15 @@
   background: rgb(117, 139, 102)
 }
 
+.auth-error {
+  position: absolute;
+  font-family: 'Architects Daughter';
+  font-size: 15px;
+  font-weight: 700;
+  color: red;
+  margin-top: -25px;
+}
+
 .modal-form input {
   width: 100%;
   box-sizing: border-box;
@@ -64,12 +75,12 @@
   padding: 7px 8px;
   border-radius: 5px;
   margin-bottom: 30px;
-  border: 1px solid lightgray;
+  border: 1px solid gray;
 }
 
 .modal-form input:focus {
   outline: 0;
-  border: 1px solid gray;
+  border: 1px solid lightgray;
 }
 
 #submit {

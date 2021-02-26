@@ -47,7 +47,7 @@ class SessionForm extends React.Component {
             <input className='auth-input' type='text' 
               onChange={this.handleChange('username')} 
               value={this.state.username} />
-            {errors['Username'] ? <div>{errors['Username']}</div> : null}
+            {errors['Username'] ? <div className='auth-error'>{errors['Username']}</div> : null}
           </div>
 
           <div>
@@ -55,8 +55,7 @@ class SessionForm extends React.Component {
             <input className='auth-input' type='password' 
               onChange={this.handleChange('password')}
               value={this.state.password} />
-            {errors['Password'] ? <div>{errors['Password']}</div> : null}
-            {errors['Invalid'] ? <div>{errors['Invalid']}</div> : null}
+            {errors['Password'] ? <div className='auth-error'>{errors['Password']}</div> : null}
           </div>
           {
             this.props.formType === 'Sign Up' ? 
@@ -65,7 +64,7 @@ class SessionForm extends React.Component {
               <input className='auth-input' type='password' 
               onChange={this.handleChange('password2')}
               value={this.state.password2} />
-            {errors['Passwords'] ? <div>{errors['Passwords']}</div> : null}
+            {errors['Passwords'] ? <div className='auth-error'>{errors['Passwords']}</div> : null}
             </div> : ''
           }
           <button id='submit' type='submit'><span className='auth-form-field'>{this.props.formType}</span></button>
