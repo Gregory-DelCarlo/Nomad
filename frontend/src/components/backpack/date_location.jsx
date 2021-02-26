@@ -5,8 +5,8 @@ export default class DateLocation extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            park_id: '', 
-            trail_name: '',
+            parkId: '', 
+            trailName: '',
             date: ''
         }
 
@@ -14,12 +14,13 @@ export default class DateLocation extends React.Component {
     }
 
     handleChange(field) {
-        return e => this.setState({ [field]: e.target.value })
+        return e => {console.log(e.target.value); this.setState({ [field]: e.target.value })}
       }
     
       handleSubmit(e) {
         e.preventDefault();
-        this.props.clickAddItem('time and location form', 0, this.state.title)
+        const { date, trailName, parkId } = this.state;
+        this.props.clickAddItem('team form', 1, date, trailName, parkId)
       }
     
       render() {
@@ -29,11 +30,16 @@ export default class DateLocation extends React.Component {
             <form className="time-location-form" onSubmit={this.handleSubmit}>
                 <label>Pick A Park in Your Area</label>
                 <ParksDropdownContainer />
-              <label>Enter your Trail here!:</label>
+              <label>Enter your Trail here:</label>
               <input 
                 type="text"
-                onChange={this.handleChange('trail_name')}
-              />
+                onChange={this.handleChange('trailName')}
+              /><br/>
+              <label>When will you be traveling?:</label>
+              <input 
+                type='date'
+                onChange={this.handleChange('date')}
+              /><br/>
               <button type='submit'>Add to your Backpack</button>
             </form>
           </div>
