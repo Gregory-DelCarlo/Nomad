@@ -9,6 +9,7 @@ import BackpackContainer from './backpack/backpack_container';
 import LoginFormContainer from './session/login_form_container';
 import SignupFormContainer from './session/signup_form_container';
 import ParksContainer from './parks/park_container';
+import WeatherContainer from './weather/weather_container';
 
 
 const App = () => (
@@ -20,6 +21,7 @@ const App = () => (
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <ProtectedRoute exact path="/backpack" component={BackpackContainer}/>
             <Route exact path='/park/:parkId' component={ParksContainer}/>
+            <Route exact path='/weather' component={WeatherContainer}/>
         </Switch>
         <a href="https://www.vecteezy.com/free-vector/summit">Summit Vectors by Vecteezy</a>
     </div>

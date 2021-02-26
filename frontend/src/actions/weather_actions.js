@@ -1,4 +1,4 @@
-import { fetchWeather } from '../util/weather_util';
+import * as WeatherApiUtil from '../util/weather_util';
 export const RECEIVE_WEATHER = 'RECEIVE_WEATHER';
 
 const receiveWeather = weather => {
@@ -9,5 +9,5 @@ const receiveWeather = weather => {
 }
 
 export const fetchWeather = (city) => (dispatch) => (
-  fetchWeather(city).then( city => dispatch(receiveWeather(city)) )
+  WeatherApiUtil.fetchWeather(city).then( city => dispatch(receiveWeather(city)) )
 )
