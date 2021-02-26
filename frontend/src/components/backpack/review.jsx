@@ -33,6 +33,7 @@ const Review = ({ reviewBackpack }) => (
           </div>
         </div>
       </div>
+      {/* <button onClick={this.props.saveTrip()}>Save Trip</button> */}
     </div>
   </div>
 );

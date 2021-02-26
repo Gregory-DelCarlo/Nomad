@@ -12,7 +12,6 @@ class Backpack extends React.Component {
     this.state = {
       currentPage: 'start',
       numItems: 0,
-      user: this.props.userId,
       title: '',
       team: [],
       food: [],
@@ -25,6 +24,7 @@ class Backpack extends React.Component {
     this.addTeam = this.addTeam.bind(this);
     this.addSupplies = this.addSupplies.bind(this);
     this.addItem = this.addItem.bind(this);
+    this.saveTrip = this.saveTrip.bind(this);
   }
 
   changeView(item) {
@@ -54,6 +54,18 @@ class Backpack extends React.Component {
       food: food,
       equipment: equipment
     })
+  }
+
+  saveTrip(){
+    debugger
+    const trip = {
+      user: this.props.userId,
+      title: this.state.title,
+      team: this.state.team,
+      food: this.state.food,
+      equipment: this.state.equipment
+    }
+    this.props.makeNewTrip(trip);
   }
 
   getItems() {
@@ -124,6 +136,7 @@ class Backpack extends React.Component {
       return (
         <Review
           reviewBackpack={this.state}
+          saveTrip={this.saveTrip}
         />
       )
     }
