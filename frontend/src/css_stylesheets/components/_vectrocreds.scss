@@ -1,0 +1,17 @@
+.vector-creds {
+  display: flex;
+  align-items: center;
+  background-color: rgb(85,107,48);
+  height: 25px;
+}
+.vector-creds > a {
+  width: 100%;
+  margin-left: 5px;
+  text-decoration: none;
+  color: rgb(230,230,230);
+}
+
+.vector-creds > a:hover {
+  text-decoration: underline;
+  color: rgb(230,230,230);
+}
