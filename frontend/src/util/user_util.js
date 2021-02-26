@@ -1,18 +1,11 @@
+import axios from 'axios'
+
 export const getUser = (id) => {
-    return (
-        $.ajax({
-            url: `/api/users/${id}`,
-            method: 'GET'
-        })
-    )
+    return axios.get(`/api/users/${id}`)
+        
 }
 
 export const getUsers = (data) => {
-    return (
-        $.ajax({
-            url: '/api/users',
-            method: 'GET',
-            data
-        })
-    )
+    return axios.get('/api/users')
+    
 }
