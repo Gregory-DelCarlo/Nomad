@@ -44,7 +44,7 @@ class SessionForm extends React.Component {
         <form className="modal-form" onSubmit={this.handleSubmit} >
           <div>
             <span className='auth-form-field'>Username</span>
-            <input className={Object.keys(errors).length ? "auth-input error" : "auth-input"} 
+            <input className={errors['Username'] ? "auth-input error" : "auth-input"} 
               type='text' 
               onChange={this.handleChange('username')} 
               value={this.state.username} />
@@ -53,24 +53,24 @@ class SessionForm extends React.Component {
 
           <div>
             <span className='auth-form-field'>Password</span>
-            <input className={Object.keys(errors).length ? "auth-input error" : "auth-input"}  
+            <input className={errors['Password'] ? "auth-input error" : "auth-input"}  
               type='password' 
               onChange={this.handleChange('password')}
               value={this.state.password} />
             {errors['Password'] ? <div className='auth-error'>{errors['Password']}</div> : null}
+            {errors['User'] ? <div className='auth-error'>{errors['User']}</div> : null}
           </div>
           {
             this.props.formType === 'Sign Up' ? 
             <div>
               <span className='auth-form-field'>Confirm Password</span>
-              <input className={Object.keys(errors).length ? "auth-input error" : "auth-input"}  
+              <input className={errors['Passwords'] ? "auth-input error" : "auth-input"}  
                 type='password' 
                 onChange={this.handleChange('password2')}
                 value={this.state.password2} />
             {errors['Passwords'] ? <div className='auth-error'>{errors['Passwords']}</div> : null}
             </div> : ''
           }
-          {errors['User'] ? <div className='auth-error'>{errors['User']}</div> : null}
 
           <button id='submit' type='submit'><span className='auth-form-field'>{this.props.formType}</span></button>
         </form>
