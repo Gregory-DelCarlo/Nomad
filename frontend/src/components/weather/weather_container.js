@@ -4,7 +4,7 @@ import Weather from './weather';
 
 const mapStateToProps = (state) => {
   return {
-    weather: state.entities.weather
+    weather: state.entities.weather,
   }
 }
 

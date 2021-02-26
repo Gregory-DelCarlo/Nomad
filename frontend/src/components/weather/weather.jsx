@@ -22,14 +22,20 @@ class Weather extends React.Component {
 
   render() {
     let temperature
-    if (Object.values(this.props.weather).length > 0) temperature = this.props.weather.data.current.temp_f
-    // let $i = $('i') 
-    // let temperature = this.props.state.entities.weather.data.current.temp_f
+    if (Object.values(this.props.weather).length > 0) temperature = this.props.weather.data.current.temp_f;
+    let cityName
     return (
       <div>
+        {
+        
+          (document.getElementsByTagName('i') && document.getElementsByTagName('i').item(0) !== null) ?
+            console.log(document.getElementsByTagName('i').item(0).innerText) :
+            null
+        }
         <form onSubmit={this.handleSubmit}>
           <input type='text' 
             onChange={this.handleChange('city')}
+            // value={}
             placeholder="enter a city"/>
           <br />
           <button type='submit'>search weather</button>
@@ -39,7 +45,6 @@ class Weather extends React.Component {
            Object.values(this.props.weather).length > 0? <div>The weather near {this.state.city} is {temperature} F</div> : null
           }
           
-          {/* {Object.keys(this.props.state.entities.weather)} */}
       </div>
     )
   }
