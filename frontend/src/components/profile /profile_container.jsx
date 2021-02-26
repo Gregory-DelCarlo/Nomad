@@ -13,6 +13,7 @@ const mDTP = (dispatch, ownProps) => {
         getUser: (id) => dispatch(getUser(id)),
         clearErrors: () => dispatch(clearErrors()),
     })
+}
 
 
 
