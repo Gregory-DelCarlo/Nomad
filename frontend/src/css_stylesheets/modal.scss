@@ -58,6 +58,10 @@
   background: rgb(117, 139, 102)
 }
 
+.auth-input.error {
+  box-shadow: 0px 0px 0px 2px #ad0707;
+}
+
 .auth-error {
   position: absolute;
   font-family: 'Architects Daughter';
