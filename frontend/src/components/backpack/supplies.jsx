@@ -1,9 +1,23 @@
 import React from 'react';
 
-const Test3 = ({ clickAddItem }) => (
-  <div>
-    <button onClick={clickAddItem}>Add Final Item</button>
-  </div>
-);
+class Supplies extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      food: [],
+      equipment: [],
+      foodItem: '',
+      equipmentItem: ''
+    }
+  }
 
-export default Test3;
+  render() {
+    return(
+      <div>
+
+      </div>
+    )
+  }
+}
+
+export default Supplies;
