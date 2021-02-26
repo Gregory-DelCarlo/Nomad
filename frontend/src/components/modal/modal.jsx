@@ -1,9 +1,7 @@
 import React from 'react';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
-import Modal from 'react-bootstrap/Modal'
-import { openModal, closeModal } from '../../actions/modal_actions';
-import { connect } from 'react-redux';
+import Modal from 'react-bootstrap/Modal';
 
 let sessionForm
 

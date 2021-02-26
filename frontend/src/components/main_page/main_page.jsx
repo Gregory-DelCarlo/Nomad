@@ -16,6 +16,7 @@ export default class MainPage extends React.Component {
               <img
                 className="carosel-item"
                 src="https://media.tenor.com/images/b143ac6c86210714b4273f28c05f3aa7/tenor.gif"
+                alt='carousel item 1'
               />
               <Carousel.Caption>
               </Carousel.Caption>
@@ -24,6 +25,7 @@ export default class MainPage extends React.Component {
               <img
                 className="carosel-item"
                 src="https://media.tenor.com/images/b143ac6c86210714b4273f28c05f3aa7/tenor.gif"
+                alt='carousel item 2'
               />
               <Carousel.Caption>
               </Carousel.Caption>
@@ -32,6 +34,7 @@ export default class MainPage extends React.Component {
               <img
                 className="carosel-item"
                 src="https://media.tenor.com/images/b143ac6c86210714b4273f28c05f3aa7/tenor.gif"
+                alt='carousel item 3'
               />
               <Carousel.Caption>
               </Carousel.Caption>
