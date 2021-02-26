@@ -1,7 +1,12 @@
 import React from 'react';
-import Carousel from 'react-bootstrap/Carousel'
+import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import DemoApp from '../calendar/calendar'
+
+
+
 export default class MainPage extends React.Component {
+
     render() {
       return (
         <div className="carousel-container">
@@ -40,7 +45,8 @@ export default class MainPage extends React.Component {
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>
-        </div>
+         <DemoApp/>
+        </div> 
       )
     }
 }
