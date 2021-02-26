@@ -1,4 +1,6 @@
 import React from 'react';
+import logo from '../../assets/images/nomad-logo.png';
+
 
 class SessionForm extends React.Component {
 
@@ -36,7 +38,7 @@ class SessionForm extends React.Component {
     })
     return (
       <div>
-        <div className="modal-form-header">Nomad</div>
+        <div className="modal-form-header"><img className='logo'src={logo}/></div>
         <form className="modal-form" onSubmit={this.handleSubmit} >
           <div>
             <span className='auth-form-field'>Username</span>
