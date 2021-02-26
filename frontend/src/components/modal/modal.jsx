@@ -100,6 +100,7 @@ const open = dispatch => {
   return({
     openModal: modal => dispatch(openModal(modal)),
   })
+
 }
 
 function App() {

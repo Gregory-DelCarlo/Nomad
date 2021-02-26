@@ -3,32 +3,44 @@
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgb(211, 211, 211, 0.7);
-  // opacity: 0.7;
-  z-index: 10;
+//   z-index: 10;
+  background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../assets/images/modal-bg.jpg');
+  background-size: cover;
+  background-blend-mode: 0.9;
 }
 
 .modal-child {
-  background: white;
+  background: rgb(134, 156, 119);
   margin: 0 auto;
   margin-top: 150px;
   width: 350px;
   height: auto;
   opacity: 1;
 }
-.modal-form-header-wrapper{
-  background: black;
-  padding: 15px;
+// .modal-form-header-wrapper{
+//   background: black;
+//   padding: 15px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   width: 100%;
+// }
+// .modal-form-header {
+//   color: rgb(57, 158, 57);
+//   height: 40px;
+//   font-size: 40px;
+//   font-family: 'Montserrat';
+
+.modal-form-header {
+  background: rgb(105, 83, 63);;
+  height: 80px;
+  padding: 12px;
+  font-size: 40px;
+  font-family: Kalam;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 100%;
-}
-.modal-form-header {
-  color: rgb(57, 158, 57);
-  height: 40px;
-  font-size: 40px;
-  font-family: 'Montserrat';
+  border-bottom: 3px solid  rgb(37, 61, 26);
 }
 
 .modal-form {
@@ -36,6 +48,20 @@
   flex-direction: column;
   justify-content: center;
   padding: 15px;
+}
+
+.auth-form-field {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 25px;
+  color: white;
+  
+}
+
+.auth-input {
+  font-family: 'Architects Daughter', cursive;
+  font-size: 25px;
+  color: white;
+  background: rgb(117, 139, 102)
 }
 
 .modal-form input {
@@ -47,7 +73,6 @@
   border-radius: 5px;
   margin-bottom: 30px;
   border: 1px solid lightgray;
-  // opacity: 0.7;
 }
 
 .modal-form input:focus {
@@ -58,13 +83,17 @@
 #submit {
   cursor: pointer;
   color: white;
-  background: rgb(57, 158, 57);
+  background: rgb(37, 61, 26);
   font-family: 'Montserrat';
   font-size: 18px;
   padding: 10px 0px;
   outline: 0;
   border: none;
 
+}
+
+.modal-placeholder{
+  font-family: 'Architects Daughter', cursive;
 }
 
 #submit:hover {
