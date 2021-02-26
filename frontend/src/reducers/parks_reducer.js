@@ -4,12 +4,13 @@ import {
 
 const parksReducer = (state = {}, action) => {
     Object.freeze(state);
-    const nextState = state;
+    const nextState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_PARKS:
             return action.parks;
         case RECEIVE_PARK:
-            nextState[action.park.id] = action.park;
+            console.log(action.park);
+            nextState[action.park._id] = action.park;
             return nextState;
         default:
             return state;

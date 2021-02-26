@@ -1,4 +1,6 @@
 import React from 'react';
+import logo from '../../assets/images/nomad-logo.png';
+
 
 class SessionForm extends React.Component {
 
@@ -36,11 +38,11 @@ class SessionForm extends React.Component {
     })
     return (
       <div>
-        <div className="modal-form-header">Nomad</div>
+        <div className="modal-form-header"><img className='logo'src={logo}/></div>
         <form className="modal-form" onSubmit={this.handleSubmit} >
           <div>
-            <span>Username</span>
-            <input type='text' 
+            <span className='auth-form-field'>Username</span>
+            <input className='auth-input' type='text' 
               onChange={this.handleChange('username')} 
               // placeholder="Username" 
               value={this.state.username} />
@@ -48,8 +50,8 @@ class SessionForm extends React.Component {
           </div>
 
           <div>
-            <span>Password</span>
-            <input type='password' 
+            <span className='auth-form-field'>Password</span>
+            <input className='auth-input' type='password' 
               onChange={this.handleChange('password')} 
               // placeholder="Password" 
               value={this.state.password} />
@@ -59,15 +61,15 @@ class SessionForm extends React.Component {
           {
             this.props.formType === 'Sign Up' ? 
             <div>
-              <span>Confirm Password</span>
-              <input type='password' 
+              <span className='auth-form-field'>Confirm Password</span>
+              <input className='auth-input' type='password' 
               onChange={this.handleChange('password2')} 
               // placeholder="Password" 
               value={this.state.password2} />
             {errors['Passwords'] ? <div>{errors['Passwords']}</div> : null}
             </div> : ''
           }
-          <button id='submit' type='submit'>{this.props.formType}</button>
+          <button id='submit' type='submit'><span className='auth-form-field'>{this.props.formType}</span></button>
         </form>
       </div>
     )

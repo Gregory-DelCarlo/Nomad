@@ -27,7 +27,7 @@ class Modal extends React.Component {
   }
 
   handleKeyPress(e) {
-    if (e.key == "Escape") {
+    if (e.key === "Escape") {
       this.props.closeModal()
     }
   }
