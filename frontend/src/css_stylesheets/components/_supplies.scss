@@ -1,11 +1,11 @@
-.team {
+.supplies {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 650px;
+  height: 800px;
 }
 
-.team-box {
+.supplies-box {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -13,13 +13,13 @@
   height: 100%;
   width: 50%;
   border-radius: 6px;
-  padding: 40px;
+  padding: 20px;
   background-color: rgb(121,80,0);
   color: rgb(230,230,230);
   border: 2px solid black;
 }
 
-.team-box > h1 {
+.supplies-box > h1 {
   font-size: 30px;
   margin-bottom: 10px;
   background-color: rgb(85,107,48);
@@ -28,24 +28,24 @@
   border: 2px solid black;
 }
 
-.team-form {
+.food-form {
   display: flex;
   flex-direction: column;
   width: 70%;
   margin: 20px;
 }
 
-.team-form > label {
+.food-form > label {
   font-size: 20px;
   margin-bottom: 20px;
 }
 
-.team-form > input {
+.food-form > input {
   margin-bottom: 10px;
   border-radius: 4px;
 }
 
-.team-form > button {
+.food-form > button {
   background-color: rgb(85,107,48);
   color: rgb(230,230,230);
   font-size: 20px;
@@ -53,7 +53,32 @@
   border-radius: 4px;
 }
 
-.team-form-list {
+.equipment-form {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  margin: 20px;
+}
+
+.equipment-form > label {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.equipment-form > input {
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.equipment-form > button {
+  background-color: rgb(85,107,48);
+  color: rgb(230,230,230);
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 4px;
+}
+
+.food-form-list {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -61,11 +86,11 @@
   font-size: 30px;
 }
 
-.team-form-list > ul {
+.food-form-list > ul {
   display: flex;
   flex-direction: column;
   width: 70%;
-  height: 200px;
+  height: 100px;
   padding: 5px;
   margin-top: 10px;
   margin-bottom: 10px;
@@ -75,7 +100,7 @@
   overflow-y: auto;
 }
 
-.team-form-list * li {
+.food-form-list * li {
   padding: 5px;
   margin: 5px;
   border-radius: 3px;
@@ -84,7 +109,38 @@
   font-size: 15px;
 }
 
-.team-box > button {
+.equipment-form-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-size: 30px;
+}
+
+.equipment-form-list > ul {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+  height: 100px;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 2px solid black;
+  background-color: rgb(85,107,48);
+  overflow-y: auto;
+}
+
+.equipment-form-list * li {
+  padding: 5px;
+  margin: 5px;
+  border-radius: 3px;
+  background-color: rgb(142,96,0);
+  border: 2px solid rgb(121,80,0);
+  font-size: 15px;
+}
+
+.supplies-box > button {
   background-color: rgb(85,107,48);
   color: rgb(230,230,230);
   font-size: 20px;
