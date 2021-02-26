@@ -1,9 +1,11 @@
 import React from 'react';
 import Start from './start';
+import DateLocation from './date_location';
 //test components
 import Test from './test';
 import Team from './team';
 import Supplies from './supplies';
+import Review from './review';
 
 class Backpack extends React.Component {
   constructor(props) {
@@ -15,7 +17,10 @@ class Backpack extends React.Component {
       title: '',
       team: [],
       food: [],
-      equipment: []
+      equipment: [],
+      date: '',
+      parkId: '',
+      trailName: ''
     }
     this.getItems = this.getItems.bind(this);
     this.getView = this.getView.bind(this);
@@ -24,6 +29,11 @@ class Backpack extends React.Component {
     this.addTeam = this.addTeam.bind(this);
     this.addSupplies = this.addSupplies.bind(this);
     this.addItem = this.addItem.bind(this);
+    this.addDateLocation = this.addDateLocation.bind(this);
+  }
+
+  componentWillMount() {
+    this.props.getParks();
   }
 
   changeView(item) {
@@ -37,6 +47,15 @@ class Backpack extends React.Component {
   addTitle(newPage, itemNum, title) {
     this.setState({
       currentPage: newPage, numItems: itemNum, title: title
+    })
+  }
+
+  addDateLocation(newPage, itemNum, date, trailName, parkId) {
+    this.setState({currentPage: newPage, 
+                  numItems: itemNum, 
+                  date, 
+                  trailName, 
+                  parkId
     })
   }
 
@@ -103,9 +122,7 @@ class Backpack extends React.Component {
       )
     } else if (this.state.currentPage === 'time and location form') {
       return (
-        <Test 
-          clickAddItem={() => this.addItem('team form', 1)} 
-        />
+        <DateLocation clickAddItem={this.addDateLocation} currentPark={this.props.currentPark} parks={this.props.parks}/>
       )
     } else if (this.state.currentPage === 'team form') {
       return (
@@ -117,6 +134,12 @@ class Backpack extends React.Component {
       return (
         <Supplies 
           clickAddItem={this.addSupplies} 
+        />
+      )
+    } else if (this.state.currentPage === 'review') {
+      return (
+        <Review
+          reviewBackpack={this.state}
         />
       )
     }

@@ -5,6 +5,7 @@ import Weather from './weather';
 const mapStateToProps = (state) => {
   return {
     weather: state.entities.weather,
+    currentCity: state.entities.parks[state.entities.ui.currentPark].name
   }
 }
 

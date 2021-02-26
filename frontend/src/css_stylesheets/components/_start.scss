@@ -1,0 +1,54 @@
+.start {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+}
+
+.start-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  width: 50%;
+  border-radius: 6px;
+  padding: 40px;
+  background-color: rgb(121,80,0);
+  color: rgb(230,230,230);
+  border: 10px solid black;
+}
+
+.start-box > h1 {
+  font-size: 30px;
+  margin-top: 60px;
+  margin-bottom: 120px;
+  background-color: rgb(85,107,48);
+  border-radius: 6px;
+  padding: 15px;
+  border: 2px solid black;
+}
+
+.start-form {
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.start-form > label {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+.start-form > input {
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
+
+.start-form > button {
+  background-color: rgb(85,107,48);
+  color: rgb(230,230,230);
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 4px;
+}

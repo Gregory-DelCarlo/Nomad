@@ -29,26 +29,28 @@ class Team extends React.Component {
   render() {
     const team = this.state.team;
     return (
-      <div>
-        <h1>Add your team!</h1>
-        <form className="team-form" onSubmit={this.handleAddMember}>
-          <label>Enter the name of a team member:</label>
-          <input 
-            type="text"
-            onChange={this.handleChange('name')}
-            value={this.state.name}
-          />
-          <button type='submit'>Add Team Member</button>
-        </form>
-        <div>
-          <label>Your Team</label>
-          <ul>
-            {team.map((member, index) => (
-              <li key={index}>{member}</li>
-            ))}
-          </ul>
+      <div className="team">
+        <div className="team-box">
+          <h1>Add your team!</h1>
+          <form className="team-form" onSubmit={this.handleAddMember}>
+            <label>Enter the name of a team member:</label>
+            <input 
+              type="text"
+              onChange={this.handleChange('name')}
+              value={this.state.name}
+            />
+            <button type='submit'>Add Team Member</button>
+          </form>
+          <div className='team-form-list'>
+            <label>Your Team</label>
+            <ul>
+              {team.map((member, index) => (
+                <li key={index}>{member}</li>
+              ))}
+            </ul>
+          </div>
+          <button onClick={this.handleSubmit}>Next</button>
         </div>
-        <button onClick={this.handleSubmit}>Next</button>
       </div>
     )
   }
