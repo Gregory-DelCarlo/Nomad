@@ -19,7 +19,7 @@ const App = () => (
             <AuthRoute exact path="/signup" component={SignupFormContainer} />
             <ProtectedRoute exact path="/backpack" component={BackpackContainer}/>
             <Route exact path='/park/:parkId' component={ParksContainer}/>
-            <Route exact path='/user/:userId' component={Profile}/>
+            <ProtectedRoute exact path='/user/:userId' component={Profile}/>
         </Switch>
         <a href="https://www.vecteezy.com/free-vector/summit">Summit Vectors by Vecteezy</a>
     </div>

@@ -45,7 +45,6 @@ export default class MainPage extends React.Component {
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>
-         <DemoApp/>
         </div> 
       )
     }
