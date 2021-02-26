@@ -37,7 +37,7 @@ export default class ParksDropdown extends React.Component {
             switch (park.location){
                 case ("Northern California"):
                     parkslist['Northern California'].push( 
-                    <Dropdown.Item className='dropdown-items' key={park._id} onClick={this.handleClick(park._id)}>
+                    <Dropdown.Item className='dropdown-items' key={park._id} href={`#/park/${park._id}`}>
                             {park.name}
                     </Dropdown.Item>)
                      return ""
