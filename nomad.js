@@ -4,7 +4,8 @@ const mongoose = require('mongoose');
 const db = require('./config/keys').mongoURI;
 const bodyParser = require('body-parser');
 const users = require("./routes/api/users");
-const parks = require("./routes/api/parks")
+const parks = require("./routes/api/parks");
+const trips = require("./routes/api/trips");
 const path = require('path');
 
 if (process.env.NODE_ENV === 'production') {
@@ -36,6 +37,7 @@ nomad.use(bodyParser.json());
 
 nomad.use('/api/users', users);
 nomad.use('/api/parks', parks);
+nomad.use('/api/trips', trips);
 
 // set up root route
 // nomad.get('/', (req, res) => res.send('entry working'));

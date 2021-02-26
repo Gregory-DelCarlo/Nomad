@@ -11,14 +11,16 @@ const TripSchema = new Schema({
     required: true
   },
   time: {
-    type: Date,
-    default: Date.now
+    type: String
   },
-  location: {
-    type: Schema.Types.ObjectId,
-    ref: "parks"
-    // possibly change later 
-  },
+  // time: {
+  //   type: Date,
+  //   default: Date.now
+  // },
+  // location: {
+  //   type: Schema.Types.ObjectId,
+  //   ref: "parks"
+  // },
   team: {
     type: Array
   },
@@ -30,4 +32,5 @@ const TripSchema = new Schema({
   }
 })
 
-module.exports = Trip = mongoose.model('Trip', TripSchema);
+const Trip = mongoose.model('Trip', TripSchema);
+module.exports = Trip;

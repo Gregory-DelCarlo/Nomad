@@ -22,9 +22,7 @@ router.get('/user/:user_id', (req, res) => {
     );
 });
 
-router.post('/',
-  passport.authenticate('jwt', { session: false }),
-  (req, res) => {
+router.post('/', (req, res) => {
     const { errors, isValid } = validateTripInput(req.body);
 
     if (!isValid) {
@@ -34,8 +32,8 @@ router.post('/',
     const newTrip = new Trip({
       user: req.user.id,
       title: req.body.title,
-      time: req.body.time,
-      location: req.body.location,
+      // time: req.body.time,
+      // location: req.body.location,
       team: req.body.team,
       food: req.body.food,
       equipment: req.body.equipment
@@ -45,9 +43,7 @@ router.post('/',
   }
 );
 
-router.put('/update/:id', 
-  passport.authenticate('jwt', { session: false }),
-  (req, res) => {
+router.put('/update/:id', (req, res) => {
     const { errors, isValid } = validateTripInput(req.body);
 
     if (!isValid) {
@@ -57,8 +53,8 @@ router.put('/update/:id',
     const updatedTrip = {
       user: req.user.id,
       title: req.body.title,
-      time: req.body.time,
-      location: req.body.location,
+      // time: req.body.time,
+      // location: req.body.location,
       team: req.body.team,
       food: req.body.food,
       equipment: req.body.equipment
