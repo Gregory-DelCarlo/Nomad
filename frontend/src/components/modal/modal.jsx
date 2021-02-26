@@ -14,7 +14,7 @@ function MyVerticallyCenteredModal(props) {
       centered
     >
       <Modal.Body>
-        <LoginFormContainer/>
+        <SignupFormContainer />
       </Modal.Body>
     </Modal>
   );
