@@ -96,7 +96,11 @@ function MyVerticallyCenteredModal(props) {
   );
 }
 
-// const openModal = (modal) => dispatch(openModal(modal))
+const open = dispatch => {
+  return({
+    openModal: modal => dispatch(openModal(modal)),
+  })
+}
 
 function App() {
   const [modalShow, setModalShow] = React.useState(false);
@@ -106,12 +110,12 @@ function App() {
       <button className='login-btn' 
       variant="primary" 
       onClick={() => {setModalShow(true); 
-        openModal('login')}}>Login</button>
+        open('login')}}>Login</button>
 
       <button className='signup-btn' 
       variant="primary" 
       onClick={() => {setModalShow(true)
-        openModal('signup')}}>Sign Up</button>
+        open('signup')}}>Sign Up</button>
       
       <MyVerticallyCenteredModal
         show={modalShow}
