@@ -34,7 +34,7 @@ class Backpack extends React.Component {
     this.setState({currentPage: item})
   }
 
-  addItem(newPage, itemNum, ...items) {
+  addItem(newPage, itemNum) {
     this.setState({currentPage: newPage, numItems: itemNum})
   }
 
