@@ -8,10 +8,10 @@ const parksReducer = (state = {}, action) => {
     switch (action.type) {
         case RECEIVE_PARKS:
             return action.parks;
-        case RECEIVE_PARK:
-            console.log(action.park);
-            nextState[action.park._id] = action.park;
-            return nextState;
+        // case RECEIVE_PARK:
+        //     console.log(action.park);
+        //     nextState[action.park._id] = action.park;
+        //     return nextState;
         default:
             return state;
     }
