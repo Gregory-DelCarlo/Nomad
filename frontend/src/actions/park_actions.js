@@ -1,5 +1,5 @@
 import {
-    fetchParks, fetchPark 
+    fetchParks
 } from '../util/park_utils';
 
 export const RECEIVE_PARKS = 'RECEIVE_PARKS';
@@ -10,9 +10,9 @@ const receiveParks = parks => ({
     parks
 })
 
-const receivePark = park => ({
+export const receivePark = park_rid => ({
     type: RECEIVE_PARK,
-    park
+    park_rid
 })
 
 
@@ -26,7 +26,7 @@ export const getParks = () => dispatch => (
     }).catch(err => err)
 );
 
-export const getPark = parkId => dispatch => (
-    fetchPark(parkId).then(res => dispatch(receivePark(res.data)))
-);
+// export const getPark = parkId => dispatch => (
+//     fetchPark(parkId).then(res => dispatch(receivePark(res.data)))
+// );
 

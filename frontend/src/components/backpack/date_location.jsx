@@ -1,20 +1,24 @@
 import React from 'react';
 import ParksDropdownContainer from '../dropdowns/parks_dropdown_container'
+import Park from '../parks/park';
 
 export default class DateLocation extends React.Component {
     constructor(props) {
         super(props);
+        
         this.state = {
-            parkId: '', 
+            parkId: this.props.currentPark, 
             trailName: '',
             date: ''
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.renderTrailMap = this.renderTrailMap.bind(this);
+        this.getParkId = this.getParkId.bind(this);
     }
 
     handleChange(field) {
-        return e => {console.log(e.target.value); this.setState({ [field]: e.target.value })}
+        return e => {this.setState({ [field]: e.target.value })}
       }
     
       handleSubmit(e) {
@@ -22,7 +26,19 @@ export default class DateLocation extends React.Component {
         const { date, trailName, parkId } = this.state;
         this.props.clickAddItem('team form', 1, date, trailName, parkId)
       }
-    
+
+      renderTrailMap() {
+        //   debugger
+        if (this.state.parkId) {
+            return <Park rid={this.props.parks[parkId].rid} />
+        }
+      }
+
+    //   getParkId(parkId) {
+    //     //   debugger
+    //     this.setState({parkId});
+    //   }
+    //   getParkId={this.getParkId}
       render() {
         return (
           <div>
@@ -30,17 +46,20 @@ export default class DateLocation extends React.Component {
             <form className="time-location-form" onSubmit={this.handleSubmit}>
                 <label>Pick A Park in Your Area</label>
                 <ParksDropdownContainer />
-              <label>Enter your Trail here:</label>
+              <label className='form-label'>Enter your Trail here: </label>
               <input 
+                className='formInput'
                 type="text"
                 onChange={this.handleChange('trailName')}
               /><br/>
-              <label>When will you be traveling?:</label>
+              <label className='form-label'>When will you be traveling?: </label>
               <input 
+                className='form-input'
                 type='date'
                 onChange={this.handleChange('date')}
               /><br/>
               <button type='submit'>Add to your Backpack</button>
+              {this.renderTrailMap()}
             </form>
           </div>
         )

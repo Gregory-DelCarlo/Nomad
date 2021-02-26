@@ -5,8 +5,10 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 export default class ParksDropdown extends React.Component {
 
     constructor(props) {
-        super(props)
-        this.formatParks = this.formatParks.bind(this)
+        super(props);
+        // debugger
+        this.formatParks = this.formatParks.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
 
@@ -14,6 +16,11 @@ export default class ParksDropdown extends React.Component {
     componentDidMount() {
         this.props.getParks();
     }
+
+    handleClick(parkId) {
+        return () => this.recievePark(this.props.parks[parkId].rid);
+    }
+
     
     formatParks() {
        const parkslist = {
@@ -28,7 +35,7 @@ export default class ParksDropdown extends React.Component {
             switch (park.location){
                 case ("Northern California"):
                     parkslist['Northern California'].push( 
-                    <Dropdown.Item className='dropdown-items' key={park._id} href={`#/park/${park._id}`} >
+                    <Dropdown.Item className='dropdown-items' key={park._id} onClick={this.handleClick(park._id)} >
                             {park.name}
                     </Dropdown.Item>)
                      return ""

@@ -15,7 +15,7 @@ export default class MainPage extends React.Component {
             </div>
           </div> */}
           
-          <Carousel className="carousel-content" pause='false'>
+          <Carousel className="carousel-content">
             <Carousel.Item interval={3000}>
               <img
                 className="carosel-item"

@@ -7,7 +7,9 @@ import { fetchTrip,
         deleteTrip } from '../../actions/trip_actions';
 
 const mapStateToProps = state => ({
-  userId: state.session.user.id
+  userId: state.session.user.id,
+  currentPark: state.ui.currentPark,
+  parks: state.entitites.parks
 });
 
 const mapDispatchToProps = dispatch => ({
