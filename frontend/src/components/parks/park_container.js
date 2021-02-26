@@ -1,18 +1,18 @@
 import { connect } from 'react-redux';
-import { getPark } from '../../actions/park_actions';
+import { getParks } from '../../actions/park_actions';
 import Park from './park';
 
-// const mapStateToProps = (state, ownProps) => {
-//     return {
-//         park: state.entities.parks[ownProps.match.params.parkId]
-//     }
-// };
+const mapStateToProps = (state, ownProps) => {
+    return ({
+        park: state.entities.parks[ownProps.match.params.parkId]
+    })
+};
 
 // may not need
-// const mapDispatchToProps = (dispatch, ownProps) => {
-//     return {
-//         getPark: () => dispatch(getPark(ownProps.match.params.parkId))
-//     }
-// };
+const mapDispatchToProps = (dispatch) => {
+    return {
+        getParks: () => dispatch(getParks())
+    }
+};
  
-export default connect(null, null)(Park);
+export default connect(mapStateToProps, mapDispatchToProps)(Park);
