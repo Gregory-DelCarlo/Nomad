@@ -26,9 +26,27 @@
   margin: 0 auto;
 }
 
-.carousel-control-prev {
-
+.carousel-caption {
+  position: absolute;
+  bottom: 150px;
 }
+
+.carousel-caption h1 {
+  font-size: 70px;
+  color: rgb(46, 44, 44);
+  padding-bottom: 15px;
+}
+
+.link {
+  font-size: 30px;
+  color: rgb(0,0,0)!important;
+  // text-shadow: shadow1(5px 5px 0 rgb(7, 7, 7)),shadow2(5px 5px 0 rgb(7, 7, 7));
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
 
 .carosel-content {
   width: 100%;
