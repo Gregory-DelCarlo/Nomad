@@ -5,7 +5,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import carouselImg1 from "../../assets/images/carousel-img-1.jpg";
 import carouselImg2 from "../../assets/images/carousel-img-2.jpg";
 import carouselImg3 from "../../assets/images/carousel-img-3.jpg";
+import Carousel from 'react-bootstrap/Carousel';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import DemoApp from '../calendar/calendar'
+
+
+
 export default class MainPage extends React.Component {
+
     render() {
 
       return (
@@ -57,7 +64,8 @@ export default class MainPage extends React.Component {
               </Carousel.Caption>
             </Carousel.Item>
           </Carousel>
-        </div>
+         <DemoApp/>
+        </div> 
       )
     }
 }
