@@ -38,18 +38,18 @@ class SessionForm extends React.Component {
       <div>
         <div className="modal-form-header">Nomad</div>
         <form className="modal-form" onSubmit={this.handleSubmit} >
-          <div>
-            <span className='auth-form-field'>Username</span>
-            <input className='auth-input' type='text' 
+          <div className="modal-input">
+            <span className='modal-placeholder'>Username</span>
+            <input type='text' 
               onChange={this.handleChange('username')} 
               // placeholder="Username" 
               value={this.state.username} />
             {errors['Username'] ? <div>{errors['Username']}</div> : null}
           </div>
 
-          <div>
-            <span className='auth-form-field'>Password</span>
-            <input className='auth-input' type='password' 
+          <div className="modal-input">
+            <span className="modal-placeholder">Password</span>
+            <input type='password' 
               onChange={this.handleChange('password')} 
               // placeholder="Password" 
               value={this.state.password} />
@@ -58,16 +58,16 @@ class SessionForm extends React.Component {
           </div>
           {
             this.props.formType === 'Sign Up' ? 
-            <div>
-              <span className='auth-form-field'>Confirm Password</span>
-              <input className='auth-input' type='password' 
+            <div className="modal-input">
+              <span className='modal-placeholder'>Confirm Password</span>
+              <input type='password' 
               onChange={this.handleChange('password2')} 
               // placeholder="Password" 
               value={this.state.password2} />
             {errors['Passwords'] ? <div>{errors['Passwords']}</div> : null}
             </div> : ''
           }
-          <button id='submit' type='submit'><span className='auth-form-field'>{this.props.formType}</span></button>
+          <button id='submit' type='submit'>{this.props.formType}</button>
         </form>
       </div>
     )
