@@ -7,6 +7,7 @@ import carouselImg2 from "../../assets/images/carousel-img-2.jpg";
 import carouselImg3 from "../../assets/images/carousel-img-3.jpg";
 export default class MainPage extends React.Component {
     render() {
+
       return (
         <div className="carousel-container">
           {/* <div className="carousel-header-wrapper">

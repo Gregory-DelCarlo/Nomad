@@ -12,7 +12,7 @@ const App = () => (
     <div className="app">
         <NavBarContainer />
         <Switch>
-            <AuthRoute exact path='/' component={MainPage}/>
+            <Route exact path='/' component={MainPage}/>
             <ProtectedRoute exact path="/backpack" component={BackpackContainer}/>
             <Route exact path='/park/:parkId' component={ParksContainer}/>
             <Route exact path='/weather' component={WeatherContainer}/>
