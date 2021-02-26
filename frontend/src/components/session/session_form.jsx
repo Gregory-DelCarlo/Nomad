@@ -38,7 +38,9 @@ class SessionForm extends React.Component {
     })
     return (
       <div>
-        <div className="modal-form-header"><img className='logo'src={logo}/></div>
+        <div className='modal-form-header-wrapper'>
+          <div className="modal-form-header"><img className='logo'src={logo}/></div>
+        </div>
         <form className="modal-form" onSubmit={this.handleSubmit} >
           <div>
             <span className='auth-form-field'>Username</span>

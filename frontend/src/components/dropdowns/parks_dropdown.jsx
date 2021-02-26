@@ -11,6 +11,7 @@ export default class ParksDropdown extends React.Component {
     }
 
 
+
     componentDidMount() {
         this.props.getParks();
     }
@@ -47,29 +48,8 @@ export default class ParksDropdown extends React.Component {
                     </Dropdown.Item>)
                     return ""
 
-                default: 
-                        return ""
-
-            }
-                
-        });
-        return parkslist
-    }
-    
-
-    // need a component to get parks from state.
     render() {
-        // const parks = Object.values(this.props.parks).map(park => {
-        //     return( 
-        //         // <li key={park._id} className='park'>
-        //             <Dropdown.Item>
-        //             <Link to={`/park/${park._id}`}>
-        //                 {park.name}
-        //             </Link>
-        //             </Dropdown.Item>
-        //         // </li>
-        //     )
-        // });
+       
         const allParks = this.formatParks();
 
         return (

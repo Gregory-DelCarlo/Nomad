@@ -3,6 +3,7 @@
   top: 0;
   width: 100%;
   height: 100%;
+//   z-index: 10;
   background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../assets/images/modal-bg.jpg');
   background-size: cover;
   background-blend-mode: 0.9;
@@ -16,6 +17,19 @@
   height: auto;
   opacity: 1;
 }
+// .modal-form-header-wrapper{
+//   background: black;
+//   padding: 15px;
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   width: 100%;
+// }
+// .modal-form-header {
+//   color: rgb(57, 158, 57);
+//   height: 40px;
+//   font-size: 40px;
+//   font-family: 'Montserrat';
 
 .modal-form-header {
   background: rgb(105, 83, 63);;
