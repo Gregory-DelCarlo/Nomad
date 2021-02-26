@@ -77,6 +77,10 @@ import SignupFormContainer from '../session/signup_form_container';
 // export default connect(mapStateToProps, mapDispatchToProps)(Modal);
 import Modal from 'react-bootstrap/Modal'
 import Button from 'react-bootstrap/Button'
+import { openModal, closeModal } from '../../actions/modal_actions';
+import { connect } from 'react-redux';
+
+
 function MyVerticallyCenteredModal(props) {
   return (
     <Modal
@@ -85,30 +89,30 @@ function MyVerticallyCenteredModal(props) {
       // aria-labelledby="contained-modal-title-vcenter"
       centered
     >
-      {/* <Modal.Header>
-          <Modal.Title id="example-custom-modal-styling-title">
-          <div className='modal-form-header-wrapper'>
-          <div className="modal-form-header">Nomad</div>
-        </div>
-          </Modal.Title>
-        </Modal.Header> */}
       <Modal.Body>
-        <LoginFormContainer></LoginFormContainer>
+        <LoginFormContainer/>
       </Modal.Body>
-      {/* <Modal.Footer>
-        <Button onClick={props.onHide}>Close</Button>
-      </Modal.Footer> */}
     </Modal>
   );
 }
+
+// const openModal = (modal) => dispatch(openModal(modal))
 
 function App() {
   const [modalShow, setModalShow] = React.useState(false);
 
   return (
     <>
-      <button className='login-btn' variant="primary" onClick={() => setModalShow(true)}>Login</button>
-      <button className='signup-btn' variant="primary" onClick={() => setModalShow(true)}>Sign Up</button>
+      <button className='login-btn' 
+      variant="primary" 
+      onClick={() => {setModalShow(true); 
+        openModal('login')}}>Login</button>
+
+      <button className='signup-btn' 
+      variant="primary" 
+      onClick={() => {setModalShow(true)
+        openModal('signup')}}>Sign Up</button>
+      
       <MyVerticallyCenteredModal
         show={modalShow}
         onHide={() => setModalShow(false)}
@@ -117,5 +121,19 @@ function App() {
   );
 }
 
+// const mapStateToProps = state => {
+//   return {
+//     modal: state.ui.modal
+//   };
+// };
+
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     openModal: modal => dispatch(openModal(modal)),
+//     closeModal: () => dispatch(closeModal())
+//   };
+// };
+
+// export default connect(mapStateToProps, mapDispatchToProps)(App);
 
 export default App
