@@ -1,5 +1,6 @@
 import React from 'react';
 import Start from './start';
+import DateLocation from './date_location';
 //test components
 import Test from './test';
 import Team from './team';
@@ -15,7 +16,10 @@ class Backpack extends React.Component {
       title: '',
       team: [],
       food: [],
-      equipment: []
+      equipment: [],
+      date: '',
+      park_id: '',
+      trail_name: ''
     }
     this.getItems = this.getItems.bind(this);
     this.addItem = this.addItem.bind(this);
@@ -28,7 +32,7 @@ class Backpack extends React.Component {
     this.setState({currentPage: item})
   }
 
-  addItem(newPage, itemNum) {
+  addItem(newPage, itemNum, ...items) {
     this.setState({currentPage: newPage, numItems: itemNum})
   }
 
@@ -89,9 +93,7 @@ class Backpack extends React.Component {
       )
     } else if (this.state.currentPage === 'time and location form') {
       return (
-        <Test 
-          clickAddItem={() => this.addItem('team form', 1)} 
-        />
+        <DateLocation clickAddItem={this.addItem} />
       )
     } else if (this.state.currentPage === 'team form') {
       return (
