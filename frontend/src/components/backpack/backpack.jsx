@@ -123,7 +123,6 @@ class Backpack extends React.Component {
   }
 
   render() {
-    debugger
     return (
       <div className="backpack-page">
         <div className="backpack">

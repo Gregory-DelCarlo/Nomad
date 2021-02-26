@@ -43,8 +43,8 @@ class Team extends React.Component {
         <div>
           <label>Your Team</label>
           <ul>
-            {team.map(member => (
-              <li>{member}</li>
+            {team.map((member, index) => (
+              <li key={index}>{member}</li>
             ))}
           </ul>
         </div>
