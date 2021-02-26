@@ -48,37 +48,3 @@ function App() {
 }
 
 export default App
-
-// const selectSessionForm = (modal) => {
-//   if (!modal) {
-//     return null;
-//   }
-//   let component;
-//   switch (modal) {
-//     case 'login':
-//       component = <LoginFormContainer />;
-//       break;
-//     case 'signup':
-//       component = <SignupFormContainer />;
-//       break;
-//     default:
-//       return component;
-//   }
-//   return component
-// }
-
-
-// const mapStateToProps = state => {
-//   return {
-//     modal: state.ui.modal
-//   };
-// };
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     closeModal: () => dispatch(closeModal()),
-//     openModal: modal => dispatch(openModal(modal)),
-//   };
-// };
-
-// export default connect(mapStateToProps, mapDispatchToProps)(App);
