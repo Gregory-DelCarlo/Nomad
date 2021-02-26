@@ -4,6 +4,7 @@ import Start from './start';
 import Test from './test';
 import Team from './team';
 import Supplies from './supplies';
+import Review from './review';
 
 class Backpack extends React.Component {
   constructor(props) {
@@ -117,6 +118,12 @@ class Backpack extends React.Component {
       return (
         <Supplies 
           clickAddItem={this.addSupplies} 
+        />
+      )
+    } else if (this.state.currentPage === 'review') {
+      return (
+        <Review
+          reviewBackpack={this.state}
         />
       )
     }
