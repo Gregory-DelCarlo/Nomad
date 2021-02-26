@@ -47,6 +47,13 @@ export default class ParksDropdown extends React.Component {
                         
                     </Dropdown.Item>)
                     return ""
+                default: 
+                        return ""
+            }
+        })
+
+        return parkslist;
+    }
 
     render() {
        
@@ -54,7 +61,6 @@ export default class ParksDropdown extends React.Component {
 
         return (
             <div className='map-menu'>
-                {/* <DropdownButton title="Regional Areas"> */}
                     <DropdownButton menuAlign='left' title="Northern California" className='list-button'>
                         {allParks['Northern California']} 
                     </DropdownButton>
@@ -64,7 +70,6 @@ export default class ParksDropdown extends React.Component {
                     <DropdownButton title='Southern California' className='list-button'>
                         {allParks['Southern California']}
                     </DropdownButton>
-                {/* </DropdownButton> */}
             </div>
         )
     }

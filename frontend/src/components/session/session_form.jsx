@@ -37,7 +37,7 @@ class SessionForm extends React.Component {
         errors[error.split(" ")[0]] = error
     })
     return (
-      <div>
+      <div className='modal-child'>
         <div className='modal-form-header-wrapper'>
           <div className="modal-form-header"><img className='logo'src={logo}/></div>
         </div>
@@ -46,7 +46,6 @@ class SessionForm extends React.Component {
             <span className='auth-form-field'>Username</span>
             <input className='auth-input' type='text' 
               onChange={this.handleChange('username')} 
-              // placeholder="Username" 
               value={this.state.username} />
             {errors['Username'] ? <div>{errors['Username']}</div> : null}
           </div>
@@ -54,8 +53,7 @@ class SessionForm extends React.Component {
           <div>
             <span className='auth-form-field'>Password</span>
             <input className='auth-input' type='password' 
-              onChange={this.handleChange('password')} 
-              // placeholder="Password" 
+              onChange={this.handleChange('password')}
               value={this.state.password} />
             {errors['Password'] ? <div>{errors['Password']}</div> : null}
             {errors['Invalid'] ? <div>{errors['Invalid']}</div> : null}
@@ -65,8 +63,7 @@ class SessionForm extends React.Component {
             <div>
               <span className='auth-form-field'>Confirm Password</span>
               <input className='auth-input' type='password' 
-              onChange={this.handleChange('password2')} 
-              // placeholder="Password" 
+              onChange={this.handleChange('password2')}
               value={this.state.password2} />
             {errors['Passwords'] ? <div>{errors['Passwords']}</div> : null}
             </div> : ''

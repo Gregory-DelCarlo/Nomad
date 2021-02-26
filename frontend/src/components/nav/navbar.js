@@ -25,8 +25,6 @@ class NavBar extends React.Component {
     
     return (
       <div className="auth-buttons">
-        {/* <button className='login-btn' onClick={() => this.props.openModal('login')}>Login</button>
-        <button className='signup-btn' onClick={() => this.props.openModal('signup')}>Sign Up</button> */}
         <Modal />
       </div>
     )
@@ -43,9 +41,6 @@ class NavBar extends React.Component {
     )
   }
 
-  // renderDropdown() {
-  //   return <ParksDropDownContainer />;
-  // }
 
   render() {
     return (

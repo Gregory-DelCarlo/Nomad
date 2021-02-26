@@ -3,7 +3,6 @@
   top: 0;
   width: 100%;
   height: 100%;
-//   z-index: 10;
   background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../assets/images/modal-bg.jpg');
   background-size: cover;
   background-blend-mode: 0.9;
@@ -12,25 +11,18 @@
 .modal-child {
   background: rgb(134, 156, 119);
   margin: 0 auto;
-  margin-top: 150px;
-  width: 350px;
-  height: auto;
   opacity: 1;
 }
-// .modal-form-header-wrapper{
-//   background: black;
-//   padding: 15px;
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   width: 100%;
-// }
-// .modal-form-header {
-//   color: rgb(57, 158, 57);
-//   height: 40px;
-//   font-size: 40px;
-//   font-family: 'Montserrat';
 
+.modal {
+  background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../assets/images/modal-bg.jpg');
+  background-size: cover;
+  background-blend-mode: 0.9;
+}
+
+.modal-content {
+  all: initial;
+}
 .modal-form-header {
   background: rgb(105, 83, 63);;
   height: 80px;
@@ -102,4 +94,8 @@
 
 #submit:active {
   background: rgb(29, 100, 29);
+}
+
+.modal-body {
+  padding: 0;
 }

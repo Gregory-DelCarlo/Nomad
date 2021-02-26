@@ -15,12 +15,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
     const parks = {};
-    // fetchParks().then(res => {
-    //     res.data.forEach(park => {
-    //         parks[park._id] = park
-    //     });
-    // })
-    // debugger
     if (localStorage.jwtToken) {
         setAuthToken(localStorage.jwtToken);
         const decodedUser = jwt_decode(localStorage.jwtToken);
