@@ -1,4 +1,4 @@
-import * as UserAPIUtil from '../util/user_api_util';
+import * as UserAPIUtil from '../util/user_util';
 import { receiveErrors } from './session_actions';
 import { receiveCurrentUser } from './session_actions';
 

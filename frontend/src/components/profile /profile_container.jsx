@@ -1,10 +1,13 @@
 import React from 'react';
-import Profile from './profile'
+import Profile from './profile';
+import {getUser} from '../../actions/user_actions';
+import {clearErrors} from '../../actions/session_actions';
+import {connect} from 'react-redux';
 
-const mSTP = (state, ownProps) => {
+
+const mSTP = (state) => {
     return ({
-        user: state.entities.users[ownProps.match.params.userId],
-        currentUser: state.entities.users[state.session.currentUser],
+        currentUser: state.entities.users[state.session.id]
     })
 }
 
