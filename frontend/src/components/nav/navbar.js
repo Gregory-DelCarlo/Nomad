@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom'
 import ParksDropDownContainer from '../dropdowns/parks_dropdown_container';
+import Modal from '../modal/modal';
+
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -19,10 +21,12 @@ class NavBar extends React.Component {
   }
 
   sessionContainer() {
+    
     return (
       <div className="login-signup">
-        <button className='login-btn' onClick={() => this.props.openModal('login')}>Login</button>
-        <button className='signup-btn' onClick={() => this.props.openModal('signup')}>Sign Up</button>
+        {/* <button className='login-btn' onClick={() => this.props.openModal('login')}>Login</button>
+        <button className='signup-btn' onClick={() => this.props.openModal('signup')}>Sign Up</button> */}
+        <Modal />
       </div>
     )
   }
