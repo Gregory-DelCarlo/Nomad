@@ -6,18 +6,20 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 import './css_stylesheets/application.scss';
-import { getParks } from './actions/park_actions';
+import { fetchPark, fetchParks } from './util/park_utils';
+import { getParks, getPark } from './actions/park_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
 
 
 
+    const parks = {};
     if (localStorage.jwtToken) {
         setAuthToken(localStorage.jwtToken);
         const decodedUser = jwt_decode(localStorage.jwtToken);
         const preloadedState = { 
-            entities: { users: decodedUser },
+            entities: { users: decodedUser, parks},
             session: { isAuthenticated: true, user: decodedUser } 
         };
 
@@ -30,14 +32,18 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = '/login';
         }
     } else {
-        store = configureStore({});
+        store = configureStore({entities: { parks }});
     }
+
 
     window.getState = store.getState;
     window.dispatch = store.dispatch;
+    window.fetchPark = fetchPark;
+    window.fetchParks = fetchParks;
+    window.getParks = getParks;
+    window.getPark = getPark;
   
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store} />, root);
-    window.getParks = getParks;
-    window.store = store;
+
 });

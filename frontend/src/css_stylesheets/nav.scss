@@ -1,30 +1,26 @@
 .navbar-container{
   width: 100%;
-  height: 56px;
-  background: black;
-  font-family: 'Montserrat';
+  height: 100px;
+  background: rgb(105, 83, 63);
 }
 
 .navbar-content {
-  width: 900px;
   height: 100%;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 60 160 50px;
+  align-content: center;
 }
 
 .navbar-content button {
   cursor: pointer;
-  font-family: 'Montserrat';
-  font-size: 16px;
-  // font-weight: 300;
+  font-family: 'Architects Daughter', cursive;
+  font-size: 20px;
   color: white;
-  background: rgb(57, 158, 57);
-  border: none;
+  background: rgb(37, 61, 26);
+  border: 1px solid transparent;
   padding: 5px;
   outline: 0;
+  border-radius: 4px;
 }
 
 .navbar-content button:hover {
@@ -35,22 +31,71 @@
   background: rgb(29, 100, 29);
 }
 
-// .login-signup {
-
-// }
-
 .nomad-header {
-  font-size: 30px;
-  // font-weight: 300;
-  color: rgb(57, 158, 57);
+  grid-column: 1;
+  padding-left: 25px;
 }
 
-// .logout-btn {
+.map-menu {
+  grid-column: 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
 
-// }
+.list-button {
+  margin: 5px;
+  font-family: 'Architects Daughter';
+}
+
+.btn-primary:hover  {
+  color: #fff;
+  background-color: rgb(29, 100, 29);
+  border-color: rgb(29, 100, 29);
+  border-radius: 4px;
+}
+
+.btn-primary.focus, .btn-primary:focus {
+  background-color: rgb(29, 100, 29);
+  border-color: rgb(29, 100, 29);
+  box-shadow: none!important;
+}
+
+  .btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: rgb(29, 100, 29);
+    border-color: rgb(29, 100, 29);
+}
+
+ 
+.auth-buttons {
+  grid-column: 3;
+  float: right;
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  margin-right: 20px;
+}
+
+
+.logo {
+  width: 150px;
+  height: 150px;
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently */
+}
+
 
 .login-btn {
   margin-right: 5px;
+
 }
 
 .signup-btn {

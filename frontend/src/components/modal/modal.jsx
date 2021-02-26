@@ -1,77 +1,48 @@
 import React from 'react';
-import { closeModal } from '../../actions/modal_actions';
-import { connect } from 'react-redux';
 import LoginFormContainer from '../session/login_form_container';
 import SignupFormContainer from '../session/signup_form_container';
+import Modal from 'react-bootstrap/Modal';
 
-class Modal extends React.Component {
-  constructor(props) {
-    super(props);
-    this.component = null;
-    this.handleKeyPress = this.handleKeyPress.bind(this)
-    this.handleMouseDown = this.handleMouseDown.bind(this)
-  }
+let sessionForm
 
-  selectComponent() {
-    switch (this.props.modal) {
-      case 'login':
-        this.component = <LoginFormContainer />;
-        break;
-      case 'signup':
-        this.component = <SignupFormContainer />;
-        break;
-      default:
-        this.component = null;
-        return null
-    }
+function MyVerticallyCenteredModal(props) {
+  let component
+  if (sessionForm === 'login') {
+    component = <LoginFormContainer />;
+  } else if (sessionForm === 'sign up') {
+    component = <SignupFormContainer />;
   }
-
-  handleKeyPress(e) {
-    if (e.key == "Escape") {
-      this.props.closeModal()
-    }
-  }
-
-  handleMouseDown(e) {
-    if (e.target.className === "modal-background") {
-      this.props.closeModal();
-    }
-  }
-
-  componentDidMount() {
-    document.addEventListener('keydown', this.handleKeyPress);
-  }
-
-  componentWillUnmount() {
-    document.removeEventListener('keydown', this.handleKeyPress);
-  }
-
-  render() { 
-    if (!this.props.modal) {
-      this.component = null;
-      return null
-    }
-    this.selectComponent();
-    return(
-      <div className="modal-background" onMouseDown={this.handleMouseDown} onKeyDown={this.handleKeyPress}>
-        <div className="modal-child" onClick={e => e.stopPropagation()}>
-          { this.component }
-        </div>
-      </div>
-    )
-  }
+  return (
+    <Modal
+      {...props}
+      centered
+    >
+      <Modal.Body>
+        {component}
+      </Modal.Body>
+    </Modal>
+  );
 }
 
-const mapStateToProps = state => {
-  return {
-    modal: state.ui.modal
-  }
-};
+function App() {
+  const [modalShow, setModalShow] = React.useState(false);
+  
+  return (
+    <>
+      <button className='login-btn' 
+      variant="primary" 
+      onClick={() => {setModalShow(true); sessionForm = 'login'}}>Login</button>
 
-const mapDispatchToProps = dispatch => {
-  return {
-    closeModal: () => dispatch(closeModal())
-  }
-};
+      <button className='signup-btn' 
+      variant="primary" 
+      onClick={() => {setModalShow(true); sessionForm = 'sign up'}}>Sign Up</button>
+      
+      <MyVerticallyCenteredModal
+        show={modalShow}
+        onHide={() => setModalShow(false)}
+      />
+    </>
+  );
+}
 
-export default connect(mapStateToProps, mapDispatchToProps)(Modal);
+export default App

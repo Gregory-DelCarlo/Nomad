@@ -1,35 +1,75 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import {DropdownButton, Dropdown} from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 export default class ParksDropdown extends React.Component {
 
     constructor(props) {
-        super(props);
+        super(props)
+        this.formatParks = this.formatParks.bind(this)
     }
+
+
 
     componentDidMount() {
         this.props.getParks();
     }
+    
+    formatParks() {
+       const parkslist = {
+           "Northern California": [],
+           "Central California" : [], 
+           "Southern California": []
+       }
+       
+        
 
-    // renderTrail() {
-    //     const parks = document.getElementsByClassName('park');
-    //     parks.forEach(park => {
-    //         park.addEventListener('click', e => {
-
-    //         })
-    //     })
-    // }
-    // need a component to get parks from state.
-    render() {
-        const parks = Object.values(this.props.parks).map(park => {
-            return <li className='park'>{park.name}</li>;
+        Object.values(this.props.parks).forEach(park => {
+            switch (park.location){
+                case ("Northern California"):
+                    parkslist['Northern California'].push( 
+                    <Dropdown.Item className='dropdown-items' key={park._id} href={`#/park/${park._id}`} >
+                            {park.name}
+                    </Dropdown.Item>)
+                     return ""
+                case ( "Central California"):
+                    parkslist["Central California"].push(
+                    <Dropdown.Item className='dropdown-items' key={park._id} href={`#/park/${park._id}`}>
+                            {park.name}
+                        
+                    </Dropdown.Item>)
+                    return ""
+                case ("Southern California"):
+                    parkslist["Southern California"].push(
+                    <Dropdown.Item className='dropdown-items' key={park._id} href={`#/park/${park._id}`}>
+                            {park.name}
+                        
+                    </Dropdown.Item>)
+                    return ""
+                default: 
+                        return ""
+            }
         })
+
+        return parkslist;
+    }
+
+    render() {
+       
+        const allParks = this.formatParks();
+
         return (
-            <>
-                <ul>
-                    {parks}
-                </ul>
-            </>
+            <div className='map-menu'>
+                    <DropdownButton menuAlign='left' title="Northern California" className='list-button'>
+                        {allParks['Northern California']} 
+                    </DropdownButton>
+                    <DropdownButton title="Central California" className="list-button">
+                        {allParks['Central California']}
+                    </DropdownButton>
+                    <DropdownButton title='Southern California' className='list-button'>
+                        {allParks['Southern California']}
+                    </DropdownButton>
+            </div>
         )
     }
 }
