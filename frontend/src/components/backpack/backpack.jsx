@@ -3,7 +3,7 @@ import Start from './start';
 //test components
 import Test from './test';
 import Team from './team';
-import Test3 from './test3';
+import Test3 from './supplies';
 
 class Backpack extends React.Component {
   constructor(props) {
@@ -22,6 +22,7 @@ class Backpack extends React.Component {
     this.getView = this.getView.bind(this);
     this.changeView = this.changeView.bind(this);
     this.addTitle = this.addTitle.bind(this);
+    this.addTeam = this.addTeam.bind(this);
   }
 
   changeView(item) {
@@ -35,6 +36,12 @@ class Backpack extends React.Component {
   addTitle(newPage, itemNum, title) {
     this.setState({
       currentPage: newPage, numItems: itemNum, title: title
+    })
+  }
+
+  addTeam(newPage, itemNum, team) {
+    this.setState({
+      currentPage: newPage, numItems: itemNum, team: team
     })
   }
 
@@ -83,9 +90,6 @@ class Backpack extends React.Component {
         <Start 
           clickAddItem={this.addTitle}
         />
-        // <Start 
-        //   clickAddItem={() => this.addItem('time and location form', 0)}
-        // />
       )
     } else if (this.state.currentPage === 'time and location form') {
       return (
@@ -96,7 +100,7 @@ class Backpack extends React.Component {
     } else if (this.state.currentPage === 'team form') {
       return (
         <Team 
-          clickAddItem={() => this.addItem('supplies form', 2)} 
+          clickAddItem={this.addTeam} 
         />
       )
     } else if (this.state.currentPage === 'supplies form') {
@@ -109,6 +113,7 @@ class Backpack extends React.Component {
   }
 
   render() {
+    debugger
     return (
       <div className="backpack-page">
         <div className="backpack">
