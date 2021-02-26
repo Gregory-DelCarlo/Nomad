@@ -1,3 +1,4 @@
+
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
@@ -6,8 +7,12 @@ const ParkSchema = new Schema({
         type: String,
         required: true
     },
-    rid: {
+    location: {
         type: String,
+        required: true
+    },
+    rid: {
+        type: Number,
         required: true
     }
 })

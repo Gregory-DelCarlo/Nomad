@@ -1,4 +1,6 @@
 import React from 'react';
+import logo from '../../assets/images/nomad-logo.png';
+
 
 class SessionForm extends React.Component {
 
@@ -35,39 +37,42 @@ class SessionForm extends React.Component {
         errors[error.split(" ")[0]] = error
     })
     return (
-      <div>
-        <div className="modal-form-header">Nomad</div>
+      <div className='modal-child'>
+        <div className='modal-form-header-wrapper'>
+          <div className="modal-form-header"><img className='logo'src={logo} alt='nomad logo'/></div>
+        </div>
         <form className="modal-form" onSubmit={this.handleSubmit} >
           <div>
-            <span>Username</span>
-            <input type='text' 
+            <span className='auth-form-field'>Username</span>
+            <input className={errors['Username'] ? "auth-input error" : "auth-input"} 
+              type='text' 
               onChange={this.handleChange('username')} 
-              // placeholder="Username" 
               value={this.state.username} />
-            {errors['Username'] ? <div>{errors['Username']}</div> : null}
+            {errors['Username'] ? <div className='auth-error'>{errors['Username']}</div> : null}
           </div>
 
           <div>
-            <span>Password</span>
-            <input type='password' 
-              onChange={this.handleChange('password')} 
-              // placeholder="Password" 
+            <span className='auth-form-field'>Password</span>
+            <input className={errors['Password'] ? "auth-input error" : "auth-input"}  
+              type='password' 
+              onChange={this.handleChange('password')}
               value={this.state.password} />
-            {errors['Password'] ? <div>{errors['Password']}</div> : null}
-            {errors['Invalid'] ? <div>{errors['Invalid']}</div> : null}
+            {errors['Password'] ? <div className='auth-error'>{errors['Password']}</div> : null}
+            {errors['User'] ? <div className='auth-error'>{errors['User']}</div> : null}
           </div>
           {
             this.props.formType === 'Sign Up' ? 
             <div>
-              <span>Confirm Password</span>
-              <input type='password' 
-              onChange={this.handleChange('password2')} 
-              // placeholder="Password" 
-              value={this.state.password2} />
-            {errors['Passwords'] ? <div>{errors['Passwords']}</div> : null}
+              <span className='auth-form-field'>Confirm Password</span>
+              <input className={errors['Passwords'] ? "auth-input error" : "auth-input"}  
+                type='password' 
+                onChange={this.handleChange('password2')}
+                value={this.state.password2} />
+            {errors['Passwords'] ? <div className='auth-error'>{errors['Passwords']}</div> : null}
             </div> : ''
           }
-          <button id='submit' type='submit'>{this.props.formType}</button>
+
+          <button id='submit' type='submit'><span className='auth-form-field'>{this.props.formType}</span></button>
         </form>
       </div>
     )

@@ -27,7 +27,6 @@ router.post('/register', (req, res) => {
         // Otherwise create a new user
         const newUser = new User({
           username: req.body.username,
-          // email: req.body.email,
           password: req.body.password
         })
 
@@ -98,7 +97,6 @@ router.get('/current', passport.authenticate('jwt', { session: false }), (req, r
   res.json({
     id: req.user.id,
     username: req.user.username
-    // email: req.user.email
   });
 })
 

@@ -1,5 +1,9 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom'
+import ParksDropDownContainer from '../dropdowns/parks_dropdown_container';
+import Modal from '../modal/modal';
+import logo from '../../assets/images/nomad-logo.png';
+
 
 class NavBar extends React.Component {
   constructor(props) {
@@ -14,31 +18,37 @@ class NavBar extends React.Component {
   logoutUser(e) {
     e.preventDefault();
     this.props.logout();
+    
   }
 
   sessionContainer() {
+    
     return (
-      <div className="login-signup">
-        <button className='login-btn' onClick={() => this.props.openModal('login')}>Login</button>
-        <button className='signup-btn' onClick={() => this.props.openModal('signup')}>Sign Up</button>
+      <div className="auth-buttons">
+        <Modal />
       </div>
     )
   }
 
   navContainer() {
     return(
-      <div className="logout-btn">
-        <button onClick={this.logoutUser}>Logout</button>
+      <div className="auth-buttons">
+        <div className="logout-btn">
+          <button onClick={this.logoutUser}>Logout</button>
+        </div>
       </div>
+      
     )
   }
+
 
   render() {
     return (
       <div>
         <nav className="navbar-container">
           <div className="navbar-content">
-            <div className="nomad-header">Nomad</div>
+            <div className="nomad-header"><Link className='home-link' to='/'><img className='logo' src={logo} alt='nomad logo'/></Link></div>
+            <ParksDropDownContainer />
             { this.props.loggedIn ? this.navContainer() : this.sessionContainer() }
           </div>
         </nav>
