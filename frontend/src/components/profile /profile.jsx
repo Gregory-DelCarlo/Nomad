@@ -1,9 +1,12 @@
 import React from 'react';
-import DemoApp from '../calendar/calendar'
+import Calendar from '../calendar/calendar'
 
 class Profile extends React.Component {
     constructor(props) {
         super(props)
+    }
+
+    
 
     componentDidMount() {
         this.props.getUser(this.props.match.params.userId)
@@ -15,12 +18,16 @@ class Profile extends React.Component {
     }
 
     render() {
-        
+
         return(
-
-
+        <div>
+            <div>Hi, {currentUser.username} </div>
+            <Calendar/>
+         </div>
 
         ) 
     }
 }
 
+
+export default Profile; 
