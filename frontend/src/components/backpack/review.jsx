@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Review = ({ reviewBackpack }) => (
+const Review = ({ reviewBackpack, saveTrip }) => (
   <div className='review'>
     <div className='review-box'>
       <h1>Review {reviewBackpack.title}</h1>
@@ -33,6 +33,7 @@ const Review = ({ reviewBackpack }) => (
           </div>
         </div>
       </div>
+      <button onClick={() => saveTrip()}>Save Trip</button>
     </div>
   </div>
 );

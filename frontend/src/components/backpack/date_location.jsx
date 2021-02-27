@@ -48,26 +48,30 @@ export default class DateLocation extends React.Component {
     //   getParkId={this.getParkId}
       render() {
         return (
-          <div>
-            <h1>Find A Trail To Hike!</h1>
-            <form className="time-location-form" onSubmit={this.handleSubmit}>
+          <div className="date-location">
+            <div className="date-location-box">
+              <h1>Find A Trail To Hike!</h1>
+              <div className="date-location-dropdown">
                 <label>Pick A Park in Your Area</label>
                 <ParksDropdownContainer />
-              <label className='form-label'>Enter your Trail here: </label>
-              <input 
-                className='formInput'
-                type="text"
-                onChange={this.handleChange('trailName')}
-              /><br/>
-              <label className='form-label'>When will you be traveling?: </label>
-              <input 
-                className='form-input'
-                type='date'
-                onChange={this.handleChange('date')}
-              /><br/>
-              <button type='submit'>Add to your Backpack</button>
-              {this.renderTrailMap()}
-            </form>
+              </div>
+              <form className="date-location-form" onSubmit={this.handleSubmit}>
+                <label className='form-label'>Enter your Trail here: </label>
+                <input 
+                  className='location-form-input'
+                  type="text"
+                  onChange={this.handleChange('trailName')}
+                /><br/>
+                <label className='form-label'>When will you be traveling?: </label>
+                <input 
+                  className='date-form-input'
+                  type='date'
+                  onChange={this.handleChange('date')}
+                /><br/>
+                <button type='submit'>Add to your Backpack</button>
+                {this.renderTrailMap()}
+              </form>
+            </div>
           </div>
         )
       }
