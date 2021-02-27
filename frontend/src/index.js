@@ -6,8 +6,6 @@ import jwt_decode from 'jwt-decode';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 import './css_stylesheets/application.scss';
-import { fetchPark, fetchParks } from './util/park_utils';
-import { getParks, getPark } from './actions/park_actions';
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
@@ -38,10 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     window.getState = store.getState;
     window.dispatch = store.dispatch;
-    window.fetchPark = fetchPark;
-    window.fetchParks = fetchParks;
-    window.getParks = getParks;
-    window.getPark = getPark;
   
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store} />, root);
