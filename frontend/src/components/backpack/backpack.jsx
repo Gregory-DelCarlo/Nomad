@@ -66,6 +66,7 @@ class Backpack extends React.Component {
       equipment: this.state.equipment
     }
     this.props.makeNewTrip(trip);
+    this.setState({ currentPage: 'start'})
   }
 
   getItems() {
