@@ -3,9 +3,10 @@ import { fetchWeather } from '../../actions/weather_actions';
 import Weather from './weather';
 
 const mapStateToProps = (state) => {
+  
   return {
     weather: state.entities.weather,
-    // currentPark: state.entities.parks[state.entities.ui.currentPark].name
+    currentPark: state.ui.currentPark ? state.entities.parks[state.ui.currentPark].name : '',
   }
 }
 
