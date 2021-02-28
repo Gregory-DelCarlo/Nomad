@@ -1,10 +1,10 @@
 .weather-container {
   width: 350px;
-  height: 500px;
-  display: flex;
-  flex-direction: column;
+  // height: 500px;
+  // display: flex;
+  // flex-direction: column;
   // justify-content: center;
-  align-items: flex-start;
+  // align-items: flex-start;
   background: white;
   background: rgb(244, 245, 243);
   border: 3px solid #253d1a;
@@ -15,6 +15,7 @@
   min-height: 200px;
   background: rgb(134, 156, 119);
   border-bottom: 1px solid lightgray;
+
 }
 
 .weather-header-wrapper {
@@ -41,18 +42,41 @@
   // top: 0;
 }
 
+.weather-condition-container {
+  height: 100%;
+}
+
 .weather-condition-ul {
   // padding: 100px;
   display: flex;
+  flex-flow: row wrap;
   // flex-direction: row;
+  align-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+
   // flex-wrap: wrap;
 }
 
 .weather-condition-ul li {
-  flex: 50%;
+  // flex: 50%;
+  margin: 10px auto;
+  width: 50%;
+  height: 40px;
+  text-align: center;
+  font-size: 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  // align-items: center;
+  // align-content: center;
 }
 
-.map-page {
-  // display: flex;
-  // flex-direction: row;
+.weather-condition-item-description {
+  margin-bottom: 5px;
+}
+
+.weather-condition-item-values {
+  font-size: 16px;
 }

@@ -29,8 +29,8 @@ class Weather extends React.Component {
   }
 
   render() {
-    let temperature, condition, feels_like, humidity,
-       wind_dir, wind_mph, icon_url, pressure_in, precip_in
+    let temperature, condition, feels_like, humidity, gust_mph,
+       wind_dir, wind_mph, icon_url, pressure_in, precip_in, uv, vis_miles
 
     if (Object.values(this.props.weather).length > 0) {
       temperature = this.props.weather.data.current.temp_f;
@@ -42,6 +42,9 @@ class Weather extends React.Component {
       wind_mph = this.props.weather.data.current.wind_mph;
       pressure_in = this.props.weather.data.current.pressure_in;
       precip_in = this.props.weather.data.current.precip_in;
+      uv = this.props.weather.data.current.uv;
+      vis_miles = this.props.weather.data.current.vis_miles;
+      gust_mph = this.props.weather.data.current.gust_mph;
     } 
 
     return (
@@ -51,17 +54,46 @@ class Weather extends React.Component {
           <div className="weather-header-wrapper">
             <h3 className='weather-currentpark'>{this.props.currentPark}</h3>
             <h4 className='temperature'>{temperature} °F</h4>
-            <div>{condition}</div>
+            <h4>{condition}</h4>
             <img className='weather-condition-icon' src={icon_url}/>
           </div>
         </div>
+        <div className="weather-condition-container">
           <ul className='weather-condition-ul'>
-            <tr>Feels like {feels_like}</tr>
-            <tr>Humidity {humidity}%</tr>
-            <tr>Wind {wind_dir} {wind_mph} mph</tr>
-            <tr>Pressure {pressure_in} inHg</tr>
-            <tr>Precipitation {precip_in} in</tr>
+            <li> 
+              <div className="weather-condition-item-description">Feels like</div> 
+              <div className="weather-condition-item-values">{feels_like} °F</div> 
+            </li>
+            <li> 
+              <div className="weather-condition-item-description">Humidity</div> 
+              <div className="weather-condition-item-values">{humidity}%</div> 
+            </li>
+            <li> 
+              <div className="weather-condition-item-description">Wind</div> 
+              <div className="weather-condition-item-values">{wind_dir} {wind_mph} mph</div> 
+            </li>
+            <li> 
+              <div className="weather-condition-item-description">Gust</div> 
+              <div className="weather-condition-item-values">{gust_mph} mph</div> 
+            </li>
+            <li> 
+              <div className="weather-condition-item-description">Pressure</div> 
+              <div className="weather-condition-item-values">{pressure_in} inHg</div> 
+            </li>
+            <li> 
+              <div className="weather-condition-item-description">Precipitation</div> 
+              <div className="weather-condition-item-values">{precip_in} in</div> 
+            </li>
+            <li> 
+              <div className="weather-condition-item-description">UV Index</div> 
+              <div className="weather-condition-item-values">{uv}</div> 
+            </li>
+            <li> 
+              <div className="weather-condition-item-description">Visible Miles</div> 
+              <div className="weather-condition-item-values">{vis_miles} {vis_miles === 1 ? "mile" : "miles"}</div> 
+            </li>
           </ul>
+        </div>
       </div>
     )
   }
