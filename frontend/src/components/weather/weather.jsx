@@ -13,27 +13,14 @@ class Weather extends React.Component {
   }
 
   componentDidMount() {
-    // if (this.props.weather !== JSON.parse(window.localStorage.getItem("currentPark"))) {
-
     this.props.receivePark(JSON.parse(window.localStorage.getItem("currentParkId")));
-      setTimeout(() => {
-    this.props.fetchWeather(JSON.parse(window.localStorage.getItem("currentPark")))
-    // // this.props.fetchWeather(this.props.currentPark).then( () => (this.state.weather = this.props.weather))
-      }, 100)
-
-  }
-
-  componentDidUpdate() {
-    window.localStorage.setItem("currentParkId", JSON.stringify(this.props.currentParkId))
-    // window.localStorage.setItem("weather", JSON.stringify(this.props.weather))
     setTimeout(() => {
-      window.localStorage.setItem('weather', this.props.weather)
-    // // this.props.fetchWeather(this.props.currentPark).then( () => (this.state.weather = this.props.weather))
-    }, 100)
+      this.props.fetchWeather(JSON.parse(window.localStorage.getItem("currentPark")))
+    }, 10)
   }
 
   componentWillUnmount() {
-    // localStorage.clear();
+    localStorage.clear();
   }
 
   handleSubmit(e) {
@@ -45,13 +32,6 @@ class Weather extends React.Component {
     let temperature, condition, feels_like, humidity,
        wind_dir, wind_mph, icon_url, pressure_in, precip_in
 
-    // this.state.weather = this.props.weather !== {} ? this.props.weather : this.state.weather
-    
-    // console.log(JSON.parse(window.localStorage.getItem("currentPark")))
-    // console.log(this.props.weather)
-    // this.props.fetchWeather(JSON.parse(window.localStorage.getItem("currentPark")))
-    // setTimeout( () => {}, 500)
-    // window.localStorage.setItem('weather', this.props.weather)
     if (Object.values(this.props.weather).length > 0) {
       temperature = this.props.weather.data.current.temp_f;
       condition = this.props.weather.data.current.condition.text;
@@ -63,22 +43,25 @@ class Weather extends React.Component {
       pressure_in = this.props.weather.data.current.pressure_in;
       precip_in = this.props.weather.data.current.precip_in;
     } 
+
     return (
       <div className="weather-container">
         <br />
-          {this.props.currentPark}
-          <div className='temp'> is {temperature} F</div>
-          <img className='weather-condition-icon' src={icon_url}/>
+        <div className="weather-header-container">
+          <div className="weather-header-wrapper">
+            <h3 className='weather-currentpark'>{this.props.currentPark}</h3>
+            <h4 className='temperature'>{temperature} °F</h4>
+            <div>{condition}</div>
+            <img className='weather-condition-icon' src={icon_url}/>
+          </div>
+        </div>
           <ul className='weather-condition-ul'>
-            <li>Weather condition is {condition}</li>
-            <li>Feels like {feels_like}</li>
-            <li>Humidity {humidity}</li>
-            <li>Wind {wind_dir} {wind_mph}</li>
-            <li>Pressure {pressure_in}</li>
-            <li>Precipitation {precip_in}</li>
+            <tr>Feels like {feels_like}</tr>
+            <tr>Humidity {humidity}%</tr>
+            <tr>Wind {wind_dir} {wind_mph} mph</tr>
+            <tr>Pressure {pressure_in} inHg</tr>
+            <tr>Precipitation {precip_in} in</tr>
           </ul>
-          
-          
       </div>
     )
   }

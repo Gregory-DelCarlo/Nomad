@@ -6,7 +6,6 @@ export default class ParksDropdown extends React.Component {
 
     constructor(props) {
         super(props);
-        // debugger
         this.formatParks = this.formatParks.bind(this);
         this.handleClick = this.handleClick.bind(this);
     }
@@ -14,9 +13,7 @@ export default class ParksDropdown extends React.Component {
 
 
     componentDidMount() {
-        // debugger
         this.props.getParks();
-        // this.props.receivePark('6036a5503f24932940440ced');
     }
 
     handleClick(e) {
@@ -28,15 +25,8 @@ export default class ParksDropdown extends React.Component {
             this.props.fetchWeather(this.props.currentPark)
                 .then( window.localStorage.setItem('weather', this.props.weather))
                 .then( window.localStorage.setItem("currentPark", JSON.stringify(this.props.currentPark)) )
-            // setTimeout(() => {
-                
-            // }, 1000);
-            // this.props.fetchWeather(this.props.currentPark).then( window.localStorage.setItem('weather', this.props.state.entities.weather))
-            // window.localStorage.setItem("currentPark", JSON.stringify(this.props.state.entities.parks[this.props.state.ui.currentPark].name))
-        }, 100);
-        // window.localStorage.setItem('currentPark', this.props.currentPark);
+        }, 10);
     }
-
     
     formatParks() {
        const parkslist = {
@@ -45,8 +35,6 @@ export default class ParksDropdown extends React.Component {
            "Southern California": []
        }
        
-        
-
         Object.values(this.props.parks).forEach(park => {
             switch (park.location){
                 case ("Northern California"):
