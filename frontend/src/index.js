@@ -18,7 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const decodedUser = jwt_decode(localStorage.jwtToken);
         const preloadedState = { 
             entities: { users: decodedUser, parks},
-            session: { isAuthenticated: true, user: decodedUser } 
+            session: { isAuthenticated: true, user: decodedUser },
+             
         };
 
         store = configureStore(preloadedState);
@@ -27,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (decodedUser.exp < currentTime) {
             store.dispatch(logout());
-            window.location.href = '/login';
+            window.location.href = '/';
         }
     } else {
         store = configureStore({entities: { parks }});

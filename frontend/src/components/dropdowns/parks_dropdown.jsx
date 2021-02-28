@@ -24,7 +24,7 @@ export default class ParksDropdown extends React.Component {
         this.props.receivePark(currentParkId);
         setTimeout(() => {
             this.props.fetchWeather(this.props.currentPark)
-          }, 300);
+        }, 100);
     }
 
     

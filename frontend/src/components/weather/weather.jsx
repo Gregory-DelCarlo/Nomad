@@ -26,8 +26,20 @@ class Weather extends React.Component {
   }
 
   render() {
-    let temperature
-    if (Object.values(this.props.weather).length > 0) temperature = this.props.weather.data.current.temp_f;
+    let temperature, condition, feels_like, humidity,
+       wind_dir, wind_mph, icon_url, pressure_in, precip_in
+
+    if (Object.values(this.props.weather).length > 0) {
+      temperature = this.props.weather.data.current.temp_f;
+      condition = this.props.weather.data.current.condition.text;
+      icon_url = this.props.weather.data.current.condition.icon;
+      feels_like = this.props.weather.data.current.feelslike_f;
+      humidity = this.props.weather.data.current.humidity;
+      wind_dir = this.props.weather.data.current.wind_dir;
+      wind_mph = this.props.weather.data.current.wind_mph;
+      pressure_in = this.props.weather.data.current.pressure_in;
+      precip_in = this.props.weather.data.current.precip_in;
+    } 
     return (
       <div className="weather-container">
         {/* <form onSubmit={this.handleSubmit}>
@@ -40,9 +52,18 @@ class Weather extends React.Component {
         </form> */}
         {/* {() => this.props.fetchWeather({ city: this.props.currentPark })} */}
         <br />
-          {
-            Object.values(this.props.weather).length > 0? <div>The weather near {this.props.currentPark} is {temperature} F</div> : null
-          }
+          {this.props.currentPark}
+          <div> is {temperature} F</div>
+          <img src={icon_url}/>
+          <ul>
+            <li>Weather condition is {condition}</li>
+            <li>Feels like {feels_like}</li>
+            <li>Humidity {humidity}</li>
+            <li>Wind {wind_dir} {wind_mph}</li>
+            <li>Pressure {pressure_in}</li>
+            <li>Precipitation {precip_in}</li>
+          </ul>
+          
           
       </div>
     )

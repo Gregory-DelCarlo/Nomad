@@ -1,4 +1,4 @@
-import { Strategy } from 'passport-jwt';
+// import { Strategy } from 'passport-jwt';
 import { RECEIVE_PARK } from '../actions/park_actions';
 
 const currentParkReducer = (state = '', action) => {
