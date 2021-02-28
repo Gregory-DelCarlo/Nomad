@@ -7,7 +7,7 @@ const Auth = ({ component: Component, path, loggedIn, exact }) => (
         path={path}
         exact={exact}
         render={props =>
-            loggedIn ? <Redirect to="/" /> : <Component {...props} /> // change backpack to home once the home component is built
+            loggedIn ? <Redirect to="/backpack" /> : <Component {...props} /> // change backpack to home once the home component is built
         }
     />
 );

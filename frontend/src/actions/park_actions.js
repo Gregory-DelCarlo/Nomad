@@ -1,6 +1,4 @@
-import {
-    fetchParks
-} from '../util/park_utils';
+import { fetchParks } from '../util/park_utils';
 
 export const RECEIVE_PARKS = 'RECEIVE_PARKS';
 export const RECEIVE_PARK = 'RECEIVE_PARK';

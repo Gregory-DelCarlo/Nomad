@@ -12,11 +12,11 @@ const App = () => (
     <div className="app">
         <NavBarContainer />
         <Switch>
-            <Route exact path='/' component={MainPage}/>
             <ProtectedRoute exact path="/backpack" component={BackpackContainer}/>
+            <AuthRoute exact path='/' component={MainPage}/>
+        </Switch>
             <Route exact path='/park/:parkId' component={ParksContainer}/>
             <Route exact path='/weather' component={WeatherContainer}/>
-        </Switch>
         <div className="vector-creds">
             <a href="https://www.vecteezy.com/free-vector/summit" className="vector-creds">Summit Vectors by Vecteezy</a>
         </div>

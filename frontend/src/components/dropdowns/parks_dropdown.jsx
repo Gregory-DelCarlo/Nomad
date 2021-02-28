@@ -6,23 +6,27 @@ export default class ParksDropdown extends React.Component {
 
     constructor(props) {
         super(props);
-        // debugger
         this.formatParks = this.formatParks.bind(this);
-        // this.handleClick = this.handleClick.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
 
 
     componentDidMount() {
-        // debugger
         this.props.getParks();
-        // this.props.receivePark('6036a5503f24932940440ced');
     }
 
-    handleClick(parkId) {
-        return () => this.props.receivePark(parkId);
-    }
+    handleClick(e) {
+        const currentParkId = e.split('/')[2]
+        this.props.receivePark(currentParkId);
 
+        window.localStorage.setItem("currentParkId", JSON.stringify(currentParkId))
+        setTimeout(() => {
+            this.props.fetchWeather(this.props.currentPark)
+                .then( window.localStorage.setItem('weather', this.props.weather))
+                .then( window.localStorage.setItem("currentPark", JSON.stringify(this.props.currentPark)) )
+        }, 10);
+    }
     
     formatParks() {
        const parkslist = {
@@ -31,8 +35,6 @@ export default class ParksDropdown extends React.Component {
            "Southern California": []
        }
        
-        
-
         Object.values(this.props.parks).forEach(park => {
             switch (park.location){
                 case ("Northern California"):
@@ -68,13 +70,13 @@ export default class ParksDropdown extends React.Component {
 
         return (
             <div className='map-menu'>
-                    <DropdownButton menuAlign='left' title="Northern California" className='list-button'>
+                    <DropdownButton menuAlign='left' title="Northern California" className='list-button' onSelect={this.handleClick}>
                         {allParks['Northern California']} 
                     </DropdownButton>
-                    <DropdownButton title="Central California" className="list-button">
+                    <DropdownButton title="Central California" className="list-button" onSelect={this.handleClick}>
                         {allParks['Central California']}
                     </DropdownButton>
-                    <DropdownButton title='Southern California' className='list-button'>
+                    <DropdownButton title='Southern California' className='list-button' onSelect={this.handleClick}>
                         {allParks['Southern California']}
                     </DropdownButton>
             </div>

@@ -4,7 +4,7 @@ import Park from '../parks/park';
 
 export default class DateLocation extends React.Component {
     constructor(props) {
-        debugger
+        // debugger
         super(props);
         this.state = {
             parkId: this.props.currentPark, 
