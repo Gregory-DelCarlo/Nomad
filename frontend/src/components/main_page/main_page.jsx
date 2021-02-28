@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import carouselImg1 from "../../assets/images/carousel-img-1.jpg";
@@ -7,7 +7,6 @@ import carouselImg2 from "../../assets/images/carousel-img-2.jpg";
 import carouselImg3 from "../../assets/images/carousel-img-3.jpg";
 
 export default class MainPage extends React.Component {
-
   render() {
     return (
       <div className="carousel-container">

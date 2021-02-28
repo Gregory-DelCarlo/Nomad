@@ -2,18 +2,18 @@ import { connect } from 'react-redux';
 import ParksDropdown from './parks_dropdown';
 import { getParks, receivePark } from '../../actions/park_actions'
 
-const mapStateToProps = (state, ownProps) => {
+const mapStateToProps = (state) => {
     // debugger
     return {
         parks: state.entities.parks
     };
 };
 
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
     // debugger
     return {
         getParks: () => dispatch(getParks()),
-        receivePark: parkrid => dispatch(receivePark(parkrid))
+        receivePark: park_rid => dispatch(receivePark(park_rid))
     }
 };
 

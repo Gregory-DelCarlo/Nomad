@@ -8,7 +8,7 @@ export default class ParksDropdown extends React.Component {
         super(props);
         // debugger
         this.formatParks = this.formatParks.bind(this);
-        // this.handleClick = this.handleClick.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
 
@@ -19,8 +19,11 @@ export default class ParksDropdown extends React.Component {
         // this.props.receivePark('6036a5503f24932940440ced');
     }
 
-    handleClick(parkId) {
-        return () => this.props.receivePark(parkId);
+    handleClick(e) {
+        const currentParkId = e.split('/')[2]
+        console.log(currentParkId)
+        console.log(e)
+        return this.props.receivePark(currentParkId);
     }
 
     
@@ -68,13 +71,13 @@ export default class ParksDropdown extends React.Component {
 
         return (
             <div className='map-menu'>
-                    <DropdownButton menuAlign='left' title="Northern California" className='list-button'>
+                    <DropdownButton menuAlign='left' title="Northern California" className='list-button' onSelect={this.handleClick}>
                         {allParks['Northern California']} 
                     </DropdownButton>
-                    <DropdownButton title="Central California" className="list-button">
+                    <DropdownButton title="Central California" className="list-button" onSelect={this.handleClick}>
                         {allParks['Central California']}
                     </DropdownButton>
-                    <DropdownButton title='Southern California' className='list-button'>
+                    <DropdownButton title='Southern California' className='list-button' onSelect={this.handleClick}>
                         {allParks['Southern California']}
                     </DropdownButton>
             </div>
