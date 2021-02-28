@@ -14,39 +14,26 @@ class Weather extends React.Component {
 
   componentDidMount() {
     // if (this.props.weather !== JSON.parse(window.localStorage.getItem("currentPark"))) {
-      // this.props.fetchWeather(JSON.parse(window.localStorage.getItem("weather")));
-    // const weather = JSON.parse(window.localStorage.getItem("weather"))
-    // if (weather) {
-      this.props.receivePark(JSON.parse(window.localStorage.getItem("currentPark")));
+
+    this.props.receivePark(JSON.parse(window.localStorage.getItem("currentParkId")));
       setTimeout(() => {
-        this.props.fetchWeather(this.props.currentPark)
-    }, 100);
-      // this.state.currentPark = this.props
-      // this.props.fetchWeather(this.props.currentParkId)
-    // }
-      // this.state.currentPark = window.localStorage.getItem("currentPark", JSON.stringify(this.props.currentParkId))
-    // }
-    //  else {
-      
-    // }
-    // console.log(this.state.weather)
-    // debugger
+    this.props.fetchWeather(JSON.parse(window.localStorage.getItem("currentPark")))
+    // // this.props.fetchWeather(this.props.currentPark).then( () => (this.state.weather = this.props.weather))
+      }, 100)
+
   }
 
   componentDidUpdate() {
-    // if (this.props.weather !== JSON.parse(window.localStorage.getItem("currentPark"))) {
-    //   this.props.receivePark(JSON.parse(window.localStorage.getItem("currentPark")));
-    //   this.props.fetchWeather(this.props.currentParkId)
-    //   this.state.currentPark = window.localStorage.setItem("currentPark", JSON.stringify(this.props.currentParkId))
-    // }
-    window.localStorage.setItem("weather", JSON.stringify(this.props.weather))
-    window.localStorage.setItem("currentPark", JSON.stringify(this.props.currentParkId))
+    window.localStorage.setItem("currentParkId", JSON.stringify(this.props.currentParkId))
+    // window.localStorage.setItem("weather", JSON.stringify(this.props.weather))
+    setTimeout(() => {
+      window.localStorage.setItem('weather', this.props.weather)
+    // // this.props.fetchWeather(this.props.currentPark).then( () => (this.state.weather = this.props.weather))
+    }, 100)
   }
 
   componentWillUnmount() {
-    // window.localStorage.setItem("weather", JSON.stringify(this.props.weather))
-    // window.localStorage.setItem("currentPark", JSON.stringify(this.props.currentParkId))
-    // debugger
+    // localStorage.clear();
   }
 
   handleSubmit(e) {
@@ -60,10 +47,11 @@ class Weather extends React.Component {
 
     // this.state.weather = this.props.weather !== {} ? this.props.weather : this.state.weather
     
-    console.log(JSON.parse(window.localStorage.getItem("currentPark")))
+    // console.log(JSON.parse(window.localStorage.getItem("currentPark")))
     // console.log(this.props.weather)
     // this.props.fetchWeather(JSON.parse(window.localStorage.getItem("currentPark")))
-
+    // setTimeout( () => {}, 500)
+    // window.localStorage.setItem('weather', this.props.weather)
     if (Object.values(this.props.weather).length > 0) {
       temperature = this.props.weather.data.current.temp_f;
       condition = this.props.weather.data.current.condition.text;
