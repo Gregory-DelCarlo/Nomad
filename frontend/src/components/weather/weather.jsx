@@ -49,7 +49,6 @@ class Weather extends React.Component {
 
     return (
       <div className="weather-container">
-        <br />
         <div className="weather-header-container">
           <div className="weather-header-wrapper">
             <h3 className='weather-currentpark'>{this.props.currentPark}</h3>

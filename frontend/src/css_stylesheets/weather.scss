@@ -1,10 +1,6 @@
 .weather-container {
-  width: 350px;
-  // height: 500px;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: center;
-  // align-items: flex-start;
+  width: 360px;
+  height: auto;
   background: white;
   background: rgb(244, 245, 243);
   border: 3px solid #253d1a;
@@ -15,31 +11,30 @@
   min-height: 200px;
   background: rgb(134, 156, 119);
   border-bottom: 1px solid lightgray;
-
 }
 
 .weather-header-wrapper {
   padding: 5px 25px;
   display: flex;
   flex-direction: column;
-  // justify-content: center;
   align-items: center;
 }
 
 .weather-currentpark {
   font-size: 25px;
+  margin: 2px auto;
   text-align: center;
 }
 
 .temperature {
   font-size: 50;
-  // padding: 100px;
+  margin: 2px auto;
 }
 
 .weather-condition-icon {
   width: 100px;
   height: 100px;
-  // top: 0;
+  margin: 5px auto;
 }
 
 .weather-condition-container {
@@ -47,20 +42,17 @@
 }
 
 .weather-condition-ul {
-  // padding: 100px;
   display: flex;
   flex-flow: row wrap;
-  // flex-direction: row;
   align-content: center;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-
-  // flex-wrap: wrap;
+  padding: 10px;
+  margin-bottom: 5px;
 }
 
 .weather-condition-ul li {
-  // flex: 50%;
   margin: 10px auto;
   width: 50%;
   height: 40px;
@@ -69,8 +61,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  // align-items: center;
-  // align-content: center;
 }
 
 .weather-condition-item-description {
