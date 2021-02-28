@@ -5,15 +5,14 @@ class Weather extends React.Component {
     super(props);
 
     this.state = {
-      city: ''
+      park: ''
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentWillMount() {
-    this.setState( { city: this.props.currentPark } )
-    
+    this.setState( { park: this.props.currentPark } )
   }
 
   handleChange(field) {
@@ -23,7 +22,7 @@ class Weather extends React.Component {
   handleSubmit(e) {
     console.log(this.props.currentPark)
     e.preventDefault();
-    this.props.fetchWeather(this.state)
+    this.props.fetchWeather(this.state.park)
   }
 
   render() {

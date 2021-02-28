@@ -21,8 +21,10 @@ export default class ParksDropdown extends React.Component {
 
     handleClick(e) {
         const currentParkId = e.split('/')[2]
-        this.props.fetchWeather({ city: this.props.currentPark })
-        return this.props.receivePark(currentParkId);
+        this.props.receivePark(currentParkId);
+        setTimeout(() => {
+            this.props.fetchWeather(this.props.currentPark)
+          }, 300);
     }
 
     

@@ -12,7 +12,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchWeather: city => dispatch(fetchWeather(city))
+    fetchWeather: parkId => dispatch(fetchWeather(parkId))
   }
 }
 
