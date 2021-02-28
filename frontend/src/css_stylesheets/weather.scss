@@ -1,4 +1,27 @@
 .weather-container {
   width: 400px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  background: white;
+  // padding: 100px;
+}
+
+.temp {
+  // padding: 100px;
+}
+
+.weather-condition-icon {
+  width: 100px;
   height: 100px;
+  // top: 0;
+}
+
+.weather-condition-ul {
+  // padding: 100px;
+}
+
+.map-page {
+  // display: flex;
+  // flex-direction: row;
 }

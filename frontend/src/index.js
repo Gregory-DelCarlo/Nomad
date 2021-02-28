@@ -9,21 +9,19 @@ import './css_stylesheets/application.scss';
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
-
-
-
-    const parks = {};
-    if (localStorage.jwtToken) {
+      
+      const parks = {};
+      if (localStorage.jwtToken) {
         setAuthToken(localStorage.jwtToken);
         const decodedUser = jwt_decode(localStorage.jwtToken);
         const preloadedState = { 
-            entities: { users: decodedUser, parks},
+            entities: { users: decodedUser, parks },
             session: { isAuthenticated: true, user: decodedUser },
-             
+            
         };
-
+        
         store = configureStore(preloadedState);
-
+        
         const currentTime = Date.now() / 1000;
 
         if (decodedUser.exp < currentTime) {

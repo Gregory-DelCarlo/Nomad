@@ -5,18 +5,37 @@ class Weather extends React.Component {
     super(props);
 
     this.state = {
-      park: ''
+      park: '',
+      weather: {}
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentWillMount() {
-    this.setState( { park: this.props.currentPark } )
+    // this.setState( { park: this.props.currentPark } )
+    // const state = JSON.parse(window.localStorage.getItem("weather"));
+    // state ? this.props.weather = state : null
+  }
+
+  componentDidMount() {
+    
+    this.state.weather = JSON.parse(window.localStorage.getItem("weather"));
+    console.log(this.state.weather)
+    // debugger
   }
 
   handleChange(field) {
     return e => this.setState( {[field]: e.target.value} )
+  }
+
+  componentDidUpdate() {
+    window.localStorage.setItem("weather", JSON.stringify(this.props.weather))
+  }
+
+  componentWillUnmount() {
+    // window.localStorage.setItem("weather", JSON.stringify(this.props.weather))
+    debugger
   }
 
   handleSubmit(e) {
@@ -28,34 +47,27 @@ class Weather extends React.Component {
   render() {
     let temperature, condition, feels_like, humidity,
        wind_dir, wind_mph, icon_url, pressure_in, precip_in
-
-    if (Object.values(this.props.weather).length > 0) {
-      temperature = this.props.weather.data.current.temp_f;
-      condition = this.props.weather.data.current.condition.text;
-      icon_url = this.props.weather.data.current.condition.icon;
-      feels_like = this.props.weather.data.current.feelslike_f;
-      humidity = this.props.weather.data.current.humidity;
-      wind_dir = this.props.weather.data.current.wind_dir;
-      wind_mph = this.props.weather.data.current.wind_mph;
-      pressure_in = this.props.weather.data.current.pressure_in;
-      precip_in = this.props.weather.data.current.precip_in;
+    this.state.weather = JSON.parse(window.localStorage.getItem("weather"));
+    console.log(this.state.weather)
+    console.log("wefwe")
+    if (Object.values(this.state.weather).length > 0) {
+      temperature = this.state.weather.data.current.temp_f;
+      condition = this.state.weather.data.current.condition.text;
+      icon_url = this.state.weather.data.current.condition.icon;
+      feels_like = this.state.weather.data.current.feelslike_f;
+      humidity = this.state.weather.data.current.humidity;
+      wind_dir = this.state.weather.data.current.wind_dir;
+      wind_mph = this.state.weather.data.current.wind_mph;
+      pressure_in = this.state.weather.data.current.pressure_in;
+      precip_in = this.state.weather.data.current.precip_in;
     } 
     return (
       <div className="weather-container">
-        {/* <form onSubmit={this.handleSubmit}>
-          <input type='text' 
-            onChange={this.handleChange('city')}
-            // value={this.props.state.ui.currentPark ? this.props.state.entities.parks[this.props.state.ui.currentPark].name : ''}
-            placeholder="enter a city"/>
-          <br />
-          <button type='submit'>search weather</button>
-        </form> */}
-        {/* {() => this.props.fetchWeather({ city: this.props.currentPark })} */}
         <br />
           {this.props.currentPark}
-          <div> is {temperature} F</div>
-          <img src={icon_url}/>
-          <ul>
+          <div className='temp'> is {temperature} F</div>
+          <img className='weather-condition-icon' src={icon_url}/>
+          <ul className='weather-condition-ul'>
             <li>Weather condition is {condition}</li>
             <li>Feels like {feels_like}</li>
             <li>Humidity {humidity}</li>

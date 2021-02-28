@@ -25,6 +25,7 @@ export default class ParksDropdown extends React.Component {
         setTimeout(() => {
             this.props.fetchWeather(this.props.currentPark)
         }, 100);
+        window.localStorage.setItem('ui', this.props.state.ui);
     }
 
     
