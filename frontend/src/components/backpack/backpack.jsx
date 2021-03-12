@@ -75,7 +75,6 @@ class Backpack extends React.Component {
   }
 
   saveTrip(){
-    debugger
     const trip = {
       user: this.props.userId,
       title: this.state.title,
@@ -87,7 +86,7 @@ class Backpack extends React.Component {
       trailName: this.state.trailName
     }
     this.props.makeNewTrip(trip);
-    this.setState({ currentPage: 'start'})
+    this.setState({ currentPage: 'start', numItems: 0})
   }
 
   getItems() {
@@ -96,19 +95,19 @@ class Backpack extends React.Component {
       const itemList = [
         <li 
           key="1"
-          onClick={() => this.changeView("time and location")}
+          onClick={() => this.changeView("time and location form")}
           className="location-item"
           slide={this.state.numItems}
         >Time and Location</li>, 
         <li 
           key="2"
-          onClick={() => this.changeView("team")}
+          onClick={() => this.changeView("team form")}
           className="team-item"
           slide={this.state.numItems}
         >Team</li>, 
         <li 
           key="3"
-          onClick={() => this.changeView("supplies")}
+          onClick={() => this.changeView("supplies form")}
           className="supplies-item"
           slide={this.state.numItems}
         >Supplies</li>
