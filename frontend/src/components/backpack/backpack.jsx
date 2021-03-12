@@ -75,7 +75,6 @@ class Backpack extends React.Component {
   }
 
   saveTrip(){
-    debugger
     const trip = {
       user: this.props.userId,
       title: this.state.title,
@@ -87,7 +86,7 @@ class Backpack extends React.Component {
       trailName: this.state.trailName
     }
     this.props.makeNewTrip(trip);
-    this.setState({ currentPage: 'start'})
+    this.setState({ currentPage: 'start', numItems: 0})
   }
 
   getItems() {
