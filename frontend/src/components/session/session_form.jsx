@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../../assets/images/nomad-logo.png';
 
 
+
 class SessionForm extends React.Component {
 
   constructor(props) {
@@ -25,7 +26,7 @@ class SessionForm extends React.Component {
     e.preventDefault();
     e.stopPropagation();
     const demo = {
-      email: "demo_user@gmail.com",
+      username: "Demo User",
       password: "123456"
     }
 
@@ -53,6 +54,9 @@ class SessionForm extends React.Component {
         <div className='modal-form-header-wrapper'>
           <div className="modal-form-header"><img className='logo'src={logo} alt='nomad logo'/></div>
         </div>
+        <button className="close-modal" type="button" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
         <form className="modal-form" onSubmit={this.handleSubmit} >
           <div>
             <span className='auth-form-field'>Username</span>
