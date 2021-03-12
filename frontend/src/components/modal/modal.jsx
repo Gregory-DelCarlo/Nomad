@@ -6,7 +6,7 @@ import Modal from 'react-bootstrap/Modal';
 let sessionForm
 
 function MyVerticallyCenteredModal(props) {
-  let component
+  let component = 'login' || null;
   if (sessionForm === 'login') {
     component = <LoginFormContainer />;
   } else if (sessionForm === 'sign up') {

@@ -1,17 +1,17 @@
 import { connect } from 'react-redux';
-import { getPark } from '../../actions/park_actions';
+import { getParks } from '../../actions/park_actions';
 import Park from './park';
 
 const mapStateToProps = (state, ownProps) => {
-    return {
+    return ({
         park: state.entities.parks[ownProps.match.params.parkId]
-    }
+    })
 };
 
 // may not need
-const mapDispatchToProps = (dispatch, ownProps) => {
+const mapDispatchToProps = (dispatch) => {
     return {
-        getPark: () => dispatch(getPark(ownProps.match.params.parkId))
+        getParks: () => dispatch(getParks())
     }
 };
  

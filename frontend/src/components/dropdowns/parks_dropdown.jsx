@@ -5,14 +5,27 @@ import 'bootstrap/dist/css/bootstrap.min.css'
 export default class ParksDropdown extends React.Component {
 
     constructor(props) {
-        super(props)
-        this.formatParks = this.formatParks.bind(this)
+        super(props);
+        this.formatParks = this.formatParks.bind(this);
+        this.handleClick = this.handleClick.bind(this);
     }
 
 
 
     componentDidMount() {
         this.props.getParks();
+    }
+
+    handleClick(e) {
+        const currentParkId = e.split('/')[2]
+        this.props.receivePark(currentParkId);
+
+        window.localStorage.setItem("currentParkId", JSON.stringify(currentParkId))
+        setTimeout(() => {
+            this.props.fetchWeather(this.props.currentPark)
+                .then( window.localStorage.setItem('weather', this.props.weather))
+                .then( window.localStorage.setItem("currentPark", JSON.stringify(this.props.currentPark)) )
+        }, 10);
     }
     
     formatParks() {
@@ -22,13 +35,11 @@ export default class ParksDropdown extends React.Component {
            "Southern California": []
        }
        
-        
-
         Object.values(this.props.parks).forEach(park => {
             switch (park.location){
                 case ("Northern California"):
                     parkslist['Northern California'].push( 
-                    <Dropdown.Item className='dropdown-items' key={park._id} href={`#/park/${park._id}`} >
+                    <Dropdown.Item className='dropdown-items' key={park._id} href={`#/park/${park._id}`}>
                             {park.name}
                     </Dropdown.Item>)
                      return ""
@@ -36,7 +47,6 @@ export default class ParksDropdown extends React.Component {
                     parkslist["Central California"].push(
                     <Dropdown.Item className='dropdown-items' key={park._id} href={`#/park/${park._id}`}>
                             {park.name}
-                        
                     </Dropdown.Item>)
                     return ""
                 case ("Southern California"):
@@ -60,13 +70,13 @@ export default class ParksDropdown extends React.Component {
 
         return (
             <div className='map-menu'>
-                    <DropdownButton menuAlign='left' title="Northern California" className='list-button'>
+                    <DropdownButton menuAlign='left' title="Northern California" className='list-button' onSelect={this.handleClick}>
                         {allParks['Northern California']} 
                     </DropdownButton>
-                    <DropdownButton title="Central California" className="list-button">
+                    <DropdownButton title="Central California" className="list-button" onSelect={this.handleClick}>
                         {allParks['Central California']}
                     </DropdownButton>
-                    <DropdownButton title='Southern California' className='list-button'>
+                    <DropdownButton title='Southern California' className='list-button' onSelect={this.handleClick}>
                         {allParks['Southern California']}
                     </DropdownButton>
             </div>

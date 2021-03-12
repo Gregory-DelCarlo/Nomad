@@ -1,21 +1,39 @@
 import React from 'react';
 import Start from './start';
+import DateLocation from './date_location';
 //test components
 import Test from './test';
-import Test2 from './test2';
-import Test3 from './test3';
+import Team from './team';
+import Supplies from './supplies';
+import Review from './review';
 
 class Backpack extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       currentPage: 'start',
-      numItems: 0
+      numItems: 0,
+      title: '',
+      team: [],
+      food: [],
+      equipment: [],
+      date: '',
+      parkId: '',
+      trailName: ''
     }
     this.getItems = this.getItems.bind(this);
-    this.addItem = this.addItem.bind(this);
     this.getView = this.getView.bind(this);
     this.changeView = this.changeView.bind(this);
+    this.addTitle = this.addTitle.bind(this);
+    this.addTeam = this.addTeam.bind(this);
+    this.addSupplies = this.addSupplies.bind(this);
+    this.addItem = this.addItem.bind(this);
+    this.saveTrip = this.saveTrip.bind(this);
+    this.addDateLocation = this.addDateLocation.bind(this);
+  }
+
+  componentWillMount() {
+    this.props.getParks();
   }
 
   changeView(item) {
@@ -24,6 +42,52 @@ class Backpack extends React.Component {
 
   addItem(newPage, itemNum) {
     this.setState({currentPage: newPage, numItems: itemNum})
+  }
+
+  addTitle(newPage, itemNum, title) {
+    this.setState({
+      currentPage: newPage, numItems: itemNum, title: title
+    })
+  }
+
+  addDateLocation(newPage, itemNum, date, trailName, parkId) {
+    this.setState({currentPage: newPage, 
+                  numItems: itemNum, 
+                  date, 
+                  trailName, 
+                  parkId
+    })
+  }
+
+  addTeam(newPage, itemNum, team) {
+    this.setState({
+      currentPage: newPage, numItems: itemNum, team: team
+    })
+  }
+
+  addSupplies(newPage, itemNum, food, equipment) {
+    this.setState({
+      currentPage: newPage, 
+      numItems: itemNum,
+      food: food,
+      equipment: equipment
+    })
+  }
+
+  saveTrip(){
+    debugger
+    const trip = {
+      user: this.props.userId,
+      title: this.state.title,
+      team: this.state.team,
+      food: this.state.food,
+      equipment: this.state.equipment,
+      date: this.state.date,
+      parkId: this.state.parkId,
+      trailName: this.state.trailName
+    }
+    this.props.makeNewTrip(trip);
+    this.setState({ currentPage: 'start'})
   }
 
   getItems() {
@@ -68,23 +132,32 @@ class Backpack extends React.Component {
   getView() {
     if (this.state.currentPage === 'start') {
       return (
-        <Start clickAddItem={() => this.addItem('time and location form', 0)}/>
+        <Start 
+          clickAddItem={this.addTitle}
+        />
       )
     } else if (this.state.currentPage === 'time and location form') {
       return (
-        <Test 
-          clickAddItem={() => this.addItem('team form', 1)} 
-        />
+        <DateLocation clickAddItem={this.addDateLocation} currentPark={this.props.currentPark} parks={this.props.parks}/>
       )
     } else if (this.state.currentPage === 'team form') {
       return (
-        <Test2 
-          clickAddItem={() => this.addItem('supplies form', 2)} 
+        <Team 
+          clickAddItem={this.addTeam} 
         />
       )
     } else if (this.state.currentPage === 'supplies form') {
       return (
-        <Test3 clickAddItem={() => this.addItem('', 3)} />
+        <Supplies 
+          clickAddItem={this.addSupplies} 
+        />
+      )
+    } else if (this.state.currentPage === 'review') {
+      return (
+        <Review
+          reviewBackpack={this.state}
+          saveTrip={this.saveTrip}
+        />
       )
     }
   }
