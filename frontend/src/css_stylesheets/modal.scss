@@ -142,17 +142,16 @@
 .modal-body {
   padding: 0;
 }
+.modal-header{
+  display: flex;
+  right: -4px;
+  top: -12px;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: transparent;
+  position: absolute;
+  z-index: 1;
+  padding: 1rem 1rem;
+  border: none;
+}
 
- .close-modal { 
-    cursor: pointer;
-    position: absolute;
-    left: 95%;
-    top: 0%;
-    background-color: #6f5c36;
-    color: #343a40;
-    border: none;
-    font-family: "Source Sans Pro", sans-serif;
-    font-size: 20px;
-    border-radius: 7px;
-
- }

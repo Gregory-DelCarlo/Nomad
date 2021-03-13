@@ -54,9 +54,9 @@ class SessionForm extends React.Component {
         <div className='modal-form-header-wrapper'>
           <div className="modal-form-header"><img className='logo'src={logo} alt='nomad logo'/></div>
         </div>
-        <button className="close-modal" type="button" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        {/* <Modal.Header closeButton>
+        </Modal.Header> */}
+
         <form className="modal-form" onSubmit={this.handleSubmit} >
           <div>
             <span className='auth-form-field'>Username</span>
