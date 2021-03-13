@@ -6,6 +6,7 @@ import MainPage from './main_page/main_page';
 import BackpackContainer from './backpack/backpack_container';
 import ParksContainer from './parks/park_container';
 import WeatherContainer from './weather/weather_container';
+import Profile from './profile /profile_container'
 
 
 const App = () => (
@@ -17,6 +18,7 @@ const App = () => (
         </Switch>
             <Route exact path='/park/:parkId' component={ParksContainer}/>
             <Route exact path='/weather' component={WeatherContainer}/>
+            <Route exact path='/users/:userId' component={Profile}/>
         <div className="vector-creds">
             <a href="https://www.vecteezy.com/free-vector/summit" className="vector-creds">Summit Vectors by Vecteezy</a>
         </div>
