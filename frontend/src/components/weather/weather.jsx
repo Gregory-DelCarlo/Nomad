@@ -32,19 +32,25 @@ class Weather extends React.Component {
     let temperature, condition, feels_like, humidity, gust_mph,
        wind_dir, wind_mph, icon_url, pressure_in, precip_in, uv, vis_miles
 
+    let forecast_icon
+
     if (Object.values(this.props.weather).length > 0) {
-      temperature = this.props.weather.data.current.temp_f;
-      condition = this.props.weather.data.current.condition.text;
-      icon_url = this.props.weather.data.current.condition.icon;
-      feels_like = this.props.weather.data.current.feelslike_f;
-      humidity = this.props.weather.data.current.humidity;
-      wind_dir = this.props.weather.data.current.wind_dir;
-      wind_mph = this.props.weather.data.current.wind_mph;
-      pressure_in = this.props.weather.data.current.pressure_in;
-      precip_in = this.props.weather.data.current.precip_in;
-      uv = this.props.weather.data.current.uv;
-      vis_miles = this.props.weather.data.current.vis_miles;
-      gust_mph = this.props.weather.data.current.gust_mph;
+      let currentWeather = this.props.weather.data.current;
+
+      temperature = currentWeather.temp_f;
+      condition = currentWeather.condition.text;
+      icon_url = currentWeather.condition.icon;
+      feels_like = currentWeather.feelslike_f;
+      humidity = currentWeather.humidity;
+      wind_dir = currentWeather.wind_dir;
+      wind_mph = currentWeather.wind_mph;
+      pressure_in = currentWeather.pressure_in;
+      precip_in = currentWeather.precip_in;
+      uv = currentWeather.uv;
+      vis_miles = currentWeather.vis_miles;
+      gust_mph = currentWeather.gust_mph;
+
+      forecast_icon = this.props.weather.data.forecast.forecastday[1].day.condition.icon
     } 
 
     return (
@@ -55,6 +61,9 @@ class Weather extends React.Component {
             <h4 className='temperature'>{temperature} °F</h4>
             <h4>{condition}</h4>
             <img className='weather-condition-icon' src={icon_url} alt="weather-icon"/>
+            Tomorrow's Forecast
+            <img className='weather-condition-icon2' src={forecast_icon} alt="weather-icon"/>
+            
           </div>
         </div>
         <div className="weather-condition-container">

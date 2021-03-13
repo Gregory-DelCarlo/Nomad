@@ -1,4 +1,5 @@
 import * as WeatherApiUtil from '../util/weather_util';
+
 export const RECEIVE_WEATHER = 'RECEIVE_WEATHER';
 
 const receiveWeather = weather => {
