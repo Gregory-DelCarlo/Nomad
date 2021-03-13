@@ -54,7 +54,7 @@ class Weather extends React.Component {
             <h3 className='weather-currentpark'>{this.props.currentPark}</h3>
             <h4 className='temperature'>{temperature} °F</h4>
             <h4>{condition}</h4>
-            <img className='weather-condition-icon' src={icon_url}/>
+            <img className='weather-condition-icon' src={icon_url} alt="weather-icon"/>
           </div>
         </div>
         <div className="weather-condition-container">
