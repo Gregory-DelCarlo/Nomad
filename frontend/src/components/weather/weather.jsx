@@ -32,11 +32,11 @@ class Weather extends React.Component {
     let temperature, condition, feels_like, humidity, gust_mph,
        wind_dir, wind_mph, icon_url, pressure_in, precip_in, uv, vis_miles
 
-    let forecast_icon
+    let forecast_icon = [];
+    let forecast_day = [];
 
     if (Object.values(this.props.weather).length > 0) {
       let currentWeather = this.props.weather.data.current;
-
       temperature = currentWeather.temp_f;
       condition = currentWeather.condition.text;
       icon_url = currentWeather.condition.icon;
@@ -50,7 +50,12 @@ class Weather extends React.Component {
       vis_miles = currentWeather.vis_miles;
       gust_mph = currentWeather.gust_mph;
 
-      forecast_icon = this.props.weather.data.forecast.forecastday[1].day.condition.icon
+
+      this.props.weather.data.forecast.forecastday.forEach( forecast => {
+        forecast_icon.push(forecast.day.condition.icon)
+        let date = forecast.date.split('-')
+        forecast_day.push(date[1] + '/' + date[2])
+      })
     } 
 
     return (
@@ -61,9 +66,24 @@ class Weather extends React.Component {
             <h4 className='temperature'>{temperature} °F</h4>
             <h4>{condition}</h4>
             <img className='weather-condition-icon' src={icon_url} alt="weather-icon"/>
-            Tomorrow's Forecast
-            <img className='weather-condition-icon2' src={forecast_icon} alt="weather-icon"/>
-            
+
+            <div className="forecast-wrapper">
+              <div className='forecast-day'>
+                {
+                  forecast_day.map( day => {
+                    return <div >{day}</div>
+                  })
+                }
+              </div>
+
+              <div className='forecast-icon'>
+                {
+                  forecast_icon.map( icon => {
+                    return <img className='weather-condition-icon2' src={icon} alt="weather-icon"/>
+                  })
+                }
+              </div>
+            </div>
           </div>
         </div>
         <div className="weather-condition-container">
