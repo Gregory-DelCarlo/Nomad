@@ -21,8 +21,8 @@
 }
 
 .modal-content {
-  all: initial;
-  // border: none;
+  // all: initial;
+  border: none;
   // width: 400px;
 }
 
@@ -100,6 +100,13 @@
 
 }
 
+.login-btn {
+  border-radius: 4px;
+}
+
+.signup-btn {
+  border-radius: 4px;
+}
 .modal-placeholder{
   font-family: 'Architects Daughter', cursive;
 }
