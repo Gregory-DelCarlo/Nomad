@@ -1,15 +1,6 @@
-.modal-background {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../assets/images/modal-bg.jpg');
-  background-size: cover;
-  background-blend-mode: 0.9;
-}
 
 .modal-child {
-  background: rgb(134, 156, 119);
+  background: #6E5B4B;
   margin: 0 auto;
   opacity: 1;
 }
@@ -27,7 +18,7 @@
 }
 
 .modal-form-header {
-  background: rgb(105, 83, 63);;
+  background: #3a3a3a;
   height: 80px;
   padding: 12px;
   font-size: 40px;
@@ -35,7 +26,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 3px solid  rgb(37, 61, 26);
+  border-bottom: 3px solid #325D41;
+  ;
 }
 
 .modal-form {
@@ -48,15 +40,16 @@
 .auth-form-field {
   font-family: 'Raleway', sans-serif;
   font-size: 25px;
-  color: white;
+  color: #fff;
   
 }
 
 .auth-input {
   font-family: 'Raleway', sans-serif;
   font-size: 25px;
-  color: white;
-  background: rgb(117, 139, 102)
+  color: #fff;
+  background: #816B58;
+  margin-top: 5px;
 }
 
 .auth-input.error {
@@ -80,24 +73,32 @@
   padding: 7px 8px;
   border-radius: 5px;
   margin-bottom: 30px;
-  border: 1px solid gray;
+  border: 1px solid #3a3a3a;
 }
 
 .modal-form input:focus {
   outline: 0;
-  border: 1px solid lightgray;
+  border: 1px solid #fff;
 }
 
 #submit {
   cursor: pointer;
-  color: white;
-  background: rgb(37, 61, 26);
+  color: #fff;
+  background: #4E6447;
   font-family: 'Montserrat';
   font-size: 18px;
   padding: 10px 0px;
   outline: 0;
   border: none;
 
+}
+
+#submit:hover {
+  background: #325D41;
+}
+
+#submit:active {
+  background: #145E18;
 }
 
 .login-btn {
@@ -111,13 +112,6 @@
   font-family: 'Raleway', sans-serif;
 }
 
-#submit:hover {
-  background: rgb(41, 114, 41);
-}
-
-#submit:active {
-  background: rgb(29, 100, 29);
-}
 
 .modal-body {
   padding: 0;
