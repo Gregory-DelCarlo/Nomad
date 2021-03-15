@@ -14,7 +14,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchWeather: parkId => dispatch(fetchWeather(parkId)),
+    fetchWeather: park => dispatch(fetchWeather(park)),
     receivePark: park_rid => dispatch(receivePark(park_rid)),
   }
 }

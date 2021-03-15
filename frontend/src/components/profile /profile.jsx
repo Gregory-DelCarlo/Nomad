@@ -8,16 +8,6 @@ class Profile extends React.Component {
 
     
 
-    componentDidMount() {
-       
-       
-    }
- 
-
-    componentWillUnmount() {
-        this.props.clearErrors();
-    }
-
     render() {
 
         return(
