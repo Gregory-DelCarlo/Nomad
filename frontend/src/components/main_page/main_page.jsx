@@ -26,7 +26,7 @@ export default class MainPage extends React.Component {
             <Carousel.Caption>
               <div className='carousel-caption'>
                 <h1>Discover New Places</h1>
-                <Link className='link' to='/backpack' >Plan Your Next Trip Today.</Link>
+                <Link className='link' to='/backpack' >Plan Your Next Trip Today. -></Link>
               </div>
             </Carousel.Caption>
           </Carousel.Item>
@@ -39,7 +39,7 @@ export default class MainPage extends React.Component {
             <Carousel.Caption>
               <div className='carousel-caption'>
                 <h1>Find A Grand Adventure</h1>
-                <Link className='link' to='/backpack' >Plan Your Next Trip Today.</Link>
+                <Link className='link' to='/backpack' >Plan Your Next Trip Today. -></Link>
               </div>
             </Carousel.Caption>
           </Carousel.Item>
@@ -52,7 +52,7 @@ export default class MainPage extends React.Component {
             <Carousel.Caption>
               <div className='carousel-caption'>
                 <h1>Make Unforgettable Memories</h1>
-                <Link className='link' to='/backpack' >Plan Your Next Trip Today.</Link>
+                <Link className='link' to='/backpack' >Plan Your Next Trip Today. -></Link>
               </div>
             </Carousel.Caption>
           </Carousel.Item>
