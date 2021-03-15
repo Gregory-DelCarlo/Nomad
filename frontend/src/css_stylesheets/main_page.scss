@@ -51,6 +51,7 @@
 }
 
 .link:hover {
+  cursor: pointer;
   text-decoration: underline;
 }
 
@@ -84,6 +85,7 @@
 
 .main-page-section {
   padding: 50px 80px;
+  background: #795000;
   text-align: center;
 }
 

@@ -40,7 +40,7 @@ export default class MainPage extends React.Component {
               <Carousel.Caption>
                 <div className='carousel-caption'>
                   <h1>Discover New Places</h1>
-                  <Link className='link' to='/backpack' >Plan Your Next Trip Today.</Link>
+                  <div className='link' onClick={this.handleClick} >Plan Your Next Trip Today.</div>
                 </div>
               </Carousel.Caption>
             </Carousel.Item>
@@ -53,7 +53,7 @@ export default class MainPage extends React.Component {
               <Carousel.Caption>
                 <div className='carousel-caption'>
                   <h1>Find A Grand Adventure</h1>
-                  <Link className='link' to='/backpack' >Plan Your Next Trip Today.</Link>
+                  <div className='link' onClick={this.handleClick} >Plan Your Next Trip Today.</div>
                 </div>
               </Carousel.Caption>
             </Carousel.Item>
@@ -66,7 +66,7 @@ export default class MainPage extends React.Component {
               <Carousel.Caption>
                 <div className='carousel-caption'>
                   <h1>Make Unforgettable Memories</h1>
-                  <Link className='link' to='/backpack' >Plan Your Next Trip Today.</Link>
+                  <div className='link' onClick={this.handleClick} >Plan Your Next Trip Today.</div>
                 </div>
               </Carousel.Caption>
             </Carousel.Item>
@@ -103,6 +103,10 @@ export default class MainPage extends React.Component {
 
         <section className="main-page-section">
           <h2 id="section-signup-btn" className="section-header" onClick={this.handleClick}>Sign Up</h2>
+        </section>
+
+        <section className="main-page-section divider d3">
+          <h2 className="section-header">Customizable Trail Planner</h2>
         </section>
 
         <section className="main-page-section">
