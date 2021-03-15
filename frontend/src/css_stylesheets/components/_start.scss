@@ -14,19 +14,20 @@
   width: 50%;
   border-radius: 6px;
   padding: 40px;
-  background-color: rgb(121,80,0);
-  color: rgb(230,230,230);
-  border: 10px solid black;
+  background-color: #6E5B4B;
+  color: #939b91;
+  border: 5px solid #fff;
 }
 
 .start-box > h1 {
   font-size: 30px;
   margin-top: 60px;
   margin-bottom: 120px;
-  background-color: rgb(85,107,48);
+  background-color: #52392F;
   border-radius: 6px;
   padding: 15px;
-  border: 2px solid black;
+  font-weight: 500;
+  border: 2px solid #fff;
 }
 
 .start-form {
@@ -43,11 +44,12 @@
 .start-form > input {
   margin-bottom: 10px;
   border-radius: 4px;
+  background: #816B58;
 }
 
 .start-form > button {
-  background-color: rgb(85,107,48);
-  color: rgb(230,230,230);
+  background-color: #4E6447;
+  color: #939b91;
   font-size: 20px;
   padding: 10px;
   border-radius: 4px;

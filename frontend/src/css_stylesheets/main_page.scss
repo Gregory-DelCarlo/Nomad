@@ -13,18 +13,17 @@
   width: 100%;
 }
 
-.carousel-header {
-  font-family: 'Montserrat';
-  color: white;
-  font-size: 40px;
-  font-weight: 900;
-  position: absolute;
-  z-index: 5;
-  text-align: center;
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 auto;
-}
+// .carousel-header {
+//   font-family: 'Montserrat';
+//   font-size: 38px;
+//   font-weight: 900;
+//   position: absolute;
+//   z-index: 5;
+//   text-align: center;
+//   display: inline-block;
+//   vertical-align: middle;
+//   margin: 0 auto;
+// }
 
 .carousel-caption {
   position: absolute;
@@ -32,8 +31,8 @@
 }
 
 .carousel-caption h1 {
-  font-size: 70px;
-  color: rgb(46, 44, 44);
+  font-size: 60px;
+  color: rgb(0,0,0)!important;
   padding-bottom: 15px;
 }
 
@@ -41,10 +40,10 @@
   font-size: 30px;
   color: rgb(0,0,0)!important;
   // text-shadow: shadow1(5px 5px 0 rgb(7, 7, 7)),shadow2(5px 5px 0 rgb(7, 7, 7));
+  text-decoration: underline;
 }
 
 .link:hover {
-  text-decoration: underline;
 }
 
 
