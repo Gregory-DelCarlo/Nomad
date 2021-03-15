@@ -31,7 +31,7 @@ export default class MainPage extends React.Component {
           </div> */}
           
           <Carousel className="carousel-content" pause='false'>
-            <Carousel.Item interval={3000}>
+            <Carousel.Item interval={3500}>
               <img
                 className="carosel-item"
                 src={carouselImg1}
@@ -75,22 +75,31 @@ export default class MainPage extends React.Component {
         <section className="main-page-section">
           <h2 className="section-header">Customizable Trail Planner</h2>
           <p className="section-body">Get away from city life by discovering a new adventure. 
-              Choose a route from some of the most popular trails in California</p>
+              Choose a route from some of the most popular trails in California.</p>
         </section>
-        <div className="trail-demo-container">
+
+        <section className="main-page-section divider d1">
+          <h2 className="section-header">Customizable Trail Planner</h2>
+        </section>
+
+
+        {/* <div className="trail-demo-container">
           <img src={trail} className="trail-demo-gif"/>
-        </div>
+        </div> */}
 
         <section className="main-page-section">
           <h2 className="section-header">Plan What You Need for Your Trip</h2>
           <p className="section-body">Do you need trail mix? Multi-tool?
             Or do you need to bring a compass? Decide on your essentials and pack accordingly.
+            <br />
             Whatever you need, Nomad takes the stress away from your trip.</p>
         </section>
 
-        <div className="trail-demo-container">
-          <img src={trail} className="trail-demo-gif"/>
-        </div>
+
+        <section className="main-page-section divider d2">
+          <h2 className="section-header">Customizable Trail Planner</h2>
+        </section>
+
 
         <section className="main-page-section">
           <h2 id="section-signup-btn" className="section-header" onClick={this.handleClick}>Sign Up</h2>
@@ -98,9 +107,7 @@ export default class MainPage extends React.Component {
 
         <section className="main-page-section">
           <div className="section-header">About Us</div>
-          <p className="section-body">Do you need trail mix? Multi-tool?. 
-            Or do you need to bring a compass? Decide on your essentials and pack accordingly.
-            Whatever you need, Nomad takes the stress away from your trip.</p>
+          <p className="section-body">hi</p>
         </section>
 
 

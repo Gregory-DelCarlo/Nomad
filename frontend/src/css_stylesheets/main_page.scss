@@ -28,7 +28,14 @@
 
 .carousel-caption {
   position: absolute;
-  bottom: 150px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .carousel-caption h1 {
@@ -69,14 +76,40 @@
   border-radius: 3px;
 }
 
-.trail-demo-gif {
-  width: 100%;
-  object-fit: fill;
-}
+// .trail-demo-gif {
+//   width: 100%;
+//   object-fit: fill;
+//   display: block;
+// }
 
 .main-page-section {
   padding: 50px 80px;
   text-align: center;
+}
+
+.divider {
+  height: 300px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  // background-image: url("../assets/images/carousel-img-3.jpg");
+  // background-position: 50%;
+  // background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.d1 {
+  background-image: url("https://previews.123rf.com/images/zazastudio/zazastudio1511/zazastudio151100284/47515713-beautiful-green-forest.jpg");
+}
+
+.d2 {
+  background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Poison_Green_Forest.jpg/1200px-Poison_Green_Forest.jpg");
+
+}
+
+.main-page-section::before {
+  background-color: rgba(0,0,0,0.25);
 }
 
 .section-header {
@@ -94,8 +127,13 @@
   border: 1px solid lightgray;
   display: inline-block;
   padding: 10px 30px;
+  color: rgba(0, 0, 0, 1.0);
+  transition: 0.5s;
 }
 
 #section-signup-btn:hover {
   cursor: pointer;
+  background: rgb(120, 148, 72);
+  border: 1px solid rgb(120, 148, 72);
+  color: white;
 }
