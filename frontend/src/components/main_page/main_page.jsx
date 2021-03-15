@@ -6,8 +6,20 @@ import carouselImg1 from "../../assets/images/carousel-img-1.jpg";
 import carouselImg2 from "../../assets/images/carousel-img-2.jpg";
 import carouselImg3 from "../../assets/images/carousel-img-3.jpg";
 import trail from "../../assets/images/trail.gif";
+import { PromiseProvider } from 'mongoose';
 
 export default class MainPage extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.handleClick = this.handleClick.bind(this)
+  }
+
+  handleClick() {
+    let signup_btn = document.getElementsByClassName("signup-btn")[0];
+    signup_btn.click();
+  }
+
   render() {
     return (
       <div className="main-page-container">
@@ -71,10 +83,27 @@ export default class MainPage extends React.Component {
 
         <section className="main-page-section">
           <h2 className="section-header">Plan What You Need for Your Trip</h2>
+          <p className="section-body">Do you need trail mix? Multi-tool?
+            Or do you need to bring a compass? Decide on your essentials and pack accordingly.
+            Whatever you need, Nomad takes the stress away from your trip.</p>
+        </section>
+
+        <div className="trail-demo-container">
+          <img src={trail} className="trail-demo-gif"/>
+        </div>
+
+        <section className="main-page-section">
+          <h2 id="section-signup-btn" className="section-header" onClick={this.handleClick}>Sign Up</h2>
+        </section>
+
+        <section className="main-page-section">
+          <div className="section-header">About Us</div>
           <p className="section-body">Do you need trail mix? Multi-tool?. 
             Or do you need to bring a compass? Decide on your essentials and pack accordingly.
             Whatever you need, Nomad takes the stress away from your trip.</p>
         </section>
+
+
       </div>
     )
   }

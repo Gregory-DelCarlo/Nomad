@@ -89,3 +89,13 @@
   font-size: 18px;
   line-height: 30px;
 }
+
+#section-signup-btn {
+  border: 1px solid lightgray;
+  display: inline-block;
+  padding: 10px 30px;
+}
+
+#section-signup-btn:hover {
+  cursor: pointer;
+}
