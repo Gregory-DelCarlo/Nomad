@@ -12,6 +12,9 @@
   background: rgb(134, 156, 119);
   margin: 0 auto;
   opacity: 1;
+  border-radius: 8px;
+  box-shadow: 0px 0px 0px 4px #253d1a;
+
 }
 
 .modal {
@@ -35,7 +38,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 3px solid  rgb(37, 61, 26);
+  // border-bottom: 3px solid  rgb(37, 61, 26);
+   border-bottom: 3px solid  rgb(105, 83, 63);
+    border-radius: 5px;
 }
 
 .modal-form {
@@ -100,6 +105,23 @@
 
 }
 
+
+.demo-button{
+  cursor: pointer;
+  color: white;
+  background: rgb(37, 61, 26);
+  font-family: 'Architects Daughter';
+  font-size: 24px;
+  padding: 10px 0px;
+  outline: 0;
+  width: 100%;
+  margin-top: 5px;
+  // margin-right: 10px;
+  border: none;
+  // margin: 4px;
+}
+
+
 .login-btn {
   border-radius: 4px;
 }
@@ -122,3 +144,16 @@
 .modal-body {
   padding: 0;
 }
+.modal-header{
+  display: flex;
+  right: -4px;
+  top: -12px;
+  align-items: flex-start;
+  justify-content: space-between;
+  background: transparent;
+  position: absolute;
+  z-index: 1;
+  padding: 1rem 1rem;
+  border: none;
+}
+
