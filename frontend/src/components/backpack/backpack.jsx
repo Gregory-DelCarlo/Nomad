@@ -1,8 +1,6 @@
 import React from 'react';
 import Start from './start';
 import DateLocation from './date_location';
-//test components
-import Test from './test';
 import Team from './team';
 import Supplies from './supplies';
 import Review from './review';
