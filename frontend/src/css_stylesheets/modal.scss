@@ -70,7 +70,8 @@
 
 .auth-error {
   position: absolute;
-  font-family: 'Architects Daughter';
+  // font-family: 'Architects Daughter';
+  font-family: 'Raleway', sans-serif;
   font-size: 15px;
   font-weight: 700;
   color: red;
@@ -109,7 +110,8 @@
   cursor: pointer;
   color: white;
   background: rgb(37, 61, 26);
-  font-family: 'Architects Daughter';
+  // font-family: 'Architects Daughter';
+  font-family: 'Raleway', sans-serif;
   font-size: 24px;
   padding: 10px 0px;
   outline: 0;
@@ -128,7 +130,8 @@
   border-radius: 4px;
 }
 .modal-placeholder{
-  font-family: 'Architects Daughter', cursive;
+  // font-family: 'Architects Daughter', cursive;
+  font-family: 'Raleway', sans-serif
 }
 
 #submit:hover {
