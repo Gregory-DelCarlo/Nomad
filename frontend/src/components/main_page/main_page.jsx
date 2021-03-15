@@ -79,7 +79,7 @@ export default class MainPage extends React.Component {
         </section>
 
         <section className="main-page-section divider d1">
-          <h2 className="section-header">Customizable Trail Planner</h2>
+          <h2 className="section-header">Define Your Trip</h2>
         </section>
 
 
@@ -97,19 +97,15 @@ export default class MainPage extends React.Component {
 
 
         <section className="main-page-section divider d2">
-          <h2 className="section-header">Customizable Trail Planner</h2>
-        </section>
-
-
-        <section className="main-page-section">
           <h2 id="section-signup-btn" className="section-header" onClick={this.handleClick}>Sign Up</h2>
         </section>
 
-        <section className="main-page-section divider d3">
-          <h2 className="section-header">Customizable Trail Planner</h2>
+        <section className="main-page-section">
+          <h2 className="section-header">Define Your Parameters</h2>
+          <p className="section-body">Make your next outdoor trip the best trip ever with Nomad</p>
         </section>
 
-        <section className="main-page-section">
+        <section className="main-page-section d3">
           <div className="section-header">About Us</div>
           <p className="section-body">hi</p>
         </section>
