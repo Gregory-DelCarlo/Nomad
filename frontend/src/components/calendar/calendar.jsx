@@ -117,9 +117,9 @@ function renderEventContent(eventInfo) {
 }
 
 
-removehike = () => {
-    clickInfo.event.remove()
-}
+// removehike = () => {
+//     clickInfo.event.remove()
+// }
 
 
 // handleEventClick = (clickInfo) => {

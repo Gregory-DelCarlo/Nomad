@@ -175,20 +175,11 @@ export default class MainPage extends React.Component {
                   <a href="google.com"><img src={angellist} className="link-imgs" alt="" /></a>
                 </div>
               </div>
-<<<<<<< HEAD
-            </Carousel.Caption>
-          </Carousel.Item>
-        </Carousel>
-        
-      </div>
-        <Calendar />
-=======
             </div>
           {/* </div> */}
         </section>
 
 
->>>>>>> 305204bd33c228caea7f08a398f8cacc77ff09f3
       </div>
     )
   }
