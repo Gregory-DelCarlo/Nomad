@@ -4,7 +4,7 @@
 
 Need help planning your next outdoor trip? Consider using Nomad, an outdoor backpacking app that makes it easy for users to plan a trip around popular trails in California. Select a trail to view its details and weather forecast. Once you've decided on a route, you can pack your essentials to go along with your trip.
 
-Nomad is created using an Express backend and MongoDB for data storage. The frontend is created with using React/Redux to create a smooth single-page webapp.
+Nomad was built with an Express backend while using MongoDB for data storage. The frontend was built using React/Redux to create a smooth single-page webapp.
 
 ## Technologies
 * MongoDB
