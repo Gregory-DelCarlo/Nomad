@@ -17,7 +17,7 @@ class Profile extends React.Component {
 
         return(
         <div>
-            {/* <div className='greeting-user'>Hi, {currentUser.username} </div> */}          
+            {/* <div className='greeting-user'>Hi, {currentUser.username} </div> */}
             <Calendar/>
          </div>
 

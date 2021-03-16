@@ -32,11 +32,11 @@ function App() {
   
   return (
     <>
-      <button className='login-btn' 
+      <button className='auth-btn' 
       variant="primary" 
       onClick={() => {setModalShow(true); sessionForm = 'login'}}>Login</button>
 
-      <button className='signup-btn' 
+      <button className='auth-btn' 
       variant="primary" 
       onClick={() => {setModalShow(true); sessionForm = 'sign up'}}>Sign Up</button>
       
