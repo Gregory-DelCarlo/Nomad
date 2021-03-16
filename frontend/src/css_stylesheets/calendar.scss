@@ -25,11 +25,13 @@ b { /* used for event dates/times */
   margin-right: 3px;
 }
 
-.calendar {
+.calendar-whole {
   display: flex;
   min-height: 50%;
   font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   font-size: 14px;
+  align-content: center;
+  width: 800px;
 }
 
 .calendar-sidebar {
@@ -46,7 +48,14 @@ b { /* used for event dates/times */
 .calendar-main {
   flex-grow: 1;
   padding: 3em;
-  max-width: 900px;
+  // max-width: 900px;
+  // height: 900px;
+   width: 600px;
+
+}
+
+.fc .fc-media-screen .fc-direction-ltr .fc-theme-standard{
+  width: 700px;
 }
 
 .fc { /* the calendar root */

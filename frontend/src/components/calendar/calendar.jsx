@@ -3,7 +3,7 @@ import FullCalendar, { formatDate } from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
-import { INITIAL_EVENTS, createEventId } from './event-utils'
+import {createEventId } from './event-utils'
 
 export default class Calendar extends React.Component {
 
@@ -16,9 +16,10 @@ export default class Calendar extends React.Component {
 
     render() {
         return (
-            <div className='calendar'>
+            <div className='calendar-whole'>
                 {this.renderSidebar()}
                 <div className='calendar-main'>
+                    {/* style={{ width: 600 + "px" }} */}
                     <FullCalendar
                         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
                         headerToolbar={{
@@ -26,16 +27,13 @@ export default class Calendar extends React.Component {
                             center: 'title',
                             right: 'dayGridMonth,timeGridWeek,timeGridDay'
                         }}
-                        // height="2000"
-                        // contentHeight='600'
-                        aspectRatio='5'
+                        aspectRatio='1.3'
                         initialView='dayGridMonth'
                         editable={true}
                         selectable={true}
                         selectMirror={true}
                         dayMaxEvents={true}
                         weekends={this.state.weekendsVisible}
-                        // initialEvents={INITIAL_EVENTS} // alternatively, use the `events` setting to fetch from a feed
                         select={this.handleDateSelect}
                         eventContent={renderEventContent} // custom render function
                         eventClick={this.handleEventClick}
@@ -61,8 +59,8 @@ export default class Calendar extends React.Component {
                             checked={this.state.weekendsVisible}
                             onChange={this.handleWeekendsToggle}
                         ></input>
-            toggle weekends
-          </label>
+                            toggle weekends
+                    </label>
                 </div>
                 <div className='calendar-sidebar-section'>
                     <h2>All Hikes({this.state.currentEvents.length})</h2>
