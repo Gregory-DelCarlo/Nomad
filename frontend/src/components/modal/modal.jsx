@@ -17,6 +17,9 @@ function MyVerticallyCenteredModal(props) {
       {...props}
       centered
     >
+      <Modal.Header closeButton>
+      </Modal.Header>
+
       <Modal.Body>
         {component}
       </Modal.Body>
