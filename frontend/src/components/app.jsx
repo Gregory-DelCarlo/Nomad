@@ -18,7 +18,7 @@ const App = () => (
             <AuthRoute exact path='/' component={MainPage}/>
             <Route exact path='/park/:parkId' component={ParksContainer}/>
             <Route exact path='/weather' component={WeatherContainer}/>
-            <Route exact path='/user/:userId' component={Profile}/>
+            {/* <Route exact path='/user/:userId' component={Profile}/> */}
         </Switch>
         <div className="vector-creds">
             <a href="https://www.vecteezy.com/free-vector/summit" className="vector-creds">Summit Vectors by Vecteezy</a>
