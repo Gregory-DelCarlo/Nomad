@@ -1,7 +1,7 @@
 .carousel-container {
   position: relative;
   width: 100%;
-  height: 900px;
+  height: 600px;
 }
 
 .carousel-header-wrapper {
@@ -13,38 +13,58 @@
   width: 100%;
 }
 
-.carousel-header {
-  font-family: 'Montserrat';
-  color: white;
-  font-size: 40px;
-  font-weight: 900;
-  position: absolute;
-  z-index: 5;
-  text-align: center;
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 auto;
-}
+// .carousel-header {
+//   font-family: 'Montserrat';
+//   font-size: 38px;
+//   font-weight: 900;
+//   position: absolute;
+//   z-index: 5;
+//   text-align: center;
+//   display: inline-block;
+//   vertical-align: middle;
+//   margin: 0 auto;
+// }
 
 .carousel-caption {
   position: absolute;
-  bottom: 150px;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .carousel-caption h1 {
-  font-size: 70px;
-  color: rgb(46, 44, 44);
+  font-size: 55px;
+  font-weight: 500;
+  color: rgb(0,0,0);
   padding-bottom: 15px;
 }
 
+.carousel-control-prev{
+  z-index: 10;
+}
+.carousel-control-next {
+  z-index: 10;
+}
+
 .link {
+  display: inline-block;
   font-size: 30px;
   color: rgb(0,0,0)!important;
   // text-shadow: shadow1(5px 5px 0 rgb(7, 7, 7)),shadow2(5px 5px 0 rgb(7, 7, 7));
+  text-decoration: underline;
+  transition: 0.5s;
 }
 
 .link:hover {
-  text-decoration: underline;
+  cursor: pointer;
+  font-size: 35px;
+  color: #fff!important;
 }
 
 
@@ -54,8 +74,9 @@
 
 .carosel-item {
   width: 100%;
-  height: 700px;
-  // object-fit: cover;
+  height: 600px;
+  object-fit: cover;
+  opacity: 0.95;
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
   -khtml-user-select: none; /* Konqueror HTML */
@@ -68,3 +89,173 @@
 .modal-form button {
   border-radius: 3px;
 }
+
+// .trail-demo-gif {
+//   width: 100%;
+//   object-fit: fill;
+//   display: block;
+// }
+
+.main-page-section {
+  background: #795000;
+  text-align: center;
+}
+
+.section {
+  padding: 50px 80px;
+}
+
+.divider {
+  position: relative;
+  height: 350px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  // background-image: url("../assets/images/carousel-img-3.jpg");
+  // background-position: 50%;
+  // background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+
+  opacity: .97;
+}
+
+.d1 {
+  background-image: url("https://picjumbo.com/wp-content/uploads/leaf-leaves-background-2210x1473.jpg");
+}
+
+.d2 {
+  background-image: url("https://picjumbo.com/wp-content/uploads/green-leaves-with-white-lines-pattern-background-2210x1473.jpg");
+  // background-image: url("https://picjumbo.com/wp-content/uploads/dark-plant-background-2210x1473.jpg");
+  // background-image: url("https://c.stocksy.com/a/u8V100/z9/358044.jpg");
+}
+
+.d3 {
+  
+  position: relative;
+  color: white;
+  height: 80vh;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: .97;
+  background-image: url("https://picjumbo.com/wp-content/uploads/green-palm-leaves-2210x1473.jpg");
+  // background-image: url("https://picjumbo.com/wp-content/uploads/green-leaves-with-white-lines-pattern-background-2210x1473.jpg");
+}
+
+.section-header {
+  font-size: 35px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.section-body {
+  font-size: 18px;
+  line-height: 30px;
+}
+
+#section-signup-btn {
+  border: 1px solid lightgray;
+  display: inline-block;
+  padding: 10px 30px;
+  color: white;
+  transition: 0.6s;
+}
+
+#section-signup-btn:hover {
+  cursor: pointer;
+  background: rgb(120, 148, 72);
+  border: 1px solid rgb(120, 148, 72);
+  color: black;
+}
+
+.about-header {
+  position: absolute;
+  top: 10%;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+#github-link {
+  height: 80px;
+  margin-top: 15px;
+}
+
+.about-footer-container {
+  position: absolute;
+  bottom: 10%;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.about-person-container {
+}
+
+.about-person-img {
+  width: 20vmin;
+  height: 20vmin;
+  box-sizing: border-box;
+  border: 1px solid rgb(65, 82, 62);
+  box-shadow: 1px 1px 9px 4px #2b352b;
+  border-radius: 50%;
+  margin: 5px auto 10px;
+}
+
+#ethan{
+  background-image: url("https://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/005/767/medium/gregory_delcarlo.jpeg?1607127966");
+  background-size: cover;
+}
+
+#jeffrey {
+  background-image: url("https://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/005/786/medium/jeffrey_bogart.jpg?1606888285");
+  background-size: cover;
+}
+
+#trevor {
+  background-image: url("https://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/005/812/medium/trevor_smith.jpeg?1607127996");
+  background-size: cover;
+}
+
+#kenny {
+  background-image: url("https://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/005/796/medium/Kenny_Zeng.jpg?1607127823");
+  background-size: cover;
+}
+
+.individual-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.social-links-container {
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: center;
+}
+
+.link-imgs {
+  height: 40px;
+  padding: 3px;
+}
+
+.link-imgs:hover {
+  cursor: pointer;
+}
+
+.name-header {
+  color: white;
+  font-size: 30px;
+}
+.arrow {
+  font-family: 'Architects Daughter', cursive;
+  color: inherit!important;
+  font-size: inherit;
+}
+

@@ -4,6 +4,7 @@
   align-items: center;
   height: 800px;
   min-width: 800px;
+  
 }
 
 .date-location-box {
@@ -15,19 +16,21 @@
   width: 80%;
   border-radius: 6px;
   padding: 40px;
-  background-color: rgb(121,80,0);
+  background-color: #6E5B4B;
   color: rgb(230,230,230);
-  border: 10px solid black;
+  // border: 10px solid black;
+  // box-shadow: 2px 4px 12px 3px rgb(170, 169, 169);
+  box-shadow: 2px 4px 12px 3px #3c3f3b;
   min-width: 650px;
 }
 
 .date-location-box > h1 {
   font-size: 30px;
   margin: 20px;
-  background-color: rgb(85,107,48);
+  background-color: #52392F;
   border-radius: 6px;
   padding: 15px;
-  border: 2px solid black;
+  border: 2px solid #fff;
 }
 
 .date-location-dropdown {
@@ -42,8 +45,8 @@
 }
 
 .date-location-dropdown * button {
-  background-color: rgb(85,107,48);
-  border: 2px solid black;
+  background-color: #4E6447;
+  border: 2px solid #fff;
 }
 
 .date-location-form {
@@ -55,15 +58,26 @@
 
 .date-location-form input {
   width: 100%;
+  background-color: #816B58;
+  color: #fff;
+  border-radius: 4px;
 }
 
 .date-location-form > button {
-  background-color: rgb(85,107,48);
+  background-color: #4E6447;
   color: rgb(230,230,230);
   font-size: 20px;
   padding: 10px;
   margin: 20px;
   border-radius: 4px;
+}
+
+.date-location-form > button:hover {
+  background-color: #325D41;
+}
+
+.date-location-form > button:active {
+  background-color: #145E18;
 }
 
 .form-label {
