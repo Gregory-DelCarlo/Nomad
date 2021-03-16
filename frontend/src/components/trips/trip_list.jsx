@@ -11,7 +11,6 @@ class TripList extends React.Component {
   componentDidMount() {
     this.props.getUserTrips(this.props.userId);
     this.setState({trips: this.props.trips});
-    debugger
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -21,9 +20,24 @@ class TripList extends React.Component {
     else return null;
   }
 
+  getTrips() {
+    return (
+      <ul className="trip-list">
+        {this.state.trips.map((trip, ind) => (
+          <li key={ind}> {trip.title} </li>
+        ))}
+      </ul> 
+    )
+  }
+
   render() {
-    debugger
-    return null;
+    return (
+      <div className="trips-page">
+        <div className="backpack">
+          {this.getTrips()}
+        </div>
+      </div>
+    )
   }
 
 }
