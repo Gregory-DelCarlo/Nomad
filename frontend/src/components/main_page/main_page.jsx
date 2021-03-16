@@ -1,14 +1,15 @@
 import React from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import carouselImg1 from "../../assets/images/carousel-img-1.jpg";
 import img1 from "../../assets/images/1.jpg";
 import img2 from "../../assets/images/2.jpg";
 import img3 from "../../assets/images/3.jpg";
+
 import angellist from "../../assets/images/angellist.png";
 import github from "../../assets/images/github.png";
 import linkedin from "../../assets/images/linkedin.png";
 
+import carouselImg1 from "../../assets/images/carousel-img-1.jpg";
 import carouselImg2 from "../../assets/images/carousel-img-2.jpg";
 import carouselImg3 from "../../assets/images/carousel-img-3.jpg";
 // import trail from "../../assets/images/trail.gif";
@@ -108,63 +109,73 @@ export default class MainPage extends React.Component {
         </section>
 
         <section className="main-page-section d3">
-          <div className="about-header">About Us</div>
-
+          <div className="about-header">
+            <h2>About Us</h2>
+            <a href="https://github.com/Gregory-DelCarlo/Nomad"><img src={github} class="link-imgs" id="github-link"/></a>
+          </div>
           <div className="about-footer-container">
-            <div className="about-person-container">
+            {/* <div className="about-person-container"> */}
               <div className="individual-container">
-                <h3 className="name-header">
-                  Ethan
-                </h3>
-                <div className="about-person-img" id="ethan">
+                <div className="profile">
+                  <h3 className="name-header">
+                    Ethan
+                  </h3>
+                  <div className="about-person-img" id="ethan">
+                  </div>
                 </div>
-                <div classname="social-links-container">
-                  <a href="google.com"><img src={angellist} class="link-imgs" /></a>
-                  <a href="google.com"><img src={github} class="link-imgs" /></a>
-                  <a href="google.com"><img src={linkedin} class="link-imgs" /></a>
+                <div className="social-links-container">
+                  <a href="google.com"><img src={linkedin} className="link-imgs" /></a>
+                  <a href="google.com"><img src={github} className="link-imgs" /></a>
+                  <a href="google.com"><img src={angellist} className="link-imgs" /></a>
                 </div>
               </div>
 
               <div className="individual-container">
-                <h3 className="name-header">
-                  Jeffrey
-                </h3>
-                <div className="about-person-img" id="jeffrey">
+                <div className="profile">
+                  <h3 className="name-header">
+                    Jeffrey
+                  </h3>
+                  <div className="about-person-img" id="jeffrey">
+                  </div>
                 </div>
-                <div classname="social-links-container">
-                  <a href="google.com"><img src={angellist} class="link-imgs" /></a>
-                  <a href="google.com"><img src={github} class="link-imgs" /></a>
-                  <a href="google.com"><img src={linkedin} class="link-imgs" /></a>
-                </div>
-              </div>
-
-              <div className="individual-container">
-                <h3 className="name-header">
-                  Trevor
-                </h3>
-                <div className="about-person-img" id="trevor">
-                </div>
-                <div classname="social-links-container">
-                  <a href="google.com"><img src={angellist} class="link-imgs" /></a>
-                  <a href="google.com"><img src={github} class="link-imgs" /></a>
-                  <a href="google.com"><img src={linkedin} class="link-imgs" /></a>
+                <div className="social-links-container">
+                  <a href="google.com"><img src={linkedin} className="link-imgs" /></a>
+                  <a href="google.com"><img src={github} className="link-imgs" /></a>
+                  <a href="google.com"><img src={angellist} className="link-imgs" /></a>
                 </div>
               </div>
 
               <div className="individual-container">
-                <h3 className="name-header">
-                  Kenny
-                </h3>
-                <div className="about-person-img" id="kenny">
+                <div className="profile">
+                  <h3 className="name-header">
+                    Trevor
+                  </h3>
+                  <div className="about-person-img" id="trevor">
+                  </div>
                 </div>
-                <div classname="social-links-container">
-                  <a href="google.com"><img src={angellist} class="link-imgs" /></a>
-                  <a href="google.com"><img src={github} class="link-imgs" /></a>
-                  <a href="google.com"><img src={linkedin} class="link-imgs" /></a>
+                <div className="social-links-container">
+                  <a href="google.com"><img src={linkedin} className="link-imgs" /></a>
+                  <a href="google.com"><img src={github} className="link-imgs" /></a>
+                  <a href="google.com"><img src={angellist} className="link-imgs" /></a>
+                </div>
+              </div>
+
+              <div className="individual-container">
+                <div className="profile">
+                  <h3 className="name-header">
+                    Kenny
+                  </h3>
+                  <div className="about-person-img" id="kenny">
+                  </div>
+                </div>
+                <div className="social-links-container">
+                  <a href="google.com"><img src={linkedin} className="link-imgs" /></a>
+                  <a href="google.com"><img src={github} className="link-imgs" /></a>
+                  <a href="google.com"><img src={angellist} className="link-imgs" /></a>
                 </div>
               </div>
             </div>
-          </div>
+          {/* </div> */}
         </section>
 
 

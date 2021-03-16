@@ -170,28 +170,33 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-  font-size: 35px;
+  font-size: 40px;
   font-weight: bold;
+}
+
+#github-link {
+  height: 80px;
+  margin-top: 15px;
 }
 
 .about-footer-container {
   position: absolute;
-  bottom: 5%;
+  bottom: 10%;
   width: 100%;
-}
-
-.about-person-container {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+}
+
+.about-person-container {
 }
 
 .about-person-img {
   width: 20vmin;
   height: 20vmin;
   box-sizing: border-box;
-  border: 1px solid black;
-  box-shadow: 1px 1px 7px 3px #464444;
+  border: 1px solid rgb(65, 82, 62);
+  box-shadow: 1px 1px 9px 4px #2b352b;
   border-radius: 50%;
   margin: 5px auto 10px;
 }
@@ -216,18 +221,23 @@
   background-size: cover;
 }
 
-.social-links-container {
-  background: white;
+.individual-container {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  // align-items: center;
+  align-items: flex-start;
+}
+
+.social-links-container {
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-self: center;
 }
 
 .link-imgs {
   height: 40px;
-  width: auto;
-  padding: 5px;
+  padding: 3px;
 }
 
 .link-imgs:hover {
