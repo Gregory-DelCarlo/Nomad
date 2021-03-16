@@ -9,9 +9,9 @@ import angellist from "../../assets/images/angellist.png";
 import github from "../../assets/images/github.png";
 import linkedin from "../../assets/images/linkedin.png";
 
-import carouselImg1 from "../../assets/images/carousel-img-1.jpg";
-import carouselImg2 from "../../assets/images/carousel-img-2.jpg";
-import carouselImg3 from "../../assets/images/carousel-img-3.jpg";
+// import carouselImg1 from "../../assets/images/carousel-img-1.jpg";
+// import carouselImg2 from "../../assets/images/carousel-img-2.jpg";
+// import carouselImg3 from "../../assets/images/carousel-img-3.jpg";
 // import trail from "../../assets/images/trail.gif";
 
 export default class MainPage extends React.Component {
@@ -111,7 +111,8 @@ export default class MainPage extends React.Component {
         <section className="main-page-section d3">
           <div className="about-header">
             <h2>About Us</h2>
-            <a href="https://github.com/Gregory-DelCarlo/Nomad"><img src={github} class="link-imgs" id="github-link"/></a>
+            <a href="https://github.com/Gregory-DelCarlo/Nomad">
+              <img src={github} class="link-imgs" id="github-link" alt=""/></a>
           </div>
           <div className="about-footer-container">
             {/* <div className="about-person-container"> */}
@@ -124,9 +125,9 @@ export default class MainPage extends React.Component {
                   </div>
                 </div>
                 <div className="social-links-container">
-                  <a href="google.com"><img src={linkedin} className="link-imgs" /></a>
-                  <a href="google.com"><img src={github} className="link-imgs" /></a>
-                  <a href="google.com"><img src={angellist} className="link-imgs" /></a>
+                  <a href="google.com"><img src={linkedin} className="link-imgs" alt=""/></a>
+                  <a href="google.com"><img src={github} className="link-imgs" alt=""/></a>
+                  <a href="google.com"><img src={angellist} className="link-imgs" alt=""/></a>
                 </div>
               </div>
 
@@ -139,9 +140,9 @@ export default class MainPage extends React.Component {
                   </div>
                 </div>
                 <div className="social-links-container">
-                  <a href="google.com"><img src={linkedin} className="link-imgs" /></a>
-                  <a href="google.com"><img src={github} className="link-imgs" /></a>
-                  <a href="google.com"><img src={angellist} className="link-imgs" /></a>
+                  <a href="google.com"><img src={linkedin} className="link-imgs" alt=""/></a>
+                  <a href="google.com"><img src={github} className="link-imgs" alt=""/></a>
+                  <a href="google.com"><img src={angellist} className="link-imgs" alt=""/></a>
                 </div>
               </div>
 
@@ -154,9 +155,9 @@ export default class MainPage extends React.Component {
                   </div>
                 </div>
                 <div className="social-links-container">
-                  <a href="google.com"><img src={linkedin} className="link-imgs" /></a>
-                  <a href="google.com"><img src={github} className="link-imgs" /></a>
-                  <a href="google.com"><img src={angellist} className="link-imgs" /></a>
+                  <a href="google.com"><img src={linkedin} className="link-imgs" alt=""/></a>
+                  <a href="google.com"><img src={github} className="link-imgs" alt=""/></a>
+                  <a href="google.com"><img src={angellist} className="link-imgs" alt=""/></a>
                 </div>
               </div>
 
@@ -169,9 +170,9 @@ export default class MainPage extends React.Component {
                   </div>
                 </div>
                 <div className="social-links-container">
-                  <a href="google.com"><img src={linkedin} className="link-imgs" /></a>
-                  <a href="google.com"><img src={github} className="link-imgs" /></a>
-                  <a href="google.com"><img src={angellist} className="link-imgs" /></a>
+                  <a href="google.com"><img src={linkedin} className="link-imgs" alt=""/></a>
+                  <a href="google.com"><img src={github} className="link-imgs" alt="" /></a>
+                  <a href="google.com"><img src={angellist} className="link-imgs" alt="" /></a>
                 </div>
               </div>
             </div>
