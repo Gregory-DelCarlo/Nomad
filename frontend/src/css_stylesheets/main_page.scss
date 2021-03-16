@@ -13,18 +13,17 @@
   width: 100%;
 }
 
-.carousel-header {
-  font-family: 'Montserrat';
-  color: white;
-  font-size: 40px;
-  font-weight: 900;
-  position: absolute;
-  z-index: 5;
-  text-align: center;
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 auto;
-}
+// .carousel-header {
+//   font-family: 'Montserrat';
+//   font-size: 38px;
+//   font-weight: 900;
+//   position: absolute;
+//   z-index: 5;
+//   text-align: center;
+//   display: inline-block;
+//   vertical-align: middle;
+//   margin: 0 auto;
+// }
 
 .carousel-caption {
   position: absolute;
@@ -40,8 +39,9 @@
 }
 
 .carousel-caption h1 {
-  font-size: 70px;
-  color: rgb(46, 44, 44);
+  font-size: 35px;
+  font-weight: 500;
+  color: rgb(0,0,0)!important;
   padding-bottom: 15px;
 }
 
@@ -57,11 +57,18 @@
   font-size: 30px;
   color: rgb(0,0,0)!important;
   // text-shadow: shadow1(5px 5px 0 rgb(7, 7, 7)),shadow2(5px 5px 0 rgb(7, 7, 7));
+  text-decoration: underline;
 }
 
 .link:hover {
+<<<<<<< HEAD
   cursor: pointer;
   text-decoration: underline;
+=======
+  font-size: 40px;
+  color: #fff!important;
+  transition: 2;
+>>>>>>> 53807561869b699a31e95c0ab7e0096bd8e65f17
 }
 
 
@@ -87,6 +94,7 @@
   border-radius: 3px;
 }
 
+<<<<<<< HEAD
 // .trail-demo-gif {
 //   width: 100%;
 //   object-fit: fill;
@@ -250,3 +258,11 @@
   color: white;
   font-size: 30px;
 }
+=======
+.arrow {
+  font-family: 'Architects Daughter', cursive;
+  color: inherit!important;
+  font-size: inherit;
+}
+
+>>>>>>> 53807561869b699a31e95c0ab7e0096bd8e65f17

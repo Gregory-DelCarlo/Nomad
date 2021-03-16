@@ -1,20 +1,8 @@
-.modal-background {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../assets/images/modal-bg.jpg');
-  background-size: cover;
-  background-blend-mode: 0.9;
-}
 
 .modal-child {
-  background: rgb(134, 156, 119);
+  background: #6E5B4B;
   margin: 0 auto;
   opacity: 1;
-  border-radius: 8px;
-  box-shadow: 0px 0px 0px 4px #253d1a;
-
 }
 
 .modal {
@@ -24,6 +12,7 @@
 }
 
 .modal-content {
+<<<<<<< HEAD
   all: initial;
   // border: none;
   width: 400px;
@@ -33,10 +22,16 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
+=======
+  // all: initial;
+  border: none;
+  box-shadow: 2px 4px 12px 3px #3a3a3a;
+  // width: 400px;
+>>>>>>> 53807561869b699a31e95c0ab7e0096bd8e65f17
 }
 
 .modal-form-header {
-  background: rgb(105, 83, 63);;
+  background: #3a3a3a;
   height: 80px;
   padding: 12px;
   font-size: 40px;
@@ -44,9 +39,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // border-bottom: 3px solid  rgb(37, 61, 26);
-   border-bottom: 3px solid  rgb(105, 83, 63);
-    border-radius: 5px;
+  border-bottom: 3px solid #325D41;
 }
 
 .modal-form {
@@ -54,20 +47,22 @@
   flex-direction: column;
   justify-content: center;
   padding: 15px;
+  border-radius: 3px;
 }
 
 .auth-form-field {
-  font-family: 'Architects Daughter', cursive;
+  font-family: 'Raleway', sans-serif;
   font-size: 25px;
-  color: white;
+  color: #fff!important;
   
 }
 
 .auth-input {
-  font-family: 'Architects Daughter', cursive;
+  font-family: 'Raleway', sans-serif;
   font-size: 25px;
-  color: white;
-  background: rgb(117, 139, 102)
+  color: #fff;
+  background: #816B58;
+  margin-top: 5px;
 }
 
 .auth-input.error {
@@ -76,7 +71,10 @@
 
 .auth-error {
   position: absolute;
+<<<<<<< HEAD
   // font-family: 'Architects Daughter';
+=======
+>>>>>>> 53807561869b699a31e95c0ab7e0096bd8e65f17
   font-family: 'Raleway', sans-serif;
   font-size: 15px;
   font-weight: 700;
@@ -92,32 +90,42 @@
   padding: 7px 8px;
   border-radius: 5px;
   margin-bottom: 30px;
-  border: 1px solid gray;
+  border: 1px solid #3a3a3a;
 }
 
 .modal-form input:focus {
   outline: 0;
-  border: 1px solid lightgray;
+  border: 1px solid #fff;
 }
 
-#submit {
+.auth-form-button {
   cursor: pointer;
-  color: white;
-  background: rgb(37, 61, 26);
-  font-family: 'Montserrat';
-  font-size: 18px;
+  color: #fff;
+  background: #4E6447;
+  font-size: 25px;
   padding: 10px 0px;
+  margin-bottom: 5px;
   outline: 0;
   border: none;
+}
 
+.auth-form-button:hover {
+  background: #325D41;
+}
+
+.auth-form-button:active {
+  background: #145E18;
 }
 
 .demo-button{
   cursor: pointer;
   color: white;
   background: rgb(37, 61, 26);
+<<<<<<< HEAD
   // font-family: 'Architects Daughter';
   font-family: 'Raleway', sans-serif;
+=======
+>>>>>>> 53807561869b699a31e95c0ab7e0096bd8e65f17
   font-size: 24px;
   padding: 10px 0px;
   outline: 0;
@@ -136,17 +144,18 @@
   border-radius: 4px;
 }
 .modal-placeholder{
+<<<<<<< HEAD
   // font-family: 'Architects Daughter', cursive;
   font-family: 'Raleway', sans-serif
 }
 
 #submit:hover {
   background: rgb(41, 114, 41);
+=======
+  font-family: 'Raleway', sans-serif;
+>>>>>>> 53807561869b699a31e95c0ab7e0096bd8e65f17
 }
 
-#submit:active {
-  background: rgb(29, 100, 29);
-}
 
 .modal-body {
   padding: 0;

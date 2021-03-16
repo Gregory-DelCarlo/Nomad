@@ -14,7 +14,6 @@ const Review = ({ reviewBackpack, saveTrip }) => (
       </div>
       <div className='review-supplies'>
         <h2>Supplies:</h2>
-        <div className='review-supplies-box'>
           <div className='food-list'>
             <label>Food</label>
             <ul>
@@ -31,7 +30,6 @@ const Review = ({ reviewBackpack, saveTrip }) => (
               ))}
             </ul>
           </div>
-        </div>
       </div>
       <button onClick={() => saveTrip()}>Save Trip</button>
     </div>

@@ -88,8 +88,8 @@ class SessionForm extends React.Component {
             </div> : ''
           }
 
-          <button id='submit' type='submit'><span className='auth-form-field'>{this.props.formType}</span></button>
-          <button className="demo-button" onClick={this.loginDemo}>Demo Sign In</button>
+          <button className='auth-form-button'id='submit' type='submit'><span className='auth-form-field'>{this.props.formType}</span></button>
+          <button className="auth-form-button" onClick={this.loginDemo}>Demo Sign In</button>
         </form>
       </div>
     )
