@@ -5,12 +5,14 @@ import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import { INITIAL_EVENTS, createEventId } from './event-utils'
 
-export default class DemoApp extends React.Component {
+export default class Calendar extends React.Component {
 
     state = {
         weekendsVisible: true,
         currentEvents: []
     }
+
+   
 
     render() {
         return (
@@ -24,6 +26,9 @@ export default class DemoApp extends React.Component {
                             center: 'title',
                             right: 'dayGridMonth,timeGridWeek,timeGridDay'
                         }}
+                        // height="2000"
+                        // contentHeight='600'
+                        aspectRatio='5'
                         initialView='dayGridMonth'
                         editable={true}
                         selectable={true}
@@ -48,16 +53,8 @@ export default class DemoApp extends React.Component {
 
     renderSidebar() {
         return (
-            <div className='demo-app-sidebar'>
-                <div className='demo-app-sidebar-section'>
-                    <h2>Instructions</h2>
-                    <ul>
-                        <li>Select dates and you will be prompted to create a new event</li>
-                        <li>Drag, drop, and resize events</li>
-                        <li>Click an event to delete it</li>
-                    </ul>
-                </div>
-                <div className='demo-app-sidebar-section'>
+            <div className='calendar-sidebar'>
+                <div className='calendar-sidebar-section'>
                     <label>
                         <input
                             type='checkbox'
@@ -67,7 +64,7 @@ export default class DemoApp extends React.Component {
             toggle weekends
           </label>
                 </div>
-                <div className='demo-app-sidebar-section'>
+                <div className='calendar-sidebar-section'>
                     <h2>All Events ({this.state.currentEvents.length})</h2>
                     <ul>
                         {this.state.currentEvents.map(renderSidebarEvent)}
@@ -100,11 +97,7 @@ export default class DemoApp extends React.Component {
         }
     }
 
-    handleEventClick = (clickInfo) => {
-        if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
-            clickInfo.event.remove()
-        }
-    }
+    
 
     handleEvents = (events) => {
         this.setState({
@@ -123,6 +116,12 @@ function renderEventContent(eventInfo) {
     )
 }
 
+// handleEventClick = (clickInfo) => {
+//     if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
+//         clickInfo.event.remove()
+//     }
+// }
+
 function renderSidebarEvent(event) {
     return (
         <li key={event.id}>
@@ -131,4 +130,3 @@ function renderSidebarEvent(event) {
         </li>
     )
 }
-

@@ -11,12 +11,13 @@ class Profile extends React.Component {
     render() {
 
         return(
+           
         <div>
             {/* <div className='greeting-user'>Hi, {currentUser.username} </div> */}
             <Calendar/>
          </div>
 
-        ) 
+        )
     }
 }
 
