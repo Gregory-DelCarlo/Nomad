@@ -14,7 +14,16 @@
 .modal-content {
   // all: initial;
   border: none;
+  width: 400px;
   box-shadow: 2px 4px 12px 3px #3a3a3a;
+}
+
+.modal-dialog {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  // all: initial;
+  border: none;
   // width: 400px;
 }
 
