@@ -113,10 +113,10 @@ export default class MainPage extends React.Component {
           <div className="about-footer-container">
             <div className="about-person-container">
               <div className="individual-container">
-                <h3>
-                  bob1
+                <h3 className="name-header">
+                  Ethan
                 </h3>
-                <div className="about-person-img">
+                <div className="about-person-img" id="ethan">
                 </div>
                 <div classname="social-links-container">
                   <a href="google.com"><img src={angellist} class="link-imgs" /></a>
@@ -124,11 +124,12 @@ export default class MainPage extends React.Component {
                   <a href="google.com"><img src={linkedin} class="link-imgs" /></a>
                 </div>
               </div>
+
               <div className="individual-container">
-                <h3>
-                  bob1
+                <h3 className="name-header">
+                  Jeffrey
                 </h3>
-                <div className="about-person-img">
+                <div className="about-person-img" id="jeffrey">
                 </div>
                 <div classname="social-links-container">
                   <a href="google.com"><img src={angellist} class="link-imgs" /></a>
@@ -136,11 +137,12 @@ export default class MainPage extends React.Component {
                   <a href="google.com"><img src={linkedin} class="link-imgs" /></a>
                 </div>
               </div>
+
               <div className="individual-container">
-                <h3>
-                  bob1
+                <h3 className="name-header">
+                  Trevor
                 </h3>
-                <div className="about-person-img">
+                <div className="about-person-img" id="trevor">
                 </div>
                 <div classname="social-links-container">
                   <a href="google.com"><img src={angellist} class="link-imgs" /></a>
@@ -148,11 +150,12 @@ export default class MainPage extends React.Component {
                   <a href="google.com"><img src={linkedin} class="link-imgs" /></a>
                 </div>
               </div>
+
               <div className="individual-container">
-                <h3>
-                  bob1
+                <h3 className="name-header">
+                  Kenny
                 </h3>
-                <div className="about-person-img">
+                <div className="about-person-img" id="kenny">
                 </div>
                 <div classname="social-links-container">
                   <a href="google.com"><img src={angellist} class="link-imgs" /></a>

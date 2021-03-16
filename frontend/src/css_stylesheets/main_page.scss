@@ -189,13 +189,31 @@
 .about-person-img {
   width: 20vmin;
   height: 20vmin;
-  background: lightgray;
   box-sizing: border-box;
   border: 1px solid black;
   box-shadow: 1px 1px 7px 3px #464444;
   border-radius: 50%;
   margin: 5px auto 10px;
-  font-size: 25px;
+}
+
+#ethan{
+  background-image: url("https://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/005/767/medium/gregory_delcarlo.jpeg?1607127966");
+  background-size: cover;
+}
+
+#jeffrey {
+  background-image: url("https://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/005/786/medium/jeffrey_bogart.jpg?1606888285");
+  background-size: cover;
+}
+
+#trevor {
+  background-image: url("https://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/005/812/medium/trevor_smith.jpeg?1607127996");
+  background-size: cover;
+}
+
+#kenny {
+  background-image: url("https://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/005/796/medium/Kenny_Zeng.jpg?1607127823");
+  background-size: cover;
 }
 
 .social-links-container {
@@ -214,4 +232,9 @@
 
 .link-imgs:hover {
   cursor: pointer;
+}
+
+.name-header {
+  color: white;
+  font-size: 30px;
 }
