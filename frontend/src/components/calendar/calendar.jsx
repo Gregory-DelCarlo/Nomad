@@ -65,7 +65,7 @@ export default class Calendar extends React.Component {
           </label>
                 </div>
                 <div className='calendar-sidebar-section'>
-                    <h2>All Events ({this.state.currentEvents.length})</h2>
+                    <h2>All Hikes({this.state.currentEvents.length})</h2>
                     <ul>
                         {this.state.currentEvents.map(renderSidebarEvent)}
                     </ul>
@@ -115,6 +115,12 @@ function renderEventContent(eventInfo) {
         </>
     )
 }
+
+
+removehike = () => {
+    clickInfo.event.remove()
+}
+
 
 // handleEventClick = (clickInfo) => {
 //     if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
