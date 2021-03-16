@@ -5,6 +5,10 @@ import carouselImg1 from "../../assets/images/carousel-img-1.jpg";
 import img1 from "../../assets/images/1.jpg";
 import img2 from "../../assets/images/2.jpg";
 import img3 from "../../assets/images/3.jpg";
+import angellist from "../../assets/images/angellist.png";
+import github from "../../assets/images/github.png";
+import linkedin from "../../assets/images/linkedin.png";
+
 import carouselImg2 from "../../assets/images/carousel-img-2.jpg";
 import carouselImg3 from "../../assets/images/carousel-img-3.jpg";
 // import trail from "../../assets/images/trail.gif";
@@ -70,7 +74,7 @@ export default class MainPage extends React.Component {
             </Carousel.Item>
           </Carousel>
         </div>
-        <section className="main-page-section">
+        <section className="main-page-section section">
           <h2 className="section-header">Customizable Trail Planner</h2>
           <p className="section-body">Get away from city life by discovering a new adventure. 
               Choose a route from some of the most popular trails in California.</p>
@@ -85,7 +89,7 @@ export default class MainPage extends React.Component {
           <img src={trail} className="trail-demo-gif"/>
         </div> */}
 
-        <section className="main-page-section">
+        <section className="main-page-section section">
           <h2 className="section-header">Plan What You Need for Your Trip</h2>
           <p className="section-body">Do you need trail mix? Multi-tool?
             Or do you need to bring a compass? Decide on your essentials and pack accordingly.
@@ -98,14 +102,66 @@ export default class MainPage extends React.Component {
           <h2 id="section-signup-btn" className="section-header" onClick={this.handleClick}>Sign Up</h2>
         </section>
 
-        <section className="main-page-section">
+        <section className="main-page-section section">
           <h2 className="section-header">Define Your Parameters</h2>
           <p className="section-body">Make your next outdoor trip the best trip ever with Nomad</p>
         </section>
 
         <section className="main-page-section d3">
-          <div className="section-header">About Us</div>
-          <p className="section-body">hi</p>
+          <div className="about-header">About Us</div>
+
+          <div className="about-footer-container">
+            <div className="about-person-container">
+              <div className="individual-container">
+                <h3>
+                  bob1
+                </h3>
+                <div className="about-person-img">
+                </div>
+                <div classname="social-links-container">
+                  <a href="google.com"><img src={angellist} class="link-imgs" /></a>
+                  <a href="google.com"><img src={github} class="link-imgs" /></a>
+                  <a href="google.com"><img src={linkedin} class="link-imgs" /></a>
+                </div>
+              </div>
+              <div className="individual-container">
+                <h3>
+                  bob1
+                </h3>
+                <div className="about-person-img">
+                </div>
+                <div classname="social-links-container">
+                  <a href="google.com"><img src={angellist} class="link-imgs" /></a>
+                  <a href="google.com"><img src={github} class="link-imgs" /></a>
+                  <a href="google.com"><img src={linkedin} class="link-imgs" /></a>
+                </div>
+              </div>
+              <div className="individual-container">
+                <h3>
+                  bob1
+                </h3>
+                <div className="about-person-img">
+                </div>
+                <div classname="social-links-container">
+                  <a href="google.com"><img src={angellist} class="link-imgs" /></a>
+                  <a href="google.com"><img src={github} class="link-imgs" /></a>
+                  <a href="google.com"><img src={linkedin} class="link-imgs" /></a>
+                </div>
+              </div>
+              <div className="individual-container">
+                <h3>
+                  bob1
+                </h3>
+                <div className="about-person-img">
+                </div>
+                <div classname="social-links-container">
+                  <a href="google.com"><img src={angellist} class="link-imgs" /></a>
+                  <a href="google.com"><img src={github} class="link-imgs" /></a>
+                  <a href="google.com"><img src={linkedin} class="link-imgs" /></a>
+                </div>
+              </div>
+            </div>
+          </div>
         </section>
 
 
