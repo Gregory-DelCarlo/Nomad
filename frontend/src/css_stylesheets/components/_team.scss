@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 650px;
+  height: 670px;
 }
 
 .team-box {
@@ -14,18 +14,17 @@
   width: 50%;
   border-radius: 6px;
   padding: 40px;
-  background-color: rgb(121,80,0);
-  color: rgb(230,230,230);
-  border: 10px solid black;
+  background-color: #6E5B4B;
+  box-shadow: 2px 4px 12px 3px rgb(170, 169, 169);
 }
 
 .team-box > h1 {
   font-size: 30px;
   margin-bottom: 10px;
-  background-color: rgb(85,107,48);
+  background-color: #52392F;
   border-radius: 6px;
   padding: 15px;
-  border: 2px solid black;
+  border: 2px solid #fff;
 }
 
 .team-form {
@@ -43,14 +42,8 @@
 .team-form > input {
   margin-bottom: 10px;
   border-radius: 4px;
-}
-
-.team-form > button {
-  background-color: rgb(85,107,48);
-  color: rgb(230,230,230);
-  font-size: 20px;
-  padding: 10px;
-  border-radius: 4px;
+  background-color: #816B58;
+  color: #fff;
 }
 
 .team-form-list {
@@ -70,8 +63,8 @@
   margin-top: 10px;
   margin-bottom: 10px;
   border-radius: 4px;
-  border: 2px solid black;
-  background-color: rgb(85,107,48);
+  border: 2px solid #fff;
+  background-color: #52392F;
   overflow-y: auto;
 }
 
@@ -79,15 +72,23 @@
   padding: 5px;
   margin: 5px;
   border-radius: 3px;
-  background-color: rgb(142,96,0);
-  border: 2px solid rgb(121,80,0);
+  background-color: #6E5B4B;
+  border: 2px solid #fff;
   font-size: 15px;
 }
 
-.team-box > button {
-  background-color: rgb(85,107,48);
-  color: rgb(230,230,230);
+.team-btn {
+  background-color: #4E6447;
+  color: #fff;
   font-size: 20px;
   padding: 10px;
   border-radius: 4px;
+}
+
+.team-btn:hover {
+  background-color: #325D41;
+}
+
+.team-btn:active {
+  background-color: #145E18;
 }

@@ -16,7 +16,8 @@
   padding: 40px;
   background-color: #6E5B4B;
   color: #939b91;
-  border: 5px solid #fff;
+  // border: 5px solid #fff;
+  box-shadow: 2px 4px 12px 3px rgb(170, 169, 169);
 }
 
 .start-box > h1 {
@@ -45,6 +46,7 @@
   margin-bottom: 10px;
   border-radius: 4px;
   background: #816B58;
+  color: #fff;
 }
 
 .start-form > button {
@@ -53,4 +55,12 @@
   font-size: 20px;
   padding: 10px;
   border-radius: 4px;
+}
+
+.start-form > button:hover {
+  background-color: #325D41;
+}
+
+.start-form > button:active {
+  background-color: #145E18;
 }
