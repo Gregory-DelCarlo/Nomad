@@ -3,9 +3,6 @@
   background: #6E5B4B;
   margin: 0 auto;
   opacity: 1;
-  border-radius: 8px;
-  box-shadow: 0px 0px 0px 4px #253d1a;
-
 }
 
 .modal {
@@ -38,12 +35,13 @@
   flex-direction: column;
   justify-content: center;
   padding: 15px;
+  border-radius: 3px;
 }
 
 .auth-form-field {
   font-family: 'Raleway', sans-serif;
   font-size: 25px;
-  color: #fff;
+  color: #fff!important;
   
 }
 
@@ -84,23 +82,22 @@
   border: 1px solid #fff;
 }
 
-#submit {
+.auth-form-button {
   cursor: pointer;
   color: #fff;
   background: #4E6447;
-  font-family: 'Montserrat';
-  font-size: 18px;
+  font-size: 25px;
   padding: 10px 0px;
+  margin-bottom: 5px;
   outline: 0;
   border: none;
-
 }
 
-#submit:hover {
+.auth-form-button:hover {
   background: #325D41;
 }
 
-#submit:active {
+.auth-form-button:active {
   background: #145E18;
 }
 
@@ -108,7 +105,6 @@
   cursor: pointer;
   color: white;
   background: rgb(37, 61, 26);
-  font-family: 'Architects Daughter';
   font-size: 24px;
   padding: 10px 0px;
   outline: 0;
