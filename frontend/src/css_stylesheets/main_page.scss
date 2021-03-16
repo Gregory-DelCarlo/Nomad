@@ -13,18 +13,17 @@
   width: 100%;
 }
 
-.carousel-header {
-  font-family: 'Montserrat';
-  color: white;
-  font-size: 40px;
-  font-weight: 900;
-  position: absolute;
-  z-index: 5;
-  text-align: center;
-  display: inline-block;
-  vertical-align: middle;
-  margin: 0 auto;
-}
+// .carousel-header {
+//   font-family: 'Montserrat';
+//   font-size: 38px;
+//   font-weight: 900;
+//   position: absolute;
+//   z-index: 5;
+//   text-align: center;
+//   display: inline-block;
+//   vertical-align: middle;
+//   margin: 0 auto;
+// }
 
 .carousel-caption {
   position: absolute;
@@ -40,8 +39,9 @@
 }
 
 .carousel-caption h1 {
-  font-size: 70px;
-  color: rgb(46, 44, 44);
+  font-size: 55px;
+  font-weight: 500;
+  color: rgb(0,0,0);
   padding-bottom: 15px;
 }
 
@@ -57,11 +57,14 @@
   font-size: 30px;
   color: rgb(0,0,0)!important;
   // text-shadow: shadow1(5px 5px 0 rgb(7, 7, 7)),shadow2(5px 5px 0 rgb(7, 7, 7));
+  text-decoration: underline;
+  transition: 0.5s;
 }
 
 .link:hover {
   cursor: pointer;
-  text-decoration: underline;
+  font-size: 35px;
+  color: #fff!important;
 }
 
 
@@ -250,3 +253,9 @@
   color: white;
   font-size: 30px;
 }
+.arrow {
+  font-family: 'Architects Daughter', cursive;
+  color: inherit!important;
+  font-size: inherit;
+}
+

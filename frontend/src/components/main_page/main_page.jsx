@@ -22,7 +22,7 @@ export default class MainPage extends React.Component {
   }
 
   handleClick() {
-    let signup_btn = document.getElementsByClassName("signup-btn")[0];
+    let signup_btn = document.getElementById("signup-btn");
     signup_btn.click();
   }
 

@@ -14,6 +14,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     action: user => dispatch(login(user)),
+    demoForm: (demo) => dispatch(login(demo)),
     closeModal: () => dispatch(closeModal()),
     clearErrors: () => dispatch(clearErrors())
   }

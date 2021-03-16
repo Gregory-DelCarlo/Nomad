@@ -30,6 +30,7 @@
     "mongoose": "^5.11.17",
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
+    "react-calendar-component": "^3.0.0",
     "styled-components": "^5.2.1",
     "validator": "^13.5.2"
   },

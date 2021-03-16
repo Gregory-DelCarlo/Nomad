@@ -39,7 +39,7 @@ class Team extends React.Component {
               onChange={this.handleChange('name')}
               value={this.state.name}
             />
-            <button type='submit'>Add Team Member</button>
+            <button className='team-btn' type='submit'>Add Team Member</button>
           </form>
           <div className='team-form-list'>
             <label>Your Team</label>
@@ -49,7 +49,7 @@ class Team extends React.Component {
               ))}
             </ul>
           </div>
-          <button onClick={this.handleSubmit}>Next</button>
+          <button className='team-btn' onClick={this.handleSubmit}>Next</button>
         </div>
       </div>
     )
