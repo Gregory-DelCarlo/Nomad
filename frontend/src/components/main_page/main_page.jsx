@@ -1,12 +1,13 @@
 import React from 'react';
-import { Link, Redirect } from 'react-router-dom';
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import carouselImg1 from "../../assets/images/carousel-img-1.jpg";
+import img1 from "../../assets/images/1.jpg";
+import img2 from "../../assets/images/2.jpg";
+import img3 from "../../assets/images/3.jpg";
 import carouselImg2 from "../../assets/images/carousel-img-2.jpg";
 import carouselImg3 from "../../assets/images/carousel-img-3.jpg";
-import trail from "../../assets/images/trail.gif";
-import { PromiseProvider } from 'mongoose';
+// import trail from "../../assets/images/trail.gif";
 
 export default class MainPage extends React.Component {
   constructor(props) {
@@ -24,17 +25,12 @@ export default class MainPage extends React.Component {
     return (
       <div className="main-page-container">
         <div className="carousel-container">
-          {/* <div className="carousel-header-wrapper">
-            <div className="carousel-header">
-                Plan Your Trip Today
-            </div>
-          </div> */}
-          
           <Carousel className="carousel-content" pause='false'>
             <Carousel.Item interval={3500}>
               <img
                 className="carosel-item"
-                src={carouselImg1}
+                src={img1}
+                // src={carouselImg1}
                 alt='carousel item 1'
               />
               <Carousel.Caption>
@@ -47,7 +43,8 @@ export default class MainPage extends React.Component {
             <Carousel.Item interval={3000}>
               <img
                 className="carosel-item"
-                src={carouselImg2}
+                src={img2}
+                // src={carouselImg2}
                 alt='carousel item 2'
               />
               <Carousel.Caption>
@@ -60,7 +57,8 @@ export default class MainPage extends React.Component {
             <Carousel.Item  interval={3000}>
               <img
                 className="carosel-item"
-                src={carouselImg3}
+                src={img3}
+                // src={carouselImg3}
                 alt='carousel item 3'
               />
               <Carousel.Caption>
