@@ -31,7 +31,8 @@
 }
 
 .carousel-caption h1 {
-  font-size: 60px;
+  font-size: 35px;
+  font-weight: 500;
   color: rgb(0,0,0)!important;
   padding-bottom: 15px;
 }
@@ -44,6 +45,9 @@
 }
 
 .link:hover {
+  font-size: 40px;
+  color: #fff!important;
+  transition: 2;
 }
 
 
@@ -67,3 +71,10 @@
 .modal-form button {
   border-radius: 3px;
 }
+
+.arrow {
+  font-family: 'Architects Daughter', cursive;
+  color: inherit!important;
+  font-size: inherit;
+}
+

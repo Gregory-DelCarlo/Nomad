@@ -94,19 +94,12 @@
   user-select: none; /* Non-prefixed version, currently */
 }
 
-
-.login-btn {
-  margin-left: 5px;
-  background: #4E6447!important;
-
-}
-
-.signup-btn {
+.auth-btn {
   margin-left: 5px;
   background: #4E6447!important;
 }
 
-.logout-btn {
-  background: #4E6447!important;
+.auth-btn:hover {
+  background: #325D41!important;
 }
 
