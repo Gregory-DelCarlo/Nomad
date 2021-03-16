@@ -39,9 +39,9 @@
 }
 
 .carousel-caption h1 {
-  font-size: 35px;
+  font-size: 55px;
   font-weight: 500;
-  color: rgb(0,0,0)!important;
+  color: rgb(0,0,0);
   padding-bottom: 15px;
 }
 
@@ -58,12 +58,19 @@
   color: rgb(0,0,0)!important;
   // text-shadow: shadow1(5px 5px 0 rgb(7, 7, 7)),shadow2(5px 5px 0 rgb(7, 7, 7));
   text-decoration: underline;
+  transition: 0.5s;
 }
 
 .link:hover {
+<<<<<<< HEAD
   font-size: 40px;
   color: #fff!important;
   transition: 2;
+=======
+  cursor: pointer;
+  font-size: 35px;
+  color: #fff!important;
+>>>>>>> 65598e59a4ef38c4eb06ebc1ef02fc5bfd8b4d2f
 }
 
 
@@ -252,3 +259,9 @@
   color: white;
   font-size: 30px;
 }
+.arrow {
+  font-family: 'Architects Daughter', cursive;
+  color: inherit!important;
+  font-size: inherit;
+}
+
