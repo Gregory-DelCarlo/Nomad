@@ -51,8 +51,8 @@ class Backpack extends React.Component {
   addDateLocation(newPage, itemNum, date, trailName, parkId) {
     this.setState({currentPage: newPage, 
                   numItems: itemNum, 
-                  date, 
-                  trailName, 
+                  date: date, 
+                  trailName: trailName, 
                   parkId
     })
   }
