@@ -2,6 +2,7 @@ import React from 'react';
 import logo from '../../assets/images/nomad-logo.png';
 
 
+
 class SessionForm extends React.Component {
 
   constructor(props) {
@@ -14,10 +15,22 @@ class SessionForm extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoAttempt = false;
+    this.loginDemo = this.loginDemo.bind(this)
   }
 
   componentWillUnmount() {
     this.props.clearErrors();
+  }
+
+  loginDemo(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    const demo = {
+      username: "Demo User",
+      password: "123456"
+    }
+
+    this.props.demoForm(demo).then(this.props.closeModal)
   }
 
   handleSubmit(e) {
@@ -41,6 +54,9 @@ class SessionForm extends React.Component {
         <div className='modal-form-header-wrapper'>
           <div className="modal-form-header"><img className='logo'src={logo} alt='nomad logo'/></div>
         </div>
+        {/* <Modal.Header closeButton>
+        </Modal.Header> */}
+
         <form className="modal-form" onSubmit={this.handleSubmit} >
           <div>
             <span className='auth-form-field'>Username</span>
@@ -73,6 +89,7 @@ class SessionForm extends React.Component {
           }
 
           <button id='submit' type='submit'><span className='auth-form-field'>{this.props.formType}</span></button>
+          <button className="demo-button" onClick={this.loginDemo}>Demo Sign In</button>
         </form>
       </div>
     )
