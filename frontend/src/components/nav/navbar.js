@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom'
 import ParksDropDownContainer from '../dropdowns/parks_dropdown_container';
 import Modal from '../modal/modal';
 import logo from '../../assets/images/nomad-logo.png';
+import { GrUserWorker } from 'react-icons/gr'
 
 
 class NavBar extends React.Component {
@@ -37,6 +38,12 @@ class NavBar extends React.Component {
         <div>
           <button  className="auth-btn" onClick={this.logoutUser}>Logout</button>
         </div>
+        <div>
+
+          <Link to={`/user/${this.props.currentUser.id}`}
+          ><GrUserWorker/></Link>
+        </div>
+
       </div>
       
     )

@@ -4,8 +4,6 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import img1 from "../../assets/images/1.jpg";
 import img2 from "../../assets/images/2.jpg";
 import img3 from "../../assets/images/3.jpg";
-import Calendar from '../calendar/calendar'
-
 import angellist from "../../assets/images/angellist.png";
 import github from "../../assets/images/github.png";
 import linkedin from "../../assets/images/linkedin.png";
@@ -179,8 +177,6 @@ export default class MainPage extends React.Component {
             </div>
           {/* </div> */}
         </section>
-        <Calendar/>
-
       </div>
     )
   }

@@ -1,6 +1,4 @@
-import React from 'react';
 import Profile from './profile';
-import {getUser} from '../../actions/user_actions';
 import {clearErrors} from '../../actions/session_actions';
 import {connect} from 'react-redux';
 
@@ -11,9 +9,9 @@ const mSTP = (state) => {
     })
 }
 
-const mDTP = (dispatch, ownProps) => {
+const mDTP = (dispatch) => {
     return ({
-        getUser: (id) => dispatch(getUser(id)),
+    
         clearErrors: () => dispatch(clearErrors()),
     })
 }
