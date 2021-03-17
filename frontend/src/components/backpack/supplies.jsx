@@ -9,9 +9,6 @@ class Supplies extends React.Component {
       foodItem: '',
       equipmentItem: ''
     }
-  }
-  
-  componentDidMount() {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleAddFood = this.handleAddFood.bind(this);
     this.handleAddEquipment = this.handleAddEquipment.bind(this);

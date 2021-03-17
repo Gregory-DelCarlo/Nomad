@@ -10,17 +10,12 @@ const TripSchema = new Schema({
     type: String,
     required: true
   },
-  time: {
+  date: {
+    type: Date
+  },
+  trailName: {
     type: String
   },
-  // time: {
-  //   type: Date,
-  //   default: Date.now
-  // },
-  // location: {
-  //   type: Schema.Types.ObjectId,
-  //   ref: "parks"
-  // },
   team: {
     type: Array
   },

@@ -53,6 +53,12 @@
     border-radius: 5px;
 }
 
+.close {
+  font-size: 50px;
+  font-weight: 400;
+  transition: 0.3s;
+}
+
 .modal-form {
   display: flex;
   flex-direction: column;
@@ -70,12 +76,15 @@
 .auth-input {
   font-family: 'Architects Daughter', cursive;
   font-size: 25px;
-  color: white;
-  background: rgb(117, 139, 102)
+  color: #fff;
+  background: #816B58;
+  margin-top: 5px;
+  transition: 0.3s;
 }
 
 .auth-input.error {
-  box-shadow: 0px 0px 0px 2px #ff0000;
+  border: 1px solid #ff5200;
+  // box-shadow: 0px 0px 0px 1px #ff5200;;
 }
 
 .auth-error {
@@ -83,8 +92,8 @@
   // font-family: 'Architects Daughter';
   font-family: 'Raleway', sans-serif;
   font-size: 15px;
-  font-weight: 700;
-  color: red;
+  font-weight: 400;
+  color: #ff5200;
   margin-top: -25px;
 }
 
@@ -115,6 +124,33 @@
   border: none;
 
 }
+
+.auth-separator {
+  color: #fff;
+  font-size: 20px;
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.auth-separator::before, .auth-separator::after {
+  content: "";
+  display: block;
+  height: .1em;
+  width: 40%;
+}
+
+.auth-separator::before {
+  background: linear-gradient(to left, #6e6156, #fff);
+  margin-right: auto;
+}
+
+.auth-separator::after {
+  background: linear-gradient(to right, #6e6156, #fff);
+  margin-left: auto;
+}
+
 
 .demo-button{
   cursor: pointer;

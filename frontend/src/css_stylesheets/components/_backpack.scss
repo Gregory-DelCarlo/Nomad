@@ -47,6 +47,10 @@
   font-size: 30px;
 }
 
+.item-list > li:hover {
+  cursor: pointer;
+}
+
 .backpack-view {
   width: 50%;
   min-width: 500px;
