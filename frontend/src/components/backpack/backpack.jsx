@@ -1,8 +1,6 @@
 import React from 'react';
 import Start from './start';
 import DateLocation from './date_location';
-//test components
-import Test from './test';
 import Team from './team';
 import Supplies from './supplies';
 import Review from './review';
@@ -53,8 +51,8 @@ class Backpack extends React.Component {
   addDateLocation(newPage, itemNum, date, trailName, parkId) {
     this.setState({currentPage: newPage, 
                   numItems: itemNum, 
-                  date, 
-                  trailName, 
+                  date: date, 
+                  trailName: trailName, 
                   parkId
     })
   }
