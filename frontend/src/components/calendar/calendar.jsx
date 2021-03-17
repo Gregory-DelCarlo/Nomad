@@ -4,20 +4,42 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import {createEventId } from './event-utils'
-import getUserTrips from '../../util/trips_api_util'
+import {getUserTrips} from '../../util/trips_api_util'
 
 export default class Calendar extends React.Component {
-
-    state = {
+    constructor(props) {
+        super(props)
+        this.allUserTrips = this.allUserTrips.bind(this)
+        this.state = {
         weekendsVisible: true,
-        currentEvents: []
+            currentEvents: []
+        }
     }
 
-    // componentDidMount() {
-    // }
+
+    componentDidMount() {
+        this.allUserTrips()
+    }
     
     // getUserTrips()
-   
+   allUserTrips(){
+       const userTrips = getUserTrips().then(
+           trips => {
+               debugger
+               this.state.currentEvents = trips.map(
+                    ((trip) => {
+                        return ({
+                            id: trip._id,
+                            title: trip.title,
+                            start: "2020" + String(Math.random(1,12).floor()) + String(Math.random(1,25).floor)//placeholder for date/time "yyyy-mm-dd"
+                        //    end: // "yyyy-mm-dd"
+                        })
+                    }) 
+                ) 
+           }
+       )
+       return userTrips
+   }
 
     render() {
         return (
@@ -40,6 +62,7 @@ export default class Calendar extends React.Component {
                         dayMaxEvents={true}
                         weekends={this.state.weekendsVisible}
                         select={this.handleDateSelect}
+                        intialEvents={this.state.currentEvents}
                         eventContent={renderEventContent} // custom render function
                         eventClick={this.handleEventClick}
                         eventsSet={this.handleEvents} // called after events are initialized/added/changed/removed

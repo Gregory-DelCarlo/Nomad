@@ -105,3 +105,19 @@
   background: #789448;
 }
 
+.user-icon{
+  
+  color: #a8aaa5;
+  /* background-color: antiquewhite; */
+  display: flex;
+  /* right: 0px; */
+  position: relative;
+  right: 14px;
+  background-color:  #206615;
+  border-radius: 6px;
+  padding: 3px;
+}
+
+.user-icon:hover{
+   background: #789448;
+}

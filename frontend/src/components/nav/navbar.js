@@ -35,13 +35,13 @@ class NavBar extends React.Component {
   navContainer() {
     return(
       <div className="auth-buttons">
-        <div>
-          <button  className="auth-btn" onClick={this.logoutUser}>Logout</button>
-        </div>
-        <div>
+        <div className="user-icon">
 
           <Link to={`/user/${this.props.currentUser.id}`}
-          ><GrUserWorker/></Link>
+          ><GrUserWorker size="28px"/></Link>
+        </div>
+        <div>
+          <button  className="auth-btn" onClick={this.logoutUser}>Logout</button>
         </div>
 
       </div>
