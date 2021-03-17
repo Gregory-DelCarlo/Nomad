@@ -4,7 +4,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import {createEventId } from './event-utils'
-import {getUserTrips} from '../../util/trips_api_util'
+import {fetchUserTrips} from '../../actions/trip_actions'
 
 export default class Calendar extends React.Component {
     constructor(props) {
@@ -18,27 +18,21 @@ export default class Calendar extends React.Component {
 
 
     componentDidMount() {
-        this.allUserTrips()
+        fetchUserTrips()
     }
     
-    // getUserTrips()
    allUserTrips(){
-       const userTrips = getUserTrips().then(
-           trips => {
-               debugger
-               this.state.currentEvents = trips.map(
-                    ((trip) => {
-                        return ({
-                            id: trip._id,
-                            title: trip.title,
-                            start: "2020" + String(Math.random(1,12).floor()) + String(Math.random(1,25).floor)//placeholder for date/time "yyyy-mm-dd"
-                        //    end: // "yyyy-mm-dd"
-                        })
-                    }) 
-                ) 
-           }
+        debugger
+        this.state.currentEvents = this.props.trip.map(
+            ((trip) => {
+                return ({
+                    id: trip._id,
+                    title: trip.title,
+                    start: "2020" + String(Math.random(1,12).floor()) + String(Math.random(1,25).floor)//placeholder for date/time "yyyy-mm-dd"
+                //    end: // "yyyy-mm-dd"
+                })
+            }) 
        )
-       return userTrips
    }
 
     render() {
