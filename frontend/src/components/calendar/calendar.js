@@ -4,7 +4,7 @@ import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
 import {createEventId } from './event-utils'
-import {getUserTrips} from '../../util/trips_api_util'
+import {fetchUserTrips} from '../../util/trips_api_util'
 
 export default class Calendar extends React.Component {
     constructor(props) {
@@ -23,7 +23,7 @@ export default class Calendar extends React.Component {
     
     // getUserTrips()
    allUserTrips(){
-       const userTrips = getUserTrips().then(
+       const userTrips = fetchUserTrips().then(
            trips => {
                debugger
                this.state.currentEvents = trips.map(
