@@ -3,8 +3,9 @@ import { getParks } from '../../actions/park_actions';
 import Park from './park';
 
 const mapStateToProps = (state, ownProps) => {
+    // debugger
     return ({
-        park: state.entities.parks[ownProps.match.params.parkId]
+        parkRid: state.entities.parks[ownProps.parkId].rid
     })
 };
 

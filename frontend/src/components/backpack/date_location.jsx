@@ -1,6 +1,6 @@
 import React from 'react';
 import ParksDropdownContainer from '../dropdowns/parks_dropdown_container'
-import Park from '../parks/park';
+import ParkContainer from '../parks/park_container';
 
 export default class DateLocation extends React.Component {
     constructor(props) {
@@ -31,7 +31,7 @@ export default class DateLocation extends React.Component {
         // debugger
         
         if (this.state.parkId) {
-            return <Park rid={this.props.parks[this.state.parkId].rid} />
+            return <ParkContainer parkId={this.state.parkId} />
         } 
       }
 
