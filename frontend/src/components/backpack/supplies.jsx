@@ -37,7 +37,7 @@ class Supplies extends React.Component {
   }
 
   render() {
-    debugger
+    // debugger
     const food = this.state.food;
     const equipment = this.state.equipment;
     return(

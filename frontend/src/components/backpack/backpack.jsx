@@ -146,7 +146,7 @@ class Backpack extends React.Component {
         />
       )
     } else if (this.state.currentPage === 'supplies form') {
-      debugger
+      // debugger
       return (
         <Supplies 
         clickAddItem={this.addSupplies} 
