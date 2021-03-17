@@ -49,9 +49,12 @@ class Backpack extends React.Component {
   }
 
   addDateLocation(newPage, itemNum, date, trailName, parkId) {
+    const splitDate = date.split("T");
+    const newDate = splitDate[0];
+
     this.setState({currentPage: newPage, 
                   numItems: itemNum, 
-                  date: date, 
+                  date: newDate, 
                   trailName: trailName, 
                   parkId
     })
