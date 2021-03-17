@@ -1,10 +1,12 @@
 import React from 'react';
+import Trip from './trip';
 
 class TripList extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      trips: []
+      trips: [],
+      page: 0
     }
   }
 
@@ -22,11 +24,21 @@ class TripList extends React.Component {
 
   getTrips() {
     return (
-      <ul className="trip-list">
-        {this.state.trips.map((trip, ind) => (
-          <li key={ind}> {trip.title} </li>
-        ))}
-      </ul> 
+      <div className="trip-list">
+        <ul>
+          {this.state.trips.map((trip, index) => (
+            <li key={index}> {trip.title} </li>
+          ))}
+        </ul> 
+      </div>
+    )
+  }
+
+  showTrip(index) {
+    return (
+      <div className="trip-show-page">
+        <Trip trip={this.state.trips[index]}/>
+      </div>
     )
   }
 
@@ -35,6 +47,9 @@ class TripList extends React.Component {
       <div className="trips-page">
         <div className="backpack">
           {this.getTrips()}
+        </div>
+        <div className="trip-show">
+          {this.showTrip(this.state.page)}
         </div>
       </div>
     )
