@@ -9,13 +9,13 @@ class Supplies extends React.Component {
       foodItem: '',
       equipmentItem: ''
     }
-  }
-  
-  componentDidMount() {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleAddFood = this.handleAddFood.bind(this);
     this.handleAddEquipment = this.handleAddEquipment.bind(this);
   }
+  
+  // componentDidMount() {
+  // }
 
   handleChange(field) {
     return e => this.setState({ [field]: e.target.value })
@@ -37,6 +37,7 @@ class Supplies extends React.Component {
   }
 
   render() {
+    debugger
     const food = this.state.food;
     const equipment = this.state.equipment;
     return(
