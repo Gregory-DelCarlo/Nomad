@@ -6,7 +6,7 @@ class TripList extends React.Component {
     super(props)
     this.state = {
       trips: [],
-      page: 0
+      page: "start"
     }
   }
 
@@ -22,12 +22,21 @@ class TripList extends React.Component {
     else return null;
   }
 
+  changePage(index) {
+    this.setState({page: index})
+  }
+
   getTrips() {
     return (
       <div className="trip-list">
         <ul>
           {this.state.trips.map((trip, index) => (
-            <li key={index}> {trip.title} </li>
+            <li 
+              key={index}
+              onClick={() => this.changePage(index)}
+            > 
+              {trip.title} 
+            </li>
           ))}
         </ul> 
       </div>
@@ -35,11 +44,15 @@ class TripList extends React.Component {
   }
 
   showTrip(index) {
-    return (
-      <div className="trip-show-page">
-        <Trip trip={this.state.trips[index]}/>
-      </div>
-    )
+    if (index === 'start') {
+      return null;
+    } else {
+      return (
+        <div className="trip-show-page">
+          <Trip trip={this.state.trips[index]}/>
+        </div>
+      )
+    }
   }
 
   render() {
@@ -48,7 +61,7 @@ class TripList extends React.Component {
         <div className="backpack">
           {this.getTrips()}
         </div>
-        <div className="trip-show">
+        <div className="trip-show-section">
           {this.showTrip(this.state.page)}
         </div>
       </div>
