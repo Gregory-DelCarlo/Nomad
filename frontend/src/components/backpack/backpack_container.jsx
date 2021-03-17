@@ -8,7 +8,6 @@ import { fetchTrip,
 import {getParks} from '../../actions/park_actions';
 
 const mapStateToProps = state => {
-  // debugger
   return ({
   userId: state.session.user.id,
   currentPark: state.ui.currentPark,

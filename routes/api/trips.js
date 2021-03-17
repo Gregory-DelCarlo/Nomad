@@ -52,13 +52,14 @@ router.put('/update/:id', (req, res) => {
     }
   
     const updatedTrip = {
-      user: req.user.id,
+      user: req.body.user,
       title: req.body.title,
-      // time: req.body.time,
-      // location: req.body.location,
       team: req.body.team,
       food: req.body.food,
-      equipment: req.body.equipment
+      equipment: req.body.equipment,
+      date: req.body.date,
+      parkId: req.body.parkId,
+      trailName: req.body.trailName
     }
 
     Trip.findByIdAndUpdate(
