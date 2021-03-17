@@ -29,16 +29,18 @@ class TripList extends React.Component {
   getTrips() {
     return (
       <div className="trip-list">
-        <ul>
-          {this.state.trips.map((trip, index) => (
-            <li 
-              key={index}
-              onClick={() => this.changePage(index)}
-            > 
-              {trip.title} 
-            </li>
-          ))}
-        </ul> 
+        <div className="trip-list-wrapper">
+          <ul>
+            {this.state.trips.map((trip, index) => (
+              <li 
+                key={index}
+                onClick={() => this.changePage(index)}
+              > 
+                {trip.title} 
+              </li>
+            ))}
+          </ul> 
+        </div>
       </div>
     )
   }
