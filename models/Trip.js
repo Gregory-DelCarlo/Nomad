@@ -13,10 +13,6 @@ const TripSchema = new Schema({
   date: {
     type: Date
   },
-  // time: {
-  //   type: Date,
-  //   default: Date.now
-  // },
   trailName: {
     type: String
   },
