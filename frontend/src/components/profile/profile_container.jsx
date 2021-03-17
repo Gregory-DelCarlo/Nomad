@@ -1,4 +1,3 @@
-import React from 'react';
 import Profile from './profile';
 import {getUser} from '../../actions/user_actions';
 import {clearErrors} from '../../actions/session_actions';

@@ -21,6 +21,7 @@ class Start extends React.Component {
   }
 
   handleValidation() {
+    this.setState( {error: null} )
     let length = this.state.title.length;
     if (length === 0) {
       this.setState( {error: 'Title field is required'} );
