@@ -8,9 +8,9 @@ const receiveParks = parks => ({
     parks
 })
 
-export const receivePark = park_rid => ({
+export const receivePark = parkId => ({
     type: RECEIVE_PARK,
-    park_rid
+    parkId
 })
 
 

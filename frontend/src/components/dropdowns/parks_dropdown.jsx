@@ -16,8 +16,9 @@ export default class ParksDropdown extends React.Component {
         this.props.getParks();
     }
 
-    handleClick(e) {
-        const currentParkId = e.split('/')[2]
+    handleClick(parkId) {
+        // debugger
+        const currentParkId = parkId;
         this.props.receivePark(currentParkId);
 
         window.localStorage.setItem("currentParkId", JSON.stringify(currentParkId))
@@ -39,19 +40,19 @@ export default class ParksDropdown extends React.Component {
             switch (park.location){
                 case ("Northern California"):
                     parkslist['Northern California'].push( 
-                    <Dropdown.Item className='dropdown-items' key={park._id} href={`#/park/${park._id}`}>
+                    <Dropdown.Item className='dropdown-items' key={park._id} onSelect={() => this.handleClick(park._id)}>
                             {park.name}
                     </Dropdown.Item>)
                      return ""
                 case ( "Central California"):
                     parkslist["Central California"].push(
-                    <Dropdown.Item className='dropdown-items' key={park._id} href={`#/park/${park._id}`}>
+                    <Dropdown.Item className='dropdown-items' key={park._id}>
                             {park.name}
                     </Dropdown.Item>)
                     return ""
                 case ("Southern California"):
                     parkslist["Southern California"].push(
-                    <Dropdown.Item className='dropdown-items' key={park._id} href={`#/park/${park._id}`}>
+                    <Dropdown.Item className='dropdown-items' key={park._id}>
                             {park.name}
                         
                     </Dropdown.Item>)
@@ -70,13 +71,13 @@ export default class ParksDropdown extends React.Component {
 
         return (
             <div className='map-menu'>
-                    <DropdownButton menuAlign='left' title="Northern California" className='list-button' onSelect={this.handleClick}>
+                    <DropdownButton menuAlign='left' title="Northern California" className='list-button'>
                         {allParks['Northern California']} 
                     </DropdownButton>
-                    <DropdownButton title="Central California" className="list-button" onSelect={this.handleClick}>
+                    <DropdownButton title="Central California" className="list-button">
                         {allParks['Central California']}
                     </DropdownButton>
-                    <DropdownButton title='Southern California' className='list-button' onSelect={this.handleClick}>
+                    <DropdownButton title='Southern California' className='list-button'>
                         {allParks['Southern California']}
                     </DropdownButton>
             </div>

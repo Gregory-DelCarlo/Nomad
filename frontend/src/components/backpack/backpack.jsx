@@ -137,7 +137,7 @@ class Backpack extends React.Component {
       )
     } else if (this.state.currentPage === 'time and location form') {
       return (
-        <DateLocation clickAddItem={this.addDateLocation} currentPark={this.props.currentPark} parks={this.props.parks}/>
+        <DateLocation clickAddItem={this.addDateLocation} currentPark={this.props.currentPark}/>
       )
     } else if (this.state.currentPage === 'team form') {
       return (
