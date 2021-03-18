@@ -19,7 +19,7 @@ class Profile extends React.Component {
            
         <div>
             {/* <div className='greeting-user'>Hi, {currentUser.username} </div> */}
-            {/* <Calendar/> */}
+            <Calendar/>
          </div>
 
         )
