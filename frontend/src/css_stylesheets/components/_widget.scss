@@ -1,4 +1,4 @@
-.map-page {
+.widget-page {
     display: flex;
     flex-direction: column;
     // align-items: center;
@@ -9,19 +9,23 @@
     // background-size: cover;
 }
 
-.map-container {
+.widget-container {
     display: flex;
     align-items: center;
     flex-direction: row;
+    margin-bottom: 5px;
+    box-shadow: 2px 8px 12px #60625f;
 }
 
-.map-info {
+.widget-info {
     background-color: #6e5b4b;
+    height: 300px;
 }
 
-.map-widget {
-    padding-left: 5px;
-    border-radius: 4px;
+.widget-map {
+    margin-left: 5px;
+    height: 300px;
+    width: 550px;
 }
 
 

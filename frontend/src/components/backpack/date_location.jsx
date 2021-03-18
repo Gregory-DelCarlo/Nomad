@@ -30,14 +30,14 @@ export default class DateLocation extends React.Component {
     renderTrailMap() {
       if (this.props.parkRid) {
         return(
-          <div className="map-page">
+          <div className="widget-page">
               {/* <Weather/> */}
-              <div className="map-container">
-                  <div className="map-info">
-                      <iframe title='region info' width="130" height="300" frameBorder="0" src={`https://www.trailforks.com/widgets/region_info/?rid=${this.props.parkRid}&counts=1&stats=1&title=1&w=800px&h=133&activitytype=6`}></iframe>
+              <div className="widget-container">
+                  <div className="widget-info">
+                      <iframe title='region info' width="130" height="100%" frameBorder="0" src={`https://www.trailforks.com/widgets/region_info/?rid=${this.props.parkRid}&counts=1&stats=1&title=1&w=100%&100%&activitytype=6`}></iframe>
                   </div>
-                  <div className="map-widget">
-                      <iframe title='region map' width="550" height="300" frameBorder="0" allowFullScreen src={`https://www.trailforks.com/widgets/region_map/?rid=${this.props.parkRid}&w=900px&h=500px&activitytype=6&maptype=trailforks&trailstyle=difficulty&controls=0&list=1&layers=labels,poi,polygon,directory,region&z=&lat=&lon=&hideunsanctioned=0`}></iframe>
+                  <div className="widget-map">
+                      <iframe title='region map' width="100%" height="100%" frameBorder="0" allowFullScreen src={`https://www.trailforks.com/widgets/region_map/?rid=${this.props.parkRid}&w=100%&h=300px&activitytype=6&maptype=trailforks&trailstyle=difficulty&controls=0&list=1&layers=labels,poi,polygon,directory,region&z=&lat=&lon=&hideunsanctioned=0`}></iframe>
                   </div>
               </div>
           </div>
