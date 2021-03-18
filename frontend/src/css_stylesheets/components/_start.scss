@@ -3,6 +3,7 @@
   justify-content: center;
   align-items: center;
   height: 600px;
+  
 }
 
 .start-box {
@@ -23,13 +24,15 @@
 
 .start-box > h1 {
   font-size: 30px;
+  color: #e2e0e0;
   margin-top: 60px;
   margin-bottom: 120px;
   background-color: #52392F;
   border-radius: 6px;
   padding: 15px;
   font-weight: 500;
-  border: 2px solid #fff;
+  border: 2px solid #50342a;
+  box-shadow: 1px 1px 9px -1px #3c3f3b;
 }
 
 .start-form {
@@ -41,21 +44,53 @@
 .start-form > label {
   font-size: 20px;
   margin-bottom: 20px;
+  color: #e2e0e0;
 }
 
-.start-form > input {
-  margin-bottom: 10px;
-  border-radius: 4px;
+.backpack-input {
+  box-sizing: border-box;
   background: #816B58;
-  color: #fff;
+  color: #e2e0e0;
+  width: 100%;
+  font-size: 18px;
+  line-height: 20px;
+  padding: 7px 8px;
+  margin-top: 5px;
+  margin-bottom: 40px;
+  border: 1px solid #3a3a3a;
+  border-radius: 5px;
+  font-family: "Raleway", sans-serif;
+  transition: 0.3s;
+}
+
+.backpack-input.error {
+  border: 1px solid #ff5200;
+}
+
+.backpack-input:focus {
+  outline: 0;
+  border: 1px solid lightgray;
+  background: #8d7560;
+}
+
+.backpack-input-error {
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  font-weight: 400;
+  color: #ff5200;
+  margin-top: -30px;
+  margin-bottom: 10px;
+  left: 0;
 }
 
 .start-form > button {
   background-color: #4E6447;
-  color: #939b91;
+  color: #e2e0e0;
   font-size: 20px;
   padding: 10px;
   border-radius: 4px;
+  transition: 0.3s;
 }
 
 .start-form > button:hover {

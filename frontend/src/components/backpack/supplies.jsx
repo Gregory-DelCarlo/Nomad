@@ -13,6 +13,9 @@ class Supplies extends React.Component {
     this.handleAddFood = this.handleAddFood.bind(this);
     this.handleAddEquipment = this.handleAddEquipment.bind(this);
   }
+  
+  // componentDidMount() {
+  // }
 
   handleChange(field) {
     return e => this.setState({ [field]: e.target.value })
@@ -34,17 +37,19 @@ class Supplies extends React.Component {
   }
 
   render() {
+    // debugger
     const food = this.state.food;
     const equipment = this.state.equipment;
     return(
       <div className="supplies">
         <div className="supplies-box">
-          <h1>Add your supplies!</h1>
+          <h1>Add your supplies</h1>
           <form className="food-form">
             <label>Enter a food item:</label>
             <input 
               type="text"
               onChange={this.handleChange('foodItem')}
+              className="backpack-input"
               value={this.state.foodItem}
             />
             <button onClick={this.handleAddFood}>Add</button>
@@ -54,6 +59,7 @@ class Supplies extends React.Component {
             <input 
               type="text"
               onChange={this.handleChange('equipmentItem')}
+              className="backpack-input"
               value={this.state.equipmentItem}
             />
             <button onClick={this.handleAddEquipment}>Add</button>

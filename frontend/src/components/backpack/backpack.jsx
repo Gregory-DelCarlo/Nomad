@@ -1,6 +1,7 @@
 import React from 'react';
 import Start from './start';
 import DateLocation from './date_location';
+//test components
 import Team from './team';
 import Supplies from './supplies';
 import Review from './review';
@@ -152,12 +153,13 @@ class Backpack extends React.Component {
         />
       )
     } else if (this.state.currentPage === 'supplies form') {
+      // debugger
       return (
         <Supplies 
-          clickAddItem={this.addSupplies} 
+        clickAddItem={this.addSupplies} 
         />
-      )
-    } else if (this.state.currentPage === 'review') {
+        )
+      } else if (this.state.currentPage === 'review') {
       return (
         <Review
           reviewBackpack={this.state}
