@@ -1,10 +1,10 @@
 .map-page {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     // align-items: center;
     justify-content: center;
-    padding-top: 20px;
-    height: 800px;
+    // padding-top: 20px;
+    // height: 800px;
     // background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../../assets/images/map-bg.jpg');
     // background-size: cover;
 }
@@ -12,22 +12,16 @@
 .map-container {
     display: flex;
     align-items: center;
-    flex-direction: column;
-    margin-right: 15px;
+    flex-direction: row;
 }
 
 .map-info {
-    background-color: rgb(134, 156, 119);
-    padding-top: 20px;
-    border-top: 3px solid rgb(37, 61, 26);
-    border-left: 3px solid rgb(37, 61, 26);
-    border-right: 3px solid rgb(37, 61, 26);
+    background-color: #6e5b4b;
 }
 
 .map-widget {
-    border-bottom: 3px solid rgb(37, 61, 26);
-    border-left: 3px solid rgb(37, 61, 26);
-    border-right: 3px solid rgb(37, 61, 26);
+    padding-left: 5px;
+    border-radius: 4px;
 }
 
 
