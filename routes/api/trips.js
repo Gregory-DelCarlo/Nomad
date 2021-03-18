@@ -35,7 +35,8 @@ router.post('/', (req, res) => {
       team: req.body.team,
       food: req.body.food,
       equipment: req.body.equipment,
-      date: req.body.date,
+      startDate: req.body.startDate,
+      endDate: req.body.endDate,
       parkId: req.body.parkId,
       trailName: req.body.trailName
     });
@@ -57,7 +58,8 @@ router.put('/update/:id', (req, res) => {
       team: req.body.team,
       food: req.body.food,
       equipment: req.body.equipment,
-      date: req.body.date,
+      startDate: req.body.startDate,
+      endDate: req.body.endDate,
       parkId: req.body.parkId,
       trailName: req.body.trailName
     }
