@@ -1,8 +1,20 @@
+.modal-background {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../assets/images/modal-bg.jpg');
+  background-size: cover;
+  background-blend-mode: 0.9;
+}
 
 .modal-child {
-  background: #6E5B4B;
+  background: rgb(134, 156, 119);
   margin: 0 auto;
   opacity: 1;
+  border-radius: 8px;
+  box-shadow: 0px 0px 0px 4px #253d1a;
+
 }
 
 .modal {
@@ -28,7 +40,7 @@
 }
 
 .modal-form-header {
-  background: #3a3a3a;
+  background: rgb(105, 83, 63);;
   height: 80px;
   padding: 12px;
   font-size: 40px;
@@ -36,7 +48,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  border-bottom: 3px solid #325D41;
+  // border-bottom: 3px solid  rgb(37, 61, 26);
+   border-bottom: 3px solid  rgb(105, 83, 63);
+    border-radius: 5px;
 }
 
 .close {
@@ -50,18 +64,17 @@
   flex-direction: column;
   justify-content: center;
   padding: 15px;
-  border-radius: 3px;
 }
 
 .auth-form-field {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Architects Daughter', cursive;
   font-size: 25px;
-  color: #fff!important;
+  color: white;
   
 }
 
 .auth-input {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Architects Daughter', cursive;
   font-size: 25px;
   color: #fff;
   background: #816B58;
@@ -76,6 +89,7 @@
 
 .auth-error {
   position: absolute;
+  // font-family: 'Architects Daughter';
   font-family: 'Raleway', sans-serif;
   font-size: 15px;
   font-weight: 400;
@@ -91,7 +105,7 @@
   padding: 7px 8px;
   border-radius: 5px;
   margin-bottom: 30px;
-  border: 1px solid #3a3a3a;
+  border: 1px solid gray;
 }
 
 .modal-form input:focus {
@@ -99,23 +113,16 @@
   border: 1px solid lightgray;
 }
 
-.auth-form-button {
+#submit {
   cursor: pointer;
-  color: #fff;
-  background: #4E6447;
-  font-size: 25px;
+  color: white;
+  background: rgb(37, 61, 26);
+  font-family: 'Montserrat';
+  font-size: 18px;
   padding: 10px 0px;
-  margin-bottom: 5px;
   outline: 0;
   border: none;
-}
 
-.auth-form-button:hover {
-  background: #325D41;
-}
-
-.auth-form-button:active {
-  background: #145E18;
 }
 
 .auth-separator {
@@ -149,6 +156,8 @@
   cursor: pointer;
   color: white;
   background: rgb(37, 61, 26);
+  // font-family: 'Architects Daughter';
+  font-family: 'Raleway', sans-serif;
   font-size: 24px;
   padding: 10px 0px;
   outline: 0;
@@ -167,9 +176,17 @@
   border-radius: 4px;
 }
 .modal-placeholder{
-  font-family: 'Raleway', sans-serif;
+  // font-family: 'Architects Daughter', cursive;
+  font-family: 'Raleway', sans-serif
 }
 
+#submit:hover {
+  background: rgb(41, 114, 41);
+}
+
+#submit:active {
+  background: rgb(29, 100, 29);
+}
 
 .modal-body {
   padding: 0;
