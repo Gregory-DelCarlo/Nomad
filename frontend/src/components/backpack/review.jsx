@@ -7,7 +7,8 @@ const Review = ({ reviewBackpack, saveTrip }) => (
       <div className='review-date-location'>
         <h2>Date and Location:</h2>
         <ul>
-          <li>Date: {reviewBackpack.date}</li>
+          <li>Start Date: {reviewBackpack.startDate}</li>
+          <li>End Date: {reviewBackpack.endDate}</li>
           <li>Location: {reviewBackpack.trailName}</li>
         </ul>
       </div>

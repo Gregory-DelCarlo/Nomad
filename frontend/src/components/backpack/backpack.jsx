@@ -15,7 +15,8 @@ class Backpack extends React.Component {
       team: [],
       food: [],
       equipment: [],
-      date: '',
+      startDate: '',
+      endDate: '',
       parkId: '',
       trailName: ''
     }
@@ -48,13 +49,16 @@ class Backpack extends React.Component {
     })
   }
 
-  addDateLocation(newPage, itemNum, date, trailName, parkId) {
-    const splitDate = date.split("T");
-    const newDate = splitDate[0];
+  addDateLocation(newPage, itemNum, startDate, endDate, trailName, parkId) {
+    const splitStartDate = startDate.split("T");
+    const newStartDate = splitStartDate[0];
+    const splitEndDate = endDate.split("T");
+    const newEndDate = splitEndDate[0];
 
     this.setState({currentPage: newPage, 
                   numItems: itemNum, 
-                  date: newDate, 
+                  startDate: newStartDate,
+                  endDate: newEndDate, 
                   trailName: trailName, 
                   parkId
     })
@@ -82,7 +86,8 @@ class Backpack extends React.Component {
       team: this.state.team,
       food: this.state.food,
       equipment: this.state.equipment,
-      date: this.state.date,
+      startDate: this.state.startDate,
+      endDate: this.state.endDate,
       parkId: this.state.parkId,
       trailName: this.state.trailName
     }
