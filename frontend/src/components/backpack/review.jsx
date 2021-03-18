@@ -3,7 +3,7 @@ import React from 'react';
 const Review = ({ reviewBackpack, saveTrip }) => (
   <div className='review'>
     <div className='review-box'>
-      <h1>Review {reviewBackpack.title}</h1>
+      <h1>{reviewBackpack.title}</h1>
       <div className='review-team'>
         <h2>Team:</h2>
         <ul className="team-list">

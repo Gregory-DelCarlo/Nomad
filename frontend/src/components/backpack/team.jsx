@@ -37,6 +37,7 @@ class Team extends React.Component {
             <input 
               type="text"
               onChange={this.handleChange('name')}
+              className="backpack-input"
               value={this.state.name}
             />
             <button className='team-btn' type='submit'>Add Team Member</button>

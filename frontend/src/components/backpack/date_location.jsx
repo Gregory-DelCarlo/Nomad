@@ -93,7 +93,6 @@ export default class DateLocation extends React.Component {
               onChange={this.handleChange('trailName')}
             />
             { errors["Trail"] ? <div className='backpack-input-error'>{errors["Trail"]}</div> : null}
-            <br/>
             
             <label className='form-label'>When will you be traveling?: </label>
             <input 
@@ -103,7 +102,6 @@ export default class DateLocation extends React.Component {
               onChange={this.handleChange('date')}
               />
               { errors["Date"] ? <div className='backpack-input-error'>{errors["Date"]}</div> : null}
-            <br/>
             <button type='submit'>Add to your Backpack</button>
             {this.renderTrailMap()}
           </form>

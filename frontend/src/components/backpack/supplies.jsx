@@ -49,6 +49,7 @@ class Supplies extends React.Component {
             <input 
               type="text"
               onChange={this.handleChange('foodItem')}
+              className="backpack-input"
               value={this.state.foodItem}
             />
             <button onClick={this.handleAddFood}>Add</button>
@@ -58,6 +59,7 @@ class Supplies extends React.Component {
             <input 
               type="text"
               onChange={this.handleChange('equipmentItem')}
+              className="backpack-input"
               value={this.state.equipmentItem}
             />
             <button onClick={this.handleAddEquipment}>Add</button>
