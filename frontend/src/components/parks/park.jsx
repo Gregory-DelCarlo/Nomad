@@ -2,11 +2,15 @@ import React from 'react';
 import Weather from '../weather/weather_container'
 
 export default class Park extends React.Component {
+    constructor(props) {
+        super(props)
+    }
+
     componentDidMount() {
         this.props.getParks();
     }
     render() {
-        if (!this.props.park) return null;
+        // if (!this.props.park) return null;
         return(
             <div className="map-page">
                 <div className="map-container">
