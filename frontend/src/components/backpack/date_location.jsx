@@ -39,11 +39,16 @@ export default class DateLocation extends React.Component {
 
   handleValidations() {
     let trailName = this.state.trailName.length;
-    let date = this.state.date.length;
+    let startDate = this.state.startDate.length;
+    let endDate = this.state.endDate.length;
     let validForm = true;
     let errors = {}
 
-    if (date === 0){
+    if (startDate === 0){
+      errors["Trail"] = "Date cannot be empty"
+      validForm = false;
+    } 
+    if (endDate === 0){
       errors["Trail"] = "Date cannot be empty"
       validForm = false;
     } 
