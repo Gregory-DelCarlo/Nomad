@@ -4,7 +4,6 @@ import Park from '../parks/park';
 
 export default class DateLocation extends React.Component {
   constructor(props) {
-    // debugger
     super(props);
     this.state = {
         parkId: this.props.currentPark, 
@@ -12,10 +11,12 @@ export default class DateLocation extends React.Component {
         date: '',
         errors: {}
     }
+
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderTrailMap = this.renderTrailMap.bind(this);
     // this.getParkId = this.getParkId.bind(this);
     this.handleValidations = this.handleValidations.bind(this);
+    this.clearErrors = this.clearErrors.bind(this)
   }
 
   handleChange(field) {
@@ -24,46 +25,56 @@ export default class DateLocation extends React.Component {
   
   handleSubmit(e) {
     e.preventDefault();
-    this.handleValidations()
-    if (this.state.errors === {}) {
+    this.clearErrors();
+    if (this.handleValidations()) {
       const { date, trailName, parkId } = this.state;
       this.props.clickAddItem('team form', 1, date, trailName, parkId)
     }
   }
+  
+  clearErrors() {
+    this.setState( {error: {}} )
+  }
 
   handleValidations() {
-    this.setState( {error: {}} )
     let trailName = this.state.trailName.length;
     let date = this.state.date.length;
-    
-    // Must be nested as setState is async
-    if (date === 0) {
-      this.setState( {errors: Object.assign({}, this.state.errors, {Date: "Date cannot be empty"})}, () => {
-        if (trailName === 0) {
-          this.setState( {errors: Object.assign({}, this.state.errors, {Trail: "Trail name cannot be empty"})} )
-        }
-      })
+    let validForm = true;
+    let errors = {}
+
+    if (date === 0){
+      errors["Trail"] = "Date cannot be empty"
+      validForm = false;
+    } 
+    if (trailName === 0) {
+      errors["Date"] = "Trail name cannot be empty"
+      validForm = false;
     }
+
+    this.setState( {errors: errors} )
+    return validForm
   }
 
   renderTrailMap() {
-    // debugger
-    
     if (this.state.parkId) {
         return <Park rid={this.props.parks[this.state.parkId].rid} />
     } 
   }
   //   componentWillMount() {
-  //       if(this.state.parkId == '') {
-  //         this.setState({parkId: this.props.currentPark});
-  //       }
-  //   }
-  //   getParkId(parkId) {
-  //     //   debugger
-  //     this.setState({parkId});
-  //   }
-  //   getParkId={this.getParkId}
+    //       if(this.state.parkId == '') {
+      //         this.setState({parkId: this.props.currentPark});
+      //       }
+      //   }
+      //   getParkId(parkId) {
+        //     //   debugger
+        //     this.setState({parkId});
+        //   }
+        //   getParkId={this.getParkId}
   render() {
+    let errors = Object.values(this.state.errors);
+    if (errors) errors.forEach( error => {
+      errors[error.split(" ")[0]] = error
+    })
     return (
       <div className="date-location">
         <div className="date-location-box">
@@ -80,8 +91,7 @@ export default class DateLocation extends React.Component {
               type="text"
               onChange={this.handleChange('trailName')}
             />
-            {console.log(this.state.errors)}
-            { this.state.errors["Trail"] ? <div>{this.state.errors["Trail"]}</div> : null}
+            { errors["Trail"] ? <div>{errors["Trail"]}</div> : null}
             <br/>
             
             <label className='form-label'>When will you be traveling?: </label>
@@ -89,8 +99,8 @@ export default class DateLocation extends React.Component {
               className='date-form-input'
               type='date'
               onChange={this.handleChange('date')}
-            />
-            { this.state.errors["Date"] ? <div>{this.state.errors["Date"]}</div> : null}
+              />
+              { errors["Date"] ? <div>{errors["Date"]}</div> : null}
             <br/>
             <button type='submit'>Add to your Backpack</button>
             {this.renderTrailMap()}
