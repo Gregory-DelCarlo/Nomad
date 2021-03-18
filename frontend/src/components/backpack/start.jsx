@@ -38,9 +38,9 @@ class Start extends React.Component {
     return (
       <div className="start">
         <div className="start-box">
-          <h1>Start planning your trip!</h1>
+          <h1>Start planning your trip</h1>
           <form className="start-form" onSubmit={this.handleSubmit}>
-            <label>Give your trip a title:</label>
+            <label>Give your trip a name:</label>
             <input 
               type="text"
               onChange={this.handleChange('title')}

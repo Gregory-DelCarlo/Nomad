@@ -43,7 +43,7 @@ class Supplies extends React.Component {
     return(
       <div className="supplies">
         <div className="supplies-box">
-          <h1>Add your supplies!</h1>
+          <h1>Add your supplies</h1>
           <form className="food-form">
             <label>Enter a food item:</label>
             <input 

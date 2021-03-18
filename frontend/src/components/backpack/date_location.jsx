@@ -78,7 +78,7 @@ export default class DateLocation extends React.Component {
     return (
       <div className="date-location">
         <div className="date-location-box">
-          <h1>Find A Trail To Hike!</h1>
+          <h1>Find A Trail To Hike</h1>
           <div className="date-location-dropdown">
             <label>Pick A Park in Your Area</label>
             <ParksDropdownContainer />

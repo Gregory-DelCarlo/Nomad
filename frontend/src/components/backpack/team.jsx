@@ -31,7 +31,7 @@ class Team extends React.Component {
     return (
       <div className="team">
         <div className="team-box">
-          <h1>Add your team!</h1>
+          <h1>Add your team</h1>
           <form className="team-form" onSubmit={this.handleAddMember}>
             <label>Enter the name of a team member:</label>
             <input 

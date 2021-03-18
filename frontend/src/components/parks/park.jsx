@@ -10,7 +10,7 @@ export default class Park extends React.Component {
         this.props.getParks();
     }
     render() {
-        // if (!this.props.park) return null;
+        if (!this.props.park || this.props.getParks()) return null;
         return(
             <div className="map-page">
                 <div className="map-container">
