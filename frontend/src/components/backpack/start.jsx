@@ -44,8 +44,10 @@ class Start extends React.Component {
             <input 
               type="text"
               onChange={this.handleChange('title')}
+              // className="backpack-input"
+              className= {this.state.error !== null? "backpack-input error" : "backpack-input"}
             />
-            {this.state.error !== null? <div>{this.state.error}</div> : null}
+            {this.state.error !== null? <div className='backpack-input-error'>{this.state.error}</div> : null}
             <button type='submit'>Plan Trip</button>
           </form>
         </div>

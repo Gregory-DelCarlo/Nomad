@@ -43,11 +43,38 @@
   margin-bottom: 20px;
 }
 
-.start-form > input {
-  margin-bottom: 10px;
-  border-radius: 4px;
+.backpack-input {
+  box-sizing: border-box;
   background: #816B58;
   color: #fff;
+  width: 100%;
+  font-size: 18px;
+  line-height: 20px;
+  padding: 7px 8px;
+  margin-top: 5px;
+  margin-bottom: 30px;
+  border: 1px solid #3a3a3a;
+  border-radius: 5px;
+  font-family: "Raleway", sans-serif;
+  transition: 0.3s;
+}
+
+.backpack-input.error {
+  border: 1px solid #ff5200;
+}
+
+.backpack-input:focus {
+  outline: 0;
+  border: 1px solid lightgray;
+}
+
+.backpack-input-error {
+  font-family: 'Raleway', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  color: #ff5200;
+  margin-top: -20px;
+  margin-bottom: 10px;
 }
 
 .start-form > button {
@@ -56,6 +83,7 @@
   font-size: 20px;
   padding: 10px;
   border-radius: 4px;
+  transition: 0.3s;
 }
 
 .start-form > button:hover {

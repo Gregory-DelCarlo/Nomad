@@ -87,20 +87,22 @@ export default class DateLocation extends React.Component {
           <form className="date-location-form" onSubmit={this.handleSubmit}>
             <label className='form-label'>Enter your Trail here: </label>
             <input 
-              className='location-form-input'
+              // className='location-form-input'
+              className= {errors["Trail"] ? "backpack-input error" : "backpack-input"}
               type="text"
               onChange={this.handleChange('trailName')}
             />
-            { errors["Trail"] ? <div>{errors["Trail"]}</div> : null}
+            { errors["Trail"] ? <div className='backpack-input-error'>{errors["Trail"]}</div> : null}
             <br/>
             
             <label className='form-label'>When will you be traveling?: </label>
             <input 
-              className='date-form-input'
+              // className='date-form-input'
+              className= {errors["Date"]  ? "backpack-input error" : "backpack-input"}
               type='date'
               onChange={this.handleChange('date')}
               />
-              { errors["Date"] ? <div>{errors["Date"]}</div> : null}
+              { errors["Date"] ? <div className='backpack-input-error'>{errors["Date"]}</div> : null}
             <br/>
             <button type='submit'>Add to your Backpack</button>
             {this.renderTrailMap()}
