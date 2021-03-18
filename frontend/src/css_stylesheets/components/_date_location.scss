@@ -58,12 +58,9 @@
   margin: 10px;
 }
 
-// .date-location-form input {
-//   width: 100%;
-//   background-color: #816B58;
-//   color: #fff;
-//   border-radius: 4px;
-// }
+.date-location-form .error {
+  margin-bottom: 30px;
+}
 
 .date-location-form > button {
   background-color: #4E6447;
@@ -87,16 +84,16 @@
   margin: 10px;
 }
 
-.startdate-form-input {
-  display: flex;
-  align-items: center;
-  margin-bottom: 10px;
-}
+// .startdate-form-input {
+//   display: flex;
+//   align-items: center;
+//   margin-bottom: 10px;
+// }
 
-.enddate-form-input {
-  display: flex;
-  align-items: center;
-}
+// .enddate-form-input {
+//   display: flex;
+//   align-items: center;
+// }
 
 .startdate-form-input label {
   margin-right: 10px;

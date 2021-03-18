@@ -45,15 +45,15 @@ export default class DateLocation extends React.Component {
     let errors = {}
 
     if (startDate === 0){
-      errors["Trail"] = "Date cannot be empty"
+      errors["Start"] = "Start date cannot be empty"
       validForm = false;
     } 
     if (endDate === 0){
-      errors["Trail"] = "Date cannot be empty"
+      errors["End"] = "End date cannot be empty"
       validForm = false;
     } 
     if (trailName === 0) {
-      errors["Date"] = "Trail name cannot be empty"
+      errors["Trail"] = "Trail name cannot be empty"
       validForm = false;
     }
 
@@ -107,18 +107,18 @@ export default class DateLocation extends React.Component {
               <input 
                 type='date'
                 onChange={this.handleChange('startDate')}
-                className= {errors["Date"]  ? "backpack-input error" : "backpack-input"}
+                className= {errors["Start"]  ? "backpack-input error" : "backpack-input"}
               />
-              { errors["Date"] ? <div className='backpack-input-error'>{errors["Date"]}</div> : null}
+              { errors["Start"] ? <div className='backpack-input-error'>{errors["Start"]}</div> : null}
             </div>
                 <div className='enddate-form-input'>
                   <label>End:</label>
                   <input 
                     type='date'
                     onChange={this.handleChange('endDate')}
-                    className= {errors["Date"]  ? "backpack-input error" : "backpack-input"}
+                    className= {errors["End"]  ? "backpack-input error" : "backpack-input"}
                   />
-                  { errors["Date"] ? <div className='backpack-input-error'>{errors["Date"]}</div> : null}
+                  { errors["End"] ? <div className='backpack-input-error'>{errors["End"]}</div> : null}
                 </div>
             <button type='submit'>Add to your Backpack</button>
             {this.renderTrailMap()}

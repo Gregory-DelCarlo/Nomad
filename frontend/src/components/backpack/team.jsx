@@ -5,10 +5,14 @@ class Team extends React.Component {
     super(props);
     this.state = {
       team: [],
-      name: ''
+      name: '',
+      error: {}
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleAddMember = this.handleAddMember.bind(this);
+    this.handleValidation = this.handleValidation.bind(this);
+    this.clearErrors = this.clearErrors.bind(this)
+
   }
 
   handleChange(field) {
@@ -22,8 +26,29 @@ class Team extends React.Component {
 
   handleAddMember(e) {
     e.preventDefault();
-    const joined = this.state.team.concat(this.state.name);
-    this.setState({ team: joined, name: '' })
+    this.clearErrors();
+    if (this.handleValidation()) {
+      const joined = this.state.team.concat(this.state.name);
+      this.setState({ team: joined, name: '' })
+    }
+  }
+
+  clearErrors() {
+    this.setState( {error: {}} )
+  }
+
+  handleValidation() {
+    let name = this.state.name.length;
+    let error = {};
+    let validForm = true;
+
+    if (name === 0) {
+      error["Name"] = "Name cannot be blank";
+      validForm = false;
+    }
+
+    this.setState( {error: error} )
+    return validForm
   }
 
   render() {
@@ -37,9 +62,11 @@ class Team extends React.Component {
             <input 
               type="text"
               onChange={this.handleChange('name')}
-              className="backpack-input"
+              className= {this.state.error["Name"] ? "backpack-input error" : "backpack-input"}
               value={this.state.name}
             />
+            { this.state.error["Name"] ? <div className='backpack-input-error'>{this.state.error["Name"]}</div> : null}
+
             <button className='team-btn' type='submit'>Add Team Member</button>
           </form>
           <div className='team-form-list'>
