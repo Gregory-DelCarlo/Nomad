@@ -5,6 +5,7 @@ import DateLocation from './date_location';
 import Team from './team';
 import Supplies from './supplies';
 import Review from './review';
+import '@fortawesome/fontawesome-free/js/all.js';
 
 class Backpack extends React.Component {
   constructor(props) {
@@ -102,22 +103,37 @@ class Backpack extends React.Component {
       const itemList = [
         <li 
           key="1"
-          onClick={() => this.changeView("time and location form")}
+          // onClick={() => this.changeView("time and location form")}
           className="location-item"
           slide={this.state.numItems}
-        >Time and Location</li>, 
+        >
+          <p className="item-label">Time &amp; Location</p>
+          <div onClick={() => this.changeView("time and location form")}>
+            <i className='fas fa-pencil-alt'/>
+          </div>
+        </li>, 
         <li 
           key="2"
-          onClick={() => this.changeView("team form")}
+          // onClick={() => this.changeView("team form")}
           className="team-item"
           slide={this.state.numItems}
-        >Team</li>, 
+        >
+          <p className="item-label">Team</p>
+          <div onClick={() => this.changeView("team form")}>
+            <i className='fas fa-pencil-alt' />
+          </div>
+        </li>, 
         <li 
           key="3"
-          onClick={() => this.changeView("supplies form")}
+          // onClick={() => this.changeView("supplies form")}
           className="supplies-item"
           slide={this.state.numItems}
-        >Supplies</li>
+        >
+          <p className="item-label">Supplies</p>
+          <div onClick={() => this.changeView("supplies form")}>
+            <i className='fas fa-pencil-alt'/>
+          </div>
+        </li>
       ];
       const items = itemList.slice(0, itemNum);
       return (

@@ -56,7 +56,7 @@
   line-height: 20px;
   padding: 7px 8px;
   margin-top: 5px;
-  margin-bottom: 40px;
+  margin-bottom: 10px;
   border: 1px solid #3a3a3a;
   border-radius: 5px;
   font-family: "Raleway", sans-serif;
@@ -79,9 +79,13 @@
   line-height: 20px;
   font-weight: 400;
   color: #ff5200;
-  margin-top: -30px;
+  margin-top: -25px;
   margin-bottom: 10px;
   left: 0;
+}
+
+.start-form .error {
+  margin-bottom: 30px;
 }
 
 .start-form > button {
@@ -100,3 +104,4 @@
 .start-form > button:active {
   background-color: #145E18;
 }
+
