@@ -36,9 +36,12 @@ class NavBar extends React.Component {
     return(
       <div className="auth-buttons">
         <div className="user-icon">
-
-          <Link to={`/user/${this.props.currentUser.id}`}
-          ><GrUserWorker size="28px"/></Link>
+          <GrUserWorker size="28px"/>
+          <div className='dropdown-contents'>
+              <div className="dropdown-greeting">Hi, {this.props.currentUser.username}!</div>
+              <div className="profile-link"><Link to={`/user/profile`}>Profile</Link></div>
+              <div className="trips-link"><Link to={`/trips`}>Trips</Link></div>
+          </div>
         </div>
         <div>
           <button  className="auth-btn" onClick={this.logoutUser}>Logout</button>

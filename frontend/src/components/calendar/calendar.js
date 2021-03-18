@@ -22,7 +22,7 @@ export default class Calendar extends React.Component {
     }
     
    allUserTrips(){
-        debugger
+    
         this.state.currentEvents = this.props.trip.map(
             ((trip) => {
                 return ({
