@@ -6,7 +6,7 @@ export default class Park extends React.Component {
         this.props.getParks();
     }
     render() {
-        debugger
+        // debugger
         if (!this.props.parkRid) return null;
         return(
             <div className="map-page">
