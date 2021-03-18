@@ -1,6 +1,6 @@
 import React from 'react';
 import ParksDropdownContainer from '../dropdowns/parks_dropdown_container'
-import Park from '../parks/park';
+import ParkContainer from '../parks/park_container';
 
 export default class DateLocation extends React.Component {
   constructor(props) {
@@ -8,7 +8,8 @@ export default class DateLocation extends React.Component {
     this.state = {
         parkId: this.props.currentPark, 
         trailName: '',
-        date: '',
+        startDate: '',
+        endDate: '',
         errors: {}
     }
 
@@ -27,8 +28,8 @@ export default class DateLocation extends React.Component {
     e.preventDefault();
     this.clearErrors();
     if (this.handleValidations()) {
-      const { date, trailName, parkId } = this.state;
-      this.props.clickAddItem('team form', 1, date, trailName, parkId)
+      const { startDate, endDate, trailName, parkId } = this.state;
+      this.props.clickAddItem('team form', 1, startDate, endDate, trailName, parkId)
     }
   }
   
@@ -57,7 +58,7 @@ export default class DateLocation extends React.Component {
 
   renderTrailMap() {
     if (this.state.parkId) {
-        return <Park rid={this.props.parks[this.state.parkId].rid} />
+        return <ParkContainer rid={this.props.parks[this.state.parkId].rid} />
     } 
   }
   //   componentWillMount() {
@@ -95,13 +96,25 @@ export default class DateLocation extends React.Component {
             { errors["Trail"] ? <div className='backpack-input-error'>{errors["Trail"]}</div> : null}
             
             <label className='form-label'>When will you be traveling?: </label>
-            <input 
-              // className='date-form-input'
-              className= {errors["Date"]  ? "backpack-input error" : "backpack-input"}
-              type='date'
-              onChange={this.handleChange('date')}
+
+            <div className='startdate-form-input'>
+              <label>Start:</label>
+              <input 
+                type='date'
+                onChange={this.handleChange('startDate')}
+                className= {errors["Date"]  ? "backpack-input error" : "backpack-input"}
               />
               { errors["Date"] ? <div className='backpack-input-error'>{errors["Date"]}</div> : null}
+            </div>
+                <div className='enddate-form-input'>
+                  <label>End:</label>
+                  <input 
+                    type='date'
+                    onChange={this.handleChange('endDate')}
+                    className= {errors["Date"]  ? "backpack-input error" : "backpack-input"}
+                  />
+                  { errors["Date"] ? <div className='backpack-input-error'>{errors["Date"]}</div> : null}
+                </div>
             <button type='submit'>Add to your Backpack</button>
             {this.renderTrailMap()}
           </form>

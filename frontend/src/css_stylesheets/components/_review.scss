@@ -38,6 +38,34 @@
   margin: 20px;
 }
 
+.review-date-location {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.review-date-location ul {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+  border: 2px solid #fff;
+  background-color: #52392F;
+}
+
+.review-date-location * li {
+  padding: 5px;
+  margin: 5px;
+  border-radius: 3px;
+  background-color: #6E5B4B;
+  border: 1px solid #fff;
+  font-size: 15px;
+  text-align: center;
+}
+
 .review-team {
   display: flex;
   flex-direction: column;
@@ -82,10 +110,17 @@
   font-size: 20px;
 }
 
+.supply-lists {
+  display: flex;
+  justify-content: space-between;
+}
+
 .food-list {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .food-list > ul {
@@ -118,6 +153,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .equipment-list > ul {

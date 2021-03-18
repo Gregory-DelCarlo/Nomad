@@ -2,7 +2,6 @@ import React from 'react';
 import Start from './start';
 import DateLocation from './date_location';
 //test components
-import Test from './test';
 import Team from './team';
 import Supplies from './supplies';
 import Review from './review';
@@ -17,7 +16,8 @@ class Backpack extends React.Component {
       team: [],
       food: [],
       equipment: [],
-      date: '',
+      startDate: '',
+      endDate: '',
       parkId: '',
       trailName: ''
     }
@@ -50,11 +50,17 @@ class Backpack extends React.Component {
     })
   }
 
-  addDateLocation(newPage, itemNum, date, trailName, parkId) {
+  addDateLocation(newPage, itemNum, startDate, endDate, trailName, parkId) {
+    const splitStartDate = startDate.split("T");
+    const newStartDate = splitStartDate[0];
+    const splitEndDate = endDate.split("T");
+    const newEndDate = splitEndDate[0];
+
     this.setState({currentPage: newPage, 
                   numItems: itemNum, 
-                  date, 
-                  trailName, 
+                  startDate: newStartDate,
+                  endDate: newEndDate, 
+                  trailName: trailName, 
                   parkId
     })
   }
@@ -81,7 +87,8 @@ class Backpack extends React.Component {
       team: this.state.team,
       food: this.state.food,
       equipment: this.state.equipment,
-      date: this.state.date,
+      startDate: this.state.startDate,
+      endDate: this.state.endDate,
       parkId: this.state.parkId,
       trailName: this.state.trailName
     }
@@ -137,7 +144,7 @@ class Backpack extends React.Component {
       )
     } else if (this.state.currentPage === 'time and location form') {
       return (
-        <DateLocation clickAddItem={this.addDateLocation} currentPark={this.props.currentPark} parks={this.props.parks}/>
+        <DateLocation clickAddItem={this.addDateLocation} currentPark={this.props.currentPark}/>
       )
     } else if (this.state.currentPage === 'team form') {
       return (
