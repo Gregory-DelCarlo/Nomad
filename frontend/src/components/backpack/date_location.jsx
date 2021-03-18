@@ -9,12 +9,12 @@ export default class DateLocation extends React.Component {
         this.state = {
             parkId: this.props.currentPark, 
             trailName: '',
-            date: ''
+            startDate: '',
+            endDate: ''
         }
 
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderTrailMap = this.renderTrailMap.bind(this);
-        // this.getParkId = this.getParkId.bind(this);
     }
 
     handleChange(field) {
@@ -23,29 +23,16 @@ export default class DateLocation extends React.Component {
     
       handleSubmit(e) {
         e.preventDefault();
-        const { date, trailName, parkId } = this.state;
-        this.props.clickAddItem('team form', 1, date, trailName, parkId)
+        const { startDate, endDate, trailName, parkId } = this.state;
+        this.props.clickAddItem('team form', 1, startDate, endDate, trailName, parkId)
       }
 
       renderTrailMap() {
-        // debugger
-        
         if (this.state.parkId) {
             return <ParkContainer parkId={this.state.parkId} />
         } 
       }
 
-    //   componentWillMount() {
-    //       if(this.state.parkId == '') {
-    //         this.setState({parkId: this.props.currentPark});
-    //       }
-    //   }
-
-    //   getParkId(parkId) {
-    //     //   debugger
-    //     this.setState({parkId});
-    //   }
-    //   getParkId={this.getParkId}
       render() {
         return (
           <div className="date-location">
@@ -63,11 +50,20 @@ export default class DateLocation extends React.Component {
                   onChange={this.handleChange('trailName')}
                 /><br/>
                 <label className='form-label'>When will you be traveling?: </label>
-                <input 
-                  className='date-form-input'
-                  type='date'
-                  onChange={this.handleChange('date')}
-                /><br/>
+                <div className='startdate-form-input'>
+                  <label>Start:</label>
+                  <input 
+                    type='date'
+                    onChange={this.handleChange('startDate')}
+                  />
+                </div>
+                <div className='enddate-form-input'>
+                  <label>End:</label>
+                  <input 
+                    type='date'
+                    onChange={this.handleChange('endDate')}
+                  />
+                </div>
                 <button type='submit'>Add to your Backpack</button>
                 {this.renderTrailMap()}
               </form>
