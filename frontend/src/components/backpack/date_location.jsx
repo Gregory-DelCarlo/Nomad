@@ -91,14 +91,17 @@ export default class DateLocation extends React.Component {
           </div>
 
           <form className="date-location-form" onSubmit={this.handleSubmit}>
-            <label className='form-label'>Enter your trail here: </label>
-            <input 
-              // className='location-form-input'
-              className= {errors["Trail"] ? "backpack-input error" : "backpack-input"}
-              type="text"
-              onChange={this.handleChange('trailName')}
-            />
-            { errors["Trail"] ? <div className='backpack-input-error'>{errors["Trail"]}</div> : null}
+              <label className='form-label'>Enter your trail here: </label>
+            <div className="trail-input-wrapper">
+              <input 
+                // className='location-form-input'
+                className= {errors["Trail"] ? "backpack-input error" : "backpack-input"}
+                type="text"
+                onChange={this.handleChange('trailName')}
+              />
+              { errors["Trail"] ? <div className='backpack-input-error'>{errors["Trail"]}</div> : null}
+
+            </div>
             
             <label className='form-label'>When will you be traveling?: </label>
 

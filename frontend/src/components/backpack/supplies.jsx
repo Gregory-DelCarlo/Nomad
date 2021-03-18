@@ -26,32 +26,42 @@ class Supplies extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.clearErrors();
-    if (this.handleValidations()) {
-      this.props.clickAddItem('review', 3, this.state.food, this.state.equipment)
-    }
+    this.props.clickAddItem('review', 3, this.state.food, this.state.equipment)
   }
 
   handleAddFood(e) {
     e.preventDefault();
-    const joined = this.state.food.concat(this.state.foodItem);
-    this.setState({ food: joined, foodItem: '' })
+    
+    let clearField = Object.assign({}, this.state.errors, {"Food": null})
+    this.clearErrors(clearField)
+    if (this.handleValidations("foodItem")) {
+      const joined = this.state.food.concat(this.state.foodItem);
+      this.setState({ food: joined, foodItem: '' })
+    }
+
   }
 
   handleAddEquipment(e) {
     e.preventDefault();
-    const joined = this.state.equipment.concat(this.state.equipmentItem);
-    this.setState({ equipment: joined, equipmentItem: '' })
+
+    let clearField = Object.assign({}, this.state.errors, {"Equipment": null})
+    this.clearErrors(clearField)
+    if (this.handleValidations("equipmentItem")) {
+      const joined = this.state.equipment.concat(this.state.equipmentItem);
+      this.setState({ equipment: joined, equipmentItem: '' })
+    }
   }
 
-  clearErrors() {
-    this.setState( {error: {}} )
+  clearErrors(state) {
+    this.setState( {error: state} )
   }
 
-  handleValidations() {
-    let foodItem = this.state.foodItem.length;
-    let equipmentItem = this.state.equipmentItem.length;
-
+  handleValidations(field) {
+    let foodItem;
+    let equipmentItem;
+    if (field === "foodItem") foodItem = this.state.foodItem.length;
+    if (field === "equipmentItem") equipmentItem = this.state.equipmentItem.length;
+    
     let validForm = true;
     let errors = {}
 

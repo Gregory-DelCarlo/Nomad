@@ -39,11 +39,15 @@
 
 .food-form > label {
   font-size: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 20px;  
 }
 
-.food-form input {
-  margin-bottom: 20px;
+// .food-form .error {
+//   margin-bottom: 30px;
+// }
+
+.supplies-box .error {
+  margin-bottom: 30px;
 }
 
 .food-form > button {
@@ -66,9 +70,9 @@
   margin-bottom: 20px;
 }
 
-.equipment-form > input {
-  margin-bottom: 20px;
-}
+// .equipment-form > input {
+//   margin-bottom: 20px;
+// }
 
 .equipment-form > button {
   background-color: #4E6447;
