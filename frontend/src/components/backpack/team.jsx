@@ -4,7 +4,7 @@ class Team extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      team: [],
+      team: this.props.state.team,
       name: '',
       error: {}
     }

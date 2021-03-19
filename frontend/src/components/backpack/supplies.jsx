@@ -4,8 +4,8 @@ class Supplies extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      food: [],
-      equipment: [],
+      food: this.props.state.food,
+      equipment: this.props.state.equipment,
       foodItem: '',
       equipmentItem: '',
       errors: {}
