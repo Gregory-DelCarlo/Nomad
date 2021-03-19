@@ -106,7 +106,6 @@
 }
 
 .user-icon{
-  
   color: #a8aaa5;
   /* background-color: antiquewhite; */
   display: flex;
@@ -116,8 +115,47 @@
   background-color:  #206615;
   border-radius: 6px;
   padding: 3px;
+  border: none;
 }
 
-.user-icon:hover{
-   background: #789448;
+// .user-icon:hover{
+//    background: #789448;
+// }
+
+
+.dropdown-contents{
+  display: none; 
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  top: 40px;
+  font-family: 'Raleway';
+  color: black;
+}
+
+.dropdown-menu {
+	  display: flex;
+    position: relative;
+    text-align: left;
+    list-style: none;
+
+  
+}
+
+.dropdown-contents div{
+	text-decoration: none;
+	display: block;
+	color: black;
+	padding: 16px;
+}
+
+.dropdown-contents div:hover {
+	background-color: #f7f7f7;
+}
+
+.dropdown-menu:hover .dropdown-contents {
+	display: block;
 }
