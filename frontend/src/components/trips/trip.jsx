@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Trip = ({ trip }) => (
+const Trip = ({ trip, deleteTrip }) => (
   <div className='trip-show'>
     <div className='trip-show-box'>
       <h1>{trip.title}</h1>
@@ -41,6 +41,7 @@ const Trip = ({ trip }) => (
           </div>
         </div>
       </div>
+      <button onClick={deleteTrip}>Delete Trip</button>
     </div>
   </div>
 );
