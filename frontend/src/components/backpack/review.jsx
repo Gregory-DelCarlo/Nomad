@@ -23,8 +23,18 @@ class Review extends React.Component {
   handleChange(e) {
     this.props.reviewBackpack.title =  e.target.value
     this.setState({ title: e.target.value })
+    this.handleLiveValidation(e.target.value.length)
     let field = document.getElementsByClassName("review-title")[0]
     field.style.width = field.value.length * 20 + 20 + "px";
+  }
+
+  handleLiveValidation(e) {
+    let length = e
+    if (length < 3 || length > 50) {
+      this.setState( {error: 'Title must be between 3 and 50 characters'} )
+    } else {
+      this.setState( {error: null} )
+    }
   }
 
   handleClick() {
@@ -35,11 +45,7 @@ class Review extends React.Component {
   handleValidation() {
     this.setState( {error: null} )
     let length = this.state.title.length;
-    if (length === 0) {
-      this.setState( {error: 'Title field is required'} );
-      return false
-    }
-    else if (length < 3 || length > 50) {
+    if (length < 3 || length > 50) {
       this.setState( {error: 'Title must be between 3 and 50 characters'} )
       return false
     }
@@ -53,7 +59,6 @@ class Review extends React.Component {
           <div className="review-field-wrapper">
             <div className="wow">
               <input 
-                role="textbox" 
                 value={this.state.title} 
                 onChange={this.handleChange}
                 onBlur={this.handleValidation}
