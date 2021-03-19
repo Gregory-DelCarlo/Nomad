@@ -22,14 +22,14 @@ export default class Calendar extends React.Component {
     }
     
    allUserTrips(){
-    
-        this.state.currentEvents = this.props.trip.map(
+    let allTrips = fetchUserTrips()
+        this.state.currentEvents = allTrips.map(
             ((trip) => {
                 return ({
                     id: trip._id,
                     title: trip.title,
-                    start: trip.start,
-                    end: trip.end,
+                    start: trip.startDate,
+                    end: trip.endDate,
                 })
             }) 
        )
