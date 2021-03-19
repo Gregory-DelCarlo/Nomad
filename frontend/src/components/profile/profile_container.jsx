@@ -1,4 +1,3 @@
-
 import Profile from './profile';
 import {clearErrors} from '../../actions/session_actions';
 import {connect} from 'react-redux';

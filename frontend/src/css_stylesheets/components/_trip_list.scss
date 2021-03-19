@@ -24,21 +24,26 @@
   background-position: center;
 }
 
+.trip-list-wrapper {
+  height: 60%;
+  overflow-y: scroll;
+  width: 100%;
+}
+
 .trip-list > ul {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
   align-items: center;
-  height: 60%;
-  width: 100%;
-  overflow-y: auto;
 }
 
 .trip-list * li {
   width: 50%;
   min-width: 300px;
   border-radius: 4px;
-  margin-left: 110px;
+  margin-left: 250px;
+  margin-top: 30px;
+  margin-bottom: 30px;
   line-height: 2.5;
   text-align: center;
   background-color: rgb(230,230,230,0.9);

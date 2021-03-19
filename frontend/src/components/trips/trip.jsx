@@ -7,7 +7,8 @@ const Trip = ({ trip }) => (
       <div className='trip-show-date-location'>
         <h2>Date and Location:</h2>
         <ul>
-          <li>Date: {trip.date}</li>
+          <li>Start Date: {trip.startDate}</li>
+          <li>End Date: {trip.endDate}</li>
           <li>Location: {trip.trailName}</li>
         </ul>
       </div>

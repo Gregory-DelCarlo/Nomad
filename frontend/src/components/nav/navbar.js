@@ -35,11 +35,11 @@ class NavBar extends React.Component {
   navContainer() {
     return(
       <div className="auth-buttons">
-        <div className="dropdown-menu">
+        <div className="dropdown-profile">
           <button  className="user-icon">
             <GrUserWorker size="28px" />
           </button>
-            <div className='dropdown-contents'>
+            <div className='dropdown-links'>
                 <div className="dropdown-greeting">Hi, {this.props.currentUser.username}!</div>
                 <div className="profile-link"><Link to={`/user/profile`}>Profile</Link></div>
                 <div className="trips-link"><Link to={`/trips`}>Trips</Link></div>
