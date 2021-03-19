@@ -144,6 +144,7 @@
   position: relative;
   text-align: left;
   list-style: none;
+  text-decoration: none;
 
   
 }
@@ -156,9 +157,20 @@
 }
 
 .dropdown-links div:hover {
-	background-color: #f7f7f7;
+	background-color: #aca9a9;
+  text-decoration: none;
 }
 
 .dropdown-profile:hover .dropdown-links {
 	display: block;
+  text-decoration: none;
+}
+
+.prof-links{
+  text-decoration: none;
+  color: black;
+}
+
+.dropdown-greeting{
+  font-weight: 600;
 }

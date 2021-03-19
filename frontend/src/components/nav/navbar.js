@@ -41,8 +41,8 @@ class NavBar extends React.Component {
           </button>
             <div className='dropdown-links'>
                 <div className="dropdown-greeting">Hi, {this.props.currentUser.username}!</div>
-                <div className="profile-link"><Link to={`/user/profile`}>Profile</Link></div>
-                <div className="trips-link"><Link to={`/trips`}>Trips</Link></div>
+                <div className="profile-link"><Link className='prof-links' to={`/user/profile`}>Profile</Link></div>
+            <div className="trips-link"><Link className='prof-links' to={`/trips`}>Trips</Link></div>
                 <button  className="auth-btn" onClick={this.logoutUser}>Logout</button>
             </div>
           <div>
