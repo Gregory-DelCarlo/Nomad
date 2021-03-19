@@ -200,7 +200,7 @@
   background-color: #145E18;
 }
 
-.test {
+.review-field-wrapper {
   position: relative;
   display: flex; 
   width: 80%;
@@ -211,4 +211,24 @@
   position: absolute;
   width: 25px;
   height: 25px;
+}
+
+#review-title {
+  font-size: 30px;
+  background-color: #52392F;
+  border: 2px solid #50342a;
+  box-shadow: 1px 1px 9px -1px #3c3f3b;
+  min-width: 200px;
+  max-width: 500px;
+  text-align: center;
+}
+
+#review-title-error {
+  position: absolute;
+}
+
+.wow {
+  display: flex;
+  flex-direction: column;
+  position: relative;
 }
