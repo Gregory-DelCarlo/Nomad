@@ -8,11 +8,14 @@ class TripList extends React.Component {
       trips: [],
       page: "start"
     }
+    this.removeTrip = this.removeTrip.bind(this);
   }
 
   componentDidMount() {
     this.props.getUserTrips(this.props.userId);
-    this.setState({trips: this.props.trips});
+    if (this.state.trips === []) {
+      this.setState({trips: this.props.trips});
+    }
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -24,6 +27,15 @@ class TripList extends React.Component {
 
   changePage(index) {
     this.setState({page: index})
+  }
+
+  removeTrip(id, index) {
+    const newTrips = this.state.trips.splice(index, 1);
+    this.setState({
+      trips: newTrips,
+      page: "start"
+    })
+    this.props.deleteTrip(id)
   }
 
   getTrips() {
@@ -49,9 +61,13 @@ class TripList extends React.Component {
     if (index === 'start') {
       return null;
     } else {
+      const trip = this.state.trips[index];
       return (
         <div className="trip-show-page">
-          <Trip trip={this.state.trips[index]}/>
+          <Trip 
+            trip={trip}
+            deleteTrip={() => this.removeTrip(trip._id, index)}
+          />
         </div>
       )
     }
