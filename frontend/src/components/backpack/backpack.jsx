@@ -160,19 +160,25 @@ class Backpack extends React.Component {
       )
     } else if (this.state.currentPage === 'time and location form') {
       return (
-        <DateLocation clickAddItem={this.addDateLocation} currentPark={this.props.currentPark}/>
+        <DateLocation 
+          clickAddItem={this.addDateLocation} 
+          currentPark={this.props.currentPark}
+          state={this.state}
+        />
       )
     } else if (this.state.currentPage === 'team form') {
       return (
         <Team 
-          clickAddItem={this.addTeam} 
+          clickAddItem={this.addTeam}
+          state={this.state} 
         />
       )
     } else if (this.state.currentPage === 'supplies form') {
       // debugger
       return (
         <Supplies 
-        clickAddItem={this.addSupplies} 
+          clickAddItem={this.addSupplies}
+          state={this.state} 
         />
         )
       } else if (this.state.currentPage === 'review') {
@@ -180,6 +186,7 @@ class Backpack extends React.Component {
         <Review
           reviewBackpack={this.state}
           saveTrip={this.saveTrip}
+          changeView={this.changeView}
         />
       )
     }
