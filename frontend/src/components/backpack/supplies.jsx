@@ -21,7 +21,10 @@ class Supplies extends React.Component {
   // }
 
   handleChange(field) {
-    return e => this.setState({ [field]: e.target.value })
+    return e => {
+      this.handleValidations()
+      this.setState({ [field]: e.target.value })
+    }
   }
 
   handleSubmit(e) {
@@ -95,6 +98,7 @@ class Supplies extends React.Component {
             <input 
               type="text"
               onChange={this.handleChange('foodItem')}
+              // onBlur={this.handleValidations}
               // className="backpack-input"
               className= {errors["Food"] ? "backpack-input error" : "backpack-input"}
               value={this.state.foodItem}
@@ -108,6 +112,7 @@ class Supplies extends React.Component {
             <input 
               type="text"
               onChange={this.handleChange('equipmentItem')}
+              // onBlur={this.handleValidations}
               className= {errors["Equipment"] ? "backpack-input error" : "backpack-input"}
               value={this.state.equipmentItem}
             />

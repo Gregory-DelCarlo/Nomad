@@ -16,7 +16,10 @@ class Team extends React.Component {
   }
 
   handleChange(field) {
-    return e => this.setState({ [field]: e.target.value })
+    return e => {
+      this.handleValidation()
+      this.setState({ [field]: e.target.value })
+    }
   }
 
   handleSubmit(e) {
@@ -62,6 +65,7 @@ class Team extends React.Component {
             <input 
               type="text"
               onChange={this.handleChange('name')}
+              // onBlur={this.handleValidation}
               className= {this.state.error["Name"] ? "backpack-input error" : "backpack-input"}
               value={this.state.name}
             />

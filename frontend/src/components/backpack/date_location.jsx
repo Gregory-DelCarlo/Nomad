@@ -21,7 +21,10 @@ export default class DateLocation extends React.Component {
   }
 
   handleChange(field) {
-    return e => {this.setState({ [field]: e.target.value })}
+    return e => {
+      this.setState({ [field]: e.target.value })
+      this.handleValidations()
+    }
   }
   
   handleSubmit(e) {
@@ -98,6 +101,7 @@ export default class DateLocation extends React.Component {
                 className= {errors["Trail"] ? "backpack-input error" : "backpack-input"}
                 type="text"
                 onChange={this.handleChange('trailName')}
+                // onBlur={this.handleValidations}
                 value={this.state.trailName}
               />
               { errors["Trail"] ? <div className='backpack-input-error'>{errors["Trail"]}</div> : null}
@@ -111,6 +115,7 @@ export default class DateLocation extends React.Component {
               <input 
                 type='date'
                 onChange={this.handleChange('startDate')}
+                onBlur={this.handleValidations}
                 className= {errors["Start"]  ? "backpack-input error" : "backpack-input"}
                 value={this.state.startDate}
               />
@@ -121,6 +126,7 @@ export default class DateLocation extends React.Component {
                   <input 
                     type='date'
                     onChange={this.handleChange('endDate')}
+                    onBlur={this.handleValidations}
                     className= {errors["End"]  ? "backpack-input error" : "backpack-input"}
                     value={this.state.endDate}
                   />
