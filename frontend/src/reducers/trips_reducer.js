@@ -12,27 +12,15 @@ const TripsReducer = (state = {trips: []}, action) =>{
       newState[action.trip.id] = action.trip.data;
       return newState;
     case RECEIVE_USER_TRIPS:
-      newState = action.trips.data;
-      return newState;
+      return {trips: action.trips.data};
     case RECEIVE_NEW_TRIP:
-      // newState[action.trip.id] = action.trip.data;
-      newState[newState.entities.trips.length] = action.trip.data;
-      // return newState;
-      return {...newState, trips: [...newState.entities.trips, action.trips.data]}
+      return {trips: [...newState.trips, action.trip.data]}
     case RECEIVE_TRIP_UPDATE:
       newState[action.trip.id] = action.trip.data;
       return newState
     case DELETE_TRIP:
-      // delete newState[action.trip.id];
-      // return newState;
-      // return {
-      //   trips: [
-      //     ...newState.entities.trips.filter(trip => trip !== action.trip.data)
-      //   ]
-      // }
       return {
-        ...newState,
-        trips: [newState.entities.trips.filter(trip => trip !== action.trip.data)]
+        trips: newState.trips.filter(trip => trip._id !== action.trip.data._id)
       }
     default:
       return state;
