@@ -5,7 +5,7 @@ class Team extends React.Component {
     super(props);
     this.state = {
       team: this.props.state.team,
-      name: this.props.state.name,
+      name: '',
       error: {}
     }
     this.handleSubmit = this.handleSubmit.bind(this);
