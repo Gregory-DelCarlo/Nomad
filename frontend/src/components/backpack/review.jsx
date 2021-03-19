@@ -64,7 +64,7 @@ class Review extends React.Component {
                 onBlur={this.handleValidation}
                 className= {this.state.error !== null ? "review-title backpack-input review-error" : "review-title backpack-input"}
               />
-              {this.state.error !== null ? <div className='backpack-input-error' id="review-title-error">{this.state.error}</div> : null}
+              {this.state.error !== null ? <p className='backpack-input-error' id="review-title-error">{this.state.error}</p> : null}
             </div>
 
             <div onClick={this.handleClick}>

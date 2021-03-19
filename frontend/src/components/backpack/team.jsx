@@ -17,8 +17,17 @@ class Team extends React.Component {
 
   handleChange(field) {
     return e => {
-      this.handleValidation()
       this.setState({ [field]: e.target.value })
+      // this.handleValidation()
+      let error = {};
+  
+      if (e.target.length === 0) {
+        error["Name"] = "Name cannot be blank";
+      } else {
+        this.clearErrors()
+      }
+  
+      this.setState( {error: error} )
     }
   }
 

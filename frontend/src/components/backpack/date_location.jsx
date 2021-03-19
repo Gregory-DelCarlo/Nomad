@@ -18,14 +18,18 @@ export default class DateLocation extends React.Component {
     // this.getParkId = this.getParkId.bind(this);
     this.handleValidations = this.handleValidations.bind(this);
     this.clearErrors = this.clearErrors.bind(this)
+
+    this.dateValidation = this.dateValidation.bind(this)
   }
 
   handleChange(field) {
     return e => {
       this.setState({ [field]: e.target.value })
-      this.handleValidations()
+      this.handleLiveVaidation(field, e.target.value.length)
+      this.dateValidation(field, e.target.value)
     }
   }
+
   
   handleSubmit(e) {
     e.preventDefault();
@@ -39,7 +43,7 @@ export default class DateLocation extends React.Component {
   clearErrors() {
     this.setState( {error: {}} )
   }
-
+  
   handleValidations() {
     let trailName = this.state.trailName.length;
     let startDate = this.state.startDate.length;
@@ -47,6 +51,7 @@ export default class DateLocation extends React.Component {
     let validForm = true;
     let errors = {}
 
+    
     if (startDate === 0){
       errors["Start"] = "Start date cannot be empty"
       validForm = false;
@@ -59,14 +64,69 @@ export default class DateLocation extends React.Component {
       errors["Trail"] = "Trail name cannot be empty"
       validForm = false;
     }
-
+    
     this.setState( {errors: errors} )
     return validForm
   }
 
+  dateValidation(field, value) {
+    let errors = Object.assign(this.state.errors);
+    let startDate;
+    let endDate;
+    
+    if (field === "endDate") {
+      startDate = new Date(this.state.startDate);
+      endDate = new Date(value);
+      if (startDate > endDate){
+        errors["End"] = "End date cannot be earlier"
+      } else {
+        delete errors["End"]
+      }
+    }
+    else if (field === "startDate") {
+      startDate = new Date(value);
+      endDate = new Date(this.state.endDate);
+      if (startDate > endDate){
+        errors["End"] = "End date cannot be earlier"
+      } else {
+        delete errors["End"]
+      }
+    }
+
+    this.setState( {errors: errors} )
+  }
+  
+  handleLiveVaidation(field, length) {
+    let errors = Object.assign(this.state.errors)
+    
+    if (length === 0) {
+      if (field === "startDate"){
+        errors["Start"] = "Start date cannot be empty"
+      } 
+      if (field === "endDate"){
+        errors["End"] = "End date cannot be empty"
+      } 
+      if (field === "trailName") {
+        errors["Trail"] = "Trail name cannot be empty"
+      }
+    } else {
+      if (field === "startDate"){
+        delete errors["Start"]
+      } 
+      if (field === "endDate"){
+        delete errors["End"]
+      } 
+      if (field === "trailName") {
+        delete errors["Trail"]
+      }
+    }
+
+    this.setState( {errors: errors} )
+  }
+
   renderTrailMap() {
     if (this.state.parkId) {
-        return <ParkContainer rid={this.props.parks[this.state.parkId].rid} />
+      return <ParkContainer rid={this.props.parks[this.state.parkId].rid} />
     } 
   }
   //   componentWillMount() {
@@ -115,7 +175,8 @@ export default class DateLocation extends React.Component {
               <input 
                 type='date'
                 onChange={this.handleChange('startDate')}
-                onBlur={this.handleValidations}
+                // onBlur={this.handleValidations}
+                // onClick={this.dateValidation}
                 className= {errors["Start"]  ? "backpack-input error" : "backpack-input"}
                 value={this.state.startDate}
               />
@@ -126,7 +187,8 @@ export default class DateLocation extends React.Component {
                   <input 
                     type='date'
                     onChange={this.handleChange('endDate')}
-                    onBlur={this.handleValidations}
+                    // onBlur={this.handleValidations}
+                    // onClick={this.dateValidation}
                     className= {errors["End"]  ? "backpack-input error" : "backpack-input"}
                     value={this.state.endDate}
                   />

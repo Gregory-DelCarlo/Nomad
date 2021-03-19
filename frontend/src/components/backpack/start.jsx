@@ -20,11 +20,10 @@ class Start extends React.Component {
   
   handleLiveValidation(e) {
     let length = e
-    if (length < 3 || length > 50) {
-      this.setState( {error: 'Title must be between 3 and 50 characters'} )
-    } else {
+    if (length > 3 && length < 50) {
+      // this.setState( {error: 'Title must be between 3 and 50 characters'} )
       this.setState( {error: null} )
-    }
+    } 
   }
 
   handleSubmit(e) {
