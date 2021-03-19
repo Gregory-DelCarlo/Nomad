@@ -13,9 +13,7 @@ class TripList extends React.Component {
 
   componentDidMount() {
     this.props.getUserTrips(this.props.userId);
-    if (this.state.trips === []) {
-      this.setState({trips: this.props.trips});
-    }
+    this.setState({trips: this.props.trips});
   }
 
   static getDerivedStateFromProps(nextProps, prevState) {
@@ -30,15 +28,18 @@ class TripList extends React.Component {
   }
 
   removeTrip(id, index) {
+    debugger
     const newTrips = this.state.trips.splice(index, 1);
     this.setState({
       trips: newTrips,
       page: "start"
     })
     this.props.deleteTrip(id)
+    debugger
   }
 
   getTrips() {
+    debugger
     return (
       <div className="trip-list">
         <div className="trip-list-wrapper">
