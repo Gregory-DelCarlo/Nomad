@@ -8,6 +8,7 @@ class TripList extends React.Component {
       trips: [],
       page: "start"
     }
+    this.removeTrip = this.removeTrip.bind(this);
   }
 
   componentDidMount() {
@@ -24,6 +25,15 @@ class TripList extends React.Component {
 
   changePage(index) {
     this.setState({page: index})
+  }
+
+  removeTrip(trip, index) {
+    const newTrips = this.state.trips.splice(index, 1);
+    this.setState({
+      trips: newTrips,
+      page: "start"
+    })
+    this.props.deleteTrip(trip)
   }
 
   getTrips() {
@@ -49,9 +59,13 @@ class TripList extends React.Component {
     if (index === 'start') {
       return null;
     } else {
+      const trip = this.state.trips[index];
       return (
         <div className="trip-show-page">
-          <Trip trip={this.state.trips[index]}/>
+          <Trip 
+            trip={trip}
+            deleteTrip={() => this.removeTrip(trip, index)}
+          />
         </div>
       )
     }
