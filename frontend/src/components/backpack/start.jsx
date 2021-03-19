@@ -12,7 +12,18 @@ class Start extends React.Component {
   }
 
   handleChange(field) {
-    return e => this.setState({ [field]: e.target.value })
+    return e => {
+      this.setState({ [field]: e.target.value })
+      this.handleLiveValidation(e.target.value.length)
+    }
+  }
+  
+  handleLiveValidation(e) {
+    let length = e
+    if (length > 3 && length < 50) {
+      // this.setState( {error: 'Title must be between 3 and 50 characters'} )
+      this.setState( {error: null} )
+    } 
   }
 
   handleSubmit(e) {
@@ -23,11 +34,7 @@ class Start extends React.Component {
   handleValidation() {
     this.setState( {error: null} )
     let length = this.state.title.length;
-    if (length === 0) {
-      this.setState( {error: 'Title field is required'} );
-      return false
-    }
-    else if (length < 3 || length > 50) {
+    if (length < 3 || length > 50) {
       this.setState( {error: 'Title must be between 3 and 50 characters'} )
       return false
     }
@@ -44,7 +51,7 @@ class Start extends React.Component {
             <input 
               type="text"
               onChange={this.handleChange('title')}
-              // className="backpack-input"
+              // onBlur={this.handleValidation}
               className= {this.state.error !== null? "backpack-input error" : "backpack-input"}
             />
             {this.state.error !== null? <div className='backpack-input-error'>{this.state.error}</div> : null}

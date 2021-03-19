@@ -36,7 +36,7 @@
 
 .review-box * h2 {
   font-size: 30px;
-  margin: 20px;
+  margin: 10px 20px 20px;
 }
 
 .review-date-location {
@@ -201,7 +201,7 @@
   background-color: #145E18;
 }
 
-.test {
+.review-field-wrapper {
   position: relative;
   display: flex; 
   width: 80%;
@@ -212,4 +212,34 @@
   position: absolute;
   width: 25px;
   height: 25px;
+}
+
+.review-title {
+  font-size: 30px;
+  background-color: #52392F;
+  border: 1px solid #50342a;
+  box-shadow: 1px 1px 9px -1px #3c3f3b;
+  min-width: 200px;
+  max-width: 500px;
+  text-align: center;
+  transition: 0.3s;
+}
+
+.review-title:focus {
+  background-color: #795c50;
+}
+
+#review-title-error {
+  max-width: 200px;
+  margin-top: -10px;
+}
+
+.review-error {
+  margin-bottom: 20px;
+  border: 1px solid #ff5200;
+}
+
+.wow {
+  display: flex;
+  flex-direction: column;
 }
