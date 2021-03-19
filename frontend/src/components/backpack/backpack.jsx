@@ -186,6 +186,7 @@ class Backpack extends React.Component {
         <Review
           reviewBackpack={this.state}
           saveTrip={this.saveTrip}
+          changeView={this.changeView}
         />
       )
     }
