@@ -13,7 +13,11 @@
   justify-content: flex-start;
   align-items: center;
   height: 100%;
+<<<<<<< HEAD
   width: 700px;
+=======
+  width: 660px;
+>>>>>>> main
   border-radius: 6px;
   padding: 20px;
   background-color: #6E5B4B;
@@ -124,7 +128,7 @@
   margin-right: 5px;
 }
 
-.food-list > ul {
+.food-list ul {
   display: flex;
   flex-direction: column;
   width: 300px;
@@ -158,7 +162,7 @@
   margin-right: 5px;
 }
 
-.equipment-list > ul {
+.equipment-list ul {
   display: flex;
   flex-direction: column;
   width: 300px;
@@ -199,4 +203,17 @@
 
 .review-box > button:active {
   background-color: #145E18;
+}
+
+.test {
+  position: relative;
+  display: flex; 
+  width: 80%;
+  justify-content: center;
+}
+
+#review {
+  position: absolute;
+  width: 25px;
+  height: 25px;
 }

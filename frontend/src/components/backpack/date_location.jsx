@@ -7,9 +7,9 @@ export default class DateLocation extends React.Component {
     super(props);
     this.state = {
         parkId: this.props.currentPark, 
-        trailName: '',
-        startDate: '',
-        endDate: '',
+        trailName: this.props.state.trailName,
+        startDate: this.props.state.startDate,
+        endDate: this.props.state.endDate,
         errors: {}
     }
 
@@ -98,6 +98,7 @@ export default class DateLocation extends React.Component {
                 className= {errors["Trail"] ? "backpack-input error" : "backpack-input"}
                 type="text"
                 onChange={this.handleChange('trailName')}
+                value={this.state.trailName}
               />
               { errors["Trail"] ? <div className='backpack-input-error'>{errors["Trail"]}</div> : null}
 
@@ -111,6 +112,7 @@ export default class DateLocation extends React.Component {
                 type='date'
                 onChange={this.handleChange('startDate')}
                 className= {errors["Start"]  ? "backpack-input error" : "backpack-input"}
+                value={this.state.startDate}
               />
               { errors["Start"] ? <div className='backpack-input-error'>{errors["Start"]}</div> : null}
             </div>
@@ -120,6 +122,7 @@ export default class DateLocation extends React.Component {
                     type='date'
                     onChange={this.handleChange('endDate')}
                     className= {errors["End"]  ? "backpack-input error" : "backpack-input"}
+                    value={this.state.endDate}
                   />
                   { errors["End"] ? <div className='backpack-input-error'>{errors["End"]}</div> : null}
                 </div>
