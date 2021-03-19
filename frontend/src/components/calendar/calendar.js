@@ -28,8 +28,8 @@ export default class Calendar extends React.Component {
                 return ({
                     id: trip._id,
                     title: trip.title,
-                    start: "2020" + String(Math.random(1,12).floor()) + String(Math.random(1,25).floor)//placeholder for date/time "yyyy-mm-dd"
-                //    end: // "yyyy-mm-dd"
+                    start: trip.start,
+                    end: trip.end,
                 })
             }) 
        )

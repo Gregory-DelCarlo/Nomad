@@ -156,9 +156,10 @@
 	padding: 16px;
 }
 
-.dropdown-links div:hover {
+.dropdown-links .prof-links:hover {
 	background-color: #aca9a9;
-  text-decoration: none;
+  text-decoration: underline;
+   color: #000000;
 }
 
 .dropdown-profile:hover .dropdown-links {
@@ -170,6 +171,11 @@
   text-decoration: none;
   color: black;
 }
+
+//  .prof-links:hover{
+//   color: #000000;
+  // text-decoration: underline;
+// }
 
 .dropdown-greeting{
   font-weight: 600;
