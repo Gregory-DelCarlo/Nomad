@@ -30,7 +30,7 @@ class SessionForm extends React.Component {
       password: "123456"
     }
 
-    this.props.demoForm(demo).then(this.props.closeModal)
+    this.props.demoForm(demo).then(this.props.closeModal);
   }
 
   handleSubmit(e) {

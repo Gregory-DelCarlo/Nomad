@@ -4,7 +4,7 @@ import { RECEIVE_TRIP,
         RECEIVE_TRIP_UPDATE,
         DELETE_TRIP } from '../actions/trip_actions';
 
-const TripsReducer = (state = {trips: []}, action) =>{
+const TripsReducer = (state = {trips: [], tripsPulled: false}, action) =>{
   Object.freeze(state);
   let newState = Object.assign({}, state);
   switch(action.type) {
@@ -12,7 +12,7 @@ const TripsReducer = (state = {trips: []}, action) =>{
       newState[action.trip.id] = action.trip.data;
       return newState;
     case RECEIVE_USER_TRIPS:
-      return {trips: action.trips.data};
+      return {trips: action.trips.data, tripsPulled: true};
     case RECEIVE_NEW_TRIP:
       return {trips: [...newState.trips, action.trip.data]}
     case RECEIVE_TRIP_UPDATE:

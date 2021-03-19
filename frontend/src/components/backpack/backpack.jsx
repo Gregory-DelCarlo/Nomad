@@ -180,7 +180,6 @@ class Backpack extends React.Component {
         />
       )
     } else if (this.state.currentPage === 'supplies form') {
-      // debugger
       return (
         <Supplies 
           clickAddItem={this.addSupplies}
