@@ -27,19 +27,16 @@ class TripList extends React.Component {
     this.setState({page: index})
   }
 
-  removeTrip(id, index) {
-    debugger
+  removeTrip(trip, index) {
     const newTrips = this.state.trips.splice(index, 1);
     this.setState({
       trips: newTrips,
       page: "start"
     })
-    this.props.deleteTrip(id)
-    debugger
+    this.props.deleteTrip(trip)
   }
 
   getTrips() {
-    debugger
     return (
       <div className="trip-list">
         <div className="trip-list-wrapper">
@@ -67,7 +64,7 @@ class TripList extends React.Component {
         <div className="trip-show-page">
           <Trip 
             trip={trip}
-            deleteTrip={() => this.removeTrip(trip._id, index)}
+            deleteTrip={() => this.removeTrip(trip, index)}
           />
         </div>
       )
