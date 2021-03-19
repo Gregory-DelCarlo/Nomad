@@ -4,7 +4,6 @@ import { getParks, receivePark } from '../../actions/park_actions';
 import { fetchWeather } from '../../actions/weather_actions';
 
 const mapStateToProps = (state) => {
-    // debugger
     return {
         parks: state.entities.parks,
         currentPark: state.ui.currentPark ? state.entities.parks[state.ui.currentPark] : '',
@@ -15,7 +14,6 @@ const mapStateToProps = (state) => {
 };
 
 const mapDispatchToProps = (dispatch) => {
-    // debugger
     return {
         getParks: () => dispatch(getParks()),
         receivePark: park_rid => dispatch(receivePark(park_rid)),

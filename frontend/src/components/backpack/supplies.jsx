@@ -82,7 +82,6 @@ class Supplies extends React.Component {
   }
 
   render() {
-    // debugger
     const food = this.state.food;
     const equipment = this.state.equipment;
     let errors = Object.values(this.state.errors);

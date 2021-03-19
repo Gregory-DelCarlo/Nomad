@@ -12,7 +12,6 @@ class TripList extends React.Component {
   }
 
   componentDidMount() {
-    debugger
     if (this.props.tripsPulled === false) {
       this.props.getUserTrips(this.props.userId);
     }
