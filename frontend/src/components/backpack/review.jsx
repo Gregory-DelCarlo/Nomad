@@ -5,7 +5,8 @@ class Review extends React.Component {
     super(props)
 
     this.state ={
-      title: this.props.reviewBackpack.title
+      title: this.props.reviewBackpack.title,
+      error: null
     }
 
     this.handleChange = this.handleChange.bind(this)
@@ -15,19 +16,19 @@ class Review extends React.Component {
   }
 
   componentDidMount() {
-    let field = document.getElementById("review-title")
+    let field = document.getElementsByClassName("review-title")[0]
     field.style.width = field.value.length * 20 + 20 + "px";
   }
 
   handleChange(e) {
     this.props.reviewBackpack.title =  e.target.value
     this.setState({ title: e.target.value })
-    let field = document.getElementById("review-title")
+    let field = document.getElementsByClassName("review-title")[0]
     field.style.width = field.value.length * 20 + 20 + "px";
   }
 
   handleClick() {
-    let field = document.getElementById("review-title")
+    let field = document.getElementsByClassName("review-title")[0]
     field.focus()
   }
 
@@ -56,11 +57,9 @@ class Review extends React.Component {
                 value={this.state.title} 
                 onChange={this.handleChange}
                 onBlur={this.handleValidation}
-                // className="backpack-input"
-                className= {this.state.error !== null? "backpack-input error" : "backpack-input"}
-                id="review-title" 
+                className= {this.state.error !== null ? "review-title backpack-input review-error" : "review-title backpack-input"}
               />
-              {this.state.error !== null? <div className='backpack-input-error' id="review-title-error">{this.state.error}</div> : null}
+              {this.state.error !== null ? <div className='backpack-input-error' id="review-title-error">{this.state.error}</div> : null}
             </div>
 
             <div onClick={this.handleClick}>
