@@ -31,6 +31,8 @@ class Backpack extends React.Component {
     this.addItem = this.addItem.bind(this);
     this.saveTrip = this.saveTrip.bind(this);
     this.addDateLocation = this.addDateLocation.bind(this);
+
+    this.setTitle = this.setTitle.bind(this);
   }
 
   componentWillMount() {
@@ -49,6 +51,10 @@ class Backpack extends React.Component {
     this.setState({
       currentPage: newPage, numItems: itemNum, title: title
     })
+  }
+
+  setTitle(title) {
+    this.setState( {title: title} )
   }
 
   addDateLocation(newPage, itemNum, startDate, endDate, trailName, parkId) {
@@ -187,6 +193,7 @@ class Backpack extends React.Component {
           reviewBackpack={this.state}
           saveTrip={this.saveTrip}
           changeView={this.changeView}
+          clickAddItem={this.setTitle}
         />
       )
     }
