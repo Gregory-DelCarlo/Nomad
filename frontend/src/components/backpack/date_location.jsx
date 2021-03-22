@@ -1,6 +1,6 @@
 import React from 'react';
 import ParksDropdownContainer from '../dropdowns/parks_dropdown_container'
-import ParkContainer from '../parks/park_container';
+import Weather from '../weather/weather_container'
 
 export default class DateLocation extends React.Component {
   constructor(props) {
@@ -125,20 +125,23 @@ export default class DateLocation extends React.Component {
   }
 
   renderTrailMap() {
-    if (this.state.parkId) {
-      return <ParkContainer rid={this.props.parks[this.state.parkId].rid} />
+    if (this.props.parkRid) {
+      return(
+        <div className="widget-page">
+            {/* <Weather/> */}
+            <div className="widget-container">
+                <div className="widget-info">
+                    <iframe title='region info' width="130" height="100%" frameBorder="0" src={`https://www.trailforks.com/widgets/region_info/?rid=${this.props.parkRid}&counts=1&stats=1&title=1&w=100%&100%&activitytype=6`}></iframe>
+                </div>
+                <div className="widget-map">
+                    <iframe title='region map' width="100%" height="100%" frameBorder="0" allowFullScreen src={`https://www.trailforks.com/widgets/region_map/?rid=${this.props.parkRid}&w=100%&h=300px&activitytype=6&maptype=trailforks&trailstyle=difficulty&controls=0&list=1&layers=labels,poi,polygon,directory,region&z=&lat=&lon=&hideunsanctioned=0`}></iframe>
+                </div>
+            </div>
+        </div>
+      )
     } 
   }
-  //   componentWillMount() {
-    //       if(this.state.parkId == '') {
-      //         this.setState({parkId: this.props.currentPark});
-      //       }
-      //   }
-      //   getParkId(parkId) {
-        //     //   debugger
-        //     this.setState({parkId});
-        //   }
-        //   getParkId={this.getParkId}
+
   render() {
     let errors = Object.values(this.state.errors);
     if (errors) errors.forEach( error => {
@@ -195,9 +198,10 @@ export default class DateLocation extends React.Component {
                   { errors["End"] ? <div className='backpack-input-error'>{errors["End"]}</div> : null}
                 </div>
             <button type='submit'>Add to your Backpack</button>
-            {this.renderTrailMap()}
           </form>
-
+          <div className='map-box'>
+              {this.renderTrailMap()}
+          </div>
         </div>
       </div>
     )
