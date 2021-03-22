@@ -1,9 +1,11 @@
 import React from 'react';
 import Start from './start';
 import DateLocation from './date_location';
+//test components
 import Team from './team';
 import Supplies from './supplies';
 import Review from './review';
+import '@fortawesome/fontawesome-free/js/all.js';
 
 class Backpack extends React.Component {
   constructor(props) {
@@ -29,6 +31,8 @@ class Backpack extends React.Component {
     this.addItem = this.addItem.bind(this);
     this.saveTrip = this.saveTrip.bind(this);
     this.addDateLocation = this.addDateLocation.bind(this);
+
+    this.setTitle = this.setTitle.bind(this);
   }
 
   componentWillMount() {
@@ -47,6 +51,10 @@ class Backpack extends React.Component {
     this.setState({
       currentPage: newPage, numItems: itemNum, title: title
     })
+  }
+
+  setTitle(title) {
+    this.setState( {title: title} )
   }
 
   addDateLocation(newPage, itemNum, startDate, endDate, trailName, parkId) {
@@ -101,22 +109,37 @@ class Backpack extends React.Component {
       const itemList = [
         <li 
           key="1"
-          onClick={() => this.changeView("time and location form")}
+          // onClick={() => this.changeView("time and location form")}
           className="location-item"
           slide={this.state.numItems}
-        >Time and Location</li>, 
+        >
+          <p className="item-label">Time &amp; Location</p>
+          <div onClick={() => this.changeView("time and location form")}>
+            <i className='fas fa-pencil-alt'/>
+          </div>
+        </li>, 
         <li 
           key="2"
-          onClick={() => this.changeView("team form")}
+          // onClick={() => this.changeView("team form")}
           className="team-item"
           slide={this.state.numItems}
-        >Team</li>, 
+        >
+          <p className="item-label">Team</p>
+          <div onClick={() => this.changeView("team form")}>
+            <i className='fas fa-pencil-alt' />
+          </div>
+        </li>, 
         <li 
           key="3"
-          onClick={() => this.changeView("supplies form")}
+          // onClick={() => this.changeView("supplies form")}
           className="supplies-item"
           slide={this.state.numItems}
-        >Supplies</li>
+        >
+          <p className="item-label">Supplies</p>
+          <div onClick={() => this.changeView("supplies form")}>
+            <i className='fas fa-pencil-alt'/>
+          </div>
+        </li>
       ];
       const items = itemList.slice(0, itemNum);
       return (
@@ -143,25 +166,34 @@ class Backpack extends React.Component {
       )
     } else if (this.state.currentPage === 'time and location form') {
       return (
-        <DateLocation clickAddItem={this.addDateLocation} currentParkId={this.props.currentPark} parkRid={this.props.currentParkRid} />
+        <DateLocation 
+          clickAddItem={this.addDateLocation} 
+          currentPark={this.props.currentPark}
+          state={this.state}
+          parkRid={this.props.currentParkRid}
+        />
       )
     } else if (this.state.currentPage === 'team form') {
       return (
         <Team 
-          clickAddItem={this.addTeam} 
+          clickAddItem={this.addTeam}
+          state={this.state} 
         />
       )
     } else if (this.state.currentPage === 'supplies form') {
       return (
         <Supplies 
-          clickAddItem={this.addSupplies} 
+          clickAddItem={this.addSupplies}
+          state={this.state} 
         />
-      )
-    } else if (this.state.currentPage === 'review') {
+        )
+      } else if (this.state.currentPage === 'review') {
       return (
         <Review
           reviewBackpack={this.state}
           saveTrip={this.saveTrip}
+          changeView={this.changeView}
+          clickAddItem={this.setTitle}
         />
       )
     }

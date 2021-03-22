@@ -10,7 +10,10 @@ const TripSchema = new Schema({
     type: String,
     required: true
   },
-  date: {
+  startDate: {
+    type: String
+  },
+  endDate: {
     type: String
   },
   trailName: {

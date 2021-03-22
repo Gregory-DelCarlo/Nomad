@@ -48,5 +48,5 @@ export const updateTrip = trip => dispatch => (
 );
 
 export const deleteTrip = trip => dispatch => (
-  APIUtil.deleteTrip(trip).then(trip => dispatch(removeTrip(trip)))
+  APIUtil.deleteTrip(trip._id).then(trip => dispatch(removeTrip(trip)))
 );

@@ -4,14 +4,10 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import NavBarContainer from './nav/navbar_container';
 import MainPage from './main_page/main_page';
 import BackpackContainer from './backpack/backpack_container';
-import LoginFormContainer from './session/login_form_container';
-import SignupFormContainer from './session/signup_form_container';
 import WeatherContainer from './weather/weather_container';
 import Profile from './profile/profile_container'
 import TripListContainer from './trips/trip_list_container';
 import MapsContainer from './maps/maps_container';
-
-
 const App = () => (
     <div className="app">
         <NavBarContainer />

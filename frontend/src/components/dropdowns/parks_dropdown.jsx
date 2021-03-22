@@ -17,7 +17,6 @@ export default class ParksDropdown extends React.Component {
     }
 
     handleClick(parkId) {
-        // debugger
         const currentParkId = parkId;
         this.props.receivePark(currentParkId);
 

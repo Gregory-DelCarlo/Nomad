@@ -9,7 +9,8 @@ import {
 
 const mapStateToProps = state => {
   return({
-    trips: Object.values(state.trips),
+    trips: Object.values(state.backpack.trips),
+    tripsPulled: state.backpack.tripsPulled,
     userId: state.session.user.id
   })
 }

@@ -4,15 +4,31 @@ class Team extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      team: [],
-      name: ''
+      team: this.props.state.team,
+      name: '',
+      error: {}
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleAddMember = this.handleAddMember.bind(this);
+    this.handleValidation = this.handleValidation.bind(this);
+    this.clearErrors = this.clearErrors.bind(this)
+
   }
 
   handleChange(field) {
-    return e => this.setState({ [field]: e.target.value })
+    return e => {
+      this.setState({ [field]: e.target.value })
+      // this.handleValidation()
+      let error = {};
+  
+      if (e.target.length === 0) {
+        error["Name"] = "Name cannot be blank";
+      } else {
+        this.clearErrors()
+      }
+  
+      this.setState( {error: error} )
+    }
   }
 
   handleSubmit(e) {
@@ -22,8 +38,29 @@ class Team extends React.Component {
 
   handleAddMember(e) {
     e.preventDefault();
-    const joined = this.state.team.concat(this.state.name);
-    this.setState({ team: joined, name: '' })
+    this.clearErrors();
+    if (this.handleValidation()) {
+      const joined = this.state.team.concat(this.state.name);
+      this.setState({ team: joined, name: '' })
+    }
+  }
+
+  clearErrors() {
+    this.setState( {error: {}} )
+  }
+
+  handleValidation() {
+    let name = this.state.name.length;
+    let error = {};
+    let validForm = true;
+
+    if (name === 0) {
+      error["Name"] = "Name cannot be blank";
+      validForm = false;
+    }
+
+    this.setState( {error: error} )
+    return validForm
   }
 
   render() {
@@ -31,14 +68,18 @@ class Team extends React.Component {
     return (
       <div className="team">
         <div className="team-box">
-          <h1>Add your team!</h1>
+          <h1>Add your team</h1>
           <form className="team-form" onSubmit={this.handleAddMember}>
             <label>Enter the name of a team member:</label>
             <input 
               type="text"
               onChange={this.handleChange('name')}
+              // onBlur={this.handleValidation}
+              className= {this.state.error["Name"] ? "backpack-input error" : "backpack-input"}
               value={this.state.name}
             />
+            { this.state.error["Name"] ? <div className='backpack-input-error'>{this.state.error["Name"]}</div> : null}
+
             <button className='team-btn' type='submit'>Add Team Member</button>
           </form>
           <div className='team-form-list'>
