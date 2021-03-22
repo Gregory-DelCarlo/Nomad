@@ -31,6 +31,8 @@ export default class Calendar extends React.Component {
                     title: trip.title,
                     start: trip.startDate,
                     end: trip.endDate,
+                    backgroundColor: "grey"
+
                 })
             }) 
         )
@@ -51,7 +53,7 @@ export default class Calendar extends React.Component {
                             center: 'title',
                             right: 'dayGridMonth,timeGridWeek,timeGridDay'
                         }}
-                        aspectRatio='1.3'
+                        aspectRatio='1.2'
                         initialView='dayGridMonth'
                         editable={true}
                         selectable={true}
