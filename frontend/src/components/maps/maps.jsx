@@ -45,41 +45,36 @@ export default class Park extends React.Component {
             switch (this.props.parks[parkKey].location) {
                 case 'Northern California':
                     this.state.north.push(<li className='park-name' key={parkKey}>
-                                            <button>
+                                            <button onClick={() => this.props.receivePark(parkKey)}>
                                                 {this.props.parks[parkKey].name}
                                             </button>
                                           </li>);
                     return null;
                 case 'Central California':
                     this.state.central.push(<li className='park-name' key={parkKey}>
-                                            <button>
+                                            <button onClick={() => this.props.receivePark(parkKey)}>
                                                 {this.props.parks[parkKey].name}
                                             </button>
                                             </li>);
                     return null;
                 case 'Southern California':
                     this.state.south.push(<li className='park-name' key={parkKey}>
-                                            <button>
+                                            <button onClick={() => this.props.receivePark(parkKey)}>
                                                 {this.props.parks[parkKey].name}
                                             </button>
                                             </li>);
                     return null;
             }
         });
-        debugger
     }
 
     renderParks() {
-        debugger
         if (this.state.area) {
-            debugger
             return this.state[this.state.area];
         }
-        debugger
     }
 
     render() {
-        debugger
         return(
             <div className='map-page'>
                 <div className='map-list'>
