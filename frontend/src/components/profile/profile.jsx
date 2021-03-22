@@ -1,5 +1,5 @@
 import React from 'react';
-import Calendar from '../calendar/calendar'
+import Calendar from '../calendar/calendar_container'
 
 class Profile extends React.Component {
     constructor(props) {

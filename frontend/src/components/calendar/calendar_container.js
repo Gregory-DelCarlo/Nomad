@@ -14,7 +14,7 @@ const mSTP = (state) => {
 
 const mDTP = (dispatch) => {
     return ({
-        getUserTrips: userId => dispatch(fetchUserTrips(userId)),
+        fetchUserTrips: userId => dispatch(fetchUserTrips(userId)),
         clearErrors: () => dispatch(clearErrors()),
     })
 }

@@ -3,29 +3,29 @@ import FullCalendar, { formatDate } from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
-import {createEventId } from './event-utils'
-import {fetchUserTrips} from '../../actions/trip_actions'
+import {INITIAL_EVENTS, } from './event-utils'
+
+
 
 export default class Calendar extends React.Component {
     constructor(props) {
         super(props)
         this.allUserTrips = this.allUserTrips.bind(this)
+        this.weekendsVisible = true;
         this.state = {
-        weekendsVisible: true,
             currentEvents: []
-
         }
+
     }
 
 
     componentDidMount() {
-        this.props.getUserTrips(this.props.userId);
-        this.setState({ currentEvents: this.props.trips });
+        this.props.fetchUserTrips(this.props.userId);
     }
     
    allUserTrips(){
-    
-        this.state.currentEvents.map(
+  
+       this.mapped = this.props.trips.map(
             ((trip) => {
                 return ({
                     id: trip._id,
@@ -34,7 +34,9 @@ export default class Calendar extends React.Component {
                     end: trip.endDate,
                 })
             }) 
-       )
+        )
+      
+        return this.mapped 
    }
 
     render() {
@@ -56,11 +58,11 @@ export default class Calendar extends React.Component {
                         selectable={true}
                         selectMirror={true}
                         dayMaxEvents={true}
-                        weekends={this.state.weekendsVisible}
-                        select={this.handleDateSelect}
-                        intialEvents={this.state.currentEvents}
-                        eventContent={renderEventContent} // custom render function
-                        eventClick={this.handleEventClick}
+                        weekends={this.props.weekendsVisible}
+                        // select={this.handleDateSelect}
+                        events={INITIAL_EVENTS}
+                        // eventContent={renderEventContent} // custom render function
+                        // eventClick={this.handleEventClick}
                         eventsSet={this.handleEvents} // called after events are initialized/added/changed/removed
                     /* you can update a remote database when these fire:
                     eventAdd={function(){}}
@@ -80,16 +82,16 @@ export default class Calendar extends React.Component {
                     <label>
                         <input
                             type='checkbox'
-                            checked={this.state.weekendsVisible}
+                            checked={this.props.weekendsVisible}
                             onChange={this.handleWeekendsToggle}
                         ></input>
                             toggle weekends
                     </label>
                 </div>
                 <div className='calendar-sidebar-section'>
-                    <h2>All Hikes({this.state.currentEvents.length})</h2>
+                    <h2>All Hikes({this.props.trips.length})</h2>
                     <ul>
-                        {this.state.currentEvents.map(renderSidebarEvent)}
+                        {this.props.trips.map(renderSidebarEvent)}
                     </ul>
                 </div>
             </div>
@@ -97,46 +99,43 @@ export default class Calendar extends React.Component {
     }
 
     handleWeekendsToggle = () => {
-        this.setState({
-            weekendsVisible: !this.state.weekendsVisible
-        })
+        this.props.weekendsVisible = !this.props.weekendsVisible
+    
     }
 
-    handleDateSelect = (selectInfo) => {
-        let title = prompt('Please enter a new title for your event')
-        let calendarApi = selectInfo.view.calendar
+    // handleDateSelect = (selectInfo) => {
+    //     let title = prompt('Please enter a new title for your event')
+    //     let calendarApi = selectInfo.view.calendar
 
-        calendarApi.unselect() // clear date selection
+    //     calendarApi.unselect() // clear date selection
 
-        if (title) {
-            calendarApi.addEvent({
-                id: createEventId(),
-                title,
-                start: selectInfo.startStr,
-                end: selectInfo.endStr,
-                allDay: selectInfo.allDay
-            })
-        }
-    }
+    //     if (title) {
+    //         calendarApi.addEvent({
+    //             id: createEventId(),
+    //             title,
+    //             start: selectInfo.startStr,
+    //             end: selectInfo.endStr,
+    //             allDay: selectInfo.allDay
+    //         })
+    //     }
+    // }
 
     
 
-    handleEvents = (events) => {
-        this.setState({
-            currentEvents: events
-        })
-    }
+    // handleEvents = (events) => {
+    //     this.props.trips = events
+    // }
 
 }
 
-function renderEventContent(eventInfo) {
-    return (
-        <>
-            <b>{eventInfo.timeText}</b>
-            <i>{eventInfo.event.title}</i>
-        </>
-    )
-}
+// function renderEventContent(eventInfo) {
+//     return (
+//         <>
+//             <b>{eventInfo.timeText}</b>
+//             <i>{eventInfo.event.title}</i>
+//         </>
+//     )
+// }
 
 
 // removehike = () => {
