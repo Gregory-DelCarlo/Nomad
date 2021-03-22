@@ -17,10 +17,9 @@ export default class ParksDropdown extends React.Component {
     }
 
     handleClick(parkId) {
-        const currentParkId = parkId;
-        this.props.receivePark(currentParkId);
+        this.props.receivePark(parkId);
 
-        window.localStorage.setItem("currentParkId", JSON.stringify(currentParkId))
+        window.localStorage.setItem("currentParkId", JSON.stringify(parkId))
         setTimeout(() => {
             this.props.fetchWeather(this.props.currentPark)
                 .then( window.localStorage.setItem('weather', this.props.weather))
