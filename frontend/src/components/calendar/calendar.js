@@ -3,7 +3,7 @@ import FullCalendar, { formatDate } from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
-import {INITIAL_EVENTS, } from './event-utils'
+
 
 
 
@@ -12,14 +12,12 @@ export default class Calendar extends React.Component {
         super(props)
         this.allUserTrips = this.allUserTrips.bind(this)
         this.weekendsVisible = true;
-        this.state = {
-            currentEvents: []
-        }
-
+    
     }
 
 
     componentDidMount() {
+        debugger
         this.props.fetchUserTrips(this.props.userId);
     }
     
@@ -27,6 +25,7 @@ export default class Calendar extends React.Component {
   
        this.mapped = this.props.trips.map(
             ((trip) => {
+                // debugger
                 return ({
                     id: trip._id,
                     title: trip.title,
@@ -60,9 +59,9 @@ export default class Calendar extends React.Component {
                         dayMaxEvents={true}
                         weekends={this.props.weekendsVisible}
                         // select={this.handleDateSelect}
-                        events={INITIAL_EVENTS}
-                        // eventContent={renderEventContent} // custom render function
-                        // eventClick={this.handleEventClick}
+                        initialEvents={this.allUserTrips()}
+                        eventContent={renderEventContent} // custom render function
+                        eventClick={this.handleEventClick}
                         eventsSet={this.handleEvents} // called after events are initialized/added/changed/removed
                     /* you can update a remote database when these fire:
                     eventAdd={function(){}}
@@ -102,45 +101,16 @@ export default class Calendar extends React.Component {
         this.props.weekendsVisible = !this.props.weekendsVisible
     
     }
-
-    // handleDateSelect = (selectInfo) => {
-    //     let title = prompt('Please enter a new title for your event')
-    //     let calendarApi = selectInfo.view.calendar
-
-    //     calendarApi.unselect() // clear date selection
-
-    //     if (title) {
-    //         calendarApi.addEvent({
-    //             id: createEventId(),
-    //             title,
-    //             start: selectInfo.startStr,
-    //             end: selectInfo.endStr,
-    //             allDay: selectInfo.allDay
-    //         })
-    //     }
-    // }
-
-    
-
-    // handleEvents = (events) => {
-    //     this.props.trips = events
-    // }
-
 }
 
-// function renderEventContent(eventInfo) {
-//     return (
-//         <>
-//             <b>{eventInfo.timeText}</b>
-//             <i>{eventInfo.event.title}</i>
-//         </>
-//     )
-// }
-
-
-// removehike = () => {
-//     clickInfo.event.remove()
-// }
+function renderEventContent(eventInfo) {
+    return (
+        <>
+            <b>{eventInfo.timeText}</b>
+            <i>{eventInfo.event.title}</i>
+        </>
+    )
+}
 
 
 // handleEventClick = (clickInfo) => {
