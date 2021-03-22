@@ -4,23 +4,29 @@ import Weather from '../weather/weather_container'
 export default class Park extends React.Component {
     constructor(props) {
         super(props);
-        this.areaParks = [];
         this.getMap = this.getMap.bind(this);
-        this.getParks = this.getParks.bind(this);
-        this.parkRid = '';
-        this.areas = [
-            <li className='area-name'><button onClick={this.getParks}>Northern California</button></li>,
-            <li className='area-name'><button onClick={this.getParks}>Central California</button></li>,
-            <li className='area-name'><button onClick={this.getParks}>Southern California</button></li>
-        ];
+        this.setParkAreas = this.setParkAreas.bind(this);
+        this.renderParks = this.renderParks.bind(this);
+        this.state = {
+            areas: [
+                <li className='area-name'><button onClick={() => this.setState({area: 'north'})}>Northern California</button></li>,
+                <li className='area-name'><button onClick={() => this.setState({area: 'central'})}>Central California</button></li>,
+                <li className='area-name'><button onClick={() => this.setState({area: 'south'})}>Southern California</button></li>
+            ],
+            north: [],
+            south: [],
+            central: [],
+            area: ''
+        };
     }
 
     componentDidMount() {
         this.props.getParks();
+        this.setParkAreas();
     }
 
     getMap() {
-        if (!this.props.park || this.props.getParks()) return null;
+        if (!this.props.parkRid) return null;
         return(
                 <div className="map-container">
                     <div className="map-info">
@@ -34,32 +40,58 @@ export default class Park extends React.Component {
         )
     }
 
-    getParks(e) {
-        this.areaParks = [];
-
+    setParkAreas() {
         Object.keys(this.props.parks).forEach( parkKey => {
-            if (this.props.parks[parkKey].location === e.target.innerText) {
-                this.areaParks.push(<li className='park-name'>
-                                        <button onClick={() => this.parkRid = this.props.parks[parkKey].rid }>
-                                            {this.props.parks[parkKey].name}
-                                        </button>
-                                    </li>);
+            switch (this.props.parks[parkKey].location) {
+                case 'Northern California':
+                    this.state.north.push(<li className='park-name' key={parkKey}>
+                                            <button>
+                                                {this.props.parks[parkKey].name}
+                                            </button>
+                                          </li>);
+                    return null;
+                case 'Central California':
+                    this.state.central.push(<li className='park-name' key={parkKey}>
+                                            <button>
+                                                {this.props.parks[parkKey].name}
+                                            </button>
+                                            </li>);
+                    return null;
+                case 'Southern California':
+                    this.state.south.push(<li className='park-name' key={parkKey}>
+                                            <button>
+                                                {this.props.parks[parkKey].name}
+                                            </button>
+                                            </li>);
+                    return null;
             }
         });
+        debugger
+    }
+
+    renderParks() {
+        debugger
+        if (this.state.area) {
+            debugger
+            return this.state[this.state.area];
+        }
+        debugger
     }
 
     render() {
+        debugger
         return(
             <div className='map-page'>
                 <div className='map-list'>
                     <h2>Areas</h2>
                     <ul className='map-areas'>
-                        {this.areas}
+                        {this.state.areas}
                     </ul>
                     <h2>Parks</h2>
-                    <ul className='park-maps'>
-                        {this.areaParks}
-                    </ul>
+                        <ul className='park-maps'>
+                            {this.renderParks()}
+                        </ul>
+                    {/* {this.state.parksList} */}
                 </div>
                 {this.getMap()}
             </div>
