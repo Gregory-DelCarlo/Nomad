@@ -3,8 +3,16 @@ import Weather from '../weather/weather_container'
 
 export default class Park extends React.Component {
     constructor(props) {
-        super(props)
+        super(props);
+        this.areaParks = [];
         this.getMap = this.getMap.bind(this);
+        this.getParks = this.getParks.bind(this);
+        this.parkRid = '';
+        this.areas = [
+            <li className='area-name'><button onClick={this.getParks}>Northern California</button></li>,
+            <li className='area-name'><button onClick={this.getParks}>Central California</button></li>,
+            <li className='area-name'><button onClick={this.getParks}>Southern California</button></li>
+        ];
     }
 
     componentDidMount() {
@@ -25,19 +33,33 @@ export default class Park extends React.Component {
             </div>
         )
     }
-    getTrails() {
-        
+
+    getParks(e) {
+        this.areaParks = [];
+
+        Object.keys(this.props.parks).forEach( parkKey => {
+            if (this.props.parks[parkKey].location === e.target.innerText) {
+                this.areaParks.push(<li className='park-name'>
+                                        <button onClick={() => this.parkRid = this.props.parks[parkKey].rid }>
+                                            {this.props.parks[parkKey].name}
+                                        </button>
+                                    </li>);
+            }
+        });
     }
 
     render() {
         return(
             <div className='map-page'>
                 <div className='map-list'>
-                <ul className='map-areas'>
-                    <li className='area-name'>Northern California</li>
-                    <li className='area-name'>Central California</li>
-                    <li className='area-name'>Southern California</li>
-                </ul>
+                    <h2>Areas</h2>
+                    <ul className='map-areas'>
+                        {this.areas}
+                    </ul>
+                    <h2>Parks</h2>
+                    <ul className='park-maps'>
+                        {this.areaParks}
+                    </ul>
                 </div>
                 {this.getMap()}
             </div>

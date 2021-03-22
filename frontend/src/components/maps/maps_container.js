@@ -4,7 +4,8 @@ import Maps from './maps';
 
 const mapStateToProps = (state) => {
     return ({
-        parkRid: state.ui.currentPark ? state.entities.parks[state.ui.currentPark].rid : ''
+        parkRid: state.ui.currentPark ? state.entities.parks[state.ui.currentPark].rid : '',
+        parks: state.entities.parks
     })
 };
 
