@@ -2,18 +2,16 @@ import { connect } from 'react-redux';
 import { getParks } from '../../actions/park_actions';
 import Maps from './maps';
 
-const mapStateToProps = (state, ownProps) => {
-    // debugger
+const mapStateToProps = (state) => {
     return ({
-        parkRid: state.entities.parks[state.ui.currentPark].rid
+        parkRid: state.ui.currentPark ? state.entities.parks[state.ui.currentPark].rid : ''
     })
 };
 
-// may not need
 const mapDispatchToProps = (dispatch) => {
-    return {
+    return( {
         getParks: () => dispatch(getParks())
-    }
+    })
 };
  
 export default connect(mapStateToProps, mapDispatchToProps)(Maps);
