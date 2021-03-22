@@ -43,6 +43,7 @@ class NavBar extends React.Component {
                 <div className="dropdown-greeting">Hi, {this.props.currentUser.username}!</div>
                 <div className="profile-link"><Link className='prof-links' to={`/user/profile`}>Profile</Link></div>
             <div className="trips-link"><Link className='prof-links' to={`/trips`}>Trips</Link></div>
+            <div className='trips-link'><Link to='/maps'>Maps</Link></div>
                 <button  className="auth-btn" onClick={this.logoutUser}>Logout</button>
             </div>
           <div>
@@ -61,7 +62,6 @@ class NavBar extends React.Component {
         <nav className="navbar-container">
           <div className="navbar-content">
             <div className="nomad-header"><Link className='home-link' to='/'><img className='logo' src={logo} alt='nomad logo'/></Link></div>
-              <ParksDropDownContainer />
               { this.props.loggedIn ? this.navContainer() : this.sessionContainer() }
           </div>
         </nav>

@@ -170,6 +170,7 @@ class Backpack extends React.Component {
           clickAddItem={this.addDateLocation} 
           currentPark={this.props.currentPark}
           state={this.state}
+          parkRid={this.props.currentParkRid}
         />
       )
     } else if (this.state.currentPage === 'team form') {

@@ -11,7 +11,8 @@ const mapStateToProps = state => {
   return ({
   userId: state.session.user.id,
   currentPark: state.ui.currentPark,
-  parks: state.entities.parks
+  parks: state.entities.parks,
+  currentParkRid: state.ui.currentPark ? state.entities.parks[state.ui.currentPark].rid : ''
 })};
 
 const mapDispatchToProps = dispatch => ({
