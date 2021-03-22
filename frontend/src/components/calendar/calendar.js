@@ -13,17 +13,19 @@ export default class Calendar extends React.Component {
         this.state = {
         weekendsVisible: true,
             currentEvents: []
+
         }
     }
 
 
     componentDidMount() {
-        fetchUserTrips()
+        this.props.getUserTrips(this.props.userId);
+        this.setState({ currentEvents: this.props.trips });
     }
     
    allUserTrips(){
-    let allTrips = fetchUserTrips()
-        this.state.currentEvents = allTrips.map(
+    
+        this.state.currentEvents.map(
             ((trip) => {
                 return ({
                     id: trip._id,
