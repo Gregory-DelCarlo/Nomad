@@ -10,42 +10,21 @@ import interactionPlugin from '@fullcalendar/interaction'
 export default class Calendar extends React.Component {
     constructor(props) {
         super(props)
-        this.allUserTrips = this.allUserTrips.bind(this)
-        this.weekendsVisible = true;
+    }
     
+    state = {
+        weekendsVisible: true
     }
 
-
     componentDidMount() {
-        debugger
         this.props.fetchUserTrips(this.props.userId);
     }
     
-   allUserTrips(){
-  
-       this.mapped = this.props.trips.map(
-            ((trip) => {
-                // debugger
-                return ({
-                    id: trip._id,
-                    title: trip.title,
-                    start: trip.startDate,
-                    end: trip.endDate,
-                    backgroundColor: "grey"
-
-                })
-            }) 
-        )
-      
-        return this.mapped 
-   }
-
     render() {
         return (
             <div className='calendar-whole'>
                 {this.renderSidebar()}
                 <div className='calendar-main'>
-                    {/* style={{ width: 600 + "px" }} */}
                     <FullCalendar
                         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
                         headerToolbar={{
@@ -53,19 +32,20 @@ export default class Calendar extends React.Component {
                             center: 'title',
                             right: 'dayGridMonth,timeGridWeek,timeGridDay'
                         }}
-                        aspectRatio='1.2'
+                        aspectRatio='1.4'
                         initialView='dayGridMonth'
-                        editable={true}
                         selectable={true}
                         selectMirror={true}
                         dayMaxEvents={true}
-                        weekends={this.props.weekendsVisible}
-                        // select={this.handleDateSelect}
-                        initialEvents={this.allUserTrips()}
-                        eventContent={renderEventContent} // custom render function
+                         weekends={this.state.weekendsVisible}
+                        initialEvents={this.props.trips}
                         eventClick={this.handleEventClick}
-                        eventsSet={this.handleEvents} // called after events are initialized/added/changed/removed
-                    /* you can update a remote database when these fire:
+                        eventsSet={this.handleEvents} 
+                        
+                        
+                        // called after events are initialized/added/changed/removed
+                        /* you can update a remote database when these fire:
+                    eventContent={renderEventContent} // custom render function
                     eventAdd={function(){}}
                     eventChange={function(){}}
                     eventRemove={function(){}}
@@ -83,7 +63,9 @@ export default class Calendar extends React.Component {
                     <label>
                         <input
                             type='checkbox'
-                            checked={this.props.weekendsVisible}
+                            // checked={this.props.weekendsVisible}
+                            checked={this.state.weekendsVisible}
+
                             onChange={this.handleWeekendsToggle}
                         ></input>
                             toggle weekends
@@ -98,28 +80,14 @@ export default class Calendar extends React.Component {
             </div>
         )
     }
-
-    handleWeekendsToggle = () => {
-        this.props.weekendsVisible = !this.props.weekendsVisible
     
-    }
+    handleWeekendsToggle = () => {
+        this.setState({
+          weekendsVisible: !this.state.weekendsVisible
+        })
+      }
+   
 }
-
-function renderEventContent(eventInfo) {
-    return (
-        <>
-            <b>{eventInfo.timeText}</b>
-            <i>{eventInfo.event.title}</i>
-        </>
-    )
-}
-
-
-// handleEventClick = (clickInfo) => {
-//     if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
-//         clickInfo.event.remove()
-//     }
-// }
 
 function renderSidebarEvent(event) {
     return (
@@ -129,3 +97,16 @@ function renderSidebarEvent(event) {
         </li>
     )
 }
+// function renderEventContent(eventInfo) {
+//     return (
+//         <>
+//             <b>{eventInfo.timeText}</b>
+//             <i>{eventInfo.event.title}</i>
+//         </>
+//     )
+// }
+// handleEventClick = (trip) => {
+    
+//     }
+// }
+
