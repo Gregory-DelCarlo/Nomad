@@ -1,17 +1,20 @@
 import React from 'react';
-import Weather from '../weather/weather_container'
+import WeatherContainer from '../weather/weather_container'
 
 export default class Park extends React.Component {
     constructor(props) {
         super(props);
+
         this.getMap = this.getMap.bind(this);
         this.setParkAreas = this.setParkAreas.bind(this);
         this.renderParks = this.renderParks.bind(this);
+        this.renderWeather = this.renderWeather.bind(this);
+
         this.state = {
             areas: [
-                <li className='area-name'><button onClick={() => this.setState({area: 'north'})}>Northern California</button></li>,
-                <li className='area-name'><button onClick={() => this.setState({area: 'central'})}>Central California</button></li>,
-                <li className='area-name'><button onClick={() => this.setState({area: 'south'})}>Southern California</button></li>
+                <li className='area-name' key='a1'><button onClick={() => this.setState({area: 'north'})}>Northern California</button></li>,
+                <li className='area-name' key='b2'><button onClick={() => this.setState({area: 'central'})}>Central California</button></li>,
+                <li className='area-name' key='c3'><button onClick={() => this.setState({area: 'south'})}>Southern California</button></li>
             ],
             north: [],
             south: [],
@@ -33,10 +36,9 @@ export default class Park extends React.Component {
                         <iframe title='region info' width="900" height="133" frameBorder="0" src={`https://www.trailforks.com/widgets/region_info/?rid=${this.props.parkRid}&counts=1&stats=1&title=1&w=800px&h=133&activitytype=6`}></iframe>
                     </div>
                     <div className="map-widget">
-                        <iframe title='region map' width="900" height="500" frameBorder="0" allowFullScreen src={`https://www.trailforks.com/widgets/region_map/?rid=${this.props.parkRid}&w=900px&h=500px&activitytype=6&maptype=trailforks&trailstyle=difficulty&controls=0&list=1&layers=labels,poi,polygon,directory,region&z=&lat=&lon=&hideunsanctioned=0`}></iframe>
+                        <iframe className='render-map' title='region map' width="900" height="500" frameBorder="0" allowFullScreen src={`https://www.trailforks.com/widgets/region_map/?rid=${this.props.parkRid}&w=900px&h=500px&activitytype=6&maptype=trailforks&trailstyle=difficulty&controls=0&list=1&layers=labels,poi,polygon,directory,region&z=&lat=&lon=&hideunsanctioned=0`}></iframe>
+                    </div>
                 </div>
-                <Weather/>
-            </div>
         )
     }
 
@@ -74,21 +76,29 @@ export default class Park extends React.Component {
         }
     }
 
+    renderWeather() {
+        if(this.props.parkRid) {
+            return <WeatherContainer />
+        }
+    }
+
     render() {
         return(
             <div className='map-page'>
                 <div className='map-list'>
                     <h2>Areas</h2>
-                    <ul className='map-areas'>
-                        {this.state.areas}
-                    </ul>
+                        <ul className='map-areas'>
+                            {this.state.areas}
+                        </ul>
                     <h2>Parks</h2>
                         <ul className='park-maps'>
                             {this.renderParks()}
                         </ul>
-                    {/* {this.state.parksList} */}
                 </div>
                 {this.getMap()}
+                <div className='weather-box'>
+                    {this.renderWeather()}
+                </div>
             </div>
         )
     }
