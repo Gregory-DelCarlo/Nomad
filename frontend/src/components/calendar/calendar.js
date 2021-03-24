@@ -41,7 +41,7 @@ export default class Calendar extends React.Component {
                         selectMirror={true}
                         dayMaxEvents={true}
                         weekends={this.state.weekendsVisible}
-                        initialEvents={this.props.trips}
+                        events={this.props.trips}
                         eventClick={this.handleEventClick}
                         eventsSet={this.handleEvents} 
                     // called after events are initialized/added/changed/removed
