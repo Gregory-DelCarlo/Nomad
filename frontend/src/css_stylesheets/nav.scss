@@ -106,7 +106,6 @@
 }
 
 .user-icon{
-  
   color: #a8aaa5;
   /* background-color: antiquewhite; */
   display: flex;
@@ -116,8 +115,68 @@
   background-color:  #206615;
   border-radius: 6px;
   padding: 3px;
+  border: none;
 }
 
-.user-icon:hover{
-   background: #789448;
+// .user-icon:hover{
+//    background: #789448;
+// }
+
+
+.dropdown-links{
+  display: none; 
+  position: absolute;
+  background-color: #b6b3b3;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 12px 16px;
+  z-index: 1;
+  top: 40px;
+  font-family: 'Raleway';
+  color: black;
+  right: 0px;
+  text-decoration: none;
+  border-radius: 2px;
+}
+
+.dropdown-profile {
+  display: flex;
+  position: relative;
+  text-align: left;
+  list-style: none;
+  text-decoration: none;
+
+  
+}
+
+.dropdown-links div{
+	text-decoration: none;
+  display: block;
+	color: inherit;
+	padding: 16px;
+}
+
+.dropdown-links .prof-links:hover {
+	background-color: #aca9a9;
+  text-decoration: underline;
+   color: #000000;
+}
+
+.dropdown-profile:hover .dropdown-links {
+	display: block;
+  text-decoration: none;
+}
+
+.prof-links{
+  text-decoration: none;
+  color: black;
+}
+
+//  .prof-links:hover{
+//   color: #000000;
+  // text-decoration: underline;
+// }
+
+.dropdown-greeting{
+  font-weight: 600;
 }
