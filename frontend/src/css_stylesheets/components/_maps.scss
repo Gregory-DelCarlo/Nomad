@@ -28,5 +28,34 @@
     width: 200px;
     box-shadow: 2px 8px 12px #60625f;
     border: 5px solid #6e5b4b;
+    border-radius: 3px; 
+}
+
+.map-list h2 {
+    margin: 5px;
+    text-align: center;
+    background: #52392F;
+    color: #fff;
+    font-size: 25px;
     border-radius: 3px;
+}
+
+// .map-areas, .park-maps {
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: flex-start;
+// }
+
+.park-name button, .area-name button {
+        background-color: #4E6447;
+        color: #e2e0e0;
+        font-size: 15px;
+        padding: 5px;
+        border-radius: 4px;
+}
+
+.park-name button:hover, .area-name button:hover {
+  background-color: #325D41;
+  transition: 0.3s;
 }

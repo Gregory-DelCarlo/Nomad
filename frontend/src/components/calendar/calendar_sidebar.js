@@ -1,5 +1,6 @@
 import React from 'react'
 import { formatDate } from '@fullcalendar/react'
+import {Link} from 'react-router-dom'
 
 export function Sidebar(props) {
     
@@ -30,8 +31,10 @@ export function Sidebar(props) {
 function renderSidebarEvent(event) {
     return (
         <li key={event.id}>
-            <b>{formatDate(event.start, { year: 'numeric', month: 'short', day: 'numeric' })}</b>
-            <i>{event.title}</i>
+            <Link className='cal-trip-link' to={`/trips`}>
+                <b>{formatDate(event.start, { year: 'numeric', month: 'short', day: 'numeric' })}</b>
+                <i>{event.title}</i>
+            </Link>
         </li>
     )
 }
