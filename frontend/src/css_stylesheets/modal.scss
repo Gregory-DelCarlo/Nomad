@@ -9,12 +9,10 @@
 }
 
 .modal-child {
-  background: rgb(134, 156, 119);
+  background: #52392F;
   margin: 0 auto;
   opacity: 1;
-  border-radius: 8px;
-  box-shadow: 0px 0px 0px 4px #253d1a;
-
+  border-radius: 3.5px;
 }
 
 .modal {
@@ -24,23 +22,20 @@
 }
 
 .modal-content {
-  // all: initial;
   border: none;
   width: 400px;
-  box-shadow: 2px 4px 12px 3px #3a3a3a;
+  box-shadow: 2px 6px 9px 3px #3a3a3a;
 }
 
 .modal-dialog {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  // all: initial;
   border: none;
-  // width: 400px;
 }
 
 .modal-form-header {
-  background: rgb(105, 83, 63);;
+  background: #735441;
   height: 80px;
   padding: 12px;
   font-size: 40px;
@@ -48,9 +43,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  // border-bottom: 3px solid  rgb(37, 61, 26);
-   border-bottom: 3px solid  rgb(105, 83, 63);
-    border-radius: 5px;
+  border-bottom: 3px solid  #735441;
+  border-radius: 5px;
 }
 
 .close {
@@ -67,14 +61,12 @@
 }
 
 .auth-form-field {
-  font-family: 'Architects Daughter', cursive;
   font-size: 25px;
-  color: white;
+  color: white!important;
   
 }
 
 .auth-input {
-  font-family: 'Architects Daughter', cursive;
   font-size: 25px;
   color: #fff;
   background: #816B58;
@@ -83,17 +75,15 @@
 }
 
 .auth-input.error {
-  border: 1px solid #ff5200;
-  // box-shadow: 0px 0px 0px 1px #ff5200;;
+  border: 1px solid #ff0000;
 }
 
 .auth-error {
   position: absolute;
-  // font-family: 'Architects Daughter';
   font-family: 'Raleway', sans-serif;
   font-size: 15px;
   font-weight: 400;
-  color: #ff5200;
+  color: #ff0000;
   margin-top: -25px;
 }
 
@@ -113,11 +103,10 @@
   border: 1px solid lightgray;
 }
 
-#submit {
+.auth-form-button {
   cursor: pointer;
   color: white;
   background: rgb(37, 61, 26);
-  font-family: 'Montserrat';
   font-size: 18px;
   padding: 10px 0px;
   outline: 0;
@@ -126,7 +115,7 @@
 }
 
 .auth-separator {
-  color: #fff;
+  color: #fff!important;
   font-size: 20px;
   margin: 15px 0;
   display: flex;
@@ -142,12 +131,12 @@
 }
 
 .auth-separator::before {
-  background: linear-gradient(to left, #6e6156, #fff);
+  background: linear-gradient(to right, rgba(253, 253, 253, 0.9),rgba(0, 0, 0, 0));
   margin-right: auto;
 }
 
 .auth-separator::after {
-  background: linear-gradient(to right, #6e6156, #fff);
+  background: linear-gradient(to left, rgba(253, 253, 253, 0.9),rgba(0, 0, 0, 0));
   margin-left: auto;
 }
 

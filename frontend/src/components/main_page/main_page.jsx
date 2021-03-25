@@ -75,7 +75,7 @@ export default class MainPage extends React.Component {
           </Carousel>
         </div>
         <section className="main-page-section section">
-          <h2 className="section-header">Customizable Trail Planner</h2>
+          <h2 className="section-title">Customizable Trail Planner</h2>
           <p className="section-body">Get away from city life by discovering a new adventure. 
               Choose a route from some of the most popular trails in California.</p>
         </section>
@@ -90,7 +90,7 @@ export default class MainPage extends React.Component {
         </div> */}
 
         <section className="main-page-section section">
-          <h2 className="section-header">Plan What You Need for Your Trip</h2>
+          <h2 className="section-title">Plan What You Need for Your Trip</h2>
           <p className="section-body">Do you need trail mix? Multi-tool?
             Or do you need to bring a compass? Decide on your essentials and pack accordingly.
             <br />
@@ -103,7 +103,7 @@ export default class MainPage extends React.Component {
         </section>
 
         <section className="main-page-section section">
-          <h2 className="section-header">Define Your Parameters</h2>
+          <h2 className="section-title">Define Your Parameters</h2>
           <p className="section-body">Make your next outdoor trip the best trip ever with Nomad</p>
         </section>
 
