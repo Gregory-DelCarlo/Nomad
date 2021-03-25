@@ -4,7 +4,6 @@
   min-height: 50%;
   font-size: 14px;
   align-content: center;
-  width: 800px;
 }
 
 .calendar-sidebar {
@@ -60,15 +59,12 @@
 
 .cal-trip-link{
   font-family: 'Raleway', sans-serif!important;
-  color: black;
+  color: #fff;
   font-weight: 500;
    margin: 3em 0;
   padding:  7px;
 }
 
-.cal-trip-link a{
-  color: white;
-}
 
 .calendar-trips-list{
   font-size: 17px;
@@ -98,7 +94,7 @@
     padding: 5px;
     border-radius: 4px;
     max-width: 300px;
-    overflow-x: auto;
+    overflow-x: hidden;
 }
 
 .full-calendar-component{
@@ -124,7 +120,13 @@
     flex-grow: 1;
     flex-shrink: 1;
     min-width: 0;
-    color: black;
+}
+
+.fc-popover {
+  background: #46454a!important;
+  color: #fff;
+  border: 2px solid #46454a!important;
+  border-radius: 4px;
 }
 
 .fc .fc-col-header-cell-cushion {
