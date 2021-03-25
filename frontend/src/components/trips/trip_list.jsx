@@ -42,7 +42,7 @@ class TripList extends React.Component {
     return (
       <div className="trip-list">
         <div className="trip-list-wrapper">
-          <ul>
+          <ul className="trips-list-ul">
             {this.state.trips.map((trip, index) => (
               <li 
                 key={index}
