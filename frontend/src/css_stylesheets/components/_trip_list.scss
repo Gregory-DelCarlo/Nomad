@@ -30,6 +30,11 @@
   width: 100%;
 }
 
+.trip-list-wrapper::-webkit-scrollbar {
+
+  display: none;
+}
+
 // .trips-list-ul {
 //   display: flex;
 //   flex-direction: column;
