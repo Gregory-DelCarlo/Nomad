@@ -4,7 +4,7 @@
   min-height: 50%;
   font-size: 14px;
   align-content: center;
-  width: 800px;
+  // width: 800px;
 }
 
 .calendar-sidebar {
@@ -50,6 +50,7 @@
   background: #725441;
   padding: 16px;
   width: 680px;
+  border-radius: 27px;
 
 }
 
@@ -60,13 +61,13 @@
 
 .cal-trip-link{
   font-family: 'Raleway', sans-serif!important;
-  color: black;
+  color: rgb(255, 255, 255);
   font-weight: 500;
    margin: 3em 0;
   padding:  7px;
 }
 
-.cal-trip-link a{
+a.cal-trip-link {
   color: white;
 }
 
