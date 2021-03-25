@@ -14,6 +14,12 @@
   border-right: 1px solid #d3e2e8;
 }
 
+.calendar-sidebar-section{
+  padding: 2em;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
 .calendar-sidebar-section label {
   background: #46454a;
   padding: 6px;
@@ -47,11 +53,6 @@
 
 }
 
-.calendar-sidebar-section{
-padding: 2em;
-max-height: 600px;
-overflow-y: scroll;
-}
 
 .cal-trip-link{
   font-family: 'Raleway', sans-serif!important;
@@ -93,7 +94,7 @@ overflow-y: scroll;
     padding: 5px;
     border-radius: 4px;
     max-width: 300px;
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 .full-calendar-component{
