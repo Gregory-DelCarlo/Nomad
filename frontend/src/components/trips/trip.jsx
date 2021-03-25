@@ -6,7 +6,7 @@ const Trip = ({ trip, deleteTrip }) => (
       <h1>{trip.title}</h1>
       <div className='trip-show-date-location'>
         <h2>Date and Location:</h2>
-        <ul>
+        <ul className='trip-show-times'>
           <li>Start Date: {trip.startDate}</li>
           <li>End Date: {trip.endDate}</li>
           <li>Location: {trip.trailName}</li>
@@ -41,7 +41,7 @@ const Trip = ({ trip, deleteTrip }) => (
           </div>
         </div>
       </div>
-      <button onClick={deleteTrip}>Delete Trip</button>
+      <button  className='delete-trip' onClick={deleteTrip}>Delete Trip</button>
     </div>
   </div>
 );

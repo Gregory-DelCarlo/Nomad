@@ -58,6 +58,11 @@
   margin: 10px 10px 0px 10px;
 }
 
+.start-and-end-form{
+   display: flex;
+  flex-direction: row;
+}
+
 .date-location-form .error {
   margin-bottom: 30px;
 }
