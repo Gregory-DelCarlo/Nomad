@@ -4,7 +4,6 @@
   min-height: 50%;
   font-size: 14px;
   align-content: center;
-  // width: 800px;
 }
 
 .calendar-sidebar {
@@ -54,14 +53,14 @@
 
 }
 
-// .calendar-sidebar-section::-webkit-scrollbar {
+.calendar-sidebar-section::-webkit-scrollbar {
 
-//   // display: none;
-// }
+  display: none;
+}
 
 .cal-trip-link{
   font-family: 'Raleway', sans-serif!important;
-  color: rgb(255, 255, 255);
+  color: #fff;
   font-weight: 500;
    margin: 3em 0;
   padding:  7px;
@@ -99,7 +98,7 @@ a.cal-trip-link {
     padding: 5px;
     border-radius: 4px;
     max-width: 300px;
-    overflow-x: auto;
+    overflow-x: hidden;
 }
 
 .full-calendar-component{
@@ -125,7 +124,13 @@ a.cal-trip-link {
     flex-grow: 1;
     flex-shrink: 1;
     min-width: 0;
-    color: black;
+}
+
+.fc-popover {
+  background: #46454a!important;
+  color: #fff;
+  border: 2px solid #46454a!important;
+  border-radius: 4px;
 }
 
 .fc .fc-col-header-cell-cushion {
