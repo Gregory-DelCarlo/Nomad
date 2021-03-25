@@ -20,7 +20,7 @@ export function Sidebar(props) {
             </div>
             <div className='calendar-sidebar-section'>
                 <h2>All Hikes({props.trips.length})</h2>
-                <ul>
+                <ul className="calendar-trips-list">
                     {props.trips.map(renderSidebarEvent)}
                 </ul>
             </div>
@@ -32,7 +32,7 @@ function renderSidebarEvent(event) {
     return (
         <li key={event.id}>
             <Link className='cal-trip-link' to={`/trips`}>
-                <b>{formatDate(event.start, { year: 'numeric', month: 'short', day: 'numeric' })}</b>
+                <b className="cal-trip-link-sub"> {formatDate(event.start, { year: 'numeric', month: 'short', day: 'numeric' })}</b>
                 <i>{event.title}</i>
             </Link>
         </li>
