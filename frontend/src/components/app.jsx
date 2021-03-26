@@ -22,6 +22,7 @@ const App = () => (
         </Switch>
         <div className="vector-creds">
             <a href="https://www.vecteezy.com/free-vector/summit" className="vector-creds">Summit Vectors by Vecteezy</a>
+            <a href='https://www.trailsforks.com' className='vector-creds'>Maps by Trailforks</a>
         </div>
     </div>
 );
