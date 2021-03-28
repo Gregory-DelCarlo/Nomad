@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom'
 import ParksDropDownContainer from '../dropdowns/parks_dropdown_container';
 import Modal from '../modal/modal';
-import logo from '../../assets/images/nomad-logo.png';
+import logo from '../../assets/images/nomad-logo-long.png';
 import { GrUserWorker } from 'react-icons/gr'
 
 

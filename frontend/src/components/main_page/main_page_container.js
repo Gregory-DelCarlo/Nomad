@@ -7,11 +7,5 @@ const mapStateToProps = state => {
     loggedIn: state.session.isAuthenticated,
   }
 };
-
-const mapDispatchToProps = dispatch => {
-    return {
-      openModal: modal => dispatch(openModal(modal))
-    };
-};
   
-export default connect(mapStateToProps, mapDispatchToProps)(MainPage);
+export default connect(mapStateToProps)(MainPage);

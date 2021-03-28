@@ -7,6 +7,7 @@ import img3 from "../../assets/images/3.jpg";
 import angellist from "../../assets/images/angellist.png";
 import github from "../../assets/images/github.png";
 import linkedin from "../../assets/images/linkedin.png";
+import { Redirect } from 'react-router-dom';
 
 // import carouselImg1 from "../../assets/images/carousel-img-1.jpg";
 // import carouselImg2 from "../../assets/images/carousel-img-2.jpg";
@@ -21,8 +22,12 @@ export default class MainPage extends React.Component {
   }
 
   handleClick() {
-    let signup_btn = document.getElementById("signup-btn");
-    signup_btn.click();
+    if(this.props.loggedIn) {
+      this.props.history.push('/backpack')
+    } else  {
+      let signup_btn = document.getElementById("signup-btn");
+      signup_btn.click();
+    }
   }
 
   render() {
@@ -75,7 +80,7 @@ export default class MainPage extends React.Component {
           </Carousel>
         </div>
         <section className="main-page-section section">
-          <h2 className="section-header">Customizable Trail Planner</h2>
+          <h2 className="section-title">Customizable Trail Planner</h2>
           <p className="section-body">Get away from city life by discovering a new adventure. 
               Choose a route from some of the most popular trails in California.</p>
         </section>
@@ -90,7 +95,7 @@ export default class MainPage extends React.Component {
         </div> */}
 
         <section className="main-page-section section">
-          <h2 className="section-header">Plan What You Need for Your Trip</h2>
+          <h2 className="section-title">Plan What You Need for Your Trip</h2>
           <p className="section-body">Do you need trail mix? Multi-tool?
             Or do you need to bring a compass? Decide on your essentials and pack accordingly.
             <br />
@@ -103,15 +108,16 @@ export default class MainPage extends React.Component {
         </section>
 
         <section className="main-page-section section">
-          <h2 className="section-header">Define Your Parameters</h2>
+          <h2 className="section-title">Define Your Parameters</h2>
           <p className="section-body">Make your next outdoor trip the best trip ever with Nomad</p>
         </section>
 
         <section className="main-page-section d3">
           <div className="about-header">
             <h2>About Us</h2>
-            <a href="https://github.com/Gregory-DelCarlo/Nomad">
-              <img src={github} class="link-imgs" id="github-link" alt=""/></a>
+            <a href="https://github.com/Gregory-DelCarlo/Nomad" target='_blank'>
+            <img src={github} class="link-imgs" id="github-link" alt=""/></a>
+            <div id='nomad-source'>Nomad source code</div>
           </div>
           <div className="about-footer-container">
             {/* <div className="about-person-container"> */}
@@ -124,9 +130,9 @@ export default class MainPage extends React.Component {
                   </div>
                 </div>
                 <div className="social-links-container">
-                  <a href="google.com"><img src={linkedin} className="link-imgs" alt=""/></a>
-                  <a href="google.com"><img src={github} className="link-imgs" alt=""/></a>
-                  <a href="google.com"><img src={angellist} className="link-imgs" alt=""/></a>
+                  <a href="https://www.linkedin.com/in/gregory-ethan-del-carlo-755852106/" target='_blank'><img src={linkedin} className="link-imgs" alt=""/></a>
+                  <a href="https://github.com/Gregory-DelCarlo" target='_blank'><img src={github} className="link-imgs" alt=""/></a>
+                  <a href="https://angel.co/u/gregory-del-carlo" target='_blank'><img src={angellist} className="link-imgs" alt=""/></a>
                 </div>
               </div>
 
@@ -139,9 +145,9 @@ export default class MainPage extends React.Component {
                   </div>
                 </div>
                 <div className="social-links-container">
-                  <a href="google.com"><img src={linkedin} className="link-imgs" alt=""/></a>
-                  <a href="google.com"><img src={github} className="link-imgs" alt=""/></a>
-                  <a href="google.com"><img src={angellist} className="link-imgs" alt=""/></a>
+                  <a href="https://www.linkedin.com/in/jeffrey-bogart-7874121a5/" target='_blank'><img src={linkedin} className="link-imgs" alt=""/></a>
+                  <a href="https://github.com/JS-Bogart" target='_blank'><img src={github} className="link-imgs" alt=""/></a>
+                  <a href="" target='_blank'><img src={angellist} className="link-imgs" alt=""/></a>
                 </div>
               </div>
 
@@ -154,9 +160,9 @@ export default class MainPage extends React.Component {
                   </div>
                 </div>
                 <div className="social-links-container">
-                  <a href="google.com"><img src={linkedin} className="link-imgs" alt=""/></a>
-                  <a href="google.com"><img src={github} className="link-imgs" alt=""/></a>
-                  <a href="google.com"><img src={angellist} className="link-imgs" alt=""/></a>
+                  <a href="https://www.linkedin.com/in/trevor-smith-4b4b82208/" target='_blank'><img src={linkedin} className="link-imgs" alt=""/></a>
+                  <a href="https://github.com/trevorsmith1667" target='_blank'><img src={github} className="link-imgs" alt=""/></a>
+                  <a href="" target='_blank'><img src={angellist} className="link-imgs" alt=""/></a>
                 </div>
               </div>
 
@@ -169,9 +175,9 @@ export default class MainPage extends React.Component {
                   </div>
                 </div>
                 <div className="social-links-container">
-                  <a href="google.com"><img src={linkedin} className="link-imgs" alt=""/></a>
-                  <a href="google.com"><img src={github} className="link-imgs" alt="" /></a>
-                  <a href="google.com"><img src={angellist} className="link-imgs" alt="" /></a>
+                  <a href="" target='_blank'><img src={linkedin} className="link-imgs" alt=""/></a>
+                  <a href="https://github.com/LinkedLists" target='_blank'><img src={github} className="link-imgs" alt="" /></a>
+                  <a href="" target='_blank'><img src={angellist} className="link-imgs" alt="" /></a>
                 </div>
               </div>
             </div>

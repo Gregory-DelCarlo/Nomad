@@ -35,7 +35,7 @@ export default class Calendar extends React.Component {
                             center: 'title',
                             right: 'dayGridMonth,timeGridWeek,timeGridDay'
                         }}
-                        aspectRatio='1.4'
+                        // aspectRatio='.9'
                         initialView='dayGridMonth'
                         selectable={true}
                         selectMirror={true}

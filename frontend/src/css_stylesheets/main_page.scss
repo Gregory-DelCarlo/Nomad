@@ -41,7 +41,7 @@
 .carousel-caption h1 {
   font-size: 55px;
   font-weight: 500;
-  color: rgb(0,0,0);
+  color:#221913!important;
   padding-bottom: 15px;
 }
 
@@ -55,7 +55,7 @@
 .link {
   display: inline-block;
   font-size: 30px;
-  color: rgb(0,0,0)!important;
+  color: #221913!important;
   // text-shadow: shadow1(5px 5px 0 rgb(7, 7, 7)),shadow2(5px 5px 0 rgb(7, 7, 7));
   text-decoration: underline;
   transition: 0.5s;
@@ -64,7 +64,6 @@
 .link:hover {
   cursor: pointer;
   font-size: 35px;
-  color: #fff!important;
 }
 
 
@@ -97,7 +96,7 @@
 // }
 
 .main-page-section {
-  background: #795000;
+  background: #735441;
   text-align: center;
 }
 
@@ -143,10 +142,15 @@
   // background-image: url("https://picjumbo.com/wp-content/uploads/green-leaves-with-white-lines-pattern-background-2210x1473.jpg");
 }
 
-.section-header {
+.section-header, .section-title {
   font-size: 35px;
   font-weight: bold;
   margin-bottom: 15px;
+}
+
+.section-title, .section-body {
+  // color: #89b78d;
+  color: white;
 }
 
 .section-body {
@@ -193,8 +197,7 @@
   justify-content: space-around;
 }
 
-.about-person-container {
-}
+
 
 .about-person-img {
   width: 20vmin;
@@ -207,22 +210,22 @@
 }
 
 #ethan{
-  background-image: url("https://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/005/767/medium/gregory_delcarlo.jpeg?1607127966");
+  background-image: url('../assets/images/ethan.jpg');
   background-size: cover;
 }
 
 #jeffrey {
-  background-image: url("https://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/005/786/medium/jeffrey_bogart.jpg?1606888285");
+  background-image: url("../assets/images/jeffrey.jpg");
   background-size: cover;
 }
 
 #trevor {
-  background-image: url("https://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/005/812/medium/trevor_smith.jpeg?1607127996");
+  background-image: url("../assets/images/trevor.jpeg");
   background-size: cover;
 }
 
 #kenny {
-  background-image: url("https://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/005/796/medium/Kenny_Zeng.jpg?1607127823");
+  background-image: url("../assets/images/Kenny.jpg");
   background-size: cover;
 }
 
@@ -259,3 +262,10 @@
   font-size: inherit;
 }
 
+.section-header, .about-header h2, .name-header {
+  color: #fff!important;
+}
+
+#nomad-source {
+  font-size: 18px;
+}

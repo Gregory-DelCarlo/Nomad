@@ -52,7 +52,7 @@ class SessionForm extends React.Component {
     return (
       <div className='modal-child'>
         <div className='modal-form-header-wrapper'>
-          <div className="modal-form-header"><img className='logo'src={logo} alt='nomad logo'/></div>
+          <div className="modal-form-header"><img className='modal-logo'src={logo} alt='nomad logo'/></div>
         </div>
         {/* <Modal.Header closeButton>
         </Modal.Header> */}
@@ -88,7 +88,7 @@ class SessionForm extends React.Component {
             </div> : ''
           }
 
-          <button className='auth-form-button'id='submit' type='submit'><span className='auth-form-field'>{this.props.formType}</span></button>
+          <button className='auth-form-button'><span className='auth-form-field'>{this.props.formType}</span></button>
           <div className="auth-separator">
             or
           </div>
