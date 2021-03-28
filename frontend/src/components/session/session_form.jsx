@@ -52,7 +52,7 @@ class SessionForm extends React.Component {
     return (
       <div className='modal-child'>
         <div className='modal-form-header-wrapper'>
-          <div className="modal-form-header"><img className='logo'src={logo} alt='nomad logo'/></div>
+          <div className="modal-form-header"><img className='modal-logo'src={logo} alt='nomad logo'/></div>
         </div>
         {/* <Modal.Header closeButton>
         </Modal.Header> */}
