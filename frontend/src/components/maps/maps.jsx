@@ -71,9 +71,7 @@ export default class Park extends React.Component {
     }
 
     renderParks() {
-        if (this.state.area) {
-            return this.state[this.state.area];
-        }
+        return this.state[this.state.area];
     }
 
     renderWeather() {
