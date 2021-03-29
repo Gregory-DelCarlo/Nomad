@@ -147,7 +147,7 @@ export default class MainPage extends React.Component {
                 <div className="social-links-container">
                   <a href="https://www.linkedin.com/in/jeffrey-bogart-7874121a5/" target='_blank'><img src={linkedin} className="link-imgs" alt=""/></a>
                   <a href="https://github.com/JS-Bogart" target='_blank'><img src={github} className="link-imgs" alt=""/></a>
-                  <a href="" target='_blank'><img src={angellist} className="link-imgs" alt=""/></a>
+                  <a href="https://angel.co/u/jeffrey-bogart" target='_blank'><img src={angellist} className="link-imgs" alt=""/></a>
                 </div>
               </div>
 
@@ -162,7 +162,7 @@ export default class MainPage extends React.Component {
                 <div className="social-links-container">
                   <a href="https://www.linkedin.com/in/trevor-smith-4b4b82208/" target='_blank'><img src={linkedin} className="link-imgs" alt=""/></a>
                   <a href="https://github.com/trevorsmith1667" target='_blank'><img src={github} className="link-imgs" alt=""/></a>
-                  <a href="" target='_blank'><img src={angellist} className="link-imgs" alt=""/></a>
+                  <a href="https://angel.co/u/trevor-smith-49" target='_blank'><img src={angellist} className="link-imgs" alt=""/></a>
                 </div>
               </div>
 
@@ -175,9 +175,9 @@ export default class MainPage extends React.Component {
                   </div>
                 </div>
                 <div className="social-links-container">
-                  <a href="" target='_blank'><img src={linkedin} className="link-imgs" alt=""/></a>
+                  {/* <a href="" target='_blank'><img src={linkedin} className="link-imgs" alt=""/></a> */}
                   <a href="https://github.com/LinkedLists" target='_blank'><img src={github} className="link-imgs" alt="" /></a>
-                  <a href="" target='_blank'><img src={angellist} className="link-imgs" alt="" /></a>
+                  {/* <a href="" target='_blank'><img src={angellist} className="link-imgs" alt="" /></a> */}
                 </div>
               </div>
             </div>
