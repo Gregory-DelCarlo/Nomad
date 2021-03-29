@@ -109,7 +109,6 @@ class Backpack extends React.Component {
       const itemList = [
         <li 
           key="1"
-          // onClick={() => this.changeView("time and location form")}
           className="location-item"
           slide={this.state.numItems}
         >
@@ -120,7 +119,6 @@ class Backpack extends React.Component {
         </li>, 
         <li 
           key="2"
-          // onClick={() => this.changeView("team form")}
           className="team-item"
           slide={this.state.numItems}
         >
@@ -131,7 +129,6 @@ class Backpack extends React.Component {
         </li>, 
         <li 
           key="3"
-          // onClick={() => this.changeView("supplies form")}
           className="supplies-item"
           slide={this.state.numItems}
         >

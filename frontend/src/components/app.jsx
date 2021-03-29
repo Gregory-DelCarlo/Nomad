@@ -17,7 +17,6 @@ const App = () => (
             <ProtectedRoute exact path='/user/profile' component={Profile}/>
             <Route exact path='/' component={MainPageContainer}/>
             <Route exact path='/maps' component={MapsContainer} />
-            {/* <Route exact path='/park/:parkId' component={ParksContainer}/> */}
             <Route exact path='/weather' component={WeatherContainer}/>
         </Switch>
         <div className="vector-creds">

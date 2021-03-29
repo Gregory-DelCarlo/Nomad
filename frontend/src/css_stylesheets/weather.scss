@@ -1,4 +1,5 @@
 .weather-container {
+  margin-left: 100px;
   width: 360px;
   height: 550px;
   background: #fff;
@@ -40,10 +41,6 @@
   width: 100px;
   height: 100px;
   margin: 5px auto;
-}
-
-.weather-condition-container {
-  // height: 100%;
 }
 
 .weather-condition-ul {

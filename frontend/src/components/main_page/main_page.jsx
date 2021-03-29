@@ -7,13 +7,6 @@ import img3 from "../../assets/images/3.jpg";
 import angellist from "../../assets/images/angellist.png";
 import github from "../../assets/images/github.png";
 import linkedin from "../../assets/images/linkedin.png";
-import { Redirect } from 'react-router-dom';
-
-// import carouselImg1 from "../../assets/images/carousel-img-1.jpg";
-// import carouselImg2 from "../../assets/images/carousel-img-2.jpg";
-// import carouselImg3 from "../../assets/images/carousel-img-3.jpg";
-// import trail from "../../assets/images/trail.gif";
-
 export default class MainPage extends React.Component {
   constructor(props) {
     super(props);
@@ -39,7 +32,6 @@ export default class MainPage extends React.Component {
               <img
                 className="carosel-item"
                 src={img1}
-                // src={carouselImg1}
                 alt='carousel item 1'
               />
               <Carousel.Caption>
@@ -53,7 +45,6 @@ export default class MainPage extends React.Component {
               <img
                 className="carosel-item"
                 src={img2}
-                // src={carouselImg2}
                 alt='carousel item 2'
               />
               <Carousel.Caption>
@@ -67,7 +58,6 @@ export default class MainPage extends React.Component {
               <img
                 className="carosel-item"
                 src={img3}
-                // src={carouselImg3}
                 alt='carousel item 3'
               />
               <Carousel.Caption>
@@ -88,11 +78,6 @@ export default class MainPage extends React.Component {
         <section className="main-page-section divider d1">
           <h2 className="section-header">Define Your Trip</h2>
         </section>
-
-
-        {/* <div className="trail-demo-container">
-          <img src={trail} className="trail-demo-gif"/>
-        </div> */}
 
         <section className="main-page-section section">
           <h2 className="section-title">Plan What You Need for Your Trip</h2>
@@ -120,7 +105,6 @@ export default class MainPage extends React.Component {
             <div id='nomad-source'>Nomad source code</div>
           </div>
           <div className="about-footer-container">
-            {/* <div className="about-person-container"> */}
               <div className="individual-container">
                 <div className="profile">
                   <h3 className="name-header">
@@ -147,7 +131,7 @@ export default class MainPage extends React.Component {
                 <div className="social-links-container">
                   <a href="https://www.linkedin.com/in/jeffrey-bogart-7874121a5/" target='_blank'><img src={linkedin} className="link-imgs" alt=""/></a>
                   <a href="https://github.com/JS-Bogart" target='_blank'><img src={github} className="link-imgs" alt=""/></a>
-                  <a href="" target='_blank'><img src={angellist} className="link-imgs" alt=""/></a>
+                  <a href="https://angel.co/u/jeffrey-bogart" target='_blank'><img src={angellist} className="link-imgs" alt=""/></a>
                 </div>
               </div>
 
@@ -162,7 +146,7 @@ export default class MainPage extends React.Component {
                 <div className="social-links-container">
                   <a href="https://www.linkedin.com/in/trevor-smith-4b4b82208/" target='_blank'><img src={linkedin} className="link-imgs" alt=""/></a>
                   <a href="https://github.com/trevorsmith1667" target='_blank'><img src={github} className="link-imgs" alt=""/></a>
-                  <a href="" target='_blank'><img src={angellist} className="link-imgs" alt=""/></a>
+                  <a href="https://angel.co/u/trevor-smith-49" target='_blank'><img src={angellist} className="link-imgs" alt=""/></a>
                 </div>
               </div>
 
@@ -175,13 +159,12 @@ export default class MainPage extends React.Component {
                   </div>
                 </div>
                 <div className="social-links-container">
-                  <a href="" target='_blank'><img src={linkedin} className="link-imgs" alt=""/></a>
+                  {/* <a href="" target='_blank'><img src={linkedin} className="link-imgs" alt=""/></a> */}
                   <a href="https://github.com/LinkedLists" target='_blank'><img src={github} className="link-imgs" alt="" /></a>
-                  <a href="" target='_blank'><img src={angellist} className="link-imgs" alt="" /></a>
+                  {/* <a href="" target='_blank'><img src={angellist} className="link-imgs" alt="" /></a> */}
                 </div>
               </div>
             </div>
-          {/* </div> */}
         </section>
       </div>
     )

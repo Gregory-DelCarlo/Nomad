@@ -16,9 +16,6 @@ class Supplies extends React.Component {
     this.handleValidations = this.handleValidations.bind(this);
     this.clearErrors = this.clearErrors.bind(this)
   }
-  
-  // componentDidMount() {
-  // }
 
   handleChange(field) {
     return e => {
@@ -97,8 +94,6 @@ class Supplies extends React.Component {
             <input 
               type="text"
               onChange={this.handleChange('foodItem')}
-              // onBlur={this.handleValidations}
-              // className="backpack-input"
               className= {errors["Food"] ? "backpack-input error" : "backpack-input"}
               value={this.state.foodItem}
             />
@@ -111,7 +106,6 @@ class Supplies extends React.Component {
             <input 
               type="text"
               onChange={this.handleChange('equipmentItem')}
-              // onBlur={this.handleValidations}
               className= {errors["Equipment"] ? "backpack-input error" : "backpack-input"}
               value={this.state.equipmentItem}
             />

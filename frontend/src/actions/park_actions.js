@@ -24,7 +24,3 @@ export const getParks = () => dispatch => (
     }).catch(err => err)
 );
 
-// export const getPark = parkId => dispatch => (
-//     fetchPark(parkId).then(res => dispatch(receivePark(res.data)))
-// );
-

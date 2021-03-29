@@ -1,10 +1,7 @@
 .map-page {
-    display: grid;
-    grid-template-columns: 15% 55% 30%;
-    // flex-direction: column;
+    display: flex;
+    flex-flow: row nowrap;
     align-items: center;
-    justify-content: center;
-    // padding-top: 20px;
     height: 100%;
     background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../../assets/images/map-bg.jpg');
     background-size: cover;
@@ -12,6 +9,8 @@
 
 .map-container {
     width: 900px;
+    position: relative;
+    left: 45px;
     box-shadow: 2px 8px 12px #60625f;
     border-top: 4px solid #6e5b4b;
     border-radius: 4px;
@@ -19,10 +18,10 @@
 
 .map-info {
     background-color: #6e5b4b;
-    // height: 300px;
 }
 
 .map-list {
+    margin: 10px 0;
     background: #6e5b4b;
     height: 800px;
     width: 200px;
@@ -31,21 +30,21 @@
     border-radius: 3px; 
 }
 
-.map-list h2 {
+.map-list li, .parks-list li {
     margin: 5px;
+    button {
+        padding: 7px;
+    }
+}
+
+.map-list h2 {
+    margin: 5px 5px 15px 5px;
     text-align: center;
     background: #52392F;
     color: #fff;
     font-size: 25px;
     border-radius: 3px;
 }
-
-// .map-areas, .park-maps {
-//     display: flex;
-//     flex-direction: column;
-//     align-items: center;
-//     justify-content: flex-start;
-// }
 
 .park-name button, .area-name button {
         background-color: #4E6447;

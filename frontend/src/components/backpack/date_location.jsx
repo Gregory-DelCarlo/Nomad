@@ -1,6 +1,5 @@
 import React from 'react';
-import ParksDropdownContainer from '../dropdowns/parks_dropdown_container'
-import Weather from '../weather/weather_container'
+import ParksDropdownContainer from '../dropdowns/parks_dropdown_container';
 
 export default class DateLocation extends React.Component {
   constructor(props) {
@@ -15,7 +14,6 @@ export default class DateLocation extends React.Component {
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderTrailMap = this.renderTrailMap.bind(this);
-    // this.getParkId = this.getParkId.bind(this);
     this.handleValidations = this.handleValidations.bind(this);
     this.clearErrors = this.clearErrors.bind(this)
 
@@ -128,7 +126,6 @@ export default class DateLocation extends React.Component {
     if (this.props.parkRid) {
       return(
         <div className="widget-page">
-            {/* <Weather/> */}
             <div className="widget-container">
                 <div className="widget-info">
                     <iframe title='region info' width="130" height="100%" frameBorder="0" src={`https://www.trailforks.com/widgets/region_info/?rid=${this.props.parkRid}&counts=1&stats=1&title=1&w=100%&100%&activitytype=6`}></iframe>
@@ -160,12 +157,10 @@ export default class DateLocation extends React.Component {
             
               <label className='form-label'>Enter your trail here: </label>
             <div className="trail-input-wrapper">
-              <input 
-                // className='location-form-input'
+              <input
                 className= {errors["Trail"] ? "backpack-input error" : "backpack-input"}
                 type="text"
                 onChange={this.handleChange('trailName')}
-                // onBlur={this.handleValidations}
                 value={this.state.trailName}
               />
               { errors["Trail"] ? <div className='backpack-input-error'>{errors["Trail"]}</div> : null}
@@ -179,8 +174,6 @@ export default class DateLocation extends React.Component {
                 <input 
                   type='date'
                   onChange={this.handleChange('startDate')}
-                  // onBlur={this.handleValidations}
-                  // onClick={this.dateValidation}
                   className= {errors["Start"]  ? "backpack-input error" : "backpack-input"}
                   value={this.state.startDate}
                 />
@@ -191,8 +184,6 @@ export default class DateLocation extends React.Component {
                     <input 
                       type='date'
                       onChange={this.handleChange('endDate')}
-                      // onBlur={this.handleValidations}
-                      // onClick={this.dateValidation}
                       className= {errors["End"]  ? "backpack-input error" : "backpack-input"}
                       value={this.state.endDate}
                     />

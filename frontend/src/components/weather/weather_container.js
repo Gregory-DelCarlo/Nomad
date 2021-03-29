@@ -8,7 +8,6 @@ const mapStateToProps = (state) => {
   return {
     weather: state.entities.weather,
     parks: state.entities.parks,
-    // currentPark: state.ui.currentPark ? state.entities.parks[state.ui.currentPark].name : '',
     currentParkId: state.ui.currentPark ? state.ui.currentPark : '',
   }
 }
