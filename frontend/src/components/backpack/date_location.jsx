@@ -157,6 +157,7 @@ export default class DateLocation extends React.Component {
           </div>
 
           <form className="date-location-form" onSubmit={this.handleSubmit}>
+            
               <label className='form-label'>Enter your trail here: </label>
             <div className="trail-input-wrapper">
               <input 
@@ -170,32 +171,33 @@ export default class DateLocation extends React.Component {
               { errors["Trail"] ? <div className='backpack-input-error'>{errors["Trail"]}</div> : null}
 
             </div>
-            
-            <label className='form-label'>When will you be traveling?: </label>
+            <div className="start-and-end-form">
+              <label className='form-label'>When will you be traveling? </label>
 
-            <div className='startdate-form-input'>
-              <label>Start:</label>
-              <input 
-                type='date'
-                onChange={this.handleChange('startDate')}
-                // onBlur={this.handleValidations}
-                // onClick={this.dateValidation}
-                className= {errors["Start"]  ? "backpack-input error" : "backpack-input"}
-                value={this.state.startDate}
-              />
-              { errors["Start"] ? <div className='backpack-input-error'>{errors["Start"]}</div> : null}
-            </div>
-                <div className='enddate-form-input'>
-                  <label>End:</label>
-                  <input 
-                    type='date'
-                    onChange={this.handleChange('endDate')}
-                    // onBlur={this.handleValidations}
-                    // onClick={this.dateValidation}
-                    className= {errors["End"]  ? "backpack-input error" : "backpack-input"}
-                    value={this.state.endDate}
-                  />
-                  { errors["End"] ? <div className='backpack-input-error'>{errors["End"]}</div> : null}
+              <div className='startdate-form-input'>
+                <label>Start:</label>
+                <input 
+                  type='date'
+                  onChange={this.handleChange('startDate')}
+                  // onBlur={this.handleValidations}
+                  // onClick={this.dateValidation}
+                  className= {errors["Start"]  ? "backpack-input error" : "backpack-input"}
+                  value={this.state.startDate}
+                />
+                { errors["Start"] ? <div className='backpack-input-error'>{errors["Start"]}</div> : null}
+              </div>
+                  <div className='enddate-form-input'>
+                    <label>End:</label>
+                    <input 
+                      type='date'
+                      onChange={this.handleChange('endDate')}
+                      // onBlur={this.handleValidations}
+                      // onClick={this.dateValidation}
+                      className= {errors["End"]  ? "backpack-input error" : "backpack-input"}
+                      value={this.state.endDate}
+                    />
+                    { errors["End"] ? <div className='backpack-input-error'>{errors["End"]}</div> : null}
+                  </div>
                 </div>
             <button type='submit'>Add to your Backpack</button>
           </form>

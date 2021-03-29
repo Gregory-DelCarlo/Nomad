@@ -17,6 +17,7 @@
   padding: 20px;
   background-color: #6E5B4B;
   box-shadow: 2px 4px 12px 3px rgb(170, 169, 169);
+  color: white;
 }
 
 .trip-show-box > h1 {
@@ -77,4 +78,13 @@
   align-items: center;
   width: 100%;
   font-size: 20px;
+}
+
+.delete-trip{
+  background-color: #4E6447;
+  color: #e2e0e0;
+  font-size: 20px;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 4px;
 }
