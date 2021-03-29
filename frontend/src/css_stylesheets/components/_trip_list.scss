@@ -50,9 +50,11 @@
   line-height: 2.5;
   color: #fff;
   text-align: center;
+  background-color: #808080;
   font-size: 25px;
-  border: 2px solid black;
-  background: #808080;
+  overflow-x: scroll;
+  color: white; 
+  font-weight: 600;
 }
 
 .trip-list * li:hover {
