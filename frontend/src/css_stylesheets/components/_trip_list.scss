@@ -51,9 +51,11 @@
   margin-bottom: 30px;
   line-height: 2.5;
   text-align: center;
-  background-color: rgb(230,230,230,0.9);
+  background-color: #808080;
   font-size: 25px;
   overflow-x: scroll;
+  color: white; 
+  font-weight: 600;
 }
 
 .trip-list * li:hover {
