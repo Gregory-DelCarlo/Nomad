@@ -2,7 +2,7 @@ import React from 'react';
 import { Switch, Route } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import NavBarContainer from './nav/navbar_container';
-import MainPage from './main_page/main_page';
+import MainPageContainer from './main_page/main_page_container';
 import BackpackContainer from './backpack/backpack_container';
 import WeatherContainer from './weather/weather_container';
 import Profile from './profile/profile_container'
@@ -15,7 +15,7 @@ const App = () => (
             <ProtectedRoute exact path="/backpack" component={BackpackContainer}/>
             <ProtectedRoute exact path="/trips" component={TripListContainer}/>
             <ProtectedRoute exact path='/user/profile' component={Profile}/>
-            <AuthRoute exact path='/' component={MainPage}/>
+            <Route exact path='/' component={MainPageContainer}/>
             <Route exact path='/maps' component={MapsContainer} />
             {/* <Route exact path='/park/:parkId' component={ParksContainer}/> */}
             <Route exact path='/weather' component={WeatherContainer}/>

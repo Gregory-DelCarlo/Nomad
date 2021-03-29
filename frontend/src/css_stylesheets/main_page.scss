@@ -210,22 +210,22 @@
 }
 
 #ethan{
-  background-image: url("https://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/005/767/medium/gregory_delcarlo.jpeg?1607127966");
+  background-image: url('../assets/images/ethan.jpg');
   background-size: cover;
 }
 
 #jeffrey {
-  background-image: url("https://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/005/786/medium/jeffrey_bogart.jpg?1606888285");
+  background-image: url("../assets/images/jeffrey.jpg");
   background-size: cover;
 }
 
 #trevor {
-  background-image: url("https://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/005/812/medium/trevor_smith.jpeg?1607127996");
+  background-image: url("../assets/images/trevor.jpeg");
   background-size: cover;
 }
 
 #kenny {
-  background-image: url("https://s3-us-west-2.amazonaws.com/aa-progress-tracker/students/avatars/000/005/796/medium/Kenny_Zeng.jpg?1607127823");
+  background-image: url("../assets/images/Kenny.jpg");
   background-size: cover;
 }
 
@@ -266,3 +266,6 @@
   color: #fff!important;
 }
 
+#nomad-source {
+  font-size: 18px;
+}
