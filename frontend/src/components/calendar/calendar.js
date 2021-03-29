@@ -1,5 +1,5 @@
 import React from 'react'
-import FullCalendar, { formatDate } from '@fullcalendar/react'
+import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
@@ -35,6 +35,7 @@ export default class Calendar extends React.Component {
                             center: 'title',
                             right: 'dayGridMonth,timeGridWeek,timeGridDay'
                         }}
+                        //change the aspect ratio of the calendar
                         // aspectRatio='.9'
                         initialView='dayGridMonth'
                         selectable={true}
@@ -65,17 +66,4 @@ export default class Calendar extends React.Component {
       }
    
 }
-
-// // function renderEventContent(eventInfo) {
-//     return (
-//         <>
-//             <b>{eventInfo.timeText}</b>
-//             <i>{eventInfo.event.title}</i>
-//         </>
-//     )
-// }
-// handleEventClick = (trip) => {
-    
-//     }
-// }
 

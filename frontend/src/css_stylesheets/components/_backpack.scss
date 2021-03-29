@@ -36,11 +36,9 @@
 .item-list > li {
   display: flex;
   align-items: center;
-  // align-self: center;
   justify-content: flex-end;
   position: relative;
   height: 80px;
-  // width: 50%;
   padding: 5px 10px;
   min-width: 300px;
   border-radius: 4px;
@@ -56,10 +54,6 @@
 .item-label {
   width: 100%;
 }
-
-// .item-list > li:hover {
-//   cursor: pointer;
-// }
 
 .backpack-view {
   width: 50%;

@@ -23,7 +23,6 @@ class SessionForm extends React.Component {
   }
   
   loginDemo(e) {
-    // const history = useHistory();
     e.preventDefault();
     e.stopPropagation();
     const demo = {
@@ -60,8 +59,6 @@ class SessionForm extends React.Component {
         <div className='modal-form-header-wrapper'>
           <div className="modal-form-header"><img className='modal-logo'src={logo} alt='nomad logo'/></div>
         </div>
-        {/* <Modal.Header closeButton>
-        </Modal.Header> */}
 
         <form className="modal-form" onSubmit={this.handleSubmit} >
           <div>

@@ -21,7 +21,6 @@ class Start extends React.Component {
   handleLiveValidation(e) {
     let length = e
     if (length > 3 && length < 50) {
-      // this.setState( {error: 'Title must be between 3 and 50 characters'} )
       this.setState( {error: null} )
     } 
   }
@@ -51,7 +50,6 @@ class Start extends React.Component {
             <input 
               type="text"
               onChange={this.handleChange('title')}
-              // onBlur={this.handleValidation}
               className= {this.state.error !== null? "backpack-input error" : "backpack-input"}
             />
             {this.state.error !== null? <div className='backpack-input-error'>{this.state.error}</div> : null}

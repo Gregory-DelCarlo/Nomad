@@ -16,7 +16,6 @@
   font-family: 'Raleway', sans-serif;
   font-size: 20px;
   color: #fff;
-  // background: #364D32;
   background: #206615;
   border: 1px solid transparent;
   padding: 5px;
@@ -101,7 +100,6 @@
 
 .auth-btn {
   margin-left: 5px;
-  // background: #4E6447!important;
 }
 
 .auth-btn:hover {
@@ -110,9 +108,7 @@
 
 .user-icon{
   color: #a8aaa5;
-  /* background-color: antiquewhite; */
   display: flex;
-  /* right: 0px; */
   position: relative;
   right: 14px;
   background-color:  #206615;
@@ -120,11 +116,6 @@
   padding: 3px;
   border: none;
 }
-
-// .user-icon:hover{
-//    background: #789448;
-// }
-
 
 .dropdown-links{
   display: none; 
@@ -174,11 +165,6 @@
   text-decoration: none;
   color: black;
 }
-
-//  .prof-links:hover{
-//   color: #000000;
-  // text-decoration: underline;
-// }
 
 .dropdown-greeting{
   font-weight: 600;
