@@ -87,7 +87,6 @@ class Supplies extends React.Component {
   }
 
   removeItem(form, index) {
-    console.log(form)
     if (form === "food") {
       let temp = this.state.food
       temp.splice(index, 1)
@@ -97,9 +96,6 @@ class Supplies extends React.Component {
       temp.splice(index, 1)
       this.setState({equipment: temp})
     }
-    // let temp = this.state[form]
-    // temp.splice(index, 1)
-    // this.setState({[form]: temp})
   }
 
   render() {

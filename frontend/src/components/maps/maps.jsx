@@ -82,7 +82,6 @@ export default class Park extends React.Component {
 
     renderWeather() {
         if(this.props.parkRid) {
-            console.log(this.props.parkName)
             return <WeatherContainer parkName={this.props.parkName}/>
         }
     }
