@@ -78,6 +78,22 @@ class Supplies extends React.Component {
     return validForm
   }
 
+  removeItem(form, index) {
+    console.log(form)
+    if (form === "food") {
+      let temp = this.state.food
+      temp.splice(index, 1)
+      this.setState({food: temp})
+    } else {
+      let temp = this.state.equipment
+      temp.splice(index, 1)
+      this.setState({equipment: temp})
+    }
+    // let temp = this.state[form]
+    // temp.splice(index, 1)
+    // this.setState({[form]: temp})
+  }
+
   render() {
     const food = this.state.food;
     const equipment = this.state.equipment;
@@ -116,7 +132,10 @@ class Supplies extends React.Component {
             <label>Your Food</label>
             <ul>
               {food.map((item, index) => (
-                <li key={index}>{item}</li>
+                <li key={index}>
+                  <span className="form-list-item">{item}</span>
+                  <button className="clear-item-btn" onClick={() => this.removeItem("food", index)}>X</button>
+                </li>
               ))}
             </ul>
           </div>
@@ -124,7 +143,10 @@ class Supplies extends React.Component {
             <label>Your Equipment</label>
             <ul>
               {equipment.map((item, index) => (
-                <li key={index}>{item}</li>
+                <li key={index}>
+                  <span className="form-list-item">{item}</span>
+                  <button className="clear-item-btn" onClick={() => this.removeItem("equipment", index)}>X</button>
+                  </li>
               ))}
             </ul>
           </div>

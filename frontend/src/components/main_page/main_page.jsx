@@ -89,7 +89,9 @@ export default class MainPage extends React.Component {
 
 
         <section className="main-page-section divider d2">
-          <h2 id="section-signup-btn" className="section-header" onClick={this.handleClick}>Sign Up</h2>
+          <h2 id="section-signup-btn" className="section-header" onClick={this.handleClick}>
+            {this.props.loggedIn ? "Plan a trip" : "Sign Up" }
+          </h2>
         </section>
 
         <section className="main-page-section section">
