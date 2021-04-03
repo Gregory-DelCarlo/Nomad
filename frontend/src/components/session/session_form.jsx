@@ -1,10 +1,9 @@
 import React from 'react';
 import logo from '../../assets/images/nomad-logo.png';
-
-
+import { useHistory } from 'react-router-dom';
 
 class SessionForm extends React.Component {
-
+  
   constructor(props) {
     super(props)
     this.state = {
@@ -12,16 +11,17 @@ class SessionForm extends React.Component {
       password: '',
       password2: ''
     }
-
+    
+    
     this.handleSubmit = this.handleSubmit.bind(this);
     this.demoAttempt = false;
     this.loginDemo = this.loginDemo.bind(this)
   }
-
+  
   componentWillUnmount() {
     this.props.clearErrors();
   }
-
+  
   loginDemo(e) {
     e.preventDefault();
     e.stopPropagation();
@@ -29,14 +29,19 @@ class SessionForm extends React.Component {
       username: "Demo User",
       password: "123456"
     }
-
-    this.props.demoForm(demo).then(this.props.closeModal)
+    this.props.demoForm(demo).then(() => {
+      this.props.closeModal();
+      this.props.history.push('/backpack');
+    });
   }
 
   handleSubmit(e) {
     e.preventDefault();
     this.props.action(this.state).then( () => {
-      if (this.props.errors.length === 0) this.props.closeModal()
+      if (this.props.errors.length === 0) {
+        this.props.closeModal();
+        this.props.history.push('/backpack');
+      }
     });
   }
 
@@ -52,10 +57,8 @@ class SessionForm extends React.Component {
     return (
       <div className='modal-child'>
         <div className='modal-form-header-wrapper'>
-          <div className="modal-form-header"><img className='logo'src={logo} alt='nomad logo'/></div>
+          <div className="modal-form-header"><img className='modal-logo'src={logo} alt='nomad logo'/></div>
         </div>
-        {/* <Modal.Header closeButton>
-        </Modal.Header> */}
 
         <form className="modal-form" onSubmit={this.handleSubmit} >
           <div>
@@ -88,7 +91,7 @@ class SessionForm extends React.Component {
             </div> : ''
           }
 
-          <button className='auth-form-button'id='submit' type='submit'><span className='auth-form-field'>{this.props.formType}</span></button>
+          <button className='auth-form-button'><span className='auth-form-field'>{this.props.formType}</span></button>
           <div className="auth-separator">
             or
           </div>

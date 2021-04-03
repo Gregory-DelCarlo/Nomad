@@ -1,46 +1,33 @@
 import React from 'react'
-import FullCalendar, { formatDate } from '@fullcalendar/react'
+import FullCalendar from '@fullcalendar/react'
 import dayGridPlugin from '@fullcalendar/daygrid'
 import timeGridPlugin from '@fullcalendar/timegrid'
 import interactionPlugin from '@fullcalendar/interaction'
-import {createEventId } from './event-utils'
-import {fetchUserTrips} from '../../actions/trip_actions'
+import {Sidebar} from './calendar_sidebar'
 
 export default class Calendar extends React.Component {
     constructor(props) {
         super(props)
-        this.allUserTrips = this.allUserTrips.bind(this)
-        this.state = {
-        weekendsVisible: true,
-            currentEvents: []
-        }
+        this.handleWeekendsToggle = this.handleWeekendsToggle.bind(this)
     }
-
+    
+    state = {
+        weekendsVisible: true
+    }
 
     componentDidMount() {
-        fetchUserTrips()
+        this.props.fetchUserTrips(this.props.userId);
     }
     
-   allUserTrips(){
-    
-        this.state.currentEvents = this.props.trip.map(
-            ((trip) => {
-                return ({
-                    id: trip._id,
-                    title: trip.title,
-                    start: "2020" + String(Math.random(1,12).floor()) + String(Math.random(1,25).floor)//placeholder for date/time "yyyy-mm-dd"
-                //    end: // "yyyy-mm-dd"
-                })
-            }) 
-       )
-   }
-
     render() {
         return (
             <div className='calendar-whole'>
-                {this.renderSidebar()}
+                    <Sidebar
+                        toggled={this.state.weekendsVisible}
+                        onChange={this.handleWeekendsToggle}
+                        trips={this.props.trips}
+                    />
                 <div className='calendar-main'>
-                    {/* style={{ width: 600 + "px" }} */}
                     <FullCalendar
                         plugins={[dayGridPlugin, timeGridPlugin, interactionPlugin]}
                         headerToolbar={{
@@ -48,19 +35,19 @@ export default class Calendar extends React.Component {
                             center: 'title',
                             right: 'dayGridMonth,timeGridWeek,timeGridDay'
                         }}
-                        aspectRatio='1.3'
+                        //change the aspect ratio of the calendar
+                        // aspectRatio='.9'
                         initialView='dayGridMonth'
-                        editable={true}
                         selectable={true}
                         selectMirror={true}
                         dayMaxEvents={true}
                         weekends={this.state.weekendsVisible}
-                        select={this.handleDateSelect}
-                        intialEvents={this.state.currentEvents}
-                        eventContent={renderEventContent} // custom render function
+                        events={this.props.trips}
                         eventClick={this.handleEventClick}
-                        eventsSet={this.handleEvents} // called after events are initialized/added/changed/removed
+                        eventsSet={this.handleEvents} 
+                    // called after events are initialized/added/changed/removed
                     /* you can update a remote database when these fire:
+                    eventContent={renderEventContent} // custom render function
                     eventAdd={function(){}}
                     eventChange={function(){}}
                     eventRemove={function(){}}
@@ -71,88 +58,12 @@ export default class Calendar extends React.Component {
         )
     }
 
-    renderSidebar() {
-        return (
-            <div className='calendar-sidebar'>
-                <div className='calendar-sidebar-section'>
-                    <label>
-                        <input
-                            type='checkbox'
-                            checked={this.state.weekendsVisible}
-                            onChange={this.handleWeekendsToggle}
-                        ></input>
-                            toggle weekends
-                    </label>
-                </div>
-                <div className='calendar-sidebar-section'>
-                    <h2>All Hikes({this.state.currentEvents.length})</h2>
-                    <ul>
-                        {this.state.currentEvents.map(renderSidebarEvent)}
-                    </ul>
-                </div>
-            </div>
-        )
-    }
-
+    
     handleWeekendsToggle = () => {
         this.setState({
-            weekendsVisible: !this.state.weekendsVisible
+          weekendsVisible: !this.state.weekendsVisible
         })
-    }
-
-    handleDateSelect = (selectInfo) => {
-        let title = prompt('Please enter a new title for your event')
-        let calendarApi = selectInfo.view.calendar
-
-        calendarApi.unselect() // clear date selection
-
-        if (title) {
-            calendarApi.addEvent({
-                id: createEventId(),
-                title,
-                start: selectInfo.startStr,
-                end: selectInfo.endStr,
-                allDay: selectInfo.allDay
-            })
-        }
-    }
-
-    
-
-    handleEvents = (events) => {
-        this.setState({
-            currentEvents: events
-        })
-    }
-
+      }
+   
 }
 
-function renderEventContent(eventInfo) {
-    return (
-        <>
-            <b>{eventInfo.timeText}</b>
-            <i>{eventInfo.event.title}</i>
-        </>
-    )
-}
-
-
-// removehike = () => {
-//     clickInfo.event.remove()
-// }
-
-
-// handleEventClick = (clickInfo) => {
-//     if (confirm(`Are you sure you want to delete the event '${clickInfo.event.title}'`)) {
-//         clickInfo.event.remove()
-//     }
-// }
-
-function renderSidebarEvent(event) {
-    return (
-        <li key={event.id}>
-            <b>{formatDate(event.start, { year: 'numeric', month: 'short', day: 'numeric' })}</b>
-            <i>{event.title}</i>
-        </li>
-    )
-}

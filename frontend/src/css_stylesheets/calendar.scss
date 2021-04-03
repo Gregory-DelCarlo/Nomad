@@ -1,64 +1,148 @@
-html,
-body,
-body > div { /* the react root */
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
-
-h2 {
-  margin: 0;
-  font-size: 16px;
-}
-
-ul {
-  margin: 0;
-  padding: 0 0 0 1.5em;
-}
-
-li {
-  margin: 1.5em 0;
-  padding: 0;
-}
-
-b { /* used for event dates/times */
-  margin-right: 3px;
-}
 
 .calendar-whole {
   display: flex;
   min-height: 50%;
-  font-family: Arial, Helvetica Neue, Helvetica, sans-serif;
   font-size: 14px;
   align-content: center;
-  width: 800px;
 }
 
 .calendar-sidebar {
-  width: 200px;
+  width: 300px;
   line-height: 1.5;
-  background: #eaf9ff;
+  background: transparent;
   border-right: 1px solid #d3e2e8;
 }
 
-.calendar-sidebar-section {
+.calendar-sidebar-section{
   padding: 2em;
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.calendar-sidebar-section label {
+  background: #46454a;
+  padding: 6px;
+  border-radius: 10px;
+  font-weight: 700;
+  color: white;
+}
+
+.calendar-sidebar-section input {
+    box-sizing: border-box;
+    margin: 8px;
 }
 
 .calendar-main {
   flex-grow: 1;
   padding: 3em;
-  // max-width: 900px;
-  // height: 900px;
-   width: 600px;
-
-}
-
-.fc .fc-media-screen .fc-direction-ltr .fc-theme-standard{
-  width: 700px;
+  width: 600px;
+  
 }
 
 .fc { /* the calendar root */
   max-width: 1100px;
   margin: 0 auto;
+  background: #725441;
+  padding: 16px;
+  width: 680px;
+  border-radius: 27px;
+
+}
+
+.calendar-sidebar-section::-webkit-scrollbar {
+
+  display: none;
+}
+
+.cal-trip-link{
+  font-family: 'Raleway', sans-serif!important;
+  color: #fff;
+  font-weight: 500;
+   margin: 3em 0;
+  padding:  7px;
+}
+
+a.cal-trip-link {
+  color: white;
+}
+
+.calendar-trips-list{
+  font-size: 17px;
+  padding-left: 0.5rem;
+  background: #808080;
+  padding: 8px;
+  border-radius: 10px;
+}
+
+.calendar-sidebar-section h2 {
+  background: #46454a;
+  font-weight: 700;
+  padding: 4px;
+  margin-bottom: 7px;
+  border-radius: 10px;
+  color: white;
+}
+
+.cal-trip-link-sub {
+  margin-right: 3px;
+  padding: 3px
+}
+
+.calendar-trips-list li {
+    margin: 15px 0px;
+    border: 2px solid black;
+    padding: 5px;
+    border-radius: 4px;
+    max-width: 300px;
+    overflow-x: hidden;
+}
+
+.full-calendar-component{
+  background-image: url('../assets/images/calendar_background.jpg');
+  background-size: cover;
+}
+
+.fc .fc-daygrid-day-number {
+    position: relative;
+    z-index: 4;
+    padding: 4px;
+    color: black;
+}
+
+.fc .fc-daygrid-more-link {
+    position: relative;
+    z-index: 4;
+    cursor: pointer;
+    color: black;
+}
+
+.fc-h-event .fc-event-title-container {
+    flex-grow: 1;
+    flex-shrink: 1;
+    min-width: 0;
+}
+
+.fc-popover {
+  background: #46454a!important;
+  color: #fff;
+  border: 2px solid #46454a!important;
+  border-radius: 4px;
+}
+
+.fc .fc-col-header-cell-cushion {
+    display: inline-block;
+    padding: 2px 4px;
+    color: black;
+}
+
+.fc .fc-toolbar-title {
+    font-size: 1.75em;
+    margin: 0;
+    font-family: 'Raleway';
+    font-weight: 600;
+}
+
+.fc-h-event {
+    display: block;
+    border: 1px solid #000000;
 }

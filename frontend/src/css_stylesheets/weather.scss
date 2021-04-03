@@ -1,17 +1,21 @@
 .weather-container {
+  margin-left: 100px;
   width: 360px;
-  height: 565px;
-  background: white;
-  background: rgb(244, 245, 243);
-  border: 3px solid #253d1a;
+  height: 550px;
+  background: #fff;
+  box-shadow: 2px 8px 12px #60625f;
+  border-bottom: 2px solid #fff;
+  border-radius: 4px;
 }
 
 .weather-header-container {
   width: 100%;
   height: 290px;
   min-height: 200px;
-  background: rgb(134, 156, 119);
-  border-bottom: 1px solid lightgray;
+  background: #6e5b4b;
+  border-top: 2px solid #6e5b4b;
+  border-radius: 4px;
+  border-bottom: 2px solid lightgray;
 }
 
 .weather-header-wrapper {
@@ -37,10 +41,6 @@
   width: 100px;
   height: 100px;
   margin: 5px auto;
-}
-
-.weather-condition-container {
-  // height: 100%;
 }
 
 .weather-condition-ul {

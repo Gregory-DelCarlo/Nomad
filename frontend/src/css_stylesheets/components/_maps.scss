@@ -1,0 +1,60 @@
+.map-page {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    height: 100%;
+    background-image: linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5)), url('../../assets/images/map-bg.jpg');
+    background-size: cover;
+}
+
+.map-container {
+    width: 900px;
+    position: relative;
+    left: 45px;
+    box-shadow: 2px 8px 12px #60625f;
+    border-top: 4px solid #6e5b4b;
+    border-radius: 4px;
+}
+
+.map-info {
+    background-color: #6e5b4b;
+}
+
+.map-list {
+    margin: 10px 0;
+    background: #6e5b4b;
+    height: 800px;
+    width: 200px;
+    box-shadow: 2px 8px 12px #60625f;
+    border: 5px solid #6e5b4b;
+    border-radius: 3px; 
+}
+
+.map-list li, .parks-list li {
+    margin: 5px;
+    button {
+        padding: 7px;
+    }
+}
+
+.map-list h2 {
+    margin: 5px 5px 15px 5px;
+    text-align: center;
+    background: #52392F;
+    color: #fff;
+    font-size: 25px;
+    border-radius: 3px;
+}
+
+.park-name button, .area-name button {
+        background-color: #4E6447;
+        color: #e2e0e0;
+        font-size: 15px;
+        padding: 5px;
+        border-radius: 4px;
+}
+
+.park-name button:hover, .area-name button:hover {
+  background-color: #325D41;
+  transition: 0.3s;
+}

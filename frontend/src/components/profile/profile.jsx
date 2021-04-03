@@ -1,24 +1,15 @@
 import React from 'react';
-import Calendar from '../calendar/calendar'
+import Calendar from '../calendar/calendar_container'
 
 class Profile extends React.Component {
     constructor(props) {
         super(props)
     }
-//     componentDidMount() {
-//         this.props.getUser(this.props.match.params.userId)
-//     }
- 
-
-//     componentWillUnmount() {
-//         this.props.clearErrors();
-//     }
     render() {
 
         return(
            
-        <div>
-            {/* <div className='greeting-user'>Hi, {currentUser.username} </div> */}
+        <div className="full-calendar-component">
             <Calendar/>
          </div>
 

@@ -17,11 +17,9 @@ export default class ParksDropdown extends React.Component {
     }
 
     handleClick(parkId) {
-        // debugger
-        const currentParkId = parkId;
-        this.props.receivePark(currentParkId);
+        this.props.receivePark(parkId);
 
-        window.localStorage.setItem("currentParkId", JSON.stringify(currentParkId))
+        window.localStorage.setItem("currentParkId", JSON.stringify(parkId))
         setTimeout(() => {
             this.props.fetchWeather(this.props.currentPark)
                 .then( window.localStorage.setItem('weather', this.props.weather))
@@ -46,13 +44,13 @@ export default class ParksDropdown extends React.Component {
                      return ""
                 case ( "Central California"):
                     parkslist["Central California"].push(
-                    <Dropdown.Item className='dropdown-items' key={park._id}>
+                    <Dropdown.Item className='dropdown-items' key={park._id} onSelect={() => this.handleClick(park._id)}>
                             {park.name}
                     </Dropdown.Item>)
                     return ""
                 case ("Southern California"):
                     parkslist["Southern California"].push(
-                    <Dropdown.Item className='dropdown-items' key={park._id}>
+                    <Dropdown.Item className='dropdown-items' key={park._id} onSelect={() => this.handleClick(park._id)}>
                             {park.name}
                         
                     </Dropdown.Item>)

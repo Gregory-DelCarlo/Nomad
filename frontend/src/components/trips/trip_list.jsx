@@ -12,7 +12,9 @@ class TripList extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getUserTrips(this.props.userId);
+    if (this.props.tripsPulled === false) {
+      this.props.getUserTrips(this.props.userId);
+    }
     this.setState({trips: this.props.trips});
   }
 
@@ -40,7 +42,7 @@ class TripList extends React.Component {
     return (
       <div className="trip-list">
         <div className="trip-list-wrapper">
-          <ul>
+          <ul className="trips-list-ul">
             {this.state.trips.map((trip, index) => (
               <li 
                 key={index}
