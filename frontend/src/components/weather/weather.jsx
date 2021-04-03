@@ -10,27 +10,15 @@ class Weather extends React.Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.getWeather = this.getWeather.bind(this);
   }
-
-  componentDidUpdate() {
-    this.getWeather()
-  }
-
   componentDidMount() {
-    this.getWeather()
-  }
-
-  getWeather() {
-    this.props.receivePark(this.props.currentParkId);
-    setTimeout(() => {
-      this.props.fetchWeather(this.props.parks[this.props.currentParkId])
-    }, 10)
+    this.props.fetchWeather(this.props.parks[this.props.currentParkId])
   }
 
   componentWillUnmount() {
     localStorage.clear();
   }
+
 
   handleSubmit(e) {
     e.preventDefault();
@@ -71,7 +59,7 @@ class Weather extends React.Component {
       <div className="weather-container">
         <div className="weather-header-container">
           <div className="weather-header-wrapper">
-            <h3 className='weather-currentpark'>{this.props.currentPark}</h3>
+            <h3 className='weather-currentpark'>{this.props.parkName}</h3>
             <h4 className='temperature'>{temperature} °F</h4>
             <h4>{condition}</h4>
             <img className='weather-condition-icon' src={icon_url} alt="weather-icon"/>

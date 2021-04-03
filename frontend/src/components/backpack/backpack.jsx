@@ -31,7 +31,7 @@ class Backpack extends React.Component {
     this.addItem = this.addItem.bind(this);
     this.saveTrip = this.saveTrip.bind(this);
     this.addDateLocation = this.addDateLocation.bind(this);
-
+    this.clearTrip = this.clearTrip.bind(this)
     this.setTitle = this.setTitle.bind(this);
   }
 
@@ -100,7 +100,23 @@ class Backpack extends React.Component {
       trailName: this.state.trailName
     }
     this.props.makeNewTrip(trip);
-    this.setState({ currentPage: 'start', numItems: 0})
+    this.clearTrip()
+    this.props.history.push('/trips')
+  }
+
+  clearTrip() {
+    this.setState({
+      currentPage: 'start',
+      numItems: 0,
+      title: '',
+      team: [],
+      food: [],
+      equipment: [],
+      startDate: '',
+      endDate: '',
+      parkId: '',
+      trailName: ''
+    })
   }
 
   getItems() {
@@ -191,6 +207,7 @@ class Backpack extends React.Component {
           saveTrip={this.saveTrip}
           changeView={this.changeView}
           clickAddItem={this.setTitle}
+          clearTrip={this.props.clearTrip}
         />
       )
     }

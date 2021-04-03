@@ -57,9 +57,20 @@ class Team extends React.Component {
       error["Name"] = "Name cannot be blank";
       validForm = false;
     }
+    else if (name > 20) {
+      error["Name"] = "Name cannot be over 20 characters";
+      validForm = false;
+    }
+    
 
     this.setState( {error: error} )
     return validForm
+  }
+
+  removeMember(index) {
+    let temp = this.state.team
+    temp.splice(index, 1)
+    this.setState({team: temp})
   }
 
   render() {
@@ -82,9 +93,12 @@ class Team extends React.Component {
           </form>
           <div className='team-form-list'>
             <label>Your Team</label>
-            <ul>
+            <ul className="team-form-list-ul">
               {team.map((member, index) => (
-                <li key={index}>{member}</li>
+                <li key={index} className="team-form-member">
+                  <span className="form-list-item">{member}</span> 
+                  <button className="clear-item-btn" onClick={() => this.removeMember(index)}>X</button>
+                </li>
               ))}
             </ul>
           </div>

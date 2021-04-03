@@ -1,7 +1,5 @@
 import React from 'react';
 import logo from '../../assets/images/nomad-logo.png';
-import { useHistory } from 'react-router-dom';
-
 class SessionForm extends React.Component {
   
   constructor(props) {

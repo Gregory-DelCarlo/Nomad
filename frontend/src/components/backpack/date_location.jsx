@@ -9,13 +9,13 @@ export default class DateLocation extends React.Component {
         trailName: this.props.state.trailName,
         startDate: this.props.state.startDate,
         endDate: this.props.state.endDate,
-        errors: {}
+        errors: {},
+        dateErrorFlag: false
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderTrailMap = this.renderTrailMap.bind(this);
     this.handleValidations = this.handleValidations.bind(this);
-    this.clearErrors = this.clearErrors.bind(this)
 
     this.dateValidation = this.dateValidation.bind(this)
   }
@@ -31,15 +31,15 @@ export default class DateLocation extends React.Component {
   
   handleSubmit(e) {
     e.preventDefault();
-    this.clearErrors();
-    if (this.handleValidations()) {
+    if (this.handleValidations() && !this.state.dateErrorFlag) {
+      let errors = []
+      errors["End"] = "End date cannot be earlier"
+      this.setState( {errors: errors} )
+    }
+    else if (this.handleValidations() && this.state.dateErrorFlag) {
       const { startDate, endDate, trailName, parkId } = this.state;
       this.props.clickAddItem('team form', 1, startDate, endDate, trailName, parkId)
     }
-  }
-  
-  clearErrors() {
-    this.setState( {error: {}} )
   }
   
   handleValidations() {
@@ -62,6 +62,9 @@ export default class DateLocation extends React.Component {
       errors["Trail"] = "Trail name cannot be empty"
       validForm = false;
     }
+    if (startDate > endDate) {
+      errors["End"] = "End date cannot be earlier"
+    }
     
     this.setState( {errors: errors} )
     return validForm
@@ -71,12 +74,14 @@ export default class DateLocation extends React.Component {
     let errors = Object.assign(this.state.errors);
     let startDate;
     let endDate;
+    let validForm = true;
     
     if (field === "endDate") {
       startDate = new Date(this.state.startDate);
       endDate = new Date(value);
       if (startDate > endDate){
         errors["End"] = "End date cannot be earlier"
+        validForm = false;
       } else {
         delete errors["End"]
       }
@@ -86,12 +91,13 @@ export default class DateLocation extends React.Component {
       endDate = new Date(this.state.endDate);
       if (startDate > endDate){
         errors["End"] = "End date cannot be earlier"
+        validForm = false;
       } else {
         delete errors["End"]
       }
     }
 
-    this.setState( {errors: errors} )
+    this.setState( {errors: errors, dateErrorFlag: validForm} )
   }
   
   handleLiveVaidation(field, length) {

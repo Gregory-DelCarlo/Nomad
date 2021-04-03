@@ -6,7 +6,7 @@
   padding-top: 40px;
   padding-bottom: 40px;
   padding-left: 10px;
-  background-image: linear-gradient(to bottom right,rgb(58, 58, 58, .9), rgba(58,58,58, .7)),  url('../../assets/images/backpack-bg.jpg');
+  background-image: linear-gradient(to bottom right,rgb(58, 58, 58, .6), rgba(58,58,58, 0)),  url('../../assets/images/backpack-bg.jpg');
   background-size: cover;
   background-blend-mode: 0.9;
 }
@@ -28,6 +28,11 @@
   height: 60%;
   overflow-y: scroll;
   width: 100%;
+}
+
+.trips-list-ul {
+  display: flex;
+  flex-direction: column-reverse;
 }
 
 .trip-list-wrapper::-webkit-scrollbar {

@@ -97,6 +97,9 @@
 }
 
 .food-form-list * li {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
   padding: 5px;
   margin: 5px;
   border-radius: 3px;
@@ -104,6 +107,11 @@
   border: 2px solid #50342a;
   box-shadow: 1px 1px 9px -1px #3c3f3b;
   font-size: 15px;
+}
+
+.team-form-member{
+  animation: background-in;
+  animation-duration: 0.3s;
 }
 
 .equipment-form-list {
@@ -130,6 +138,9 @@
 }
 
 .equipment-form-list * li {
+  display: flex;
+  justify-content: flex-end;
+  position: relative;
   padding: 5px;
   margin: 5px;
   border-radius: 3px;

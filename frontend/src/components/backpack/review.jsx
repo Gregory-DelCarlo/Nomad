@@ -1,5 +1,4 @@
 import React from 'react';
-
 class Review extends React.Component {
   constructor(props){
     super(props)
@@ -12,7 +11,6 @@ class Review extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleClick = this.handleClick.bind(this)
     this.handleValidation = this.handleValidation.bind(this);
-
   }
 
   componentDidMount() {

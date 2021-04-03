@@ -5,6 +5,7 @@ export const RECEIVE_USER_TRIPS = "RECEIVE_USER_TRIPS";
 export const RECEIVE_NEW_TRIP = "RECEIVE_NEW_TRIP";
 export const RECEIVE_TRIP_UPDATE = "RECEIVE_TRIP_UPDATE";
 export const DELETE_TRIP = "DELETE_TRIP";
+export const CLEAR_TRIP = "CLEAR_TRIP";
 
 const receiveTrip = trip => ({
   type: RECEIVE_TRIP,
@@ -30,6 +31,12 @@ const removeTrip = trip => ({
   type: DELETE_TRIP,
   trip
 });
+
+export const clearTrip = () => {
+  return {
+    type: CLEAR_TRIP
+  }
+}
 
 export const fetchTrip = id => dispatch => (
   APIUtil.getTrip(id).then(trip => dispatch(receiveTrip(trip)))

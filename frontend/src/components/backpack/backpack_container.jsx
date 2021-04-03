@@ -4,7 +4,8 @@ import { fetchTrip,
         fetchUserTrips, 
         makeNewTrip, 
         updateTrip, 
-        deleteTrip } from '../../actions/trip_actions';
+        deleteTrip,
+        clearTrip } from '../../actions/trip_actions';
 import {getParks} from '../../actions/park_actions';
 
 const mapStateToProps = state => {
@@ -21,6 +22,7 @@ const mapDispatchToProps = dispatch => ({
   makeNewTrip: trip => dispatch(makeNewTrip(trip)),
   updateTrip: trip => dispatch(updateTrip(trip)),
   deleteTrip: trip => dispatch(deleteTrip(trip)),
+  clearTrip: () => dispatch(clearTrip()),
   getParks: () => dispatch(getParks())
 });
 

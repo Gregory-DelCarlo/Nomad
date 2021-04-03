@@ -9,6 +9,7 @@ export default class Park extends React.Component {
         this.setParkAreas = this.setParkAreas.bind(this);
         this.renderParks = this.renderParks.bind(this);
         this.renderWeather = this.renderWeather.bind(this);
+        this.fetchData = this.fetchData.bind(this)
 
         this.state = {
             areas: [
@@ -42,26 +43,31 @@ export default class Park extends React.Component {
         )
     }
 
+    fetchData(parkKey) {
+        this.props.receivePark(parkKey)
+        this.props.fetchWeather(this.props.parks[parkKey])
+    }
+
     setParkAreas() {
         Object.keys(this.props.parks).forEach( parkKey => {
             switch (this.props.parks[parkKey].location) {
                 case 'Northern California':
                     this.state.north.push(<li className='park-name' key={parkKey}>
-                                            <button onClick={() => this.props.receivePark(parkKey)}>
+                                            <button onClick={() => this.fetchData(parkKey)}>
                                                 {this.props.parks[parkKey].name}
                                             </button>
                                           </li>);
                     return null;
                 case 'Central California':
                     this.state.central.push(<li className='park-name' key={parkKey}>
-                                            <button onClick={() => this.props.receivePark(parkKey)}>
+                                            <button onClick={() => this.fetchData(parkKey)}>
                                                 {this.props.parks[parkKey].name}
                                             </button>
                                             </li>);
                     return null;
                 case 'Southern California':
                     this.state.south.push(<li className='park-name' key={parkKey}>
-                                            <button onClick={() => this.props.receivePark(parkKey)}>
+                                            <button onClick={() => this.fetchData(parkKey)}>
                                                 {this.props.parks[parkKey].name}
                                             </button>
                                             </li>);
@@ -76,7 +82,7 @@ export default class Park extends React.Component {
 
     renderWeather() {
         if(this.props.parkRid) {
-            return <WeatherContainer />
+            return <WeatherContainer parkName={this.props.parkName}/>
         }
     }
 

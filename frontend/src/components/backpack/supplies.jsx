@@ -69,13 +69,33 @@ class Supplies extends React.Component {
       errors["Food"] = "Food item cannot be blank"
       validForm = false;
     } 
+    else if (foodItem > 20) {
+      errors["Food"] = "Food item cannot be over 20 characters"
+      validForm = false;
+    }
     if (equipmentItem === 0) {
       errors["Equipment"] = "Equipment cannot be blank"
+      validForm = false;
+    }
+    else if (equipmentItem > 20) {
+      errors["Eequipment"] = "Equipment cannot be over 20 characters"
       validForm = false;
     }
 
     this.setState( {errors: errors} )
     return validForm
+  }
+
+  removeItem(form, index) {
+    if (form === "food") {
+      let temp = this.state.food
+      temp.splice(index, 1)
+      this.setState({food: temp})
+    } else {
+      let temp = this.state.equipment
+      temp.splice(index, 1)
+      this.setState({equipment: temp})
+    }
   }
 
   render() {
@@ -116,7 +136,10 @@ class Supplies extends React.Component {
             <label>Your Food</label>
             <ul>
               {food.map((item, index) => (
-                <li key={index}>{item}</li>
+                <li key={index}>
+                  <span className="form-list-item">{item}</span>
+                  <button className="clear-item-btn" onClick={() => this.removeItem("food", index)}>X</button>
+                </li>
               ))}
             </ul>
           </div>
@@ -124,7 +147,10 @@ class Supplies extends React.Component {
             <label>Your Equipment</label>
             <ul>
               {equipment.map((item, index) => (
-                <li key={index}>{item}</li>
+                <li key={index}>
+                  <span className="form-list-item">{item}</span>
+                  <button className="clear-item-btn" onClick={() => this.removeItem("equipment", index)}>X</button>
+                  </li>
               ))}
             </ul>
           </div>

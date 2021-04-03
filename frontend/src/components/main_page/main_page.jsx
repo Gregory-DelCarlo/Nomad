@@ -89,7 +89,9 @@ export default class MainPage extends React.Component {
 
 
         <section className="main-page-section divider d2">
-          <h2 id="section-signup-btn" className="section-header" onClick={this.handleClick}>Sign Up</h2>
+          <h2 id="section-signup-btn" className="section-header" onClick={this.handleClick}>
+            {this.props.loggedIn ? "Plan a trip" : "Sign Up" }
+          </h2>
         </section>
 
         <section className="main-page-section section">
@@ -100,9 +102,8 @@ export default class MainPage extends React.Component {
         <section className="main-page-section d3">
           <div className="about-header">
             <h2>About Us</h2>
-            <a href="https://github.com/Gregory-DelCarlo/Nomad" target='_blank'>
+            <a href="https://github.com/Gregory-DelCarlo/Nomad">
             <img src={github} class="link-imgs" id="github-link" alt=""/></a>
-            <div id='nomad-source'>Nomad source code</div>
           </div>
           <div className="about-footer-container">
               <div className="individual-container">
@@ -114,9 +115,9 @@ export default class MainPage extends React.Component {
                   </div>
                 </div>
                 <div className="social-links-container">
-                  <a href="https://www.linkedin.com/in/gregory-ethan-del-carlo-755852106/" target='_blank'><img src={linkedin} className="link-imgs" alt=""/></a>
-                  <a href="https://github.com/Gregory-DelCarlo" target='_blank'><img src={github} className="link-imgs" alt=""/></a>
-                  <a href="https://angel.co/u/gregory-del-carlo" target='_blank'><img src={angellist} className="link-imgs" alt=""/></a>
+                  <a href="https://www.linkedin.com/in/gregory-ethan-del-carlo-755852106/"><img src={linkedin} className="link-imgs" alt=""/></a>
+                  <a href="https://github.com/Gregory-DelCarlo"><img src={github} className="link-imgs" alt=""/></a>
+                  <a href="https://angel.co/u/gregory-del-carlo"><img src={angellist} className="link-imgs" alt=""/></a>
                 </div>
               </div>
 
@@ -129,9 +130,9 @@ export default class MainPage extends React.Component {
                   </div>
                 </div>
                 <div className="social-links-container">
-                  <a href="https://www.linkedin.com/in/jeffrey-bogart-7874121a5/" target='_blank'><img src={linkedin} className="link-imgs" alt=""/></a>
-                  <a href="https://github.com/JS-Bogart" target='_blank'><img src={github} className="link-imgs" alt=""/></a>
-                  <a href="https://angel.co/u/jeffrey-bogart" target='_blank'><img src={angellist} className="link-imgs" alt=""/></a>
+                  <a href="https://www.linkedin.com/in/jeffrey-bogart-7874121a5/"><img src={linkedin} className="link-imgs" alt=""/></a>
+                  <a href="https://github.com/JS-Bogart"><img src={github} className="link-imgs" alt=""/></a>
+                  <a href="https://angel.co/u/jeffrey-bogart"><img src={angellist} className="link-imgs" alt=""/></a>
                 </div>
               </div>
 
@@ -144,9 +145,9 @@ export default class MainPage extends React.Component {
                   </div>
                 </div>
                 <div className="social-links-container">
-                  <a href="https://www.linkedin.com/in/trevor-smith-4b4b82208/" target='_blank'><img src={linkedin} className="link-imgs" alt=""/></a>
-                  <a href="https://github.com/trevorsmith1667" target='_blank'><img src={github} className="link-imgs" alt=""/></a>
-                  <a href="https://angel.co/u/trevor-smith-49" target='_blank'><img src={angellist} className="link-imgs" alt=""/></a>
+                  <a href="https://www.linkedin.com/in/trevor-smith-4b4b82208/"><img src={linkedin} className="link-imgs" alt=""/></a>
+                  <a href="https://github.com/trevorsmith1667"><img src={github} className="link-imgs" alt=""/></a>
+                  <a href="https://angel.co/u/trevor-smith-49"><img src={angellist} className="link-imgs" alt=""/></a>
                 </div>
               </div>
 
@@ -159,9 +160,9 @@ export default class MainPage extends React.Component {
                   </div>
                 </div>
                 <div className="social-links-container">
-                  {/* <a href="" target='_blank'><img src={linkedin} className="link-imgs" alt=""/></a> */}
-                  <a href="https://github.com/LinkedLists" target='_blank'><img src={github} className="link-imgs" alt="" /></a>
-                  {/* <a href="" target='_blank'><img src={angellist} className="link-imgs" alt="" /></a> */}
+                  {/* <a href=""><img src={linkedin} className="link-imgs" alt=""/></a> */}
+                  <a href="https://github.com/LinkedLists"><img src={github} className="link-imgs" alt="" /></a>
+                  {/* <a href=""><img src={angellist} className="link-imgs" alt="" /></a> */}
                 </div>
               </div>
             </div>
