@@ -104,7 +104,6 @@ export default class MainPage extends React.Component {
             <h2>About Us</h2>
             <a href="https://github.com/Gregory-DelCarlo/Nomad" target='_blank'>
             <img src={github} class="link-imgs" id="github-link" alt=""/></a>
-            <div id='nomad-source'>Nomad source code</div>
           </div>
           <div className="about-footer-container">
               <div className="individual-container">

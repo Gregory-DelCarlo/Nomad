@@ -57,6 +57,11 @@ class Team extends React.Component {
       error["Name"] = "Name cannot be blank";
       validForm = false;
     }
+    else if (name > 20) {
+      error["Name"] = "Name cannot be over 20 characters";
+      validForm = false;
+    }
+    
 
     this.setState( {error: error} )
     return validForm

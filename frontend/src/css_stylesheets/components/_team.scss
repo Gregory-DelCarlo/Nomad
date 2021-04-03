@@ -79,11 +79,19 @@
   border: 2px solid #50342a;
   box-shadow: 1px 1px 9px -1px #3c3f3b;
   font-size: 15px;
+  animation: background-in;
+  animation-duration: 0.3s;
 }
 
 .form-list-item {
   width: 100%;
   text-align: center;
+}
+
+@keyframes background-in {
+  0%{
+    opacity: 0;
+  }
 }
 
 .clear-item-btn {

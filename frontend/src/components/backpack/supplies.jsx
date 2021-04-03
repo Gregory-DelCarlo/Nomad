@@ -69,8 +69,16 @@ class Supplies extends React.Component {
       errors["Food"] = "Food item cannot be blank"
       validForm = false;
     } 
+    else if (foodItem > 20) {
+      errors["Food"] = "Food item cannot be over 20 characters"
+      validForm = false;
+    }
     if (equipmentItem === 0) {
       errors["Equipment"] = "Equipment cannot be blank"
+      validForm = false;
+    }
+    else if (equipmentItem > 20) {
+      errors["Eequipment"] = "Equipment cannot be over 20 characters"
       validForm = false;
     }
 
