@@ -10,23 +10,24 @@ class Weather extends React.Component {
     }
 
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.getWeather = this.getWeather.bind(this);
+    // this.getWeather = this.getWeather.bind(this);
   }
 
-  componentDidUpdate() {
-    this.getWeather()
-  }
+  // componentDidUpdate() {
+  //   this.getWeather()
+  // }
 
   componentDidMount() {
-    this.getWeather()
+    this.props.fetchWeather(this.props.parks[this.props.currentParkId])
+    // this.getWeather()
   }
 
-  getWeather() {
-    this.props.receivePark(this.props.currentParkId);
-    setTimeout(() => {
-      this.props.fetchWeather(this.props.parks[this.props.currentParkId])
-    }, 10)
-  }
+  // getWeather() {
+  //   this.props.receivePark(this.props.currentParkId);
+  //   setTimeout(() => {
+  //     
+  //   }, 10)
+  // }
 
   componentWillUnmount() {
     localStorage.clear();

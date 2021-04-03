@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { getParks, receivePark } from '../../actions/park_actions';
+import { fetchWeather } from '../../actions/weather_actions';
 import Maps from './maps';
 
 const mapStateToProps = (state) => {
@@ -12,7 +13,8 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return( {
         getParks: () => dispatch(getParks()),
-        receivePark: parkId => dispatch(receivePark(parkId))
+        receivePark: parkId => dispatch(receivePark(parkId)),
+        fetchWeather: park => dispatch(fetchWeather(park))
     })
 };
  
