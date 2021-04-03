@@ -60,14 +60,14 @@ export default class Park extends React.Component {
                     return null;
                 case 'Central California':
                     this.state.central.push(<li className='park-name' key={parkKey}>
-                                            <button onClick={() => this.props.receivePark(parkKey)}>
+                                            <button onClick={() => this.fetchData(parkKey)}>
                                                 {this.props.parks[parkKey].name}
                                             </button>
                                             </li>);
                     return null;
                 case 'Southern California':
                     this.state.south.push(<li className='park-name' key={parkKey}>
-                                            <button onClick={() => this.props.receivePark(parkKey)}>
+                                            <button onClick={() => this.fetchData(parkKey)}>
                                                 {this.props.parks[parkKey].name}
                                             </button>
                                             </li>);
@@ -82,7 +82,8 @@ export default class Park extends React.Component {
 
     renderWeather() {
         if(this.props.parkRid) {
-            return <WeatherContainer />
+            console.log(this.props.parkName)
+            return <WeatherContainer parkName={this.props.parkName}/>
         }
     }
 

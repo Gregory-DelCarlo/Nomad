@@ -6,6 +6,7 @@ import Maps from './maps';
 const mapStateToProps = (state) => {
     return ({
         parkRid: state.ui.currentPark ? state.entities.parks[state.ui.currentPark].rid : '',
+        parkName: state.ui.currentPark ? state.entities.parks[state.ui.currentPark].name : '',
         parks: state.entities.parks
     })
 };

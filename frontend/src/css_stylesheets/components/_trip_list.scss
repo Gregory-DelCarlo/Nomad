@@ -30,6 +30,11 @@
   width: 100%;
 }
 
+.trips-list-ul {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 .trip-list-wrapper::-webkit-scrollbar {
 
   display: none;
