@@ -36,9 +36,29 @@
 }
 
 .trip-list-wrapper::-webkit-scrollbar {
-
-  display: none;
+  width: 6px;
+  opacity: 0;
+  z-index: 1000;
 }
+
+.trip-list-wrapper::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+ 
+.trip-list-wrapper::-webkit-scrollbar-thumb {
+  background: #b67543; 
+  border-radius: 10px;
+  z-index: 1000;
+  opacity: 0;
+  transition: 0.3;
+}
+
+.trip-list-wrapper::-webkit-scrollbar-thumb:hover {
+  width: 20px;
+  cursor: pointer;
+  opacity: 0.2;
+}
+
 
 .trip-list * li {
   width: 50%;
