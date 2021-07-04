@@ -27,6 +27,7 @@ export default class Park extends React.Component {
     componentDidMount() {
         this.props.getParks();
         this.setParkAreas();
+        
     }
 
     getMap() {

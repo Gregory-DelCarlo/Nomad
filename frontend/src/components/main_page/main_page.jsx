@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactGA from 'react-ga';
 import Carousel from 'react-bootstrap/Carousel';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import img1 from "../../assets/images/1.jpg";
@@ -7,12 +8,26 @@ import img3 from "../../assets/images/3.jpg";
 import angellist from "../../assets/images/angellist.png";
 import github from "../../assets/images/github.png";
 import linkedin from "../../assets/images/linkedin.png";
+
 export default class MainPage extends React.Component {
   constructor(props) {
     super(props);
 
     this.handleClick = this.handleClick.bind(this)
+    this.trackPage = this.trackPage.bind(this)
   }
+
+  componentDidMount() {
+    const page = this.props.location.pathname;
+    this.trackPage(page);
+  }
+
+  trackPage(page) {
+    ReactGA.set({
+      page
+    });
+    ReactGA.pageview(page);
+  };
 
   handleClick() {
     if(this.props.loggedIn) {
