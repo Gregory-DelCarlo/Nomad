@@ -7,6 +7,7 @@ const users = require("./routes/api/users");
 const parks = require("./routes/api/parks");
 const trips = require("./routes/api/trips");
 const path = require('path');
+const http = require('http');
 
 if (process.env.NODE_ENV === 'production') {
     nomad.use(express.static('frontend/build'));
@@ -41,3 +42,7 @@ nomad.use('/api/trips', trips);
 
 //set server so listen on the port specified
 nomad.listen(port, () => console.log(`Server is running on port ${port}`));
+
+setInterval(() => {
+  http.get("http://nomad2.herokuapp.com");
+}, 25 * 60 * 1000); // ping live site every 25 minutes
